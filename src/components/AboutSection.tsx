@@ -13,8 +13,8 @@ const AboutSection = () => {
                 className="w-full h-[400px] object-cover"
               />
             </div>
-            <div className="absolute -top-4 -right-4 bg-nex-primary text-white px-6 py-3 rounded-2xl font-montserrat font-semibold shadow-lg">
-              +500 casas entregadas
+            <div className="absolute -top-4 -right-4 bg-nex-primary text-white px-6 py-3 rounded-2xl font-inter font-semibold shadow-lg">
+              +50 casas entregadas
             </div>
           </div>
           
@@ -24,35 +24,23 @@ const AboutSection = () => {
               ¿Quiénes somos?
             </h2>
             
-            <div className="space-y-4 text-nex-text font-montserrat text-lg leading-relaxed">
+            <div className="space-y-4 text-nex-text font-inter text-lg leading-relaxed">
               <p>
                 En <span className="font-semibold text-nex-primary">Nex Modular Homes</span> distribuimos 
-                casas modulares expandibles de instalación rápida en toda España. Nuestras viviendas 
-                no requieren cimentación ni obras complejas, lo que permite una entrega limpia, 
-                ágil y eficiente.
+                casas modulares expandibles por toda España. Nuestras viviendas 
+                no requieren cimentación ni obras complejas.
               </p>
               
               <p>
-                Te acompañamos durante todo el proceso: desde la elección del modelo y la 
+                Queremos acompañarte durante todo el proceso: desde la elección del modelo y la 
                 personalización hasta la entrega final.
               </p>
               
               <div className="bg-wood-50 border-l-4 border-nex-secondary p-4 rounded-r-2xl">
                 <p className="font-medium text-nex-text">
-                  Además, disponemos de una casa piloto visitable en Campo Real (Madrid) 
+                  Además, disponemos de una casa piloto única en España situada en Campo Real (Madrid) 
                   para que puedas ver en persona cómo se vive en una casa modular.
                 </p>
-              </div>
-            </div>
-            
-            <div className="mt-8 grid grid-cols-2 gap-6">
-              <div className="text-center bg-wood-50 p-4 rounded-2xl">
-                <div className="text-3xl font-bold text-nex-primary font-playfair mb-2">3-4</div>
-                <div className="text-sm font-montserrat text-nex-text/70">Meses de entrega</div>
-              </div>
-              <div className="text-center bg-wood-50 p-4 rounded-2xl">
-                <div className="text-3xl font-bold text-nex-primary font-playfair mb-2">0</div>
-                <div className="text-sm font-montserrat text-nex-text/70">Obras necesarias</div>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ const AdvantagesSection = () => {
     {
       icon: "🚚",
       title: "Se entregan listas para instalar",
-      description: "Todo incluido: transporte, instalación y puesta en marcha"
+      description: "Transporte e instalación incluído en el precio (Sin sorpresas)"
     },
     {
       icon: "🎨",
@@ -19,7 +19,7 @@ const AdvantagesSection = () => {
     {
       icon: "⚡",
       title: "Alta eficiencia energética",
-      description: "Excelente aislamiento y sistemas de climatización eficientes"
+      description: "Excelente aislamiento con paneles sándwich EPS 65 mm"
     },
     {
       icon: "💰",
@@ -40,7 +40,7 @@ const AdvantagesSection = () => {
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-nex-text mb-4">
             ¿Por qué una casa modular?
           </h2>
-          <p className="text-lg font-montserrat text-nex-text/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg font-inter text-nex-text/80 max-w-2xl mx-auto leading-relaxed">
             Ventajas de nuestras casas modulares que las convierten en la mejor opción para tu nuevo hogar
           </p>
         </div>
@@ -60,7 +60,7 @@ const AdvantagesSection = () => {
                 {advantage.title}
               </h3>
               
-              <p className="text-nex-text/70 font-montserrat leading-relaxed">
+              <p className="text-nex-text/70 font-inter leading-relaxed">
                 {advantage.description}
               </p>
               

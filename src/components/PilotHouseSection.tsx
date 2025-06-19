@@ -24,14 +24,14 @@ const PilotHouseSection = () => {
               ¿Quieres ver una casa modular en persona?
             </h2>
             
-            <p className="text-xl mb-8 font-montserrat text-white/90 leading-relaxed">
+            <p className="text-xl mb-8 font-inter text-white/90 leading-relaxed">
               Ven a conocer nuestra casa piloto en Campo Real (Madrid). 
               Descubre cómo se siente vivir en una casa prefabricada de diseño moderno y eficiente.
             </p>
             
             <Button 
               size="lg"
-              className="bg-white text-nex-primary hover:bg-white/90 px-8 py-4 text-lg font-montserrat font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 mb-8"
+              className="bg-white text-nex-primary hover:bg-white/90 px-8 py-4 text-lg font-inter font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 mb-8"
               onClick={handleWhatsApp}
             >
               Escríbenos por WhatsApp
@@ -41,19 +41,19 @@ const PilotHouseSection = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-white/80" />
-                <span className="font-montserrat text-white/90">P.º de Pozuelo, 24, 28510 Campo Real, Madrid</span>
+                <span className="font-inter text-white/90">P.º de Pozuelo, 24, 28510 Campo Real, Madrid</span>
               </div>
               
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-white/80" />
-                <a href="tel:+34611486694" className="font-montserrat text-white/90 hover:text-white transition-colors">
+                <a href="tel:+34611486694" className="font-inter text-white/90 hover:text-white transition-colors">
                   611 48 66 94
                 </a>
               </div>
               
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-white/80" />
-                <a href="mailto:info@nexmodularhomes.com" className="font-montserrat text-white/90 hover:text-white transition-colors">
+                <a href="mailto:info@nexmodularhomes.com" className="font-inter text-white/90 hover:text-white transition-colors">
                   info@nexmodularhomes.com
                 </a>
               </div>
@@ -74,7 +74,7 @@ const PilotHouseSection = () => {
             <div className="absolute -bottom-6 -right-6 bg-white text-nex-text px-6 py-4 rounded-2xl shadow-lg">
               <div className="text-2xl font-bold text-nex-secondary">📍</div>
               <div className="text-sm font-playfair font-semibold">Casa Piloto</div>
-              <div className="text-xs font-montserrat">Campo Real, Madrid</div>
+              <div className="text-xs font-inter">Campo Real, Madrid</div>
             </div>
           </div>
         </div>
