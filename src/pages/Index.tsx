@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen font-inter">
+    <div className="min-h-screen font-montserrat">
       <HeroSection />
       <AboutSection />
       <ModelsSection />
@@ -24,7 +24,7 @@ const Index = () => {
           href="https://wa.me/34611486694"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+          className="bg-nex-secondary hover:bg-nex-secondary/90 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
           aria-label="Contactar por WhatsApp"
         >
           <span className="text-2xl">💬</span>

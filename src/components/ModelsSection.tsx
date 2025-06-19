@@ -38,21 +38,21 @@ const ModelsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-forest-50 to-brand-50">
+    <section className="py-20 bg-gradient-to-br from-wood-50 to-forest-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-playfair font-bold text-forest-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-playfair font-bold text-nex-text mb-4">
             Modelos disponibles
           </h2>
-          <p className="text-lg text-forest-700 max-w-2xl mx-auto">
+          <p className="text-lg font-montserrat text-nex-text/80 max-w-2xl mx-auto leading-relaxed">
             Descubre nuestros modelos de casas modulares, diseñados para adaptarse a tus necesidades y estilo de vida.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {models.map((model, index) => (
-            <Card key={model.name} className={`group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg animate-slide-up ${index === 1 ? 'delay-200' : ''}`}>
-              <div className="relative overflow-hidden rounded-t-lg">
+            <Card key={model.name} className={`group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg animate-slide-up bg-white rounded-3xl overflow-hidden ${index === 1 ? 'delay-200' : ''}`}>
+              <div className="relative overflow-hidden">
                 <img 
                   src={model.image}
                   alt={`Casa modular ${model.name}`}
@@ -63,26 +63,26 @@ const ModelsSection = () => {
                 </div>
               </div>
               
-              <CardHeader>
-                <CardTitle className="text-2xl font-playfair text-forest-900 flex items-center justify-between">
+              <CardHeader className="pb-4">
+                <CardTitle className="text-2xl font-daydream text-nex-text flex items-center justify-between">
                   {model.name}
-                  <span className="text-lg font-bold text-brand-600">{model.price}</span>
+                  <span className="text-lg font-bold text-nex-primary font-playfair">{model.price}</span>
                 </CardTitle>
-                <p className="text-forest-600 font-medium">{model.size}</p>
+                <p className="text-nex-text/70 font-montserrat font-medium">{model.size}</p>
               </CardHeader>
               
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   {model.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-brand-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-forest-700">{feature}</span>
+                      <div className="w-2 h-2 bg-nex-secondary rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-nex-text font-montserrat">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 
                 <Button 
-                  className="w-full bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="w-full bg-nex-primary hover:bg-nex-primary/90 text-white font-montserrat font-semibold py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                   onClick={() => handleRequestInfo(model.name)}
                 >
                   Solicita ficha técnica
