@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Company info */}
           <div>
-            <h3 className="text-2xl font-playfair text-nex-secondary mb-4">
+            <h3 className="text-2xl font-playfair text-nex-primary mb-4">
               Nex Modular Homes
             </h3>
             <p className="text-white/80 font-inter mb-4 leading-relaxed">
@@ -20,7 +20,7 @@ const Footer = () => {
                 href="https://wa.me/34611486694" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-nex-secondary hover:bg-nex-secondary/80 p-2 rounded-xl transition-colors duration-300"
+                className="bg-nex-primary hover:bg-nex-primary/80 p-2 rounded-xl transition-colors duration-300"
               >
                 📱
               </a>
@@ -32,21 +32,21 @@ const Footer = () => {
             <h4 className="text-lg font-playfair font-semibold mb-4">Contacto</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-nex-secondary" />
+                <Phone className="w-4 h-4 text-nex-primary" />
                 <a href="tel:+34611486694" className="text-white/80 font-inter hover:text-white transition-colors">
                   611 48 66 94
                 </a>
               </div>
               
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-nex-secondary" />
+                <Mail className="w-4 h-4 text-nex-primary" />
                 <a href="mailto:info@nexmodularhomes.com" className="text-white/80 font-inter hover:text-white transition-colors">
                   info@nexmodularhomes.com
                 </a>
               </div>
               
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-nex-secondary mt-1" />
+                <MapPin className="w-4 h-4 text-nex-primary mt-1" />
                 <span className="text-white/80 font-inter">
                   P.º de Pozuelo, 24<br />
                   28510 Campo Real, Madrid

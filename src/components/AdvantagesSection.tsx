@@ -49,7 +49,7 @@ const AdvantagesSection = () => {
           {advantages.map((advantage, index) => (
             <div 
               key={index} 
-              className={`group p-6 rounded-3xl bg-gradient-to-br from-white to-wood-50 border border-wood-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-slide-up`}
+              className={`group p-6 rounded-3xl bg-gradient-to-br from-white to-forest-50 border border-forest-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-slide-up`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -64,7 +64,7 @@ const AdvantagesSection = () => {
                 {advantage.description}
               </p>
               
-              <div className="mt-4 w-12 h-1 bg-gradient-to-r from-nex-secondary to-nex-primary rounded-full group-hover:w-16 transition-all duration-300"></div>
+              <div className="mt-4 w-12 h-1 bg-gradient-to-r from-nex-primary to-forest-600 rounded-full group-hover:w-16 transition-all duration-300"></div>
             </div>
           ))}
         </div>

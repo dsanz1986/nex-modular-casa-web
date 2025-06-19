@@ -19,15 +19,42 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    // Crear el contenido del email
+    const emailBody = `
+Nueva solicitud de información desde la web:
+
+Nombre: ${formData.nombre}
+Email: ${formData.email}
+Teléfono: ${formData.telefono}
+Comentarios: ${formData.comentarios}
+    `.trim();
+
+    try {
+      // Enviar por email usando mailto (esto abrirá el cliente de email del usuario)
+      const subject = encodeURIComponent("Nueva solicitud de información - Nex Modular Homes");
+      const body = encodeURIComponent(emailBody);
+      const mailtoLink = `mailto:info@nexmodularhomes.com?subject=${subject}&body=${body}`;
+      
+      window.location.href = mailtoLink;
+      
+      // Mostrar mensaje de éxito
       toast({
-        title: "¡Solicitud enviada!",
-        description: "Nos pondremos en contacto contigo muy pronto.",
+        title: "¡Solicitud preparada!",
+        description: "Se ha abierto tu cliente de email para enviar la solicitud.",
       });
+      
+      // Limpiar formulario
       setFormData({ nombre: "", email: "", telefono: "", comentarios: "" });
+      
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Hubo un problema al procesar tu solicitud. Por favor, inténtalo de nuevo.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -38,7 +65,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contacto" className="py-20 bg-gradient-to-br from-wood-50 to-white">
+    <section id="contacto" className="py-20 bg-gradient-to-br from-forest-50 to-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-nex-text mb-4">
@@ -49,7 +76,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-xl p-8 animate-slide-up border border-wood-200">
+        <div className="bg-white rounded-3xl shadow-xl p-8 animate-slide-up border border-forest-200">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
@@ -63,7 +90,7 @@ const ContactSection = () => {
                   required
                   value={formData.nombre}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-wood-200 rounded-2xl focus:ring-2 focus:ring-nex-secondary focus:border-transparent transition-all duration-300 font-inter"
+                  className="w-full px-4 py-3 border border-forest-200 rounded-2xl focus:ring-2 focus:ring-nex-primary focus:border-transparent transition-all duration-300 font-inter"
                   placeholder="Tu nombre completo"
                 />
               </div>
@@ -79,7 +106,7 @@ const ContactSection = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-wood-200 rounded-2xl focus:ring-2 focus:ring-nex-secondary focus:border-transparent transition-all duration-300 font-inter"
+                  className="w-full px-4 py-3 border border-forest-200 rounded-2xl focus:ring-2 focus:ring-nex-primary focus:border-transparent transition-all duration-300 font-inter"
                   placeholder="tu@email.com"
                 />
               </div>
@@ -95,7 +122,7 @@ const ContactSection = () => {
                 type="tel"
                 value={formData.telefono}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-wood-200 rounded-2xl focus:ring-2 focus:ring-nex-secondary focus:border-transparent transition-all duration-300 font-inter"
+                className="w-full px-4 py-3 border border-forest-200 rounded-2xl focus:ring-2 focus:ring-nex-primary focus:border-transparent transition-all duration-300 font-inter"
                 placeholder="+34 600 000 000"
               />
             </div>
@@ -110,7 +137,7 @@ const ContactSection = () => {
                 rows={4}
                 value={formData.comentarios}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-wood-200 rounded-2xl focus:ring-2 focus:ring-nex-secondary focus:border-transparent transition-all duration-300 resize-none font-inter"
+                className="w-full px-4 py-3 border border-forest-200 rounded-2xl focus:ring-2 focus:ring-nex-primary focus:border-transparent transition-all duration-300 resize-none font-inter"
                 placeholder="Cuéntanos sobre tu proyecto, presupuesto, ubicación, etc."
               />
             </div>

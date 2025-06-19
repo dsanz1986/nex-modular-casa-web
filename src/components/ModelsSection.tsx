@@ -10,7 +10,7 @@ const ModelsSection = () => {
       size: "72 m² habitables + 18 m² de porche",
       price: "Desde 39.990 €",
       features: [
-        "Estructura de acero galvanizado + paneles sándwich EPS 65 mm",
+        "Estructura de acero galvanizado + aislamiento EPS",
         "Ideal para vivir todo el año",
         "Alta eficiencia y distribución personalizable",
         "Entrega en 3-4 meses",
@@ -40,7 +40,7 @@ const ModelsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-wood-50 to-forest-50">
+    <section className="py-20 bg-gradient-to-br from-forest-50 to-forest-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-nex-text mb-4">
@@ -77,7 +77,7 @@ const ModelsSection = () => {
                 <ul className="space-y-3 mb-6">
                   {model.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-nex-secondary rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-nex-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-nex-text font-inter">{feature}</span>
                     </li>
                   ))}

@@ -34,7 +34,7 @@ const PilotHouseSection = () => {
               className="bg-white text-nex-primary hover:bg-white/90 px-8 py-4 text-lg font-inter font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 mb-8"
               onClick={handleWhatsApp}
             >
-              Escríbenos por WhatsApp
+              Solicita tu cita por WhatsApp
             </Button>
             
             {/* Contact info */}
@@ -72,7 +72,7 @@ const PilotHouseSection = () => {
             
             {/* Floating badge */}
             <div className="absolute -bottom-6 -right-6 bg-white text-nex-text px-6 py-4 rounded-2xl shadow-lg">
-              <div className="text-2xl font-bold text-nex-secondary">📍</div>
+              <div className="text-2xl font-bold text-nex-primary">📍</div>
               <div className="text-sm font-playfair font-semibold">Casa Piloto</div>
               <div className="text-xs font-inter">Campo Real, Madrid</div>
             </div>
