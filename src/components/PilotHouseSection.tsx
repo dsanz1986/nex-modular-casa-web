@@ -9,7 +9,7 @@ const PilotHouseSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-nex-primary to-wood-800 text-white relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-nex-primary to-forest-800 text-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 right-10 w-32 h-32 border-2 border-white rounded-full"></div>

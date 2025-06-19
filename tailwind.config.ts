@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,7 +20,6 @@ export default {
 		extend: {
 			fontFamily: {
 				'playfair': ['Playfair Display', 'serif'],
-				'daydream': ['Brush Script MT', 'cursive'],
 				'montserrat': ['Montserrat', 'sans-serif'],
 			},
 			colors: {
@@ -68,26 +66,26 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Colores personalizados para Nex Modular Homes
+				// Colores personalizados para Nex Modular Homes - VERDE ORIGINAL
 				nex: {
-					primary: '#A5292A',    // Rojo teja
-					secondary: '#6FA66C',  // Verde hoja
+					primary: '#6FA66C',    // Verde hoja (color original)
+					secondary: '#A97E5C',  // Madera clara
 					text: '#1A1A1A',       // Negro carbón
 					wood: '#A97E5C',       // Madera clara
 					white: '#FFFFFF',      // Blanco
 				},
 				// Mantener compatibilidad con colores anteriores
 				brand: {
-					50: '#fef2f2',
-					100: '#fee2e2',
-					200: '#fecaca',
-					300: '#fca5a5',
-					400: '#f87171',
-					500: '#A5292A',
-					600: '#931f20',
-					700: '#7f1d1d',
-					800: '#651515',
-					900: '#450a0a',
+					50: '#f0f9f0',
+					100: '#dcf2dc',
+					200: '#b9e5b9',
+					300: '#8dd28d',
+					400: '#6FA66C',
+					500: '#4f7a4c',
+					600: '#3d5f3a',
+					700: '#2d4729',
+					800: '#1e301b',
+					900: '#0f180e',
 				},
 				forest: {
 					50: '#f0f9f0',

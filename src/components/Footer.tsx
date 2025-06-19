@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Company info */}
           <div>
-            <h3 className="text-2xl font-daydream text-nex-secondary mb-4">
+            <h3 className="text-2xl font-playfair text-nex-secondary mb-4">
               Nex Modular Homes
             </h3>
             <p className="text-white/80 font-inter mb-4 leading-relaxed">

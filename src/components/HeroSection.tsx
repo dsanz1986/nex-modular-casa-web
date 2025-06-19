@@ -8,7 +8,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-wood-50 via-white to-forest-50 overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-wood-50 via-white to-forest-50 overflow-hidden pt-24">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-wood-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -21,7 +21,7 @@ const HeroSection = () => {
         <div className="text-center lg:text-left animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-nex-text leading-tight mb-6">
             Empieza una nueva forma de
-            <span className="text-nex-primary block font-daydream text-5xl md:text-6xl lg:text-7xl">vivir</span>
+            <span className="text-nex-primary block font-playfair text-5xl md:text-6xl lg:text-7xl">vivir</span>
           </h1>
           
           <p className="text-lg md:text-xl font-inter text-nex-text/80 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">

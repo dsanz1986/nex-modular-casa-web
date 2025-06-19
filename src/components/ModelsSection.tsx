@@ -66,7 +66,7 @@ const ModelsSection = () => {
               </div>
               
               <CardHeader className="pb-4">
-                <CardTitle className="text-2xl font-daydream text-nex-text flex items-center justify-between">
+                <CardTitle className="text-2xl font-playfair text-nex-text flex items-center justify-between">
                   {model.name}
                   <span className="text-lg font-bold text-nex-primary font-playfair">{model.price}</span>
                 </CardTitle>
