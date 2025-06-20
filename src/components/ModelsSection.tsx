@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Download } from "lucide-react";
 
 const ModelsSection = () => {
   const models = [
@@ -16,7 +17,8 @@ const ModelsSection = () => {
         "Entrega en 3-4 meses",
         "Transporte e instalación incluidos"
       ],
-      image: "https://images.unsplash.com/photo-1524230572899-a752b3835840?w=500&h=400&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1524230572899-a752b3835840?w=500&h=400&fit=crop&crop=center",
+      pdfPath: "/ficha-tecnica-nex-natura.pdf"
     },
     {
       name: "Nex Nido",
@@ -30,13 +32,18 @@ const ModelsSection = () => {
         "Entrega en 3-4 meses",
         "Transporte e instalación incluidos"
       ],
-      image: "https://images.unsplash.com/photo-1487252665478-49b61b47f302?w=500&h=400&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1487252665478-49b61b47f302?w=500&h=400&fit=crop&crop=center",
+      pdfPath: "/ficha-tecnica-nex-nido.pdf"
     }
   ];
 
-  const handleRequestInfo = (modelName: string) => {
-    const message = `Hola, me interesa descargar la ficha técnica del modelo ${modelName}. ¿Podrían enviarme más información?`;
-    window.open(`https://wa.me/34611486694?text=${encodeURIComponent(message)}`, '_blank');
+  const handleDownloadPDF = (modelName: string, pdfPath: string) => {
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = `ficha-tecnica-${modelName.toLowerCase().replace(' ', '-')}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -84,9 +91,10 @@ const ModelsSection = () => {
                 </ul>
                 
                 <Button 
-                  className="w-full bg-nex-primary hover:bg-nex-primary/90 text-white font-inter font-semibold py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-                  onClick={() => handleRequestInfo(model.name)}
+                  className="w-full bg-nex-primary hover:bg-nex-primary/90 text-white font-inter font-semibold py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+                  onClick={() => handleDownloadPDF(model.name, model.pdfPath)}
                 >
+                  <Download size={18} />
                   Descargar ficha técnica
                 </Button>
               </CardContent>
