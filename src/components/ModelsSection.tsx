@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Download } from "lucide-react";
 
 const ModelsSection = () => {
@@ -8,8 +8,6 @@ const ModelsSection = () => {
     {
       name: "Nex Natura",
       icon: "🌿",
-      size: "72 m² habitables + 18 m² de porche",
-      price: "Desde 39.990 €",
       features: [
         "Estructura de acero galvanizado + aislamiento EPS",
         "Ideal para vivir todo el año",
@@ -17,14 +15,12 @@ const ModelsSection = () => {
         "Entrega en 3-4 meses",
         "Transporte e instalación incluidos"
       ],
-      image: "https://images.unsplash.com/photo-1524230572899-a752b3835840?w=500&h=400&fit=crop&crop=center",
+      image: "/lovable-uploads/c6c6f354-9983-4867-82ff-da049a835f66.png",
       pdfPath: "/ficha-tecnica-nex-natura.pdf"
     },
     {
       name: "Nex Nido",
       icon: "🌿",
-      size: "36 m² habitables + 18 m² de porche opcional",
-      price: "Desde 19.990 €",
       features: [
         "Estructura de acero galvanizado + aislamiento EPS",
         "Ideal como segunda residencia",
@@ -32,7 +28,7 @@ const ModelsSection = () => {
         "Entrega en 3-4 meses",
         "Transporte e instalación incluidos"
       ],
-      image: "https://images.unsplash.com/photo-1487252665478-49b61b47f302?w=500&h=400&fit=crop&crop=center",
+      image: "/lovable-uploads/48c4a309-3d86-476f-8aa9-b0c036f4377c.png",
       pdfPath: "/ficha-tecnica-nex-nido.pdf"
     }
   ];
@@ -72,15 +68,7 @@ const ModelsSection = () => {
                 </div>
               </div>
               
-              <CardHeader className="pb-4">
-                <CardTitle className="text-2xl font-playfair text-nex-text flex items-center justify-between">
-                  {model.name}
-                  <span className="text-lg font-bold text-nex-primary font-playfair">{model.price}</span>
-                </CardTitle>
-                <p className="text-nex-text/70 font-inter font-medium">{model.size}</p>
-              </CardHeader>
-              
-              <CardContent>
+              <CardContent className="p-6">
                 <ul className="space-y-3 mb-6">
                   {model.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">

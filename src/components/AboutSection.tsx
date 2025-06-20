@@ -8,8 +8,8 @@ const AboutSection = () => {
           <div className="relative animate-fade-in">
             <div className="rounded-3xl overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=500&fit=crop&crop=center"
-                alt="Equipo Nex Modular Homes"
+                src="/lovable-uploads/95729307-fe95-498b-8dc6-99da387641ff.png"
+                alt="Interior casa modular Nex"
                 className="w-full h-[400px] object-cover"
               />
             </div>

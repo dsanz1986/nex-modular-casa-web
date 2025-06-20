@@ -68,7 +68,7 @@ const PilotHouseSection = () => {
           <div className="relative animate-slide-up">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=600&h=450&fit=crop&crop=center"
+                src="/lovable-uploads/c6c6f354-9983-4867-82ff-da049a835f66.png"
                 alt="Casa piloto Nex Modular Homes en Campo Real"
                 className="w-full h-[400px] object-cover"
               />
