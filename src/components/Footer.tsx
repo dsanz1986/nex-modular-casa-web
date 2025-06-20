@@ -20,9 +20,9 @@ const Footer = () => {
                 href="https://wa.me/34611486694" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-nex-primary hover:bg-nex-primary/80 p-2 rounded-xl transition-colors duration-300"
+                className="bg-nex-primary hover:bg-nex-primary/80 p-2 rounded-xl transition-colors duration-300 text-white font-semibold"
               >
-                📱
+                WhatsApp
               </a>
             </div>
           </div>

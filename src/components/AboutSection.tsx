@@ -32,14 +32,21 @@ const AboutSection = () => {
               </p>
               
               <p>
-                Queremos acompañarte durante todo el proceso: desde la elección del modelo y la 
-                personalización hasta la entrega final.
+                Estaremos contigo en cada paso, desde la elección del modelo, pasando por la personalización, hasta la entrega final.
               </p>
               
               <div className="bg-wood-50 border-l-4 border-nex-secondary p-4 rounded-r-2xl">
                 <p className="font-medium text-nex-text">
-                  Además, disponemos de una casa piloto única en España situada en Campo Real (Madrid) 
-                  para que puedas ver en persona cómo se vive en una casa modular.
+                  Y si quieres verlo con tus propios ojos, puedes{' '}
+                  <a 
+                    href="https://maps.app.goo.gl/iUWkZ5LaFUCkBY417" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-nex-primary hover:text-nex-primary/80 font-semibold underline decoration-2 underline-offset-2 transition-colors duration-300"
+                  >
+                    visitar nuestra casa piloto en Campo Real (Madrid)
+                  </a>
+                  , para que puedas descubrir cómo se siente vivir en una casa modular.
                 </p>
               </div>
             </div>

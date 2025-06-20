@@ -20,8 +20,7 @@ const HeroSection = () => {
         {/* Text content */}
         <div className="text-center lg:text-left animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-nex-text leading-tight mb-6">
-            Empieza una nueva forma de
-            <span className="text-nex-primary block font-playfair">vivir</span>
+            Empieza una nueva forma de <span className="text-nex-primary font-playfair">vivir</span>
           </h1>
           
           <p className="text-lg md:text-xl font-inter text-nex-text/80 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
@@ -52,7 +51,7 @@ const HeroSection = () => {
         <div className="relative animate-slide-up">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&h=600&fit=crop&crop=center"
+              src="/lovable-uploads/c6b8fce4-da6d-4caa-ab79-76c00abf4713.png"
               alt="Casa modular moderna Nex Modular Homes"
               className="w-full h-[400px] md:h-[500px] object-cover"
             />
@@ -67,7 +66,7 @@ const HeroSection = () => {
             </div>
             <div className="flex items-center gap-3 mt-2">
               <div className="w-3 h-3 bg-nex-primary rounded-full"></div>
-              <span className="text-sm font-inter font-medium text-nex-text">Precio cerrado</span>
+              <span className="text-sm font-inter font-medium text-nex-text">Precio sin sorpresas</span>
             </div>
           </div>
         </div>

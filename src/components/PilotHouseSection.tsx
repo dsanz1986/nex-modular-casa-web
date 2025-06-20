@@ -8,6 +8,10 @@ const PilotHouseSection = () => {
     window.open(`https://wa.me/34611486694?text=${encodeURIComponent(message)}`, '_blank');
   };
 
+  const handleMapClick = () => {
+    window.open('https://maps.app.goo.gl/iUWkZ5LaFUCkBY417', '_blank');
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-nex-primary to-forest-800 text-white relative overflow-hidden">
       {/* Background decoration */}
@@ -70,8 +74,11 @@ const PilotHouseSection = () => {
               />
             </div>
             
-            {/* Floating badge */}
-            <div className="absolute -bottom-6 -right-6 bg-white text-nex-text px-6 py-4 rounded-2xl shadow-lg">
+            {/* Floating badge - now clickable */}
+            <div 
+              className="absolute -bottom-6 -right-6 bg-white text-nex-text px-6 py-4 rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              onClick={handleMapClick}
+            >
               <div className="text-2xl font-bold text-nex-primary">📍</div>
               <div className="text-sm font-playfair font-semibold">Casa Piloto</div>
               <div className="text-xs font-inter">Campo Real, Madrid</div>
