@@ -15,7 +15,7 @@ const ModelsSection = () => {
         "Entrega en 3-4 meses",
         "Transporte e instalación incluidos"
       ],
-      image: "/lovable-uploads/c6c6f354-9983-4867-82ff-da049a835f66.png",
+      image: "/lovable-uploads/2050482f-8056-4911-89a5-9ab6b7d0fe28.png",
       pdfPath: "/ficha-tecnica-nex-natura.pdf"
     },
     {
@@ -28,7 +28,7 @@ const ModelsSection = () => {
         "Entrega en 3-4 meses",
         "Transporte e instalación incluidos"
       ],
-      image: "/lovable-uploads/48c4a309-3d86-476f-8aa9-b0c036f4377c.png",
+      image: "/lovable-uploads/672cf111-f384-44c4-bfe7-4489af3516c4.png",
       pdfPath: "/ficha-tecnica-nex-nido.pdf"
     }
   ];
