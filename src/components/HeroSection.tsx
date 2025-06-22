@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Sparkles, Home, CheckCircle } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToContact = () => {
@@ -19,13 +19,42 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         {/* Text content */}
         <div className="text-center lg:text-left animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-nex-text leading-tight mb-6">
-            Empieza una nueva forma de <span className="text-nex-primary font-playfair">vivir</span>
-          </h1>
+          <div className="mb-6">
+            <div className="inline-flex items-center gap-2 bg-nex-primary/10 text-nex-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <Sparkles className="w-4 h-4" />
+              Tu hogar perfecto te espera
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-nex-text leading-tight">
+              Empieza una nueva forma de <span className="text-nex-primary font-playfair relative">
+                vivir
+                <div className="absolute -bottom-2 left-0 w-full h-3 bg-nex-primary/20 -z-10 rounded-lg"></div>
+              </span>
+            </h1>
+          </div>
           
           <p className="text-lg md:text-xl font-inter text-nex-text/80 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
             Diseña un hogar pensado para ti, sin obra y sin líos. Nosotros te acompañamos.
           </p>
+          
+          {/* Características destacadas */}
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-nex-primary" />
+              <span className="text-sm font-inter text-nex-text">Sin obra necesaria</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-nex-primary" />
+              <span className="text-sm font-inter text-nex-text">Precio sin sorpresas</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-nex-primary" />
+              <span className="text-sm font-inter text-nex-text">Entrega rápida</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-nex-primary" />
+              <span className="text-sm font-inter text-nex-text">Totalmente personalizable</span>
+            </div>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Button 
@@ -33,6 +62,7 @@ const HeroSection = () => {
               className="bg-nex-primary hover:bg-nex-primary/90 text-white px-8 py-4 text-lg font-inter font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               onClick={scrollToContact}
             >
+              <Home className="w-5 h-5 mr-2" />
               Quiero saber más
             </Button>
             
@@ -47,19 +77,32 @@ const HeroSection = () => {
           </div>
         </div>
         
-        {/* Hero image */}
+        {/* Hero image mejorada */}
         <div className="relative animate-slide-up">
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+          {/* Marco decorativo */}
+          <div className="absolute -inset-4 bg-gradient-to-r from-nex-primary to-forest-400 rounded-3xl opacity-20 blur-xl"></div>
+          
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+            {/* Overlay gradiente */}
+            <div className="absolute inset-0 bg-gradient-to-t from-nex-text/30 via-transparent to-transparent z-10"></div>
+            
             <img 
               src="/lovable-uploads/c6b8fce4-da6d-4caa-ab79-76c00abf4713.png"
               alt="Casa modular moderna Nex Modular Homes"
               className="w-full h-[400px] md:h-[500px] object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-nex-text/20 to-transparent"></div>
+            
+            {/* Badge de calidad */}
+            <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-lg z-20">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-inter font-semibold text-nex-text">Calidad Premium</span>
+              </div>
+            </div>
           </div>
           
-          {/* Floating card with key benefits */}
-          <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-lg p-4 border border-forest-200">
+          {/* Floating cards con beneficios */}
+          <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-forest-200 animate-bounce">
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 bg-nex-primary rounded-full"></div>
               <span className="text-sm font-inter font-medium text-nex-text">Sin obra necesaria</span>
@@ -69,12 +112,22 @@ const HeroSection = () => {
               <span className="text-sm font-inter font-medium text-nex-text">Precio sin sorpresas</span>
             </div>
           </div>
+
+          <div className="absolute -top-6 -right-6 bg-nex-primary text-white rounded-2xl shadow-xl p-4 animate-pulse">
+            <div className="text-center">
+              <div className="text-2xl font-bold font-playfair">3-4</div>
+              <div className="text-xs font-inter">meses entrega</div>
+            </div>
+          </div>
         </div>
       </div>
       
-      {/* Scroll indicator */}
+      {/* Scroll indicator mejorado */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-6 h-6 text-nex-primary" />
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-sm font-inter text-nex-primary font-medium">Descubre más</span>
+          <ArrowDown className="w-6 h-6 text-nex-primary" />
+        </div>
       </div>
     </section>
   );

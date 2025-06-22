@@ -69,7 +69,7 @@ const Footer = () => {
         
         <div className="border-t border-white/20 mt-8 pt-8 text-center">
           <p className="text-white/60 font-inter">
-            © 2024 Nex Modular Homes. Todos los derechos reservados.
+            © 2025 Nex Modular Homes. Todos los derechos reservados.
           </p>
         </div>
       </div>
