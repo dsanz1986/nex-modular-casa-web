@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -19,37 +20,33 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Crear el contenido del email
-    const emailBody = `
-Nueva solicitud de información desde la web:
-
-Nombre: ${formData.nombre}
-Email: ${formData.email}
-Teléfono: ${formData.telefono}
-Comentarios: ${formData.comentarios}
-    `.trim();
-
     try {
-      // Enviar por email usando mailto (esto abrirá el cliente de email del usuario)
-      const subject = encodeURIComponent("Nueva solicitud de información - Nex Modular Homes");
-      const body = encodeURIComponent(emailBody);
-      const mailtoLink = `mailto:info@nexmodularhomes.com?subject=${subject}&body=${body}`;
+      console.log("Sending contact form data:", formData);
       
-      window.location.href = mailtoLink;
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      console.log("Email sent successfully:", data);
       
       // Mostrar mensaje de éxito
       toast({
-        title: "¡Solicitud preparada!",
-        description: "Se ha abierto tu cliente de email para enviar la solicitud.",
+        title: "¡Solicitud enviada con éxito!",
+        description: "Hemos recibido tu solicitud y nos pondremos en contacto contigo pronto.",
       });
       
       // Limpiar formulario
       setFormData({ nombre: "", email: "", telefono: "", comentarios: "" });
       
-    } catch (error) {
+    } catch (error: any) {
+      console.error("Error sending email:", error);
       toast({
-        title: "Error",
-        description: "Hubo un problema al procesar tu solicitud. Por favor, inténtalo de nuevo.",
+        title: "Error al enviar",
+        description: "Hubo un problema al enviar tu solicitud. Por favor, inténtalo de nuevo.",
         variant: "destructive"
       });
     } finally {
