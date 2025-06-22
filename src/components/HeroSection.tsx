@@ -48,11 +48,11 @@ const HeroSection = () => {
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-nex-primary" />
-              <span className="text-sm font-inter text-nex-text">Entrega rápida</span>
+              <span className="text-sm font-inter text-nex-text">Alta eficiencia</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-nex-primary" />
-              <span className="text-sm font-inter text-nex-text">Totalmente personalizable</span>
+              <span className="text-sm font-inter text-nex-text">Personalizable</span>
             </div>
           </div>
           
@@ -98,25 +98,6 @@ const HeroSection = () => {
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-sm font-inter font-semibold text-nex-text">Calidad Premium</span>
               </div>
-            </div>
-          </div>
-          
-          {/* Floating cards con beneficios */}
-          <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-forest-200 animate-bounce">
-            <div className="flex items-center gap-3">
-              <div className="w-3 h-3 bg-nex-primary rounded-full"></div>
-              <span className="text-sm font-inter font-medium text-nex-text">Sin obra necesaria</span>
-            </div>
-            <div className="flex items-center gap-3 mt-2">
-              <div className="w-3 h-3 bg-nex-primary rounded-full"></div>
-              <span className="text-sm font-inter font-medium text-nex-text">Precio sin sorpresas</span>
-            </div>
-          </div>
-
-          <div className="absolute -top-6 -right-6 bg-nex-primary text-white rounded-2xl shadow-xl p-4 animate-pulse">
-            <div className="text-center">
-              <div className="text-2xl font-bold font-playfair">3-4</div>
-              <div className="text-xs font-inter">meses entrega</div>
             </div>
           </div>
         </div>

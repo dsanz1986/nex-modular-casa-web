@@ -7,6 +7,8 @@ const ModelsSection = () => {
   const models = [
     {
       name: "Nex Natura",
+      description: "Vive con diseño, estilo y eficiencia",
+      dimensions: "90 m² totales | 72 m² habitables + 18 m² de porche",
       icon: "🌿",
       originalPrice: "44.990€",
       offerPrice: "39.990€",
@@ -22,6 +24,8 @@ const ModelsSection = () => {
     },
     {
       name: "Nex Nido",
+      description: "Compacta, versátil y de gran eficiencia",
+      dimensions: "36 m² habitables + 18 m² de porche (opcional)",
       icon: "🌿",
       originalPrice: "24.990€",
       offerPrice: "19.990€",
@@ -85,18 +89,31 @@ const ModelsSection = () => {
               </div>
               
               <CardContent className="p-6">
-                {/* Precios */}
-                <div className="mb-6 text-center">
-                  <div className="flex items-center justify-center gap-4 mb-2">
-                    <span className="text-lg text-gray-500 line-through font-inter">
+                {/* Título y descripción */}
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-playfair font-bold text-nex-text mb-2">
+                    {model.name}
+                  </h3>
+                  <p className="text-lg font-inter text-nex-primary font-semibold mb-2">
+                    {model.description}
+                  </p>
+                  <p className="text-sm font-inter text-nex-text/70">
+                    {model.dimensions}
+                  </p>
+                </div>
+
+                {/* Precios centrados y destacados */}
+                <div className="text-center mb-6 bg-gradient-to-r from-forest-50 to-forest-100 rounded-2xl p-6 border border-forest-200">
+                  <div className="flex items-center justify-center gap-4 mb-3">
+                    <span className="text-xl text-gray-500 line-through font-inter font-medium">
                       {model.originalPrice}
                     </span>
-                    <span className="text-3xl font-bold text-nex-primary font-playfair">
+                    <span className="text-4xl font-bold text-nex-primary font-playfair">
                       {model.offerPrice}
                     </span>
                   </div>
-                  <div className="bg-yellow-100 border border-yellow-300 text-yellow-800 px-4 py-2 rounded-xl text-sm font-medium">
-                    <Clock className="w-4 h-4 inline mr-2" />
+                  <div className="bg-yellow-100 border border-yellow-300 text-yellow-800 px-4 py-2 rounded-xl text-sm font-medium inline-flex items-center gap-2">
+                    <Clock className="w-4 h-4" />
                     Reservas antes del 31 de Julio
                   </div>
                 </div>

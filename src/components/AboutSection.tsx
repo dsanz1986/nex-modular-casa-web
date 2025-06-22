@@ -50,40 +50,24 @@ const AboutSection = () => {
                           <Eye className="w-6 h-6 text-white" />
                         </div>
                         <h3 className="text-xl font-playfair font-bold text-nex-text">
-                          ¡Ven a vernos!
+                          Ven a visitar nuestra casa piloto única en España con estas características
                         </h3>
-                        <div className="flex gap-1">
-                          <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                          <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                          <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                        </div>
                       </div>
                       
-                      <p className="text-nex-text font-medium text-lg leading-relaxed mb-4">
-                        ¿Quieres <span className="text-nex-primary font-bold">experimentar</span> cómo es vivir en una casa modular? 
-                        <span className="bg-yellow-200 px-2 py-1 rounded-lg ml-2 font-semibold">
-                          ¡Te invitamos a visitarnos!
-                        </span>
+                      <p className="text-nex-text font-medium text-lg leading-relaxed mb-6">
+                        Te invitamos a descubrir cómo es vivir en una casa modular de primera calidad.
                       </p>
                       
-                      <div className="bg-gradient-to-r from-forest-50 to-forest-100 p-4 rounded-2xl border-l-4 border-nex-primary">
-                        <div className="flex items-start gap-3">
-                          <MapPin className="w-6 h-6 text-nex-primary mt-1 flex-shrink-0" />
-                          <div>
-                            <p className="font-bold text-nex-text mb-2">
-                              Nuestra casa piloto te está esperando
-                            </p>
-                            <a 
-                              href="https://maps.app.goo.gl/iUWkZ5LaFUCkBY417" 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 bg-nex-primary hover:bg-nex-primary/90 text-white px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                            >
-                              <MapPin className="w-5 h-5" />
-                              Visitar en Campo Real (Madrid)
-                            </a>
-                          </div>
-                        </div>
+                      <div className="flex justify-center">
+                        <a 
+                          href="https://maps.app.goo.gl/iUWkZ5LaFUCkBY417" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 bg-nex-primary hover:bg-nex-primary/90 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
+                        >
+                          <MapPin className="w-5 h-5" />
+                          Ven a visitarnos
+                        </a>
                       </div>
                     </div>
                   </div>
