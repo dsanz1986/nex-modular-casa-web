@@ -25,7 +25,7 @@ const PilotHouseSection = () => {
           {/* Content */}
           <div className="animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">
-              ¿Quieres ver una casa modular en persona?
+              Visita nuestra casa piloto
             </h2>
             
             <p className="text-xl mb-8 font-inter text-white/90 leading-relaxed">
@@ -74,14 +74,13 @@ const PilotHouseSection = () => {
               />
             </div>
             
-            {/* Floating badge - now clickable */}
+            {/* Floating location indicator - now clickable */}
             <div 
               className="absolute -bottom-6 -right-6 bg-white text-nex-text px-6 py-4 rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               onClick={handleMapClick}
             >
               <div className="text-2xl font-bold text-nex-primary">📍</div>
-              <div className="text-sm font-playfair font-semibold">Casa Piloto</div>
-              <div className="text-xs font-inter">Campo Real, Madrid</div>
+              <div className="text-sm font-playfair font-semibold">Campo Real, Madrid</div>
             </div>
           </div>
         </div>

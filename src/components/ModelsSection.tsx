@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Download, Star, Clock, Home } from "lucide-react";
+import { Download, Star, Clock } from "lucide-react";
 
 const ModelsSection = () => {
   const models = [
@@ -9,7 +9,6 @@ const ModelsSection = () => {
       name: "Nex Natura",
       description: "Vive con diseño, estilo y eficiencia",
       dimensions: "90 m² totales | 72 m² habitables + 18 m² de porche",
-      icon: "🌿",
       originalPrice: "44.990€",
       offerPrice: "39.990€",
       features: [
@@ -25,7 +24,6 @@ const ModelsSection = () => {
       name: "Nex Nido",
       description: "Compacta, versátil y de gran eficiencia",
       dimensions: "36 m² habitables + 18 m² de porche (opcional)",
-      icon: "🌿",
       originalPrice: "24.990€",
       offerPrice: "19.990€",
       features: [
@@ -70,29 +68,19 @@ const ModelsSection = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {models.map((model, index) => (
             <Card key={model.name} className={`group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg animate-slide-up bg-white rounded-3xl overflow-hidden relative ${index === 1 ? 'delay-200' : ''}`}>
-              {/* Etiqueta de oferta */}
-              <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold z-10 shadow-lg">
-                ¡OFERTA!
-              </div>
-              
-              {/* Header con icono en lugar de imagen */}
-              <div className="relative bg-gradient-to-br from-forest-100 to-forest-200 p-8">
-                <div className="flex items-center justify-center">
-                  <div className="bg-white rounded-full p-6 shadow-lg">
-                    <Home className="w-12 h-12 text-nex-primary" />
+              <CardContent className="p-8">
+                {/* Título y descripción con badge de oferta al lado */}
+                <div className="text-center mb-6 relative">
+                  <div className="flex items-center justify-center gap-4 mb-4">
+                    <h3 className="text-2xl font-playfair font-bold text-nex-text">
+                      {model.name}
+                    </h3>
+                    {index === 0 && (
+                      <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                        ¡OFERTA!
+                      </div>
+                    )}
                   </div>
-                </div>
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                  <span className="text-2xl">{model.icon}</span>
-                </div>
-              </div>
-              
-              <CardContent className="p-6">
-                {/* Título y descripción */}
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-playfair font-bold text-nex-text mb-2">
-                    {model.name}
-                  </h3>
                   <p className="text-lg font-inter text-nex-primary font-semibold mb-2">
                     {model.description}
                   </p>

@@ -94,15 +94,6 @@ const PersonalizationSection = () => {
                 </Card>
               ))}
             </div>
-
-            {/* Imagen de apoyo para interior */}
-            <div className="mt-8 rounded-2xl overflow-hidden shadow-xl">
-              <img 
-                src="/lovable-uploads/95729307-fe95-498b-8dc6-99da387641ff.png"
-                alt="Interior personalizable casa modular"
-                className="w-full h-64 object-cover"
-              />
-            </div>
           </div>
 
           {/* Personalización Exterior */}
@@ -137,33 +128,6 @@ const PersonalizationSection = () => {
                 </Card>
               ))}
             </div>
-
-            {/* Imagen de apoyo para exterior */}
-            <div className="mt-8 rounded-2xl overflow-hidden shadow-xl">
-              <img 
-                src="/lovable-uploads/c6b8fce4-da6d-4caa-ab79-76c00abf4713.png"
-                alt="Exterior personalizable casa modular"
-                className="w-full h-64 object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Call to action */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-nex-primary to-forest-600 rounded-3xl p-8 text-white shadow-2xl max-w-4xl mx-auto">
-            <h3 className="text-2xl font-playfair font-bold mb-4">
-              ¿Listo para personalizar tu hogar?
-            </h3>
-            <p className="text-lg font-inter mb-6 opacity-90">
-              Nuestro equipo te ayudará a diseñar la casa modular perfecta para ti
-            </p>
-            <button 
-              className="bg-white text-nex-primary px-8 py-4 rounded-2xl font-inter font-bold text-lg hover:bg-gray-50 transition-colors shadow-lg"
-              onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Empezar mi personalización
-            </button>
           </div>
         </div>
       </div>
