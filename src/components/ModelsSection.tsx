@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Download, Star, Clock } from "lucide-react";
+import { Download, Star, Clock, Home } from "lucide-react";
 
 const ModelsSection = () => {
   const models = [
@@ -19,7 +19,6 @@ const ModelsSection = () => {
         "Entrega en 3-4 meses",
         "Transporte e instalación incluidos"
       ],
-      image: "/lovable-uploads/2050482f-8056-4911-89a5-9ab6b7d0fe28.png",
       pdfPath: "/ficha-tecnica-nex-natura.pdf"
     },
     {
@@ -36,7 +35,6 @@ const ModelsSection = () => {
         "Entrega en 3-4 meses",
         "Transporte e instalación incluidos"
       ],
-      image: "/lovable-uploads/672cf111-f384-44c4-bfe7-4489af3516c4.png",
       pdfPath: "/ficha-tecnica-nex-nido.pdf"
     }
   ];
@@ -77,12 +75,13 @@ const ModelsSection = () => {
                 ¡OFERTA!
               </div>
               
-              <div className="relative overflow-hidden">
-                <img 
-                  src={model.image}
-                  alt={`Casa modular ${model.name}`}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+              {/* Header con icono en lugar de imagen */}
+              <div className="relative bg-gradient-to-br from-forest-100 to-forest-200 p-8">
+                <div className="flex items-center justify-center">
+                  <div className="bg-white rounded-full p-6 shadow-lg">
+                    <Home className="w-12 h-12 text-nex-primary" />
+                  </div>
+                </div>
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
                   <span className="text-2xl">{model.icon}</span>
                 </div>

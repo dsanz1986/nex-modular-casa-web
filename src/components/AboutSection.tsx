@@ -1,5 +1,5 @@
 
-import { MapPin, Eye, Star } from "lucide-react";
+import { MapPin, Sparkles, Home } from "lucide-react";
 
 const AboutSection = () => {
   return (
@@ -37,37 +37,49 @@ const AboutSection = () => {
                 Estaremos contigo en cada paso, desde la elección del modelo, pasando por la personalización, hasta la entrega final.
               </p>
               
-              {/* Sección destacada mejorada */}
+              {/* Nueva card de visita rediseñada */}
               <div className="relative mt-8">
-                <div className="bg-gradient-to-r from-nex-primary to-forest-400 p-1 rounded-3xl shadow-2xl">
-                  <div className="bg-white rounded-3xl p-6 relative overflow-hidden">
-                    {/* Decoración de fondo */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-nex-primary/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
-                    
-                    <div className="relative z-10">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="bg-nex-primary p-3 rounded-full">
-                          <Eye className="w-6 h-6 text-white" />
+                <div className="bg-gradient-to-br from-nex-primary via-nex-primary to-forest-600 rounded-3xl p-8 text-white shadow-2xl overflow-hidden relative">
+                  {/* Decoraciones de fondo */}
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-20 translate-x-20"></div>
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-16 -translate-x-16"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="bg-white/20 backdrop-blur-sm p-3 rounded-xl">
+                            <Home className="w-6 h-6 text-white" />
+                          </div>
+                          <div className="bg-white/10 px-3 py-1 rounded-full">
+                            <span className="text-sm font-semibold">Casa Piloto</span>
+                          </div>
                         </div>
-                        <h3 className="text-xl font-playfair font-bold text-nex-text">
-                          Ven a visitar nuestra casa piloto única en España con estas características
+                        
+                        <h3 className="text-2xl font-playfair font-bold mb-3">
+                          Visita nuestra casa piloto única en España
                         </h3>
+                        
+                        <p className="text-white/90 font-medium text-lg leading-relaxed">
+                          Descubre cómo es vivir en una casa modular de primera calidad. Te invitamos a experimentar el futuro de la vivienda.
+                        </p>
                       </div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <a 
+                        href="https://maps.app.goo.gl/iUWkZ5LaFUCkBY417" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 bg-white text-nex-primary px-8 py-4 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
+                      >
+                        <MapPin className="w-5 h-5" />
+                        Ven a visitarnos
+                      </a>
                       
-                      <p className="text-nex-text font-medium text-lg leading-relaxed mb-6">
-                        Te invitamos a descubrir cómo es vivir en una casa modular de primera calidad.
-                      </p>
-                      
-                      <div className="flex justify-center">
-                        <a 
-                          href="https://maps.app.goo.gl/iUWkZ5LaFUCkBY417" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 bg-nex-primary hover:bg-nex-primary/90 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
-                        >
-                          <MapPin className="w-5 h-5" />
-                          Ven a visitarnos
-                        </a>
+                      <div className="hidden sm:flex items-center gap-2 text-white/80">
+                        <Sparkles className="w-5 h-5" />
+                        <span className="text-sm font-medium">Experiencia única</span>
                       </div>
                     </div>
                   </div>
