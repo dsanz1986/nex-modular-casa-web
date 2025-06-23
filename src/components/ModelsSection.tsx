@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Download, Star, Clock } from "lucide-react";
+import { Download, Clock } from "lucide-react";
 
 const ModelsSection = () => {
   const models = [
@@ -57,11 +57,10 @@ const ModelsSection = () => {
             Descubre nuestros modelos de casas modulares, diseñados para adaptarse a tus necesidades y estilo de vida.
           </p>
           
-          {/* Oferta especial banner */}
+          {/* Oferta especial banner - sin estrella */}
           <div className="mt-8 bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-2xl inline-flex items-center gap-3 shadow-lg animate-pulse">
-            <Star className="w-5 h-5" />
-            <span className="font-semibold font-inter">¡OFERTA ESPECIAL LIMITADA!</span>
             <Clock className="w-5 h-5" />
+            <span className="font-semibold font-inter">¡OFERTA ESPECIAL LIMITADA!</span>
           </div>
         </div>
 
@@ -69,18 +68,11 @@ const ModelsSection = () => {
           {models.map((model, index) => (
             <Card key={model.name} className={`group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg animate-slide-up bg-white rounded-3xl overflow-hidden relative ${index === 1 ? 'delay-200' : ''}`}>
               <CardContent className="p-8">
-                {/* Título y descripción con badge de oferta al lado */}
+                {/* Título y descripción - sin badge de oferta */}
                 <div className="text-center mb-6 relative">
-                  <div className="flex items-center justify-center gap-4 mb-4">
-                    <h3 className="text-2xl font-playfair font-bold text-nex-text">
-                      {model.name}
-                    </h3>
-                    {index === 0 && (
-                      <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
-                        ¡OFERTA!
-                      </div>
-                    )}
-                  </div>
+                  <h3 className="text-2xl font-playfair font-bold text-nex-text mb-4">
+                    {model.name}
+                  </h3>
                   <p className="text-lg font-inter text-nex-primary font-semibold mb-2">
                     {model.description}
                   </p>

@@ -5,7 +5,9 @@ import AboutSection from "@/components/AboutSection";
 import ModelsSection from "@/components/ModelsSection";
 import PersonalizationSection from "@/components/PersonalizationSection";
 import AdvantagesSection from "@/components/AdvantagesSection";
+import LicensesSection from "@/components/LicensesSection";
 import PilotHouseSection from "@/components/PilotHouseSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -28,8 +30,14 @@ const Index = () => {
       <div id="ventajas">
         <AdvantagesSection />
       </div>
+      <div id="licencias">
+        <LicensesSection />
+      </div>
       <div id="casa-piloto">
         <PilotHouseSection />
+      </div>
+      <div id="testimonios">
+        <TestimonialsSection />
       </div>
       <div id="contacto">
         <ContactSection />
