@@ -26,7 +26,7 @@ const LicensesSection = () => {
               </div>
               
               <h3 className="text-xl font-playfair font-bold text-nex-text mb-4">
-                📍 ¿Qué tienes que hacer?
+                ¿Qué tienes que hacer?
               </h3>
               
               <p className="text-nex-text/80 font-inter leading-relaxed">
@@ -38,32 +38,32 @@ const LicensesSection = () => {
           </Card>
 
           {/* Tarjeta 2 - Confianza */}
-          <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg bg-gradient-to-br from-nex-primary to-forest-600 text-white rounded-3xl overflow-hidden animate-slide-up delay-100">
+          <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg bg-white rounded-3xl overflow-hidden animate-slide-up delay-100">
             <CardContent className="p-8 text-center">
-              <div className="bg-white/20 p-4 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                <Shield className="w-10 h-10 text-white" />
+              <div className="bg-green-100 p-4 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center group-hover:bg-green-200 transition-colors">
+                <Shield className="w-10 h-10 text-green-600" />
               </div>
               
-              <h3 className="text-xl font-playfair font-bold mb-6">
-                ✅ Confianza
+              <h3 className="text-xl font-playfair font-bold text-nex-text mb-4">
+                Confianza
               </h3>
               
-              <blockquote className="text-lg font-inter italic leading-relaxed border-l-4 border-white/30 pl-4">
-                "Queremos que te sientas seguro en cada paso.
-                No vendemos solo una casa: te damos las herramientas para instalarla con todas las garantías."
-              </blockquote>
+              <p className="text-nex-text/80 font-inter leading-relaxed">
+                Queremos que te sientas seguro en cada paso.
+                No vendemos solo una casa: te damos las herramientas para instalarla con todas las garantías.
+              </p>
             </CardContent>
           </Card>
 
           {/* Tarjeta 3 - Ventaja adicional */}
           <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg bg-white rounded-3xl overflow-hidden animate-slide-up delay-200">
             <CardContent className="p-8 text-center">
-              <div className="bg-green-100 p-4 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center group-hover:bg-green-200 transition-colors">
-                <CheckCircle className="w-10 h-10 text-green-600" />
+              <div className="bg-blue-100 p-4 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                <CheckCircle className="w-10 h-10 text-blue-600" />
               </div>
               
               <h3 className="text-xl font-playfair font-bold text-nex-text mb-4">
-                🏠 Proceso simplificado
+                Proceso simplificado
               </h3>
               
               <p className="text-nex-text/80 font-inter leading-relaxed">
