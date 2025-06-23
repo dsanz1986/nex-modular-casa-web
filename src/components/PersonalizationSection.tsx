@@ -64,13 +64,6 @@ const PersonalizationSection = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Personalización Interior */}
           <div className="animate-slide-up">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-3 bg-nex-primary/10 text-nex-primary px-6 py-3 rounded-2xl mb-4">
-                <Home className="w-6 h-6" />
-                <span className="font-semibold font-inter">Personalización Interior</span>
-              </div>
-            </div>
-            
             <div className="space-y-6">
               {interiorFeatures.map((feature, index) => (
                 <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-0 shadow-sm bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden">
@@ -98,13 +91,6 @@ const PersonalizationSection = () => {
 
           {/* Personalización Exterior */}
           <div className="animate-slide-up delay-200">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-3 bg-forest-200/50 text-forest-700 px-6 py-3 rounded-2xl mb-4">
-                <Wrench className="w-6 h-6" />
-                <span className="font-semibold font-inter">Personalización Exterior</span>
-              </div>
-            </div>
-            
             <div className="space-y-6">
               {exteriorFeatures.map((feature, index) => (
                 <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-0 shadow-sm bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden">
