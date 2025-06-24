@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, Clock } from "lucide-react";
+import ModelImageCarousel from "./ModelImageCarousel";
 
 const ModelsSection = () => {
   const models = [
@@ -18,7 +19,19 @@ const ModelsSection = () => {
         "Entrega en 3-4 meses",
         "Transporte e instalación incluidos"
       ],
-      pdfPath: "/ficha-tecnica-nex-natura.pdf"
+      pdfPath: "/ficha-tecnica-nex-natura.pdf",
+      images: [
+        "/lovable-uploads/046aaa69-718c-4a24-a79b-fe5728d15943.png",
+        "/lovable-uploads/2c692612-5352-4091-9f9b-463d9521af51.png",
+        "/lovable-uploads/5845baa7-852c-474a-86e5-371bfcb9e62e.png",
+        "/lovable-uploads/abeef23b-3164-41d3-86b4-801639c11858.png",
+        "/lovable-uploads/ce58701f-da18-44e6-9bde-2c9ef77024fe.png",
+        "/lovable-uploads/bba57c36-edcb-45ac-ba78-1c52ea488f58.png",
+        "/lovable-uploads/7f5a1fab-6eb9-48cc-a851-fa20830e232d.png",
+        "/lovable-uploads/79ca2d0d-0900-4bb6-abf8-e8b64454f4cb.png",
+        "/lovable-uploads/9539da88-04bd-4fa2-9e9c-8eb5a7566e96.png",
+        "/lovable-uploads/3265b4fb-cc97-41e0-83a9-7bce4b13339d.png"
+      ]
     },
     {
       name: "Nex Nido",
@@ -33,7 +46,8 @@ const ModelsSection = () => {
         "Entrega en 3-4 meses",
         "Transporte e instalación incluidos"
       ],
-      pdfPath: "/ficha-tecnica-nex-nido.pdf"
+      pdfPath: "/ficha-tecnica-nex-nido.pdf",
+      images: [] // Sin imágenes por ahora para Nex Nido
     }
   ];
 
@@ -68,7 +82,12 @@ const ModelsSection = () => {
           {models.map((model, index) => (
             <Card key={model.name} className={`group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg animate-slide-up bg-white rounded-3xl overflow-hidden relative ${index === 1 ? 'delay-200' : ''}`}>
               <CardContent className="p-8">
-                {/* Título y descripción - sin badge de oferta */}
+                {/* Carrusel de imágenes */}
+                {model.images.length > 0 && (
+                  <ModelImageCarousel images={model.images} modelName={model.name} />
+                )}
+
+                {/* Título y descripción */}
                 <div className="text-center mb-6 relative">
                   <h3 className="text-2xl font-playfair font-bold text-nex-text mb-4">
                     {model.name}
