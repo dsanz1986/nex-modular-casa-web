@@ -29,7 +29,7 @@ const AboutSection = () => {
             <div className="space-y-4 text-nex-text font-inter text-lg leading-relaxed">
               <p>
                 En <span className="font-semibold text-nex-primary">Nex Modular Homes</span> distribuimos 
-                casas modulares expandibles por toda España. Nuestras viviendas 
+                viviendas modulares móviles y expandibles por toda España. Nuestras viviendas 
                 no requieren cimentación ni obras complejas.
               </p>
               
