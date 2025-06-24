@@ -1,20 +1,13 @@
-
 import { CheckCircle, FileText, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-
 const LicensesSection = () => {
-  return (
-    <section className="py-20 bg-gradient-to-br from-white to-blue-50">
+  return <section className="py-20 bg-gradient-to-br from-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-nex-text mb-6">
             ¿Y qué pasa con las licencias? No te preocupes, te ayudamos
           </h2>
-          <p className="text-lg font-inter text-nex-text/80 max-w-3xl mx-auto leading-relaxed">
-            Sabemos que la parte legal puede generar dudas, por eso te acompañamos también en este paso.
-            Al tratarse de casas prefabricadas sin cimentación ni anclaje permanente, no se consideran edificaciones tradicionales, 
-            lo que facilita su tramitación urbanística.
-          </p>
+          <p className="text-lg font-inter text-nex-text/80 max-w-3xl mx-auto leading-relaxed">Sabemos que la parte legal puede generar dudas, por eso te acompañamos también en este paso. Al tratarse de vivienda móvil sin cimentación ni anclaje permanente, no se consideran edificaciones tradicionales, lo que facilita su tramitación urbanística.</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -74,8 +67,6 @@ const LicensesSection = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default LicensesSection;

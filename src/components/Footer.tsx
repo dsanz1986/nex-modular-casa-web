@@ -1,9 +1,6 @@
-
 import { MapPin, Phone, Mail } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-nex-text text-white py-12">
+  return <footer className="bg-nex-text text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Company info */}
@@ -11,17 +8,9 @@ const Footer = () => {
             <h3 className="text-2xl font-playfair text-nex-primary mb-4">
               Nex Modular Homes
             </h3>
-            <p className="text-white/80 font-inter mb-4 leading-relaxed">
-              Especialistas en casas modulares y prefabricadas en toda España. 
-              Soluciones habitacionales modernas, personalizables y sostenibles.
-            </p>
+            <p className="text-white/80 font-inter mb-4 leading-relaxed">Especialistas en viviendas modulares móviles sin obra, listas para instalar en toda España.</p>
             <div className="flex gap-4">
-              <a 
-                href="https://wa.me/34611486694" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-nex-primary hover:bg-nex-primary/80 p-2 rounded-xl transition-colors duration-300 text-white font-semibold"
-              >
+              <a href="https://wa.me/34611486694" target="_blank" rel="noopener noreferrer" className="bg-nex-primary hover:bg-nex-primary/80 p-2 rounded-xl transition-colors duration-300 text-white font-semibold">
                 WhatsApp
               </a>
             </div>
@@ -73,8 +62,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
