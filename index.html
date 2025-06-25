@@ -9,37 +9,24 @@
     <meta name="keywords" content="casas modulares, casas prefabricadas, viviendas modulares España, casas sin obra, Nex Modular Homes" />
     <meta name="author" content="Nex Modular Homes" />
 
-    <!-- Base URL for assets -->
-    <base href="/" />
-
     <!-- Open Graph -->
     <meta property="og:title" content="Casas Modulares en España – Nex Modular Homes" />
     <meta property="og:description" content="Descubre Nex Modular Homes, especialistas en casas prefabricadas sin obra. Modelos personalizables, instalación incluida, entrega rápida y casa piloto visitable en Madrid." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nexmodularhomes.com" />
-    <meta property="og:image" content="https://nexmodularhomes.com/lovable-uploads/046aaa69-718c-4a24-a79b-fe5728d15943.png" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&h=630&fit=crop" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Casas Modulares en España – Nex Modular Homes" />
     <meta name="twitter:description" content="Especialistas en casas prefabricadas sin obra. Modelos personalizables y entrega rápida." />
-    <meta name="twitter:image" content="https://nexmodularhomes.com/lovable-uploads/046aaa69-718c-4a24-a79b-fe5728d15943.png" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&h=630&fit=crop" />
 
     <!-- Local SEO -->
     <meta name="geo.region" content="ES-M" />
     <meta name="geo.placename" content="Madrid, España" />
     <meta name="geo.position" content="40.4168;-3.7038" />
     <meta name="ICBM" content="40.4168, -3.7038" />
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://nexmodularhomes.com/" />
-
-    <!-- Fallback for older browsers -->
-    <script>
-      console.log('Loading Nex Modular Homes website...');
-      console.log('Current URL:', window.location.href);
-      console.log('Domain:', window.location.hostname);
-    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,48 +35,7 @@
   </head>
 
   <body>
-    <div id="root">
-      <!-- Fallback content for when JavaScript is disabled or fails to load -->
-      <noscript>
-        <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif;">
-          <h1>Nex Modular Homes</h1>
-          <p>Para una experiencia completa, por favor habilita JavaScript en tu navegador.</p>
-        </div>
-      </noscript>
-      
-      <!-- Loading indicator -->
-      <div id="loading-indicator" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-family: Arial, sans-serif;">
-        <div style="border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 40px; height: 40px; animation: spin 2s linear infinite; margin: 0 auto;"></div>
-        <p style="margin-top: 10px;">Cargando Nex Modular Homes...</p>
-      </div>
-      
-      <style>
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-      </style>
-    </div>
-    
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- Error handling script -->
-    <script>
-      window.addEventListener('error', function(e) {
-        console.error('Error loading application:', e.error);
-        document.getElementById('loading-indicator').innerHTML = 
-          '<div style="color: red; font-family: Arial, sans-serif;"><h2>Error al cargar</h2><p>Hubo un problema cargando la página. Por favor, recarga la página.</p></div>';
-      });
-      
-      // Remove loading indicator once React app loads
-      window.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-          const loadingIndicator = document.getElementById('loading-indicator');
-          if (loadingIndicator && document.querySelector('[data-reactroot]')) {
-            loadingIndicator.style.display = 'none';
-          }
-        }, 3000);
-      });
-    </script>
   </body>
 </html>
