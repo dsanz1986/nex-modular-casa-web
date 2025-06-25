@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, Clock } from "lucide-react";
@@ -47,7 +46,14 @@ const ModelsSection = () => {
         "Transporte e instalación incluidos"
       ],
       pdfPath: "/ficha-tecnica-nex-nido.pdf",
-      images: [] // Sin imágenes por ahora para Nex Nido
+      images: [
+        "/lovable-uploads/75957646-42e7-44d4-926f-71f307599ca7.png",
+        "/lovable-uploads/4f4177dc-18f2-4e72-99f3-de78933f5bf3.png",
+        "/lovable-uploads/3162d70c-c470-4759-8821-e227d0f533f6.png",
+        "/lovable-uploads/7dd8f200-83ee-4728-8f48-5da9b9c5048f.png",
+        "/lovable-uploads/fc39287c-d323-41c2-91ef-4673fc825ba9.png",
+        "/lovable-uploads/2dff8986-af57-4311-a724-1e6d41e0bc08.png"
+      ]
     }
   ];
 
