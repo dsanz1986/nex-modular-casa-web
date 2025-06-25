@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/nex-modular-casa-web/',
   server: {
     host: "::",
     port: 8080,
@@ -23,4 +24,3 @@ export default defineConfig(({ mode }) => ({
     outDir: 'docs',
   },
 }));
-
