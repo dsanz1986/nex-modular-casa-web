@@ -10,6 +10,7 @@ import PilotHouseSection from "@/components/PilotHouseSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 
 const Index = () => {
   return (
@@ -43,6 +44,7 @@ const Index = () => {
         <ContactSection />
       </div>
       <Footer />
+      <CookieBanner />
     </div>
   );
 };

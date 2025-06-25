@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,6 +52,13 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Nex brand colors */
+    --nex-primary: 147 57% 25%;
+    --nex-text: 210 11% 15%;
+    --forest-50: 138 50% 96%;
+    --forest-100: 138 47% 91%;
+    --forest-200: 138 47% 83%;
   }
 
   .dark {
@@ -99,5 +107,36 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom utility classes for Nex brand colors */
+@layer utilities {
+  .text-nex-primary {
+    color: hsl(var(--nex-primary));
+  }
+  
+  .text-nex-text {
+    color: hsl(var(--nex-text));
+  }
+  
+  .bg-nex-primary {
+    background-color: hsl(var(--nex-primary));
+  }
+  
+  .bg-forest-50 {
+    background-color: hsl(var(--forest-50));
+  }
+  
+  .bg-forest-100 {
+    background-color: hsl(var(--forest-100));
+  }
+  
+  .bg-forest-200 {
+    background-color: hsl(var(--forest-200));
+  }
+  
+  .border-forest-200 {
+    border-color: hsl(var(--forest-200));
   }
 }
