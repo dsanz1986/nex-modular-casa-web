@@ -68,7 +68,7 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="pb-8">
+        <div className="pb-16">
           <Carousel
             opts={{
               align: "start",
@@ -79,41 +79,43 @@ const TestimonialsSection = () => {
             <CarouselContent className="-ml-2 md:-ml-4">
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg bg-white rounded-3xl overflow-hidden h-full">
-                    <CardContent className="p-8 flex flex-col h-full min-h-[350px]">
-                      {/* Quote icon */}
-                      <div className="text-nex-primary/20 mb-4">
-                        <Quote className="w-10 h-10" />
-                      </div>
-
-                      {/* Rating */}
-                      <div className="flex gap-1 mb-4">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                        ))}
-                      </div>
-
-                      {/* Testimonial text */}
-                      <p className="text-nex-text/80 font-inter leading-relaxed mb-6 italic flex-grow">
-                        "{testimonial.text}"
-                      </p>
-
-                      {/* Customer info */}
-                      <div className="flex items-center gap-4 mt-auto">
-                        <div className="w-12 h-12 bg-nex-primary rounded-full flex items-center justify-center text-white font-semibold">
-                          {testimonial.image}
+                  <div className="pb-4">
+                    <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg bg-white rounded-3xl overflow-hidden h-full">
+                      <CardContent className="p-8 flex flex-col h-full min-h-[380px]">
+                        {/* Quote icon */}
+                        <div className="text-nex-primary/20 mb-4">
+                          <Quote className="w-10 h-10" />
                         </div>
-                        <div>
-                          <h4 className="font-inter font-semibold text-nex-text">
-                            {testimonial.name}
-                          </h4>
-                          <p className="text-sm text-nex-text/60">
-                            {testimonial.location}
-                          </p>
+
+                        {/* Rating */}
+                        <div className="flex gap-1 mb-4">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                          ))}
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+
+                        {/* Testimonial text */}
+                        <p className="text-nex-text/80 font-inter leading-relaxed mb-6 italic flex-grow">
+                          "{testimonial.text}"
+                        </p>
+
+                        {/* Customer info */}
+                        <div className="flex items-center gap-4 mt-auto">
+                          <div className="w-12 h-12 bg-nex-primary rounded-full flex items-center justify-center text-white font-semibold">
+                            {testimonial.image}
+                          </div>
+                          <div>
+                            <h4 className="font-inter font-semibold text-nex-text">
+                              {testimonial.name}
+                            </h4>
+                            <p className="text-sm text-nex-text/60">
+                              {testimonial.location}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
