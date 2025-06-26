@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Sparkles, Home, CheckCircle } from "lucide-react";
+import { Sparkles, Home, CheckCircle } from "lucide-react";
 import HeroImageCarousel from "./HeroImageCarousel";
 
 const HeroSection = () => {
@@ -80,14 +80,6 @@ const HeroSection = () => {
         
         {/* Hero carousel */}
         <HeroImageCarousel />
-      </div>
-      
-      {/* Indicador de scroll simplificado y más sutil */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-sm font-inter text-nex-primary/70 font-medium">Descubre más</span>
-          <ArrowDown className="w-5 h-5 text-nex-primary/70" />
-        </div>
       </div>
     </section>
   );

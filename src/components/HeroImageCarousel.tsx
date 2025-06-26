@@ -76,7 +76,7 @@ const HeroImageCarousel = () => {
         }}
         plugins={[
           Autoplay({
-            delay: 3500,
+            delay: 1500,
             stopOnInteraction: true,
             stopOnMouseEnter: true
           })
