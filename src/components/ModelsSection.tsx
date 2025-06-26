@@ -50,7 +50,12 @@ const ModelsSection = () => {
         "/lovable-uploads/3162d70c-c470-4759-8821-e227d0f533f6.png",
         "/lovable-uploads/7dd8f200-83ee-4728-8f48-5da9b9c5048f.png",
         "/lovable-uploads/fc39287c-d323-41c2-91ef-4673fc825ba9.png",
-        "/lovable-uploads/2dff8986-af57-4311-a724-1e6d41e0bc08.png"
+        "/lovable-uploads/2dff8986-af57-4311-a724-1e6d41e0bc08.png",
+        "/lovable-uploads/936ca473-687e-454b-921a-6e5c243f5d43.png",
+        "/lovable-uploads/ded3bbbb-7069-40c8-8d7f-e49c2c598eb7.png",
+        "/lovable-uploads/4b689c14-280d-4c2a-bdf1-052415e99dde.png",
+        "/lovable-uploads/f059c84b-6f03-45af-8e6f-96ccb457303b.png",
+        "/lovable-uploads/fd3d1060-0ef2-4564-9c30-b98d43c27356.png"
       ]
     }
   ];
