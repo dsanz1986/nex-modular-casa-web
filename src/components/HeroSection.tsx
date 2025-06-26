@@ -16,7 +16,7 @@ const HeroSection = () => {
       </div>
       
       {/* Overlay para mejorar la legibilidad */}
-      <div className="absolute inset-0 bg-black/30 z-10"></div>
+      <div className="absolute inset-0 bg-black/40 z-10"></div>
       
       {/* Hero content */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
@@ -80,7 +80,7 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Scroll indicator mejorado y más estético */}
+      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
         <div className="flex flex-col items-center gap-3 group cursor-pointer" 
              onClick={() => document.getElementById('nosotros')?.scrollIntoView({ behavior: 'smooth' })}>

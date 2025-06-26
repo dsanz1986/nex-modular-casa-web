@@ -1,12 +1,11 @@
 
 import { useState, useEffect } from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 
 const HeroImageCarousel = () => {
   const [api, setApi] = useState<any>();
-  const [current, setCurrent] = useState(0);
   
   const images = [
     {
@@ -51,18 +50,6 @@ const HeroImageCarousel = () => {
     }
   ];
 
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCurrent(api.selectedScrollSnap());
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
-
   return (
     <div className="relative w-full h-full">
       <Carousel 
@@ -73,9 +60,9 @@ const HeroImageCarousel = () => {
         }}
         plugins={[
           Autoplay({
-            delay: 5000,
-            stopOnInteraction: true,
-            stopOnMouseEnter: true
+            delay: 4000,
+            stopOnInteraction: false,
+            stopOnMouseEnter: false
           })
         ]}
         setApi={setApi}
@@ -84,48 +71,17 @@ const HeroImageCarousel = () => {
           {images.map((image, index) => (
             <CarouselItem key={index} className="pl-0">
               <Card className="border-0 rounded-none">
-                <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
-                  {/* Overlay gradiente */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10"></div>
-                  
+                <div className="relative w-full h-[100vh] overflow-hidden">
                   <img 
                     src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover"
                   />
-                  
-                  {/* Badge de calidad */}
-                  <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-lg z-20">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 bg-nex-primary rounded-full animate-pulse"></div>
-                      <span className="text-sm font-inter font-semibold text-nex-text">Calidad Premium</span>
-                    </div>
-                  </div>
                 </div>
               </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
-        
-        {/* Controles del carrusel */}
-        <CarouselPrevious className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white border-2 border-nex-primary text-nex-primary hover:text-nex-primary shadow-lg z-30" />
-        <CarouselNext className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white border-2 border-nex-primary text-nex-primary hover:text-nex-primary shadow-lg z-30" />
-        
-        {/* Indicadores de puntos */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-30">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => api?.scrollTo(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === current 
-                  ? 'bg-white shadow-lg scale-110' 
-                  : 'bg-white/50 hover:bg-white/70'
-              }`}
-              aria-label={`Ir a imagen ${index + 1}`}
-            />
-          ))}
-        </div>
       </Carousel>
     </div>
   );
