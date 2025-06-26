@@ -8,7 +8,6 @@ const ModelsSection = () => {
   const models = [
     {
       name: "Nex Natura",
-      description: "Casa modular móvil familiar de 90m² sin obra",
       dimensions: "90 m² totales | 72 m² habitables + 18 m² de porche",
       originalPrice: "44.990€",
       offerPrice: "39.990€",
@@ -34,7 +33,6 @@ const ModelsSection = () => {
     },
     {
       name: "Nex Nido",
-      description: "Casa modular móvil compacta de 36m² transportable",
       dimensions: "36 m² habitables + 18 m² de porche (opcional)",
       originalPrice: "24.990€",
       offerPrice: "19.990€",
@@ -98,14 +96,11 @@ const ModelsSection = () => {
                   <ModelImageCarousel images={model.images} modelName={model.name} />
                 )}
 
-                {/* Título y descripción */}
+                {/* Título y dimensiones */}
                 <header className="text-center mb-6 relative">
                   <h3 className="text-2xl font-playfair font-bold text-nex-text mb-4">
                     {model.name}
                   </h3>
-                  <p className="text-lg font-inter text-nex-primary font-semibold mb-2">
-                    {model.description}
-                  </p>
                   <p className="text-sm font-inter text-nex-text/70">
                     {model.dimensions}
                   </p>

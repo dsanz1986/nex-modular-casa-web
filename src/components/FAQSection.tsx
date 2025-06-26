@@ -12,42 +12,37 @@ const FAQSection = () => {
     {
       id: "instalacion",
       question: "¿Cuánto tiempo tarda la instalación?",
-      answer: "La instalación de nuestras casas modulares móviles es muy rápida. Una vez que la casa llega a tu terreno, el proceso de instalación y puesta en marcha se completa en 1-2 días. No necesitas cimentación ni obras previas, solo una superficie nivelada y acceso a servicios básicos."
+      answer: "La instalación de nuestras casas modulares móviles es muy rápida. Una vez que la casa llega a tu terreno, el proceso de instalación y puesta en marcha se completa en 6-7 días, dependiendo de la instalación. No necesitas cimentación ni obras previas, solo una superficie nivelada."
     },
     {
       id: "terreno",
       question: "¿Qué tipo de terreno necesito?",
-      answer: "Nuestras casas modulares móviles son muy versátiles en cuanto al terreno. Necesitas una superficie relativamente nivelada (con desniveles máximos de 30cm que se pueden compensar con niveladores). El terreno puede ser rústico, urbano o urbanizable. Te ayudamos a evaluar la viabilidad de tu parcela."
+      answer: "Nuestras casas modulares móviles son muy versátiles en cuanto al terreno. Necesitas una superficie nivelada. El terreno puede ser rústico o urbano. Te ayudamos a evaluar la viabilidad de tu parcela."
     },
     {
       id: "servicios",
-      question: "¿Cómo se conectan los servicios (agua, luz, internet)?",
+      question: "¿Cómo se conectan los servicios (agua y luz)?",
       answer: "Las casas vienen preparadas para conexiones estándar. Agua y electricidad se conectan como en cualquier vivienda tradicional. Para internet, puedes usar conexión por fibra (si está disponible en la zona), 4G/5G o internet satelital. Te asesoramos sobre las mejores opciones para tu ubicación específica."
     },
     {
       id: "calidad",
       question: "¿Qué garantías ofrecen sobre la calidad de construcción?",
-      answer: "Ofrecemos garantía estructural de 10 años y garantía general de 2 años. Nuestras casas están construidas con estructura de acero galvanizado de alta resistencia y paneles sándwich con aislamiento EPS de 65mm, cumpliendo con todas las normativas europeas de construcción y eficiencia energética."
+      answer: "Ofrecemos garantía estructural de 10 años y garantía general de 2 años."
     },
     {
       id: "precio",
       question: "¿Qué está incluido en el precio?",
-      answer: "El precio incluye la casa completamente terminada, transporte a tu ubicación, instalación completa, nivelación y conexión a servicios. También incluye electrodomésticos básicos, mobiliario fijo y todos los acabados seleccionados. Sin costes ocultos ni sorpresas."
+      answer: "El precio incluye la casa completamente terminada, transporte a tu ubicación con instalación completa. Sin costes ocultos ni sorpresas."
     },
     {
       id: "mantenimiento",
       question: "¿Qué mantenimiento requieren?",
-      answer: "El mantenimiento es mínimo, similar al de cualquier vivienda tradicional. Recomendamos revisión anual de sellados, limpieza de canalones y mantenimiento básico de electrodomésticos. Los materiales utilizados están diseñados para requerir poco mantenimiento y tener larga durabilidad."
+      answer: "El mantenimiento es mínimo, similar al de cualquier vivienda tradicional. Los materiales utilizados están diseñados para requerir poco mantenimiento y tener larga durabilidad."
     },
     {
       id: "movilidad",
       question: "¿Se pueden trasladar a otra ubicación?",
       answer: "Sí, una de las grandes ventajas de nuestras casas modulares móviles es su capacidad de traslado. Aunque están diseñadas para ser tu hogar permanente, pueden moverse a otra ubicación si es necesario. El proceso requiere planificación y equipos especializados que podemos gestionar."
-    },
-    {
-      id: "financiacion",
-      question: "¿Ofrecen opciones de financiación?",
-      answer: "Sí, trabajamos con diferentes entidades financieras para ofrecer opciones de financiación adaptadas a cada cliente. Puedes financiar hasta el 100% del valor de la casa con condiciones competitivas. Te ayudamos a encontrar la mejor opción según tu situación particular."
     },
     {
       id: "personalizacion",

@@ -34,7 +34,7 @@ const HeroSection = () => {
           </div>
           
           <p className="text-lg md:text-xl font-inter text-nex-text/80 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-            Viviendas modulares móviles transportables, listas para instalar en tu terreno. Sin cimentación, sin obra, sin líos. Desde 19.990€.
+            Viviendas modulares móviles transportables, listas para instalar en tu terreno. Sin cimentación, sin obra, sin líos.
           </p>
           
           {/* Características destacadas */}
@@ -45,7 +45,7 @@ const HeroSection = () => {
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-nex-primary" />
-              <span className="text-sm font-inter text-nex-text">Instalación en 1-2 días</span>
+              <span className="text-sm font-inter text-nex-text">Instalación en pocos días</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-nex-primary" />
