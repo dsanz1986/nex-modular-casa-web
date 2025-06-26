@@ -10,16 +10,44 @@ const HeroImageCarousel = () => {
   
   const images = [
     {
-      src: "/lovable-uploads/c6b8fce4-da6d-4caa-ab79-76c00abf4713.png",
-      alt: "Casa modular moderna Nex Modular Homes - Modelo 1"
+      src: "/lovable-uploads/c37a4952-fbe7-4123-8b74-27a1354e139c.png",
+      alt: "Casa modular Nex - Porche con terraza exterior"
     },
     {
-      src: "/lovable-uploads/48c4a309-3d86-476f-8aa9-b0c036f4377c.png",
-      alt: "Casa modular moderna Nex Modular Homes - Modelo 2"
+      src: "/lovable-uploads/806c2b8e-df1f-427b-bbb2-fd48460d4149.png",
+      alt: "Casa modular Nex - Entrada principal con puertas correderas"
     },
     {
-      src: "/lovable-uploads/2050482f-8056-4911-89a5-9ab6b7d0fe28.png",
-      alt: "Casa modular moderna Nex Modular Homes - Modelo 3"
+      src: "/lovable-uploads/eb3070a6-ca7a-4815-ab35-36ba8e46eb3c.png",
+      alt: "Casa modular Nex - Cocina moderna integrada"
+    },
+    {
+      src: "/lovable-uploads/755573d9-3acd-45bd-8ce4-91598735c183.png",
+      alt: "Casa modular Nex - Salón comedor con sofá negro"
+    },
+    {
+      src: "/lovable-uploads/bb3f5eed-380b-491a-a10e-44f443564eac.png",
+      alt: "Casa modular Nex - Área de estar con comedor"
+    },
+    {
+      src: "/lovable-uploads/81f18258-549e-40ba-980c-8c359e18274a.png",
+      alt: "Casa modular Nex - Espacio diáfano completo"
+    },
+    {
+      src: "/lovable-uploads/92284500-2935-472b-9e2c-3b66daba0187.png",
+      alt: "Casa modular Nex - Salón con mueble TV"
+    },
+    {
+      src: "/lovable-uploads/fdefe7c6-caf7-4d51-8baf-147a512a4f98.png",
+      alt: "Casa modular Nex - Vista completa del interior"
+    },
+    {
+      src: "/lovable-uploads/5842147e-08a5-4ce5-9c5d-c22df2320647.png",
+      alt: "Casa modular Nex - Exterior completo con paneles solares"
+    },
+    {
+      src: "/lovable-uploads/6acb8d07-7f3a-430c-874a-516011689ae2.png",
+      alt: "Casa modular Nex - Vista de mesa de comedor"
     }
   ];
 
@@ -48,7 +76,7 @@ const HeroImageCarousel = () => {
         }}
         plugins={[
           Autoplay({
-            delay: 4000,
+            delay: 3500,
             stopOnInteraction: true,
             stopOnMouseEnter: true
           })

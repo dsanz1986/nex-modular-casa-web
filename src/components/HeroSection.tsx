@@ -82,13 +82,11 @@ const HeroSection = () => {
         <HeroImageCarousel />
       </div>
       
-      {/* Scroll indicator mejorado y más visible */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-        <div className="flex flex-col items-center gap-3 bg-white/90 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg border border-nex-primary/20">
-          <span className="text-sm font-inter text-nex-primary font-semibold">Descubre más</span>
-          <div className="w-8 h-8 rounded-full bg-nex-primary/10 flex items-center justify-center">
-            <ArrowDown className="w-5 h-5 text-nex-primary" />
-          </div>
+      {/* Indicador de scroll simplificado y más sutil */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-sm font-inter text-nex-primary/70 font-medium">Descubre más</span>
+          <ArrowDown className="w-5 h-5 text-nex-primary/70" />
         </div>
       </div>
     </section>
