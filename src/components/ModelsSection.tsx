@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, Clock } from "lucide-react";
@@ -7,16 +8,16 @@ const ModelsSection = () => {
   const models = [
     {
       name: "Nex Natura",
-      description: "Vive con diseño, estilo y eficiencia",
+      description: "Casa modular móvil familiar de 90m² sin obra",
       dimensions: "90 m² totales | 72 m² habitables + 18 m² de porche",
       originalPrice: "44.990€",
       offerPrice: "39.990€",
       features: [
-        "Estructura de acero galvanizado + aislamiento EPS",
-        "Ideal para vivir todo el año",
-        "Alta eficiencia y distribución personalizable",
-        "Entrega en 3-4 meses",
-        "Transporte e instalación incluidos"
+        "Estructura de acero galvanizado resistente + aislamiento EPS 65mm",
+        "Ideal para vivir todo el año como vivienda principal",
+        "Alta eficiencia energética y distribución personalizable",
+        "Entrega e instalación en 3-4 meses sin obra",
+        "Transporte e instalación incluidos en toda España"
       ],
       pdfPath: "/ficha-tecnica-nex-natura.pdf",
       images: [
@@ -33,16 +34,16 @@ const ModelsSection = () => {
     },
     {
       name: "Nex Nido",
-      description: "Compacta, versátil y de gran eficiencia",
+      description: "Casa modular móvil compacta de 36m² transportable",
       dimensions: "36 m² habitables + 18 m² de porche (opcional)",
       originalPrice: "24.990€",
       offerPrice: "19.990€",
       features: [
-        "Estructura de acero galvanizado + aislamiento EPS",
-        "Ideal como segunda residencia",
-        "Compacta, eficiente y versátil",
-        "Entrega en 3-4 meses",
-        "Transporte e instalación incluidos"
+        "Estructura de acero galvanizado + aislamiento EPS 65mm",
+        "Perfecta como segunda residencia o casa de invitados",
+        "Diseño compacto, eficiente y totalmente transportable",
+        "Entrega rápida en 3-4 meses sin necesidad de obra",
+        "Transporte e instalación incluidos en toda España"
       ],
       pdfPath: "/ficha-tecnica-nex-nido.pdf",
       images: [
@@ -72,20 +73,21 @@ const ModelsSection = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-forest-50 to-forest-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
+        <header className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-nex-text mb-4">
-            Modelos disponibles
+            Modelos de Casas Modulares Móviles Sin Obra
           </h2>
           <p className="text-lg font-inter text-nex-text/80 max-w-2xl mx-auto leading-relaxed">
-            Descubre nuestros modelos de casas modulares, diseñados para adaptarse a tus necesidades y estilo de vida.
+            Descubre nuestros modelos de <strong>casas modulares móviles transportables</strong>, 
+            diseñadas para instalarse sin obra ni cimentación en tu terreno.
           </p>
           
-          {/* Oferta especial banner - sin estrella */}
+          {/* Oferta especial banner */}
           <div className="mt-8 bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-2xl inline-flex items-center gap-3 shadow-lg animate-pulse">
             <Clock className="w-5 h-5" />
-            <span className="font-semibold font-inter">¡OFERTA ESPECIAL LIMITADA!</span>
+            <span className="font-semibold font-inter">¡OFERTA ESPECIAL LIMITADA HASTA 31 JULIO!</span>
           </div>
-        </div>
+        </header>
 
         <div className="grid md:grid-cols-2 gap-8">
           {models.map((model, index) => (
@@ -97,7 +99,7 @@ const ModelsSection = () => {
                 )}
 
                 {/* Título y descripción */}
-                <div className="text-center mb-6 relative">
+                <header className="text-center mb-6 relative">
                   <h3 className="text-2xl font-playfair font-bold text-nex-text mb-4">
                     {model.name}
                   </h3>
@@ -107,7 +109,7 @@ const ModelsSection = () => {
                   <p className="text-sm font-inter text-nex-text/70">
                     {model.dimensions}
                   </p>
-                </div>
+                </header>
 
                 {/* Precios centrados y destacados */}
                 <div className="text-center mb-6 bg-gradient-to-r from-forest-50 to-forest-100 rounded-2xl p-6 border border-forest-200">
@@ -137,6 +139,7 @@ const ModelsSection = () => {
                 <Button 
                   className="w-full bg-nex-primary hover:bg-nex-primary/90 text-white font-inter font-semibold py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
                   onClick={() => handleDownloadPDF(model.name, model.pdfPath)}
+                  aria-label={`Descargar ficha técnica de casa modular móvil ${model.name}`}
                 >
                   <Download size={18} />
                   Descargar ficha técnica

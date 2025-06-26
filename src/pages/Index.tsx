@@ -7,6 +7,7 @@ import PersonalizationSection from "@/components/PersonalizationSection";
 import AdvantagesSection from "@/components/AdvantagesSection";
 import LicensesSection from "@/components/LicensesSection";
 import PilotHouseSection from "@/components/PilotHouseSection";
+import FAQSection from "@/components/FAQSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -16,33 +17,38 @@ const Index = () => {
   return (
     <div className="min-h-screen font-inter">
       <Navbar />
-      <div id="inicio">
-        <HeroSection />
-      </div>
-      <div id="nosotros">
-        <AboutSection />
-      </div>
-      <div id="modelos">
-        <ModelsSection />
-      </div>
-      <div id="personalizacion">
-        <PersonalizationSection />
-      </div>
-      <div id="ventajas">
-        <AdvantagesSection />
-      </div>
-      <div id="licencias">
-        <LicensesSection />
-      </div>
-      <div id="casa-piloto">
-        <PilotHouseSection />
-      </div>
-      <div id="testimonios">
-        <TestimonialsSection />
-      </div>
-      <div id="contacto">
-        <ContactSection />
-      </div>
+      <main>
+        <section id="inicio">
+          <HeroSection />
+        </section>
+        <section id="nosotros">
+          <AboutSection />
+        </section>
+        <section id="modelos">
+          <ModelsSection />
+        </section>
+        <section id="personalizacion">
+          <PersonalizationSection />
+        </section>
+        <section id="ventajas">
+          <AdvantagesSection />
+        </section>
+        <section id="licencias">
+          <LicensesSection />
+        </section>
+        <section id="casa-piloto">
+          <PilotHouseSection />
+        </section>
+        <section id="preguntas-frecuentes">
+          <FAQSection />
+        </section>
+        <section id="testimonios">
+          <TestimonialsSection />
+        </section>
+        <section id="contacto">
+          <ContactSection />
+        </section>
+      </main>
       <Footer />
       <CookieBanner />
     </div>

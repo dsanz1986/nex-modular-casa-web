@@ -8,6 +8,23 @@ interface ModelImageCarouselProps {
 }
 
 const ModelImageCarousel = ({ images, modelName }: ModelImageCarouselProps) => {
+  const getImageAlt = (index: number, modelName: string) => {
+    const altTexts = [
+      `Casa modular móvil ${modelName} - Vista exterior principal`,
+      `Interior casa modular ${modelName} - Salón y cocina`,
+      `Dormitorio casa modular móvil ${modelName}`,
+      `Baño completo casa modular ${modelName}`,
+      `Cocina equipada casa modular móvil ${modelName}`,
+      `Vista exterior lateral casa modular ${modelName}`,
+      `Distribución interior casa modular móvil ${modelName}`,
+      `Detalles acabados casa modular ${modelName}`,
+      `Instalación casa modular móvil ${modelName}`,
+      `Casa modular ${modelName} terminada`
+    ];
+    
+    return altTexts[index] || `Casa modular móvil ${modelName} - Imagen ${index + 1}`;
+  };
+
   return (
     <div className="relative mb-6">
       <Carousel 
@@ -25,8 +42,12 @@ const ModelImageCarousel = ({ images, modelName }: ModelImageCarouselProps) => {
                   <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                     <img
                       src={image}
-                      alt={`${modelName} - Imagen ${index + 1}`}
+                      alt={getImageAlt(index, modelName)}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      loading={index === 0 ? "eager" : "lazy"}
+                      decoding="async"
+                      width="600"
+                      height="450"
                     />
                   </div>
                 </CardContent>

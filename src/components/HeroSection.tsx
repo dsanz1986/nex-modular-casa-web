@@ -23,18 +23,18 @@ const HeroSection = () => {
           <div className="mb-6">
             <div className="inline-flex items-center gap-2 bg-nex-primary/10 text-nex-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <Sparkles className="w-4 h-4" />
-              Tu hogar perfecto te espera
+              Casas modulares móviles sin obra
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-nex-text leading-tight">
-              Empieza una nueva forma de <span className="text-nex-primary font-playfair relative">
-                vivir
+              Tu <span className="text-nex-primary font-playfair relative">
+                casa modular móvil
                 <div className="absolute -bottom-2 left-0 w-full h-3 bg-nex-primary/20 -z-10 rounded-lg"></div>
-              </span>
+              </span> sin obra ni complicaciones
             </h1>
           </div>
           
           <p className="text-lg md:text-xl font-inter text-nex-text/80 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-            Diseña un hogar pensado para ti, sin obra y sin líos. Nosotros te acompañamos.
+            Viviendas modulares móviles transportables, listas para instalar en tu terreno. Sin cimentación, sin obra, sin líos. Desde 19.990€.
           </p>
           
           {/* Características destacadas */}
@@ -45,15 +45,15 @@ const HeroSection = () => {
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-nex-primary" />
-              <span className="text-sm font-inter text-nex-text">Precio sin sorpresas</span>
+              <span className="text-sm font-inter text-nex-text">Instalación en 1-2 días</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-nex-primary" />
-              <span className="text-sm font-inter text-nex-text">Alta eficiencia</span>
+              <span className="text-sm font-inter text-nex-text">Totalmente transportable</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-nex-primary" />
-              <span className="text-sm font-inter text-nex-text">Personalizable</span>
+              <span className="text-sm font-inter text-nex-text">Precio cerrado</span>
             </div>
           </div>
           
@@ -62,6 +62,7 @@ const HeroSection = () => {
               size="lg" 
               className="bg-nex-primary hover:bg-nex-primary/90 text-white px-8 py-4 text-lg font-inter font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               onClick={scrollToContact}
+              aria-label="Solicitar información sobre casas modulares móviles"
             >
               <Home className="w-5 h-5 mr-2" />
               Quiero saber más
@@ -72,6 +73,7 @@ const HeroSection = () => {
               size="lg"
               className="border-2 border-nex-primary text-nex-primary hover:bg-nex-primary hover:text-white px-8 py-4 text-lg font-inter font-semibold rounded-2xl transition-all duration-300"
               onClick={() => window.open('https://wa.me/34611486694', '_blank')}
+              aria-label="Contactar por WhatsApp sobre casas modulares móviles"
             >
               Contacta por WhatsApp
             </Button>
