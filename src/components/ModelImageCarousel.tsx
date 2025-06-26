@@ -10,7 +10,13 @@ interface ModelImageCarouselProps {
 const ModelImageCarousel = ({ images, modelName }: ModelImageCarouselProps) => {
   return (
     <div className="relative mb-6">
-      <Carousel className="w-full max-w-xl mx-auto">
+      <Carousel 
+        className="w-full max-w-xl mx-auto"
+        opts={{ 
+          loop: true,
+          align: "start"
+        }}
+      >
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index}>

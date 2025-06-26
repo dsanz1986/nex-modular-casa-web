@@ -20,7 +20,6 @@ const ModelsSection = () => {
       ],
       pdfPath: "/ficha-tecnica-nex-natura.pdf",
       images: [
-        "/lovable-uploads/046aaa69-718c-4a24-a79b-fe5728d15943.png",
         "/lovable-uploads/2c692612-5352-4091-9f9b-463d9521af51.png",
         "/lovable-uploads/5845baa7-852c-474a-86e5-371bfcb9e62e.png",
         "/lovable-uploads/abeef23b-3164-41d3-86b4-801639c11858.png",
@@ -47,7 +46,6 @@ const ModelsSection = () => {
       ],
       pdfPath: "/ficha-tecnica-nex-nido.pdf",
       images: [
-        "/lovable-uploads/75957646-42e7-44d4-926f-71f307599ca7.png",
         "/lovable-uploads/4f4177dc-18f2-4e72-99f3-de78933f5bf3.png",
         "/lovable-uploads/3162d70c-c470-4759-8821-e227d0f533f6.png",
         "/lovable-uploads/7dd8f200-83ee-4728-8f48-5da9b9c5048f.png",
