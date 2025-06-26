@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Switch } from '@/components/ui/switch';
 import { useCookies, type CookiePreferences } from '@/hooks/useCookies';
-import { Cookie, Settings, X } from 'lucide-react';
+import { Cookie, Settings, X, Shield, BarChart3, Target } from 'lucide-react';
 
 const CookieBanner = () => {
   const { hasAccepted, preferences, acceptAll, rejectAll, savePreferences } = useCookies();
@@ -36,44 +36,45 @@ const CookieBanner = () => {
 
   return (
     <>
-      {/* Cookie Banner */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-lg">
-        <Card className="max-w-6xl mx-auto border-0 shadow-none bg-transparent">
+      {/* Cookie Banner - Más compacto y visual */}
+      <div className="fixed bottom-6 left-6 right-6 z-50 flex justify-center">
+        <Card className="max-w-4xl w-full bg-white/95 backdrop-blur-md border-0 shadow-2xl rounded-3xl overflow-hidden">
           <CardContent className="p-6">
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4">
-              <div className="flex items-start gap-3 flex-1">
-                <Cookie className="w-6 h-6 text-nex-primary flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-4 flex-1">
+                <div className="w-12 h-12 bg-nex-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <Cookie className="w-6 h-6 text-nex-primary" />
+                </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-nex-text mb-2">
-                    Usamos cookies para mejorar tu experiencia
+                  <h3 className="font-semibold text-nex-text mb-2 text-lg">
+                    🍪 Mejoramos tu experiencia
                   </h3>
-                  <p className="text-sm text-nex-text/80 leading-relaxed">
-                    Utilizamos cookies propias y de terceros para analizar el tráfico de la web, 
-                    personalizar el contenido y mejorar nuestros servicios. 
-                    Puedes aceptar todas las cookies o personalizar tus preferencias.
+                  <p className="text-sm text-nex-text/70 leading-relaxed">
+                    Usamos cookies para personalizar tu experiencia y analizar nuestro tráfico. 
+                    Solo las esenciales son obligatorias.
                   </p>
                 </div>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
                 <Button
-                  variant="outline"
+                  variant="ghost"
                   onClick={handleShowPreferences}
-                  className="flex items-center gap-2 border-nex-primary text-nex-primary hover:bg-nex-primary hover:text-white"
+                  className="flex items-center gap-2 text-nex-primary hover:bg-nex-primary/10 border border-nex-primary/20 rounded-xl"
                 >
                   <Settings size={16} />
-                  Personalizar
+                  Configurar
                 </Button>
                 <Button
                   variant="outline"
                   onClick={rejectAll}
-                  className="border-gray-300 text-gray-600 hover:bg-gray-100"
+                  className="border-gray-200 text-gray-600 hover:bg-gray-50 rounded-xl"
                 >
-                  Rechazar todas
+                  Solo esenciales
                 </Button>
                 <Button
                   onClick={acceptAll}
-                  className="bg-nex-primary hover:bg-nex-primary/90 text-white"
+                  className="bg-nex-primary hover:bg-nex-primary/90 text-white shadow-lg rounded-xl"
                 >
                   Aceptar todas
                 </Button>
@@ -83,79 +84,93 @@ const CookieBanner = () => {
         </Card>
       </div>
 
-      {/* Preferences Dialog */}
+      {/* Preferences Dialog - Más visual */}
       <Dialog open={showPreferences} onOpenChange={setShowPreferences}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="max-w-lg">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-2">
-              <Cookie className="w-5 h-5 text-nex-primary" />
-              Preferencias de cookies
+            <DialogTitle className="flex items-center gap-3 text-xl">
+              <div className="w-8 h-8 bg-nex-primary/10 rounded-lg flex items-center justify-center">
+                <Cookie className="w-5 h-5 text-nex-primary" />
+              </div>
+              Configuración de cookies
             </DialogTitle>
-            <DialogDescription>
-              Personaliza qué tipos de cookies quieres permitir en nuestro sitio web.
+            <DialogDescription className="text-base">
+              Personaliza tu experiencia eligiendo qué tipos de cookies permitir.
             </DialogDescription>
           </DialogHeader>
           
           <div className="space-y-6">
             {/* Necessary Cookies */}
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-2xl">
+              <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Shield className="w-5 h-5 text-green-600" />
+              </div>
               <div className="flex-1">
-                <h4 className="font-medium text-nex-text">Cookies necesarias</h4>
-                <p className="text-sm text-nex-text/70 mt-1">
-                  Esenciales para el funcionamiento básico del sitio web.
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-semibold text-nex-text">Cookies necesarias</h4>
+                  <Switch
+                    checked={true}
+                    disabled={true}
+                  />
+                </div>
+                <p className="text-sm text-nex-text/70">
+                  Esenciales para el funcionamiento básico del sitio web. Siempre activas.
                 </p>
               </div>
-              <Switch
-                checked={true}
-                disabled={true}
-                className="mt-1"
-              />
             </div>
 
             {/* Analytics Cookies */}
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex items-start gap-4 p-4 border border-gray-200 rounded-2xl hover:bg-gray-50 transition-colors">
+              <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <BarChart3 className="w-5 h-5 text-blue-600" />
+              </div>
               <div className="flex-1">
-                <h4 className="font-medium text-nex-text">Cookies analíticas</h4>
-                <p className="text-sm text-nex-text/70 mt-1">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-semibold text-nex-text">Cookies analíticas</h4>
+                  <Switch
+                    checked={tempPreferences.analytics}
+                    onCheckedChange={(checked) => updateTempPreference('analytics', checked)}
+                  />
+                </div>
+                <p className="text-sm text-nex-text/70">
                   Nos ayudan a entender cómo interactúas con nuestro sitio web.
                 </p>
               </div>
-              <Switch
-                checked={tempPreferences.analytics}
-                onCheckedChange={(checked) => updateTempPreference('analytics', checked)}
-                className="mt-1"
-              />
             </div>
 
             {/* Marketing Cookies */}
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex items-start gap-4 p-4 border border-gray-200 rounded-2xl hover:bg-gray-50 transition-colors">
+              <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Target className="w-5 h-5 text-purple-600" />
+              </div>
               <div className="flex-1">
-                <h4 className="font-medium text-nex-text">Cookies de marketing</h4>
-                <p className="text-sm text-nex-text/70 mt-1">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-semibold text-nex-text">Cookies de marketing</h4>
+                  <Switch
+                    checked={tempPreferences.marketing}
+                    onCheckedChange={(checked) => updateTempPreference('marketing', checked)}
+                  />
+                </div>
+                <p className="text-sm text-nex-text/70">
                   Para mostrarte contenido personalizado y relevante.
                 </p>
               </div>
-              <Switch
-                checked={tempPreferences.marketing}
-                onCheckedChange={(checked) => updateTempPreference('marketing', checked)}
-                className="mt-1"
-              />
             </div>
           </div>
 
-          <div className="flex gap-3 pt-4">
+          <div className="flex gap-3 pt-6">
             <Button
               variant="outline"
               onClick={() => setShowPreferences(false)}
-              className="flex-1"
+              className="flex-1 rounded-xl"
             >
               Cancelar
             </Button>
             <Button
               onClick={handleSavePreferences}
-              className="flex-1 bg-nex-primary hover:bg-nex-primary/90 text-white"
+              className="flex-1 bg-nex-primary hover:bg-nex-primary/90 text-white rounded-xl"
             >
-              Guardar preferencias
+              Guardar configuración
             </Button>
           </div>
         </DialogContent>

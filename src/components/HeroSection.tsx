@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Sparkles, Home, CheckCircle } from "lucide-react";
+import HeroImageCarousel from "./HeroImageCarousel";
 
 const HeroSection = () => {
   const scrollToContact = () => {
@@ -77,37 +78,17 @@ const HeroSection = () => {
           </div>
         </div>
         
-        {/* Hero image mejorada */}
-        <div className="relative animate-slide-up">
-          {/* Marco decorativo */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-nex-primary to-forest-400 rounded-3xl opacity-20 blur-xl"></div>
-          
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-            {/* Overlay gradiente */}
-            <div className="absolute inset-0 bg-gradient-to-t from-nex-text/30 via-transparent to-transparent z-10"></div>
-            
-            <img 
-              src="/lovable-uploads/c6b8fce4-da6d-4caa-ab79-76c00abf4713.png"
-              alt="Casa modular moderna Nex Modular Homes"
-              className="w-full h-[400px] md:h-[500px] object-cover"
-            />
-            
-            {/* Badge de calidad */}
-            <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-lg z-20">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-inter font-semibold text-nex-text">Calidad Premium</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Hero carousel */}
+        <HeroImageCarousel />
       </div>
       
-      {/* Scroll indicator mejorado */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-sm font-inter text-nex-primary font-medium">Descubre más</span>
-          <ArrowDown className="w-6 h-6 text-nex-primary" />
+      {/* Scroll indicator mejorado y más visible */}
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+        <div className="flex flex-col items-center gap-3 bg-white/90 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg border border-nex-primary/20">
+          <span className="text-sm font-inter text-nex-primary font-semibold">Descubre más</span>
+          <div className="w-8 h-8 rounded-full bg-nex-primary/10 flex items-center justify-center">
+            <ArrowDown className="w-5 h-5 text-nex-primary" />
+          </div>
         </div>
       </div>
     </section>
