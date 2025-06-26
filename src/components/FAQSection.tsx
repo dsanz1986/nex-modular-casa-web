@@ -12,7 +12,7 @@ const FAQSection = () => {
     {
       id: "instalacion",
       question: "¿Cuánto tiempo tarda la instalación?",
-      answer: "La instalación de nuestras casas modulares móviles es muy rápida. Una vez que la casa llega a tu terreno, el proceso de instalación y puesta en marcha se completa en 6-7 días, dependiendo de la instalación. No necesitas cimentación ni obras previas, solo una superficie nivelada."
+      answer: "La instalación de nuestras casas modulares móviles es muy rápida. Una vez que la casa llega a tu terreno, el proceso de instalación y puesta en marcha se completa en 1-2 días. No necesitas cimentación ni obras previas, solo una superficie nivelada."
     },
     {
       id: "terreno",

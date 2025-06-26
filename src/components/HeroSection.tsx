@@ -26,8 +26,8 @@ const HeroSection = () => {
               Casas modulares móviles sin obra
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-nex-text leading-tight">
-              Tu <span className="text-nex-primary font-playfair relative">
-                casa modular móvil
+              <span className="text-nex-primary font-playfair relative">
+                Casas modulares móviles
                 <div className="absolute -bottom-2 left-0 w-full h-3 bg-nex-primary/20 -z-10 rounded-lg"></div>
               </span> sin obra ni complicaciones
             </h1>
