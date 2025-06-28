@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, Clock } from "lucide-react";
@@ -45,16 +44,12 @@ const ModelsSection = () => {
       ],
       pdfPath: "/ficha-tecnica-nex-nido.pdf",
       images: [
-        "/lovable-uploads/4f4177dc-18f2-4e72-99f3-de78933f5bf3.png",
-        "/lovable-uploads/3162d70c-c470-4759-8821-e227d0f533f6.png",
-        "/lovable-uploads/7dd8f200-83ee-4728-8f48-5da9b9c5048f.png",
-        "/lovable-uploads/fc39287c-d323-41c2-91ef-4673fc825ba9.png",
-        "/lovable-uploads/2dff8986-af57-4311-a724-1e6d41e0bc08.png",
-        "/lovable-uploads/936ca473-687e-454b-921a-6e5c243f5d43.png",
-        "/lovable-uploads/ded3bbbb-7069-40c8-8d7f-e49c2c598eb7.png",
-        "/lovable-uploads/4b689c14-280d-4c2a-bdf1-052415e99dde.png",
-        "/lovable-uploads/f059c84b-6f03-45af-8e6f-96ccb457303b.png",
-        "/lovable-uploads/fd3d1060-0ef2-4564-9c30-b98d43c27356.png"
+        "/lovable-uploads/a10359cf-17ab-46ad-b2d4-89a649119987.png",
+        "/lovable-uploads/49a21b50-31bf-4b24-ab6b-d13ca1f6ae37.png",
+        "/lovable-uploads/9cd21d47-5bd3-4981-a142-f4e9adafe214.png",
+        "/lovable-uploads/b484ac52-693b-47a6-8598-c7cd96053504.png",
+        "/lovable-uploads/96abd6cd-722c-4b49-aa6e-28b7dac1a1c1.png",
+        "/lovable-uploads/3123b2bf-3513-4bf8-8f1d-8493f0fced9e.png"
       ]
     }
   ];
