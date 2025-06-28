@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, Clock } from "lucide-react";
@@ -44,6 +45,7 @@ const ModelsSection = () => {
       ],
       pdfPath: "/ficha-tecnica-nex-nido.pdf",
       images: [
+        "/lovable-uploads/02339d00-b43a-4820-ae8c-22bfbb566eaa.png",
         "/lovable-uploads/a10359cf-17ab-46ad-b2d4-89a649119987.png",
         "/lovable-uploads/49a21b50-31bf-4b24-ab6b-d13ca1f6ae37.png",
         "/lovable-uploads/9cd21d47-5bd3-4981-a142-f4e9adafe214.png",
