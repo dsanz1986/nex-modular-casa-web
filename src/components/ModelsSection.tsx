@@ -33,7 +33,7 @@ const ModelsSection = () => {
     },
     {
       name: "Nex Nido",
-      dimensions: "36 m² habitables + 18 m² de porche (opcional)",
+      dimensions: "54 m² totales | 36 m² habitables + 18 m² de porche (opcional)",
       originalPrice: "24.990€",
       offerPrice: "19.990€",
       features: [
