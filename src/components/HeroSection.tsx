@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Sparkles, Home, CheckCircle } from "lucide-react";
+import { Sparkles, Home } from "lucide-react";
 import HeroImageCarousel from "./HeroImageCarousel";
 
 const HeroSection = () => {
@@ -36,26 +36,6 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl font-inter text-nex-text/80 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
             Viviendas modulares móviles transportables, listas para instalar en tu terreno. Sin cimentación, sin obra, sin líos.
           </p>
-          
-          {/* Características destacadas */}
-          <div className="grid grid-cols-2 gap-4 mb-8">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-nex-primary" />
-              <span className="text-sm font-inter text-nex-text">Sin obra necesaria</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-nex-primary" />
-              <span className="text-sm font-inter text-nex-text">Instalación en pocos días</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-nex-primary" />
-              <span className="text-sm font-inter text-nex-text">Totalmente transportable</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-nex-primary" />
-              <span className="text-sm font-inter text-nex-text">Precio cerrado</span>
-            </div>
-          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Button 

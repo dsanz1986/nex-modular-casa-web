@@ -45,13 +45,11 @@ const ModelsSection = () => {
       ],
       pdfPath: "/ficha-tecnica-nex-nido.pdf",
       images: [
-        "/lovable-uploads/02339d00-b43a-4820-ae8c-22bfbb566eaa.png",
-        "/lovable-uploads/a10359cf-17ab-46ad-b2d4-89a649119987.png",
-        "/lovable-uploads/49a21b50-31bf-4b24-ab6b-d13ca1f6ae37.png",
-        "/lovable-uploads/9cd21d47-5bd3-4981-a142-f4e9adafe214.png",
-        "/lovable-uploads/b484ac52-693b-47a6-8598-c7cd96053504.png",
-        "/lovable-uploads/96abd6cd-722c-4b49-aa6e-28b7dac1a1c1.png",
-        "/lovable-uploads/3123b2bf-3513-4bf8-8f1d-8493f0fced9e.png"
+        "/lovable-uploads/f7afae9f-fbd2-44e5-bde9-49caa41b6885.png",
+        "/lovable-uploads/bec838fc-2d40-420e-9dfe-bed755fd7c45.png",
+        "/lovable-uploads/083bb7cd-c3ba-4c2e-aafc-3dc125159796.png",
+        "/lovable-uploads/a65d23c5-c0bc-4314-ac7d-913879dd42bf.png",
+        "/lovable-uploads/52b7c7ef-7b60-4c96-a4a8-99bc4c81e639.png"
       ]
     }
   ];
