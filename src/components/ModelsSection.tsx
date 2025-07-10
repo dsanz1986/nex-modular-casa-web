@@ -37,7 +37,7 @@ const ModelsSection = () => {
       originalPrice: "24.990€",
       offerPrice: "19.990€",
       features: [
-        "Estructura de acero galvanizado + aislamiento EPS 65mm",
+        "Estructura de acero galvanizado resistente + aislamiento EPS 65mm",
         "Perfecta como segunda residencia o casa de invitados",
         "Diseño compacto, eficiente y totalmente transportable",
         "Entrega rápida en 3-4 meses sin necesidad de obra",
