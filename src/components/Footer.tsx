@@ -1,8 +1,23 @@
 
 import { MapPin, Phone, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [isRouterReady, setIsRouterReady] = useState(false);
+  
+  // Use useLocation to check if router context is available
+  try {
+    const location = useLocation();
+    useEffect(() => {
+      if (location) {
+        setIsRouterReady(true);
+      }
+    }, [location]);
+  } catch (error) {
+    console.log("Router context not available yet");
+  }
+
   return (
     <footer className="bg-nex-text text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,28 +108,55 @@ const Footer = () => {
             <h4 className="text-lg font-playfair font-semibold mb-4">Información Legal</h4>
             <ul className="space-y-2">
               <li>
-                <Link 
-                  to="/aviso-legal" 
-                  className="text-white/80 font-inter hover:text-white transition-colors"
-                >
-                  Aviso Legal
-                </Link>
+                {isRouterReady ? (
+                  <Link 
+                    to="/aviso-legal" 
+                    className="text-white/80 font-inter hover:text-white transition-colors"
+                  >
+                    Aviso Legal
+                  </Link>
+                ) : (
+                  <a 
+                    href="/aviso-legal" 
+                    className="text-white/80 font-inter hover:text-white transition-colors"
+                  >
+                    Aviso Legal
+                  </a>
+                )}
               </li>
               <li>
-                <Link 
-                  to="/politica-privacidad" 
-                  className="text-white/80 font-inter hover:text-white transition-colors"
-                >
-                  Política de Privacidad
-                </Link>
+                {isRouterReady ? (
+                  <Link 
+                    to="/politica-privacidad" 
+                    className="text-white/80 font-inter hover:text-white transition-colors"
+                  >
+                    Política de Privacidad
+                  </Link>
+                ) : (
+                  <a 
+                    href="/politica-privacidad" 
+                    className="text-white/80 font-inter hover:text-white transition-colors"
+                  >
+                    Política de Privacidad
+                  </a>
+                )}
               </li>
               <li>
-                <Link 
-                  to="/politica-cookies" 
-                  className="text-white/80 font-inter hover:text-white transition-colors"
-                >
-                  Política de Cookies
-                </Link>
+                {isRouterReady ? (
+                  <Link 
+                    to="/politica-cookies" 
+                    className="text-white/80 font-inter hover:text-white transition-colors"
+                  >
+                    Política de Cookies
+                  </Link>
+                ) : (
+                  <a 
+                    href="/politica-cookies" 
+                    className="text-white/80 font-inter hover:text-white transition-colors"
+                  >
+                    Política de Cookies
+                  </a>
+                )}
               </li>
             </ul>
           </div>
