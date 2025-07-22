@@ -10,7 +10,11 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    resources: translations,
+    resources: {
+      es: { translation: translations.es },
+      en: { translation: translations.en },
+      fr: { translation: translations.fr }
+    },
     fallbackLng: 'es',
     lng: savedLanguage || 'es',
     debug: false,
