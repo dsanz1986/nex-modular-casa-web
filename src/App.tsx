@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import CookiePolicy from "./pages/CookiePolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import LegalNotice from "./pages/LegalNotice";
+import './i18n/config';
 
 const queryClient = new QueryClient();
 

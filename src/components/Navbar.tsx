@@ -1,9 +1,12 @@
 
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "./LanguageSelector";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,47 +45,50 @@ const Navbar = () => {
               onClick={() => scrollToSection('inicio')}
               className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
             >
-              Inicio
+              {t('navbar.inicio')}
             </button>
             <button 
               onClick={() => scrollToSection('nosotros')}
               className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
             >
-              Nosotros
+              {t('navbar.nosotros')}
             </button>
             <button 
               onClick={() => scrollToSection('modelos')}
               className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
             >
-              Modelos
+              {t('navbar.modelos')}
             </button>
             <button 
               onClick={() => scrollToSection('ventajas')}
               className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
             >
-              Ventajas
+              {t('navbar.ventajas')}
             </button>
             <button 
               onClick={() => scrollToSection('casa-piloto')}
               className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
             >
-              Casa Piloto
+              {t('navbar.casaPiloto')}
             </button>
             <button 
               onClick={() => scrollToSection('contacto')}
               className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
             >
-              Contacto
+              {t('navbar.contacto')}
             </button>
           </div>
 
-          {/* WhatsApp Button */}
-          <Button 
-            onClick={handleWhatsApp}
-            className="bg-nex-primary hover:bg-nex-primary/90 text-white px-4 py-2 rounded-xl font-inter font-semibold"
-          >
-            WhatsApp
-          </Button>
+          {/* Language Selector and WhatsApp Button */}
+          <div className="flex items-center gap-3">
+            <LanguageSelector />
+            <Button 
+              onClick={handleWhatsApp}
+              className="bg-nex-primary hover:bg-nex-primary/90 text-white px-4 py-2 rounded-xl font-inter font-semibold"
+            >
+              {t('navbar.whatsapp')}
+            </Button>
+          </div>
         </div>
       </div>
     </nav>

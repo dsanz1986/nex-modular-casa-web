@@ -1,9 +1,12 @@
 
 import { Button } from "@/components/ui/button";
 import { Sparkles, Home } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import HeroImageCarousel from "./HeroImageCarousel";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   const scrollToContact = () => {
     document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -23,18 +26,18 @@ const HeroSection = () => {
           <div className="mb-6">
             <div className="inline-flex items-center gap-2 bg-nex-primary/10 text-nex-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <Sparkles className="w-4 h-4" />
-              Casas modulares móviles sin obra
+              {t('hero.badge')}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-nex-text leading-tight">
               <span className="text-nex-primary font-playfair relative">
-                Casas modulares móviles
+                {t('hero.title')}
                 <div className="absolute -bottom-2 left-0 w-full h-3 bg-nex-primary/20 -z-10 rounded-lg"></div>
-              </span> sin obra ni complicaciones
+              </span> {t('hero.subtitle')}
             </h1>
           </div>
           
           <p className="text-lg md:text-xl font-inter text-nex-text/80 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-            Viviendas modulares móviles transportables, listas para instalar en tu terreno. Sin cimentación, sin obra, sin líos.
+            {t('hero.description')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -42,10 +45,10 @@ const HeroSection = () => {
               size="lg" 
               className="bg-nex-primary hover:bg-nex-primary/90 text-white px-8 py-4 text-lg font-inter font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               onClick={scrollToContact}
-              aria-label="Solicitar información sobre casas modulares móviles"
+              aria-label={t('hero.ctaMain')}
             >
               <Home className="w-5 h-5 mr-2" />
-              Quiero saber más
+              {t('hero.ctaMain')}
             </Button>
             
             <Button 
@@ -53,9 +56,9 @@ const HeroSection = () => {
               size="lg"
               className="border-2 border-nex-primary text-nex-primary hover:bg-nex-primary hover:text-white px-8 py-4 text-lg font-inter font-semibold rounded-2xl transition-all duration-300"
               onClick={() => window.open('https://wa.me/34611486694', '_blank')}
-              aria-label="Contactar por WhatsApp sobre casas modulares móviles"
+              aria-label={t('hero.ctaSecondary')}
             >
-              Contacta por WhatsApp
+              {t('hero.ctaSecondary')}
             </Button>
           </div>
         </div>

@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
@@ -7,6 +8,7 @@ import Autoplay from "embla-carousel-autoplay";
 const HeroImageCarousel = () => {
   const [api, setApi] = useState<any>();
   const [current, setCurrent] = useState(0);
+  const { t } = useTranslation();
   
   const images = [
     {
@@ -101,7 +103,7 @@ const HeroImageCarousel = () => {
                   <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-lg z-20">
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm font-inter font-semibold text-nex-text">Calidad Premium</span>
+                      <span className="text-sm font-inter font-semibold text-nex-text">{t('hero.qualityBadge')}</span>
                     </div>
                   </div>
                 </div>
