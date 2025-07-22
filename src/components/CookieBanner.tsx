@@ -6,8 +6,10 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Switch } from '@/components/ui/switch';
 import { useCookies, type CookiePreferences } from '@/hooks/useCookies';
 import { Cookie, Settings, X, Shield, BarChart3, Target } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const CookieBanner = () => {
+  const { t } = useTranslation();
   const { hasAccepted, preferences, acceptAll, rejectAll, savePreferences } = useCookies();
   const [showPreferences, setShowPreferences] = useState(false);
   const [tempPreferences, setTempPreferences] = useState<CookiePreferences>(preferences);
@@ -47,11 +49,10 @@ const CookieBanner = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-nex-text mb-2 text-lg">
-                    🍪 Mejoramos tu experiencia
+                    {t('cookies.banner.title')}
                   </h3>
                   <p className="text-sm text-nex-text/70 leading-relaxed">
-                    Usamos cookies para personalizar tu experiencia y analizar nuestro tráfico. 
-                    Solo las esenciales son obligatorias.
+                    {t('cookies.banner.description')}
                   </p>
                 </div>
               </div>
@@ -63,20 +64,20 @@ const CookieBanner = () => {
                   className="flex items-center gap-2 text-nex-primary hover:bg-nex-primary/10 border border-nex-primary/20 rounded-xl"
                 >
                   <Settings size={16} />
-                  Configurar
+                  {t('cookies.banner.configure')}
                 </Button>
                 <Button
                   variant="outline"
                   onClick={rejectAll}
                   className="border-gray-200 text-gray-600 hover:bg-gray-50 rounded-xl"
                 >
-                  Solo esenciales
+                  {t('cookies.banner.essential')}
                 </Button>
                 <Button
                   onClick={acceptAll}
                   className="bg-nex-primary hover:bg-nex-primary/90 text-white shadow-lg rounded-xl"
                 >
-                  Aceptar todas
+                  {t('cookies.banner.acceptAll')}
                 </Button>
               </div>
             </div>
@@ -92,10 +93,10 @@ const CookieBanner = () => {
               <div className="w-8 h-8 bg-nex-primary/10 rounded-lg flex items-center justify-center">
                 <Cookie className="w-5 h-5 text-nex-primary" />
               </div>
-              Configuración de cookies
+              {t('cookies.preferences.title')}
             </DialogTitle>
             <DialogDescription className="text-base">
-              Personaliza tu experiencia eligiendo qué tipos de cookies permitir.
+              {t('cookies.preferences.description')}
             </DialogDescription>
           </DialogHeader>
           
@@ -107,14 +108,14 @@ const CookieBanner = () => {
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-semibold text-nex-text">Cookies necesarias</h4>
+                  <h4 className="font-semibold text-nex-text">{t('cookies.preferences.necessary.title')}</h4>
                   <Switch
                     checked={true}
                     disabled={true}
                   />
                 </div>
                 <p className="text-sm text-nex-text/70">
-                  Esenciales para el funcionamiento básico del sitio web. Siempre activas.
+                  {t('cookies.preferences.necessary.description')}
                 </p>
               </div>
             </div>
@@ -126,14 +127,14 @@ const CookieBanner = () => {
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-semibold text-nex-text">Cookies analíticas</h4>
+                  <h4 className="font-semibold text-nex-text">{t('cookies.preferences.analytics.title')}</h4>
                   <Switch
                     checked={tempPreferences.analytics}
                     onCheckedChange={(checked) => updateTempPreference('analytics', checked)}
                   />
                 </div>
                 <p className="text-sm text-nex-text/70">
-                  Nos ayudan a entender cómo interactúas con nuestro sitio web.
+                  {t('cookies.preferences.analytics.description')}
                 </p>
               </div>
             </div>
@@ -145,14 +146,14 @@ const CookieBanner = () => {
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-semibold text-nex-text">Cookies de marketing</h4>
+                  <h4 className="font-semibold text-nex-text">{t('cookies.preferences.marketing.title')}</h4>
                   <Switch
                     checked={tempPreferences.marketing}
                     onCheckedChange={(checked) => updateTempPreference('marketing', checked)}
                   />
                 </div>
                 <p className="text-sm text-nex-text/70">
-                  Para mostrarte contenido personalizado y relevante.
+                  {t('cookies.preferences.marketing.description')}
                 </p>
               </div>
             </div>
@@ -164,13 +165,13 @@ const CookieBanner = () => {
               onClick={() => setShowPreferences(false)}
               className="flex-1 rounded-xl"
             >
-              Cancelar
+              {t('cookies.preferences.cancel')}
             </Button>
             <Button
               onClick={handleSavePreferences}
               className="flex-1 bg-nex-primary hover:bg-nex-primary/90 text-white rounded-xl"
             >
-              Guardar configuración
+              {t('cookies.preferences.save')}
             </Button>
           </div>
         </DialogContent>

@@ -2,8 +2,10 @@
 import { MapPin, Phone, Mail } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const [isRouterReady, setIsRouterReady] = useState(false);
   
   // Use useLocation to check if router context is available
@@ -25,10 +27,10 @@ const Footer = () => {
           {/* Company info */}
           <div>
             <h3 className="text-2xl font-playfair text-nex-primary mb-4">
-              Nex Modular Homes
+              {t('footer.company')}
             </h3>
             <p className="text-white/80 font-inter mb-4 leading-relaxed">
-              Especialistas en viviendas modulares móviles sin obra, listas para instalar en toda España.
+              {t('footer.description')}
             </p>
             <div className="flex gap-4">
               <a 
@@ -44,7 +46,7 @@ const Footer = () => {
           
           {/* Contact info */}
           <div>
-            <h4 className="text-lg font-playfair font-semibold mb-4">Contacto</h4>
+            <h4 className="text-lg font-playfair font-semibold mb-4">{t('footer.contact')}</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-nex-primary" />
@@ -78,26 +80,26 @@ const Footer = () => {
           
           {/* Services */}
           <div>
-            <h4 className="text-lg font-playfair font-semibold mb-4">Nuestros Servicios</h4>
+            <h4 className="text-lg font-playfair font-semibold mb-4">{t('footer.services')}</h4>
             <ul className="space-y-2">
               <li>
                 <span className="text-white/80 font-inter hover:text-white transition-colors cursor-pointer">
-                  Casas modulares
+                  {t('footer.servicesList.modularHomes')}
                 </span>
               </li>
               <li>
                 <span className="text-white/80 font-inter hover:text-white transition-colors cursor-pointer">
-                  Instalación incluida
+                  {t('footer.servicesList.installationIncluded')}
                 </span>
               </li>
               <li>
                 <span className="text-white/80 font-inter hover:text-white transition-colors cursor-pointer">
-                  Personalización
+                  {t('footer.servicesList.personalization')}
                 </span>
               </li>
               <li>
                 <span className="text-white/80 font-inter hover:text-white transition-colors cursor-pointer">
-                  Casa piloto visitable
+                  {t('footer.servicesList.pilotHouse')}
                 </span>
               </li>
             </ul>
@@ -105,7 +107,7 @@ const Footer = () => {
 
           {/* Legal links */}
           <div>
-            <h4 className="text-lg font-playfair font-semibold mb-4">Información Legal</h4>
+            <h4 className="text-lg font-playfair font-semibold mb-4">{t('footer.legal')}</h4>
             <ul className="space-y-2">
               <li>
                 {isRouterReady ? (
@@ -113,14 +115,14 @@ const Footer = () => {
                     to="/aviso-legal" 
                     className="text-white/80 font-inter hover:text-white transition-colors"
                   >
-                    Aviso Legal
+                    {t('footer.legalLinks.legalNotice')}
                   </Link>
                 ) : (
                   <a 
                     href="/aviso-legal" 
                     className="text-white/80 font-inter hover:text-white transition-colors"
                   >
-                    Aviso Legal
+                    {t('footer.legalLinks.legalNotice')}
                   </a>
                 )}
               </li>
@@ -130,14 +132,14 @@ const Footer = () => {
                     to="/politica-privacidad" 
                     className="text-white/80 font-inter hover:text-white transition-colors"
                   >
-                    Política de Privacidad
+                    {t('footer.legalLinks.privacy')}
                   </Link>
                 ) : (
                   <a 
                     href="/politica-privacidad" 
                     className="text-white/80 font-inter hover:text-white transition-colors"
                   >
-                    Política de Privacidad
+                    {t('footer.legalLinks.privacy')}
                   </a>
                 )}
               </li>
@@ -147,14 +149,14 @@ const Footer = () => {
                     to="/politica-cookies" 
                     className="text-white/80 font-inter hover:text-white transition-colors"
                   >
-                    Política de Cookies
+                    {t('footer.legalLinks.cookies')}
                   </Link>
                 ) : (
                   <a 
                     href="/politica-cookies" 
                     className="text-white/80 font-inter hover:text-white transition-colors"
                   >
-                    Política de Cookies
+                    {t('footer.legalLinks.cookies')}
                   </a>
                 )}
               </li>
@@ -164,7 +166,7 @@ const Footer = () => {
         
         <div className="border-t border-white/20 mt-8 pt-8 text-center">
           <p className="text-white/60 font-inter">
-            © 2025 Nex Modular Homes. Todos los derechos reservados.
+            {t('footer.rights')}
           </p>
         </div>
       </div>

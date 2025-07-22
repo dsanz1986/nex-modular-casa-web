@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, Clock } from "lucide-react";
 import ModelImageCarousel from "./ModelImageCarousel";
+import { useTranslation } from "react-i18next";
 
 const ModelsSection = () => {
+  const { t } = useTranslation();
+
   const models = [
     {
       name: "Nex Natura",
@@ -68,11 +71,10 @@ const ModelsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-nex-text mb-4">
-            Modelos de Casas Modulares Móviles Sin Obra
+            {t('models.title')}
           </h2>
           <p className="text-lg font-inter text-nex-text/80 max-w-2xl mx-auto leading-relaxed">
-            Descubre nuestros modelos de <strong>casas modulares móviles transportables</strong>, 
-            diseñadas para instalarse sin obra ni cimentación en tu terreno.
+            {t('models.subtitle')}
           </p>
           
           {/* Oferta especial banner */}
@@ -132,7 +134,7 @@ const ModelsSection = () => {
                   aria-label={`Descargar ficha técnica de casa modular móvil ${model.name}`}
                 >
                   <Download size={18} />
-                  Descargar ficha técnica
+                  {t('models.downloadPdf')}
                 </Button>
               </CardContent>
             </Card>

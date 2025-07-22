@@ -2,8 +2,11 @@
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useTranslation } from "react-i18next";
 
 const TestimonialsSection = () => {
+  const { t } = useTranslation();
+
   const testimonials = [
     {
       name: "María González",
@@ -61,10 +64,10 @@ const TestimonialsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-nex-text mb-4">
-            Lo que dicen nuestros clientes
+            {t('testimonials.title')}
           </h2>
           <p className="text-lg font-inter text-nex-text/80 max-w-2xl mx-auto leading-relaxed">
-            La satisfacción de nuestros clientes es nuestra mejor carta de presentación.
+            {t('testimonials.subtitle')}
           </p>
         </div>
 

@@ -1,8 +1,11 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { HelpCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const FAQSection = () => {
+  const { t } = useTranslation();
+
   const faqs = [
     {
       id: "permisos",
@@ -57,13 +60,13 @@ const FAQSection = () => {
         <div className="text-center mb-16 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-nex-primary/10 text-nex-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
             <HelpCircle className="w-4 h-4" />
-            Resolvemos tus dudas
+            {t('faq.badge')}
           </div>
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-nex-text mb-4">
-            Preguntas Frecuentes
+            {t('faq.title')}
           </h2>
           <p className="text-lg font-inter text-nex-text/80 max-w-2xl mx-auto leading-relaxed">
-            Todo lo que necesitas saber sobre nuestras casas modulares móviles sin obra
+            {t('faq.subtitle')}
           </p>
         </div>
 

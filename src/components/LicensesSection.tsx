@@ -1,13 +1,21 @@
+
 import { CheckCircle, FileText, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
+
 const LicensesSection = () => {
-  return <section className="py-20 bg-gradient-to-br from-white to-blue-50">
+  const { t } = useTranslation();
+
+  return (
+    <section className="py-20 bg-gradient-to-br from-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-nex-text mb-6">
-            ¿Y qué pasa con las licencias? No te preocupes, te ayudamos
+            {t('licenses.title')}
           </h2>
-          <p className="text-lg font-inter text-nex-text/80 max-w-3xl mx-auto leading-relaxed">Sabemos que la parte legal puede generar dudas, por eso te acompañamos también en este paso. Al tratarse de vivienda móvil sin cimentación ni anclaje permanente, no se consideran edificaciones tradicionales, lo que facilita su tramitación urbanística.</p>
+          <p className="text-lg font-inter text-nex-text/80 max-w-3xl mx-auto leading-relaxed">
+            {t('licenses.subtitle')}
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -19,13 +27,11 @@ const LicensesSection = () => {
               </div>
               
               <h3 className="text-xl font-playfair font-bold text-nex-text mb-4">
-                ¿Qué tienes que hacer?
+                {t('licenses.whatToDo.title')}
               </h3>
               
               <p className="text-nex-text/80 font-inter leading-relaxed">
-                Solo tendrás que presentar una solicitud de instalación ante tu ayuntamiento.
-                Nosotros te proporcionamos el modelo de escrito, la ficha técnica y el anexo legal necesarios 
-                para acreditar que se trata de una vivienda móvil y reversible.
+                {t('licenses.whatToDo.description')}
               </p>
             </CardContent>
           </Card>
@@ -38,12 +44,11 @@ const LicensesSection = () => {
               </div>
               
               <h3 className="text-xl font-playfair font-bold text-nex-text mb-4">
-                Confianza
+                {t('licenses.trust.title')}
               </h3>
               
               <p className="text-nex-text/80 font-inter leading-relaxed">
-                Queremos que te sientas seguro en cada paso.
-                No vendemos solo una casa: te damos las herramientas para instalarla con todas las garantías.
+                {t('licenses.trust.description')}
               </p>
             </CardContent>
           </Card>
@@ -56,17 +61,18 @@ const LicensesSection = () => {
               </div>
               
               <h3 className="text-xl font-playfair font-bold text-nex-text mb-4">
-                Proceso simplificado
+                {t('licenses.simplified.title')}
               </h3>
               
               <p className="text-nex-text/80 font-inter leading-relaxed">
-                Al no requerir cimentación permanente, el proceso de tramitación es mucho más ágil que una construcción tradicional.
-                Te acompañamos en cada paso del proceso legal.
+                {t('licenses.simplified.description')}
               </p>
             </CardContent>
           </Card>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default LicensesSection;

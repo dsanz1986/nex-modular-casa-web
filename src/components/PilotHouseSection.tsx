@@ -1,8 +1,11 @@
 
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const PilotHouseSection = () => {
+  const { t } = useTranslation();
+
   const handleWhatsApp = () => {
     const message = "Hola, me gustaría programar una visita a la casa piloto en Campo Real. ¿Cuándo sería posible?";
     window.open(`https://wa.me/34611486694?text=${encodeURIComponent(message)}`, '_blank');
@@ -25,12 +28,11 @@ const PilotHouseSection = () => {
           {/* Content */}
           <div className="animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">
-              Visita nuestra casa piloto
+              {t('pilotHouse.title')}
             </h2>
             
             <p className="text-xl mb-8 font-inter text-white/90 leading-relaxed">
-              Ven a conocer nuestra casa piloto en Campo Real (Madrid). 
-              Descubre cómo se siente vivir en una casa prefabricada de diseño moderno y eficiente.
+              {t('pilotHouse.description')}
             </p>
             
             <Button 
@@ -38,14 +40,14 @@ const PilotHouseSection = () => {
               className="bg-white text-nex-primary hover:bg-white/90 px-8 py-4 text-lg font-inter font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 mb-8"
               onClick={handleWhatsApp}
             >
-              Solicita tu cita por WhatsApp
+              {t('pilotHouse.cta')}
             </Button>
             
             {/* Contact info */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-white/80" />
-                <span className="font-inter text-white/90">P.º de Pozuelo, 24, 28510 Campo Real, Madrid</span>
+                <span className="font-inter text-white/90">{t('pilotHouse.address')}</span>
               </div>
               
               <div className="flex items-center gap-3">
@@ -80,7 +82,7 @@ const PilotHouseSection = () => {
               onClick={handleMapClick}
             >
               <div className="text-2xl font-bold text-nex-primary">📍</div>
-              <div className="text-sm font-playfair font-semibold">Campo Real, Madrid</div>
+              <div className="text-sm font-playfair font-semibold">{t('pilotHouse.location')}</div>
             </div>
           </div>
         </div>
