@@ -32,7 +32,35 @@ export const es = {
     originalPrice: "Precio original",
     currentOffer: "Oferta actual",
     seeDetails: "Ver detalles",
-    downloadPdf: "Descargar ficha técnica"
+    downloadPdf: "Descargar ficha técnica",
+    specialOffer: "¡OFERTA ESPECIAL LIMITADA HASTA 31 JULIO!",
+    reservationDeadline: "Reservas antes del 31 de Julio",
+    nexNatura: {
+      name: "Nex Natura",
+      dimensions: "90 m² totales | 72 m² habitables + 18 m² de porche",
+      originalPrice: "44.990€",
+      offerPrice: "39.990€",
+      features: [
+        "Estructura de acero galvanizado resistente + aislamiento EPS 65mm",
+        "Ideal para vivir todo el año como vivienda principal",
+        "Alta eficiencia energética y distribución personalizable",
+        "Entrega e instalación en 3-4 meses sin obra",
+        "Transporte e instalación incluidos en toda España"
+      ]
+    },
+    nexNido: {
+      name: "Nex Nido",
+      dimensions: "54 m² totales | 36 m² habitables + 18 m² de porche (opcional)",
+      originalPrice: "24.990€",
+      offerPrice: "19.990€",
+      features: [
+        "Estructura de acero galvanizado resistente + aislamiento EPS 65mm",
+        "Perfecta como segunda residencia o casa de invitados",
+        "Diseño compacto, eficiente y totalmente transportable",
+        "Entrega rápida en 3-4 meses sin necesidad de obra",
+        "Transporte e instalación incluidos en toda España"
+      ]
+    }
   },
   personalization: {
     title: "Personalización a tu medida",
@@ -114,7 +142,45 @@ export const es = {
   faq: {
     badge: "Resolvemos tus dudas",
     title: "Preguntas Frecuentes",
-    subtitle: "Todo lo que necesitas saber sobre nuestras casas modulares móviles sin obra"
+    subtitle: "Todo lo que necesitas saber sobre nuestras casas modulares móviles sin obra",
+    items: {
+      permisos: {
+        question: "¿Necesito permisos especiales para instalar una casa modular móvil?",
+        answer: "En la mayoría de casos no necesitas permisos de obra, pero sí es recomendable consultar con tu ayuntamiento local sobre normativas específicas de tu zona. Nuestras casas modulares móviles están clasificadas como viviendas transportables, lo que simplifica significativamente los trámites comparado con la construcción tradicional."
+      },
+      instalacion: {
+        question: "¿Cuánto tiempo tarda la instalación?",
+        answer: "La instalación de nuestras casas modulares móviles es muy rápida. Una vez que la casa llega a tu terreno, el proceso de instalación y puesta en marcha se completa en 1-2 días. No necesitas cimentación ni obras previas, solo una superficie nivelada."
+      },
+      terreno: {
+        question: "¿Qué tipo de terreno necesito?",
+        answer: "Nuestras casas modulares móviles son muy versátiles en cuanto al terreno. Necesitas una superficie nivelada. El terreno puede ser rústico o urbano. Te ayudamos a evaluar la viabilidad de tu parcela."
+      },
+      servicios: {
+        question: "¿Cómo se conectan los servicios (agua y luz)?",
+        answer: "Las casas vienen preparadas para conexiones estándar. Agua y electricidad se conectan como en cualquier vivienda tradicional. Para internet, puedes usar conexión por fibra (si está disponible en la zona), 4G/5G o internet satelital. Te asesoramos sobre las mejores opciones para tu ubicación específica."
+      },
+      calidad: {
+        question: "¿Qué garantías ofrecen sobre la calidad de construcción?",
+        answer: "Ofrecemos garantía estructural de 10 años y garantía general de 2 años."
+      },
+      precio: {
+        question: "¿Qué está incluido en el precio?",
+        answer: "El precio incluye la casa completamente terminada, transporte a tu ubicación con instalación completa. Sin costes ocultos ni sorpresas."
+      },
+      mantenimiento: {
+        question: "¿Qué mantenimiento requieren?",
+        answer: "El mantenimiento es mínimo, similar al de cualquier vivienda tradicional. Los materiales utilizados están diseñados para requerir poco mantenimiento y tener larga durabilidad."
+      },
+      movilidad: {
+        question: "¿Se pueden trasladar a otra ubicación?",
+        answer: "Sí, una de las grandes ventajas de nuestras casas modulares móviles es su capacidad de traslado. Aunque están diseñadas para ser tu hogar permanente, pueden moverse a otra ubicación si es necesario. El proceso requiere planificación y equipos especializados que podemos gestionar."
+      },
+      personalizacion: {
+        question: "¿Puedo personalizar el diseño interior?",
+        answer: "Absolutamente. Nuestras casas modulares móviles son totalmente personalizables. Puedes elegir distribución interior, acabados, colores, tipos de suelo, cocina, baño y todos los detalles que hagan tu casa única. Trabajamos contigo desde el diseño hasta la entrega final."
+      }
+    }
   },
   testimonials: {
     title: "Lo que dicen nuestros clientes",

@@ -32,7 +32,35 @@ export const en = {
     originalPrice: "Original price",
     currentOffer: "Current offer",
     seeDetails: "See details",
-    downloadPdf: "Download technical sheet"
+    downloadPdf: "Download technical sheet",
+    specialOffer: "SPECIAL LIMITED OFFER UNTIL JULY 31!",
+    reservationDeadline: "Reservations before July 31",
+    nexNatura: {
+      name: "Nex Natura",
+      dimensions: "90 m² total | 72 m² habitable + 18 m² porch",
+      originalPrice: "€44,990",
+      offerPrice: "€39,990",
+      features: [
+        "Resistant galvanized steel structure + 65mm EPS insulation",
+        "Ideal for year-round living as main residence",
+        "High energy efficiency and customizable layout",
+        "Delivery and installation in 3-4 months without construction",
+        "Transport and installation included throughout Spain"
+      ]
+    },
+    nexNido: {
+      name: "Nex Nido",
+      dimensions: "54 m² total | 36 m² habitable + 18 m² porch (optional)",
+      originalPrice: "€24,990",
+      offerPrice: "€19,990",
+      features: [
+        "Resistant galvanized steel structure + 65mm EPS insulation",
+        "Perfect as second residence or guest house",
+        "Compact, efficient and fully transportable design",
+        "Fast delivery in 3-4 months without construction work",
+        "Transport and installation included throughout Spain"
+      ]
+    }
   },
   personalization: {
     title: "Customization to your measure",
@@ -114,7 +142,45 @@ export const en = {
   faq: {
     badge: "We solve your doubts",
     title: "Frequently Asked Questions",
-    subtitle: "Everything you need to know about our mobile modular homes without construction"
+    subtitle: "Everything you need to know about our mobile modular homes without construction",
+    items: {
+      permisos: {
+        question: "Do I need special permits to install a mobile modular home?",
+        answer: "In most cases you don't need construction permits, but it is advisable to consult with your local town hall about specific regulations in your area. Our mobile modular homes are classified as transportable housing, which significantly simplifies the procedures compared to traditional construction."
+      },
+      instalacion: {
+        question: "How long does the installation take?",
+        answer: "The installation of our mobile modular homes is very fast. Once the house arrives at your land, the installation and commissioning process is completed in 1-2 days. You don't need foundation or previous work, just a level surface."
+      },
+      terreno: {
+        question: "What type of land do I need?",
+        answer: "Our mobile modular homes are very versatile in terms of land. You need a level surface. The land can be rural or urban. We help you evaluate the viability of your plot."
+      },
+      servicios: {
+        question: "How are services (water and electricity) connected?",
+        answer: "The houses come prepared for standard connections. Water and electricity are connected as in any traditional home. For internet, you can use fiber connection (if available in the area), 4G/5G or satellite internet. We advise you on the best options for your specific location."
+      },
+      calidad: {
+        question: "What guarantees do you offer on construction quality?",
+        answer: "We offer a 10-year structural warranty and 2-year general warranty."
+      },
+      precio: {
+        question: "What is included in the price?",
+        answer: "The price includes the completely finished house, transport to your location with complete installation. No hidden costs or surprises."
+      },
+      mantenimiento: {
+        question: "What maintenance do they require?",
+        answer: "Maintenance is minimal, similar to any traditional home. The materials used are designed to require little maintenance and have long durability."
+      },
+      movilidad: {
+        question: "Can they be moved to another location?",
+        answer: "Yes, one of the great advantages of our mobile modular homes is their transport capacity. Although they are designed to be your permanent home, they can be moved to another location if necessary. The process requires planning and specialized equipment that we can manage."
+      },
+      personalizacion: {
+        question: "Can I customize the interior design?",
+        answer: "Absolutely. Our mobile modular homes are fully customizable. You can choose interior layout, finishes, colors, flooring types, kitchen, bathroom and all the details that make your home unique. We work with you from design to final delivery."
+      }
+    }
   },
   testimonials: {
     title: "What our customers say",

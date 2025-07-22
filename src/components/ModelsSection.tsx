@@ -10,17 +10,7 @@ const ModelsSection = () => {
 
   const models = [
     {
-      name: "Nex Natura",
-      dimensions: "90 m² totales | 72 m² habitables + 18 m² de porche",
-      originalPrice: "44.990€",
-      offerPrice: "39.990€",
-      features: [
-        "Estructura de acero galvanizado resistente + aislamiento EPS 65mm",
-        "Ideal para vivir todo el año como vivienda principal",
-        "Alta eficiencia energética y distribución personalizable",
-        "Entrega e instalación en 3-4 meses sin obra",
-        "Transporte e instalación incluidos en toda España"
-      ],
+      id: "nexNatura",
       pdfPath: "/ficha-tecnica-nex-natura.pdf",
       images: [
         "/lovable-uploads/2c692612-5352-4091-9f9b-463d9521af51.png",
@@ -35,17 +25,7 @@ const ModelsSection = () => {
       ]
     },
     {
-      name: "Nex Nido",
-      dimensions: "54 m² totales | 36 m² habitables + 18 m² de porche (opcional)",
-      originalPrice: "24.990€",
-      offerPrice: "19.990€",
-      features: [
-        "Estructura de acero galvanizado resistente + aislamiento EPS 65mm",
-        "Perfecta como segunda residencia o casa de invitados",
-        "Diseño compacto, eficiente y totalmente transportable",
-        "Entrega rápida en 3-4 meses sin necesidad de obra",
-        "Transporte e instalación incluidos en toda España"
-      ],
+      id: "nexNido",
       pdfPath: "/ficha-tecnica-nex-nido.pdf",
       images: [
         "/lovable-uploads/f7afae9f-fbd2-44e5-bde9-49caa41b6885.png",
@@ -80,26 +60,26 @@ const ModelsSection = () => {
           {/* Oferta especial banner */}
           <div className="mt-8 bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-2xl inline-flex items-center gap-3 shadow-lg animate-pulse">
             <Clock className="w-5 h-5" />
-            <span className="font-semibold font-inter">¡OFERTA ESPECIAL LIMITADA HASTA 31 JULIO!</span>
+            <span className="font-semibold font-inter">{t('models.specialOffer')}</span>
           </div>
         </header>
 
         <div className="grid md:grid-cols-2 gap-8">
           {models.map((model, index) => (
-            <Card key={model.name} className={`group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg animate-slide-up bg-white rounded-3xl overflow-hidden relative ${index === 1 ? 'delay-200' : ''}`}>
+            <Card key={model.id} className={`group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg animate-slide-up bg-white rounded-3xl overflow-hidden relative ${index === 1 ? 'delay-200' : ''}`}>
               <CardContent className="p-8">
                 {/* Carrusel de imágenes */}
                 {model.images.length > 0 && (
-                  <ModelImageCarousel images={model.images} modelName={model.name} />
+                  <ModelImageCarousel images={model.images} modelName={t(`models.${model.id}.name`)} />
                 )}
 
                 {/* Título y dimensiones */}
                 <header className="text-center mb-6 relative">
                   <h3 className="text-2xl font-playfair font-bold text-nex-text mb-4">
-                    {model.name}
+                    {t(`models.${model.id}.name`)}
                   </h3>
                   <p className="text-sm font-inter text-nex-text/70">
-                    {model.dimensions}
+                    {t(`models.${model.id}.dimensions`)}
                   </p>
                 </header>
 
@@ -107,20 +87,20 @@ const ModelsSection = () => {
                 <div className="text-center mb-6 bg-gradient-to-r from-forest-50 to-forest-100 rounded-2xl p-6 border border-forest-200">
                   <div className="flex items-center justify-center gap-4 mb-3">
                     <span className="text-xl text-gray-500 line-through font-inter font-medium">
-                      {model.originalPrice}
+                      {t(`models.${model.id}.originalPrice`)}
                     </span>
                     <span className="text-4xl font-bold text-nex-primary font-playfair">
-                      {model.offerPrice}
+                      {t(`models.${model.id}.offerPrice`)}
                     </span>
                   </div>
                   <div className="bg-yellow-100 border border-yellow-300 text-yellow-800 px-4 py-2 rounded-xl text-sm font-medium inline-flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    Reservas antes del 31 de Julio
+                    {t('models.reservationDeadline')}
                   </div>
                 </div>
 
                 <ul className="space-y-3 mb-6">
-                  {model.features.map((feature, idx) => (
+                  {(t(`models.${model.id}.features`, { returnObjects: true }) as string[]).map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-nex-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-nex-text font-inter">{feature}</span>
@@ -130,8 +110,8 @@ const ModelsSection = () => {
                 
                 <Button 
                   className="w-full bg-nex-primary hover:bg-nex-primary/90 text-white font-inter font-semibold py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
-                  onClick={() => handleDownloadPDF(model.name, model.pdfPath)}
-                  aria-label={`Descargar ficha técnica de casa modular móvil ${model.name}`}
+                  onClick={() => handleDownloadPDF(t(`models.${model.id}.name`), model.pdfPath)}
+                  aria-label={`Descargar ficha técnica de casa modular móvil ${t(`models.${model.id}.name`)}`}
                 >
                   <Download size={18} />
                   {t('models.downloadPdf')}
