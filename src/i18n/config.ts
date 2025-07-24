@@ -13,7 +13,9 @@ i18n
     resources: {
       es: { translation: translations.es },
       en: { translation: translations.en },
-      fr: { translation: translations.fr }
+      fr: { translation: translations.fr },
+      de: { translation: translations.de },
+      it: { translation: translations.it }
     },
     fallbackLng: 'es',
     lng: savedLanguage || 'es',

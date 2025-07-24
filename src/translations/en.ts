@@ -261,6 +261,8 @@ export const en = {
     selector: "Language",
     es: "Español",
     en: "English",
-    fr: "Français"
+    fr: "Français",
+    de: "Deutsch",
+    it: "Italiano"
   }
 };

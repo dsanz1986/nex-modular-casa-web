@@ -2,11 +2,15 @@
 import { es } from './es';
 import { en } from './en';
 import { fr } from './fr';
+import { de } from './de';
+import { it } from './it';
 
 export const translations = {
   es,
   en,
-  fr
+  fr,
+  de,
+  it
 };
 
 export type TranslationKey = keyof typeof es;
