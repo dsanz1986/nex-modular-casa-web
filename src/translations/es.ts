@@ -1,8 +1,7 @@
-
 export const es = {
   navbar: {
     inicio: "Inicio",
-    nosotros: "Nosotros",
+    nosotros: "Nosotros", 
     modelos: "Modelos",
     ventajas: "Ventajas",
     casaPiloto: "Casa Piloto",
@@ -33,8 +32,8 @@ export const es = {
     currentOffer: "Oferta actual",
     seeDetails: "Ver detalles",
     downloadPdf: "Descargar ficha técnica",
-    specialOffer: "¡OFERTA ESPECIAL LIMITADA HASTA 31 JULIO!",
-    reservationDeadline: "Reservas antes del 31 de Julio",
+    specialOffer: "¡OFERTA ESPECIAL LIMITADA HASTA 31 AGOSTO!",
+    reservationDeadline: "Reservas antes del 31 de Agosto",
     nexNatura: {
       name: "Nex Natura",
       dimensions: "90 m² totales | 72 m² habitables + 18 m² de porche",

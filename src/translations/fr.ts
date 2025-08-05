@@ -1,8 +1,7 @@
-
 export const fr = {
   navbar: {
     inicio: "Accueil",
-    nosotros: "À propos",
+    nosotros: "À propos", 
     modelos: "Modèles",
     ventajas: "Avantages",
     casaPiloto: "Maison Pilote",
@@ -33,8 +32,8 @@ export const fr = {
     currentOffer: "Offre actuelle",
     seeDetails: "Voir détails",
     downloadPdf: "Télécharger fiche technique",
-    specialOffer: "OFFRE SPÉCIALE LIMITÉE JUSQU'AU 31 JUILLET !",
-    reservationDeadline: "Réservations avant le 31 juillet",
+    specialOffer: "OFFRE SPÉCIALE LIMITÉE JUSQU'AU 31 AOÛT !",
+    reservationDeadline: "Réservations avant le 31 août",
     nexNatura: {
       name: "Nex Natura",
       dimensions: "90 m² total | 72 m² habitable + 18 m² porche",
@@ -261,6 +260,8 @@ export const fr = {
     selector: "Langue",
     es: "Español",
     en: "English",
-    fr: "Français"
+    fr: "Français",
+    de: "Deutsch",
+    it: "Italiano"
   }
 };

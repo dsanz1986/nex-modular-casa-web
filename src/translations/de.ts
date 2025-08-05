@@ -1,8 +1,7 @@
-
 export const de = {
   navbar: {
     inicio: "Startseite",
-    nosotros: "Über uns",
+    nosotros: "Über uns", 
     modelos: "Modelle",
     ventajas: "Vorteile",
     casaPiloto: "Pilothaus",
@@ -33,8 +32,8 @@ export const de = {
     currentOffer: "Aktuelles Angebot",
     seeDetails: "Details anzeigen",
     downloadPdf: "Technisches Datenblatt herunterladen",
-    specialOffer: "BEFRISTETES SONDERANGEBOT BIS 31. JULI!",
-    reservationDeadline: "Reservierungen vor dem 31. Juli",
+    specialOffer: "BEFRISTETES SONDERANGEBOT BIS 31. AUGUST!",
+    reservationDeadline: "Reservierungen vor dem 31. August",
     nexNatura: {
       name: "Nex Natura",
       dimensions: "90 m² gesamt | 72 m² bewohnbar + 18 m² Veranda",
