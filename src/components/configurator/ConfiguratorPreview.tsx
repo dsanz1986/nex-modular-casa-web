@@ -1,6 +1,7 @@
 
-import { ConfiguratorState, getImagePath } from "@/lib/configurator-data";
+import { ConfiguratorState } from "@/lib/configurator-data";
 import { useTranslation } from "react-i18next";
+import { LayeredPreviewImage } from "./LayeredPreviewImage";
 
 interface ConfiguratorPreviewProps {
   config: ConfiguratorState;
@@ -9,17 +10,6 @@ interface ConfiguratorPreviewProps {
 
 export const ConfiguratorPreview = ({ config, viewMode }: ConfiguratorPreviewProps) => {
   const { t } = useTranslation();
-
-  // Por ahora mostramos una imagen placeholder con información de la configuración
-  const getPreviewImage = () => {
-    if (viewMode === "exterior") {
-      // Usamos una de las imágenes existentes como placeholder
-      return "/lovable-uploads/2c692612-5352-4091-9f9b-463d9521af51.png";
-    } else {
-      // Interior placeholder
-      return "/lovable-uploads/5845baa7-852c-474a-86e5-371bfcb9e62e.png";
-    }
-  };
 
   return (
     <div className="space-y-4">
@@ -33,10 +23,10 @@ export const ConfiguratorPreview = ({ config, viewMode }: ConfiguratorPreviewPro
       </div>
 
       <div className="relative aspect-[4/3] bg-gradient-to-br from-forest-50 to-forest-100 rounded-2xl overflow-hidden">
-        <img
-          src={getPreviewImage()}
-          alt={`Vista ${viewMode} configurada`}
-          className="w-full h-full object-cover"
+        <LayeredPreviewImage 
+          config={config}
+          viewMode={viewMode}
+          className="rounded-2xl"
         />
         
         {/* Overlay con información de configuración */}

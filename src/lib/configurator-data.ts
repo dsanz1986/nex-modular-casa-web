@@ -119,9 +119,45 @@ export const getDefaultConfig = (): ConfiguratorState => ({
   interiorDoors: 'white'
 });
 
+// Enhanced image path function with multiple format support
 export const getImagePath = (category: string, option: string, view: 'exterior' | 'interior' = 'exterior'): string => {
-  // Por ahora usamos placeholders, después se reemplazarán con las imágenes reales
-  return `/configurator/nex-natura/${view}/${category}-${option}.jpg`;
+  const basePath = `/configurator/nex-natura/${view}`;
+  const extensions = ['webp', 'png', 'jpg'];
+  
+  // Return the first format, browser will fallback automatically
+  return `${basePath}/${category}-${option}.${extensions[0]}`;
+};
+
+// Get base image for each view
+export const getBaseImagePath = (view: 'exterior' | 'interior'): string => {
+  const basePath = `/configurator/nex-natura/${view}`;
+  return `${basePath}/base.webp`;
+};
+
+// Get all layer images for current configuration
+export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterior' | 'interior') => {
+  const layers = [];
+  
+  if (view === 'exterior') {
+    layers.push(
+      { category: 'coating', option: config.exteriorCoating },
+      { category: 'color', option: config.exteriorColor },
+      { category: 'doors', option: config.doors },
+      { category: 'windows', option: config.windows }
+    );
+  } else {
+    layers.push(
+      { category: 'flooring', option: config.interiorFlooring },
+      { category: 'kitchen', option: config.kitchen },
+      { category: 'bathroom', option: config.bathroom },
+      { category: 'interiorDoors', option: config.interiorDoors }
+    );
+  }
+  
+  return layers.map(layer => ({
+    ...layer,
+    src: getImagePath(layer.category, layer.option, view)
+  }));
 };
 
 export const getConfigPrice = (config: ConfiguratorState): number => {
