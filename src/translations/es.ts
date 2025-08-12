@@ -64,6 +64,9 @@ export const es = {
   personalization: {
     title: "Personalización a tu medida",
     subtitle: "Haz tu casa única. Personaliza cada detalle interior y exterior para crear el hogar de tus sueños.",
+    configurator: {
+      cta: "Diseña tu casa ahora"
+    },
     interior: {
       distribution: "Distribución interior personalizable",
       distributionDesc: "Adapta los espacios a tu estilo de vida",
@@ -84,6 +87,32 @@ export const es = {
       coating: "Revestimiento exterior",
       coatingDesc: "El acabado exterior que tú quieras"
     }
+  },
+  configurator: {
+    title: "Configurador de Casa",
+    backToHome: "Volver al inicio",
+    share: "Compartir",
+    download: "Descargar",
+    exterior: "Exterior",
+    interior: "Interior",
+    previewDescription: "Vista previa de tu configuración personalizada",
+    categories: {
+      exteriorCoating: "Revestimiento Exterior",
+      exteriorColor: "Color Exterior",
+      doors: "Puertas Exteriores",
+      windows: "Ventanas",
+      flooring: "Suelo Interior",
+      kitchen: "Cocina",
+      bathroom: "Baño",
+      interiorDoors: "Puertas Interiores"
+    },
+    summary: {
+      title: "Resumen de tu configuración",
+      basePrice: "Precio base Nex Natura",
+      extras: "Extras seleccionados",
+      total: "Total"
+    },
+    requestQuote: "Solicitar presupuesto"
   },
   advantages: {
     title: "¿Por qué elegir una vivienda modular móvil?",

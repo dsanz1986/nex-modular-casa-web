@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import CookiePolicy from "./pages/CookiePolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import LegalNotice from "./pages/LegalNotice";
+import Configurator from "./pages/Configurator";
 import './i18n/config';
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/configurador" element={<Configurator />} />
           <Route path="/politica-cookies" element={<CookiePolicy />} />
           <Route path="/politica-privacidad" element={<PrivacyPolicy />} />
           <Route path="/aviso-legal" element={<LegalNotice />} />

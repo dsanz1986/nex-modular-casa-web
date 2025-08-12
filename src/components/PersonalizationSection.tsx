@@ -1,7 +1,9 @@
 
 import { Palette, Home, Plus, Settings, DoorOpen, Eye, Wrench } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const PersonalizationSection = () => {
   const { t } = useTranslation();
@@ -59,9 +61,16 @@ const PersonalizationSection = () => {
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-nex-text mb-4">
             {t('personalization.title')}
           </h2>
-          <p className="text-lg font-inter text-nex-text/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg font-inter text-nex-text/80 max-w-2xl mx-auto leading-relaxed mb-8">
             {t('personalization.subtitle')}
           </p>
+          
+          {/* CTA para el configurador */}
+          <Link to="/configurador">
+            <Button size="lg" className="bg-nex-primary hover:bg-nex-primary/90 font-inter font-semibold px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              {t('personalization.configurator.cta')}
+            </Button>
+          </Link>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
