@@ -263,5 +263,34 @@ export const de = {
     fr: "Français",
     de: "Deutsch",
     it: "Italiano"
+  },
+  configurator: {
+    title: "Konfigurator",
+    backToHome: "Zurück zur Startseite",
+    share: "Teilen",
+    download: "Herunterladen",
+    exterior: "Außenbereich",
+    interior: "Innenbereich",
+    previewDescription: "Vorschau Ihrer aktuellen Konfiguration",
+    requestQuote: "Angebot anfordern",
+    miniPreview: {
+      currentView: "Aktuelle Ansicht"
+    },
+    summary: {
+      title: "Konfigurationszusammenfassung",
+      basePrice: "Grundpreis",
+      extras: "Extras",
+      total: "Gesamt"
+    },
+    categories: {
+      exteriorCoating: "Außenverkleidung",
+      exteriorColor: "Außenfarbe",
+      doors: "Außentüren",
+      windows: "Fenster",
+      flooring: "Innenböden",
+      kitchen: "Küche",
+      bathroom: "Badezimmer",
+      interiorDoors: "Innentüren"
+    }
   }
 };

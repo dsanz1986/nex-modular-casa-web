@@ -89,30 +89,33 @@ export const es = {
     }
   },
   configurator: {
-    title: "Configurador de Casa",
+    title: "Configurador",
     backToHome: "Volver al inicio",
     share: "Compartir",
     download: "Descargar",
     exterior: "Exterior",
     interior: "Interior",
-    previewDescription: "Vista previa de tu configuración personalizada",
-    categories: {
-      exteriorCoating: "Revestimiento Exterior",
-      exteriorColor: "Color Exterior",
-      doors: "Puertas Exteriores",
-      windows: "Ventanas",
-      flooring: "Suelo Interior",
-      kitchen: "Cocina",
-      bathroom: "Baño",
-      interiorDoors: "Puertas Interiores"
+    previewDescription: "Vista previa de tu configuración actual",
+    requestQuote: "Solicitar presupuesto",
+    miniPreview: {
+      currentView: "Vista actual"
     },
     summary: {
-      title: "Resumen de tu configuración",
-      basePrice: "Precio base Nex Natura",
-      extras: "Extras seleccionados",
+      title: "Resumen de configuración",
+      basePrice: "Precio base",
+      extras: "Extras",
       total: "Total"
     },
-    requestQuote: "Solicitar presupuesto"
+    categories: {
+      exteriorCoating: "Revestimiento exterior",
+      exteriorColor: "Color exterior",
+      doors: "Puertas exteriores",
+      windows: "Ventanas",
+      flooring: "Suelo interior",
+      kitchen: "Cocina",
+      bathroom: "Baño",
+      interiorDoors: "Puertas interiores"
+    }
   },
   advantages: {
     title: "¿Por qué elegir una vivienda modular móvil?",
