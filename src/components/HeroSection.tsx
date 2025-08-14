@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { AIButton } from "@/components/ui/ai-button";
 import { Badge } from "@/components/ui/badge";
-import { HeroImageCarousel } from "./HeroImageCarousel";
+import HeroImageCarousel from "./HeroImageCarousel";
 import { Link } from "react-router-dom";
 import { MessageCircle } from "lucide-react";
 

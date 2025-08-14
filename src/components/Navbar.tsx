@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AIButton } from "@/components/ui/ai-button";
-import { LanguageSelector } from "./LanguageSelector";
+import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 

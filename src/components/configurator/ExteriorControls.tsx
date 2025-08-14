@@ -33,7 +33,7 @@ export const ExteriorControls = ({ config, onUpdate, onOptionSelect }: ExteriorC
         title={t('configurator.categories.exteriorCladding')}
         options={configuratorData.exterior.cladding.options}
         selectedValue={config.exteriorCladding}
-        onValueChange={handleCladdingChange}
+        onSelect={handleCladdingChange}
         showColors={true}
       />
 
@@ -41,14 +41,14 @@ export const ExteriorControls = ({ config, onUpdate, onOptionSelect }: ExteriorC
         title={t('configurator.categories.exteriorDoors')}
         options={configuratorData.exterior.doors.options}
         selectedValue={config.exteriorDoors}
-        onValueChange={handleDoorsChange}
+        onSelect={handleDoorsChange}
       />
 
       <OptionGroup
         title={t('configurator.categories.exteriorWindows')}
         options={configuratorData.exterior.windows.options}
         selectedValue={config.exteriorWindows}
-        onValueChange={handleWindowsChange}
+        onSelect={handleWindowsChange}
       />
     </div>
   );

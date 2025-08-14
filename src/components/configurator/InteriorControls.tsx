@@ -33,21 +33,21 @@ export const InteriorControls = ({ config, onUpdate, onOptionSelect }: InteriorC
         title={t('configurator.categories.interiorFlooring')}
         options={configuratorData.interior.flooring.options}
         selectedValue={config.interiorFlooring}
-        onValueChange={handleFlooringChange}
+        onSelect={handleFlooringChange}
       />
 
       <OptionGroup
         title={t('configurator.categories.interiorKitchen')}
         options={configuratorData.interior.kitchen.options}
         selectedValue={config.interiorKitchen}
-        onValueChange={handleKitchenChange}
+        onSelect={handleKitchenChange}
       />
 
       <OptionGroup
         title={t('configurator.categories.interiorBathroom')}
         options={configuratorData.interior.bathroom.options}
         selectedValue={config.interiorBathroom}
-        onValueChange={handleBathroomChange}
+        onSelect={handleBathroomChange}
       />
     </div>
   );
