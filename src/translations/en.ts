@@ -109,7 +109,10 @@ export const en = {
     categories: {
       exteriorCladding: "Exterior cladding",
       exteriorDoors: "Exterior doors",
-      exteriorWindows: "Exterior windows"
+      exteriorWindows: "Exterior windows",
+      interiorFlooring: "Flooring",
+      interiorKitchen: "Kitchen Furniture",
+      interiorBathroom: "Bathroom Furniture"
     },
     options: {
       terracota: "Classic Terracotta",
@@ -122,18 +125,35 @@ export const en = {
       naranja: "Modern Terracotta",
       "madera-natural": "Natural Wood",
       "madera-chocolate": "Premium Wood",
-      "puerta-simple-blanca": "Simple White Door",
-      "puerta-doble-blanca": "Double White Door",
-      "puerta-doble-negra": "Double Black Door",
-      "ventanas-estandar": "Standard Windows",
-      "ventanas-abatibles": "Casement Windows",
-      "ventanas-negras": "Black Windows"
+      "negra-doble": "Black Double",
+      "simple-blanca": "Simple White",
+      "doble-blanca": "Double White",
+      "blancas": "White",
+      "negras": "Black",
+      "abatibles": "Casement",
+      "gris-claro": "Light Grey",
+      "gris-oscuro": "Dark Grey",
+      "madera-clara": "Light Wood",
+      "madera-oscura": "Dark Wood",
+      "madera-blanca": "White Wood",
+      "madera-gris": "Grey Wood",
+      "blanco-basic": "Basic White",
+      "blanco-madera": "White Wood",
+      "blanco-moderno": "Modern White"
     },
-    interior: {
-      comingSoon: {
-        title: "Coming Soon",
-        description: "Interior customization options will be available soon. Meanwhile, you can configure your house exterior."
-      }
+    quoteForm: {
+      title: "Request Quote",
+      subtitle: "Complete your details to receive a personalized quote",
+      name: "Name",
+      email: "Email",
+      phone: "Phone",
+      namePlaceholder: "Your full name",
+      emailPlaceholder: "your@email.com",
+      phonePlaceholder: "+34 600 000 000",
+      submit: "Send request",
+      submitting: "Sending...",
+      success: "Request sent successfully!",
+      error: "Error sending request"
     }
   },
   advantages: {

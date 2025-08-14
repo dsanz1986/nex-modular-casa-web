@@ -1,3 +1,4 @@
+
 export const es = {
   navbar: {
     inicio: "Inicio",
@@ -109,7 +110,10 @@ export const es = {
     categories: {
       exteriorCladding: "Revestimiento exterior",
       exteriorDoors: "Puertas exteriores",
-      exteriorWindows: "Ventanas exteriores"
+      exteriorWindows: "Ventanas exteriores",
+      interiorFlooring: "Tarima",
+      interiorKitchen: "Muebles de Cocina",
+      interiorBathroom: "Muebles de baño"
     },
     options: {
       // Cladding options
@@ -124,19 +128,41 @@ export const es = {
       "madera-natural": "Madera Natural",
       "madera-chocolate": "Madera Premium",
       // Door options
-      "puerta-simple-blanca": "Puerta Simple Blanca",
-      "puerta-doble-blanca": "Puerta Doble Blanca",
-      "puerta-doble-negra": "Puerta Doble Negra",
+      "negra-doble": "Negra doble",
+      "simple-blanca": "Simple blanca",
+      "doble-blanca": "Doble blanca",
       // Window options
-      "ventanas-estandar": "Ventanas Estándar",
-      "ventanas-abatibles": "Ventanas Abatibles",
-      "ventanas-negras": "Ventanas Negras"
+      "blancas": "Blancas",
+      "negras": "Negras",
+      "abatibles": "Abatibles",
+      // Interior flooring options
+      "gris-claro": "Gris claro",
+      "gris-oscuro": "Gris oscuro",
+      "madera-clara": "Madera clara",
+      "madera-oscura": "Madera oscura",
+      // Kitchen options
+      "madera-blanca": "Madera blanca",
+      "madera-gris": "Madera gris",
+      "madera-oscura": "Madera oscura",
+      // Bathroom options
+      "blanco-basic": "Blanco basic",
+      "blanco-madera": "Blanco madera",
+      "blanco-moderno": "Blanco moderno",
+      "madera-clara": "Madera clara"
     },
-    interior: {
-      comingSoon: {
-        title: "Próximamente disponible",
-        description: "Las opciones de personalización interior estarán disponibles pronto. Mientras tanto, puedes configurar el exterior de tu casa."
-      }
+    quoteForm: {
+      title: "Solicitar presupuesto",
+      subtitle: "Completa tus datos para recibir un presupuesto personalizado",
+      name: "Nombre",
+      email: "Email",
+      phone: "Teléfono",
+      namePlaceholder: "Tu nombre completo",
+      emailPlaceholder: "tu@email.com",
+      phonePlaceholder: "+34 600 000 000",
+      submit: "Enviar solicitud",
+      submitting: "Enviando...",
+      success: "¡Solicitud enviada correctamente!",
+      error: "Error al enviar la solicitud"
     }
   },
   advantages: {

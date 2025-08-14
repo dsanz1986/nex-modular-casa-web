@@ -109,7 +109,10 @@ export const de = {
     categories: {
       exteriorCladding: "Außenverkleidung",
       exteriorDoors: "Außentüren",
-      exteriorWindows: "Außenfenster"
+      exteriorWindows: "Außenfenster",
+      interiorFlooring: "Bodenbelag",
+      interiorKitchen: "Küchenmöbel",
+      interiorBathroom: "Badmöbel"
     },
     options: {
       terracota: "Klassische Terrakotta",
@@ -122,20 +125,35 @@ export const de = {
       naranja: "Moderne Terrakotta",
       "madera-natural": "Naturholz",
       "madera-chocolate": "Premium-Holz",
-      // Door options
-      "puerta-simple-blanca": "Einfache Weiße Tür",
-      "puerta-doble-blanca": "Doppelte Weiße Tür",
-      "puerta-doble-negra": "Doppelte Schwarze Tür",
-      // Window options
-      "ventanas-estandar": "Standard Fenster",
-      "ventanas-abatibles": "Schwingfenster",
-      "ventanas-negras": "Schwarze Fenster"
+      "negra-doble": "Doppelt Schwarz",
+      "simple-blanca": "Einfach Weiß",
+      "doble-blanca": "Doppelt Weiß",
+      "blancas": "Weiß",
+      "negras": "Schwarz",
+      "abatibles": "Schwingfenster",
+      "gris-claro": "Hellgrau",
+      "gris-oscuro": "Dunkelgrau",
+      "madera-clara": "Helles Holz",
+      "madera-oscura": "Dunkles Holz",
+      "madera-blanca": "Weißes Holz",
+      "madera-gris": "Graues Holz",
+      "blanco-basic": "Basic Weiß",
+      "blanco-madera": "Weiß Holz",
+      "blanco-moderno": "Modernes Weiß"
     },
-    interior: {
-      comingSoon: {
-        title: "Demnächst verfügbar",
-        description: "Innenausstattungsoptionen werden in Kürze verfügbar sein. In der Zwischenzeit können Sie das Äußere Ihres Hauses konfigurieren."
-      }
+    quoteForm: {
+      title: "Angebot anfordern",
+      subtitle: "Vervollständigen Sie Ihre Daten für ein personalisiertes Angebot",
+      name: "Name",
+      email: "E-Mail",
+      phone: "Telefon",
+      namePlaceholder: "Ihr vollständiger Name",
+      emailPlaceholder: "ihre@email.com",
+      phonePlaceholder: "+34 600 000 000",
+      submit: "Anfrage senden",
+      submitting: "Wird gesendet...",
+      success: "Anfrage erfolgreich gesendet!",
+      error: "Fehler beim Senden der Anfrage"
     }
   },
   advantages: {

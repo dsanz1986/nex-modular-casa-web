@@ -1,5 +1,4 @@
 
-
 export interface ConfigOption {
   id: string;
   name: string;
@@ -18,6 +17,9 @@ export interface ConfiguratorState {
   exteriorCladding: string;
   exteriorDoors: string;
   exteriorWindows: string;
+  interiorFlooring: string;
+  interiorKitchen: string;
+  interiorBathroom: string;
 }
 
 export const configuratorData = {
@@ -42,18 +44,49 @@ export const configuratorData = {
       id: 'doors',
       name: 'Puertas exteriores',
       options: [
-        { id: 'puerta-simple-blanca', name: 'Puerta Simple Blanca', price: 0 },
-        { id: 'puerta-doble-blanca', name: 'Puerta Doble Blanca', price: 500 },
-        { id: 'puerta-doble-negra', name: 'Puerta Doble Negra', price: 500 }
+        { id: 'simple-blanca', name: 'Simple blanca', price: 0 },
+        { id: 'doble-blanca', name: 'Doble blanca', price: 500 },
+        { id: 'negra-doble', name: 'Negra doble', price: 600 }
       ]
     },
     windows: {
       id: 'windows',
       name: 'Ventanas exteriores',
       options: [
-        { id: 'ventanas-estandar', name: 'Ventanas Estándar', price: 0 },
-        { id: 'ventanas-abatibles', name: 'Ventanas Abatibles', price: 300 },
-        { id: 'ventanas-negras', name: 'Ventanas Negras', price: 200 }
+        { id: 'blancas', name: 'Blancas', price: 0 },
+        { id: 'abatibles', name: 'Abatibles', price: 300 },
+        { id: 'negras', name: 'Negras', price: 200 }
+      ]
+    }
+  },
+  interior: {
+    flooring: {
+      id: 'flooring',
+      name: 'Tarima',
+      options: [
+        { id: 'gris-claro', name: 'Gris claro', price: 0 },
+        { id: 'gris-oscuro', name: 'Gris oscuro', price: 200 },
+        { id: 'madera-clara', name: 'Madera clara', price: 400 },
+        { id: 'madera-oscura', name: 'Madera oscura', price: 400 }
+      ]
+    },
+    kitchen: {
+      id: 'kitchen',
+      name: 'Muebles de Cocina',
+      options: [
+        { id: 'madera-blanca', name: 'Madera blanca', price: 0 },
+        { id: 'madera-gris', name: 'Madera gris', price: 300 },
+        { id: 'madera-oscura', name: 'Madera oscura', price: 500 }
+      ]
+    },
+    bathroom: {
+      id: 'bathroom',
+      name: 'Muebles de baño',
+      options: [
+        { id: 'blanco-basic', name: 'Blanco basic', price: 0 },
+        { id: 'blanco-madera', name: 'Blanco madera', price: 200 },
+        { id: 'blanco-moderno', name: 'Blanco moderno', price: 300 },
+        { id: 'madera-clara', name: 'Madera clara', price: 400 }
       ]
     }
   }
@@ -61,44 +94,66 @@ export const configuratorData = {
 
 export const getDefaultConfig = (): ConfiguratorState => ({
   exteriorCladding: 'terracota',
-  exteriorDoors: 'puerta-simple-blanca',
-  exteriorWindows: 'ventanas-estandar'
+  exteriorDoors: 'simple-blanca',
+  exteriorWindows: 'blancas',
+  interiorFlooring: 'gris-claro',
+  interiorKitchen: 'madera-blanca',
+  interiorBathroom: 'blanco-basic'
 });
 
-// Image path mapping using correct file names from /public/configurator/nex-natura/exterior/
+// Updated image mapping with correct file names
 const imageMapping: Record<string, string> = {
-  // Base image (terracota default)
-  'base': 'base.jpg',
+  // Base images
+  'base-exterior': 'terracota.jpg',
+  'base-interior': 'basecocina.jpg',
   
-  // Cladding variations
-  'cladding-blanco': 'Blanca.png',
+  // Exterior cladding variations
+  'cladding-terracota': 'terracota.jpg',
+  'cladding-blanco': 'Blanca.png',  
   'cladding-gris-claro': 'Ladrillo-gris-blanco.png',
   'cladding-dorado': 'Ladrillo-amarillo.png',
   'cladding-gris-oscuro': 'Ladrillo gris.png',
   'cladding-antracita': 'Ladrillo-gris-varios.png',
   'cladding-rojo': 'Ladrillo-rojo-varios.png',
-  'cladding-naranja': 'Ladrillo-rojo-varios.png', // Fallback to red brick
+  'cladding-naranja': 'Ladrillo-rojo-varios.png',
   'cladding-madera-natural': 'Madera-media.png',
   'cladding-madera-chocolate': 'Madera-oscura.png',
   
   // Door variations
-  'doors-puerta-simple-blanca': 'Blanca-normal.png',
-  'doors-puerta-doble-blanca': 'Blanca-dos-puertas.png',
-  'doors-puerta-doble-negra': 'negra-dos-puertas.png',
+  'doors-simple-blanca': 'Blanca-normal.png',
+  'doors-doble-blanca': 'Blanca-dos-puertas.png',
+  'doors-negra-doble': 'negra-dos-puertas.png',
   
   // Window variations
-  'windows-ventanas-estandar': 'base.jpg', // Use base image for standard windows
-  'windows-ventanas-abatibles': 'hoja-abatible.png',
-  'windows-ventanas-negras': 'Negras.png'
+  'windows-blancas': 'blancas.jpg',
+  'windows-abatibles': 'hoja-abatible.png',
+  'windows-negras': 'Negras.png',
+  
+  // Interior flooring variations
+  'flooring-gris-claro': 'Gris.png',
+  'flooring-gris-oscuro': 'Gris-oscuro.png',
+  'flooring-madera-clara': 'Tarima-2.png',
+  'flooring-madera-oscura': 'Tarima-1.png',
+  
+  // Kitchen variations
+  'kitchen-madera-blanca': 'basecocina.jpg',
+  'kitchen-madera-gris': 'CocinaGris.png',
+  'kitchen-madera-oscura': 'CocinaMadera.png',
+  
+  // Bathroom variations
+  'bathroom-blanco-basic': 'blanco.png',
+  'bathroom-blanco-madera': 'blanco-madera.png',
+  'bathroom-blanco-moderno': 'blanco-moderno.png',
+  'bathroom-madera-clara': 'bañooriginal.jpg'
 };
 
-// Enhanced image path function using uploaded images
+// Enhanced image path function
 export const getImagePath = (category: string, option: string, view: 'exterior' | 'interior' = 'exterior'): string => {
   const imageKey = `${category}-${option}`;
   const fileName = imageMapping[imageKey];
   
-  if (fileName && view === 'exterior') {
-    return `/configurator/nex-natura/exterior/${fileName}`;
+  if (fileName) {
+    return `/configurator/nex-natura/${view}/${fileName}`;
   }
   
   // Fallback to original naming convention
@@ -108,16 +163,15 @@ export const getImagePath = (category: string, option: string, view: 'exterior' 
 
 // Get base image for each view
 export const getBaseImagePath = (view: 'exterior' | 'interior'): string => {
-  if (view === 'exterior') {
-    const fileName = imageMapping['base'];
-    if (fileName) {
-      return `/configurator/nex-natura/exterior/${fileName}`;
-    }
+  const baseKey = `base-${view}`;
+  const fileName = imageMapping[baseKey];
+  
+  if (fileName) {
+    return `/configurator/nex-natura/${view}/${fileName}`;
   }
   
   // Fallback to original path
-  const basePath = `/configurator/nex-natura/${view}`;
-  return `${basePath}/base.webp`;
+  return `/configurator/nex-natura/${view}/base.webp`;
 };
 
 // Get all layer images for current configuration
@@ -131,16 +185,30 @@ export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterio
     }
     
     // Add doors layer if not default
-    if (config.exteriorDoors !== 'puerta-simple-blanca') {
+    if (config.exteriorDoors !== 'simple-blanca') {
       layers.push({ category: 'doors', option: config.exteriorDoors });
     }
     
-    // Add windows layer if not default
-    if (config.exteriorWindows !== 'ventanas-estandar') {
+    // Add windows layer if not default  
+    if (config.exteriorWindows !== 'blancas') {
       layers.push({ category: 'windows', option: config.exteriorWindows });
     }
+  } else if (view === 'interior') {
+    // Add flooring layer if not default
+    if (config.interiorFlooring !== 'gris-claro') {
+      layers.push({ category: 'flooring', option: config.interiorFlooring });
+    }
+    
+    // Add kitchen layer if not default
+    if (config.interiorKitchen !== 'madera-blanca') {
+      layers.push({ category: 'kitchen', option: config.interiorKitchen });
+    }
+    
+    // Add bathroom layer if not default
+    if (config.interiorBathroom !== 'blanco-basic') {
+      layers.push({ category: 'bathroom', option: config.interiorBathroom });
+    }
   }
-  // Interior view currently has no configurable options
   
   return layers.map(layer => ({
     ...layer,
@@ -152,18 +220,47 @@ export const getConfigPrice = (config: ConfiguratorState): number => {
   const basePrice = 39990; // Precio base
   let extraPrice = 0;
 
-  // Add prices for doors
+  // Add prices for exterior doors
   const doorOption = configuratorData.exterior.doors.options.find(opt => opt.id === config.exteriorDoors);
   if (doorOption) {
     extraPrice += doorOption.price;
   }
 
-  // Add prices for windows
+  // Add prices for exterior windows
   const windowOption = configuratorData.exterior.windows.options.find(opt => opt.id === config.exteriorWindows);
   if (windowOption) {
     extraPrice += windowOption.price;
   }
 
+  // Add prices for interior flooring
+  const flooringOption = configuratorData.interior.flooring.options.find(opt => opt.id === config.interiorFlooring);
+  if (flooringOption) {
+    extraPrice += flooringOption.price;
+  }
+
+  // Add prices for interior kitchen
+  const kitchenOption = configuratorData.interior.kitchen.options.find(opt => opt.id === config.interiorKitchen);
+  if (kitchenOption) {
+    extraPrice += kitchenOption.price;
+  }
+
+  // Add prices for interior bathroom
+  const bathroomOption = configuratorData.interior.bathroom.options.find(opt => opt.id === config.interiorBathroom);
+  if (bathroomOption) {
+    extraPrice += bathroomOption.price;
+  }
+
   return basePrice + extraPrice;
 };
 
+// Function to get selected option details
+export const getSelectedOptions = (config: ConfiguratorState) => {
+  return {
+    exteriorCladding: configuratorData.exterior.cladding.options.find(opt => opt.id === config.exteriorCladding),
+    exteriorDoors: configuratorData.exterior.doors.options.find(opt => opt.id === config.exteriorDoors),
+    exteriorWindows: configuratorData.exterior.windows.options.find(opt => opt.id === config.exteriorWindows),
+    interiorFlooring: configuratorData.interior.flooring.options.find(opt => opt.id === config.interiorFlooring),
+    interiorKitchen: configuratorData.interior.kitchen.options.find(opt => opt.id === config.interiorKitchen),
+    interiorBathroom: configuratorData.interior.bathroom.options.find(opt => opt.id === config.interiorBathroom),
+  };
+};

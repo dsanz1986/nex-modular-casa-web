@@ -109,7 +109,10 @@ export const it = {
     categories: {
       exteriorCladding: "Rivestimento esterno",
       exteriorDoors: "Porte esterne",
-      exteriorWindows: "Finestre esterne"
+      exteriorWindows: "Finestre esterne",
+      interiorFlooring: "Pavimentazione",
+      interiorKitchen: "Mobili Cucina",
+      interiorBathroom: "Mobili Bagno"
     },
     options: {
       terracota: "Terracotta Classica",
@@ -122,20 +125,35 @@ export const it = {
       naranja: "Terracotta Moderna",
       "madera-natural": "Legno Naturale",
       "madera-chocolate": "Legno Premium",
-      // Door options
-      "puerta-simple-blanca": "Porta Semplice Bianca",
-      "puerta-doble-blanca": "Porta Doppia Bianca",
-      "puerta-doble-negra": "Porta Doppia Nera",
-      // Window options
-      "ventanas-estandar": "Finestre Standard",
-      "ventanas-abatibles": "Finestre a Battente",
-      "ventanas-negras": "Finestre Nere"
+      "negra-doble": "Doppia Nera",
+      "simple-blanca": "Semplice Bianca",
+      "doble-blanca": "Doppia Bianca",
+      "blancas": "Bianche",
+      "negras": "Nere",
+      "abatibles": "A Battente",
+      "gris-claro": "Grigio Chiaro",
+      "gris-oscuro": "Grigio Scuro",
+      "madera-clara": "Legno Chiaro",
+      "madera-oscura": "Legno Scuro",
+      "madera-blanca": "Legno Bianco",
+      "madera-gris": "Legno Grigio",
+      "blanco-basic": "Bianco Basic",
+      "blanco-madera": "Bianco Legno",
+      "blanco-moderno": "Bianco Moderno"
     },
-    interior: {
-      comingSoon: {
-        title: "Prossimamente disponibile",
-        description: "Le opzioni di personalizzazione degli interni saranno disponibili presto. Nel frattempo, puoi configurare l'esterno della tua casa."
-      }
+    quoteForm: {
+      title: "Richiedi Preventivo",
+      subtitle: "Completa i tuoi dati per ricevere un preventivo personalizzato",
+      name: "Nome",
+      email: "Email",
+      phone: "Telefono",
+      namePlaceholder: "Il tuo nome completo",
+      emailPlaceholder: "tua@email.com",
+      phonePlaceholder: "+34 600 000 000",
+      submit: "Invia richiesta",
+      submitting: "Invio in corso...",
+      success: "Richiesta inviata con successo!",
+      error: "Errore nell'invio della richiesta"
     }
   },
   advantages: {
