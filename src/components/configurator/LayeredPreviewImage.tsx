@@ -16,7 +16,12 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
 
   const baseImageSrc = getBaseImagePath(viewMode);
   const layers = getConfigurationLayers(config, viewMode);
-  const allImages = [baseImageSrc, ...layers.map(layer => layer.src)];
+  
+  // If there's a priority layer (last selected), show only that one
+  const priorityLayer = layers.find(layer => layer.priority);
+  const imagesToShow = priorityLayer ? [priorityLayer] : layers;
+  
+  const allImages = [baseImageSrc, ...imagesToShow.map(layer => layer.src)];
 
   // Preload images and track loading state
   useEffect(() => {
@@ -50,7 +55,7 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
       setFailedImages(failed);
       setIsLoading(false);
     });
-  }, [config, viewMode]);
+  }, [config, viewMode, JSON.stringify(config.lastSelected)]);
 
   if (isLoading) {
     return <Skeleton className={`w-full h-full ${className}`} />;
@@ -58,8 +63,8 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
 
   return (
     <div className={`relative w-full h-full ${className}`}>
-      {/* Base image */}
-      {loadedImages.has(baseImageSrc) && (
+      {/* Base image - only show if no priority layer or if base image is loaded */}
+      {(!priorityLayer || !loadedImages.has(priorityLayer.src)) && loadedImages.has(baseImageSrc) && (
         <img
           src={baseImageSrc}
           alt={`Base ${viewMode}`}
@@ -68,20 +73,20 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
       )}
 
       {/* Layer images */}
-      {layers.map((layer, index) => (
+      {imagesToShow.map((layer, index) => (
         loadedImages.has(layer.src) && (
           <img
-            key={`${layer.category}-${layer.option}`}
+            key={`${layer.category}-${layer.option}-${layer.priority ? 'priority' : 'normal'}`}
             src={layer.src}
             alt={`${layer.category} ${layer.option}`}
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ zIndex: index + 1 }}
+            style={{ zIndex: layer.priority ? 10 : index + 1 }}
           />
         )
       ))}
 
-      {/* Fallback if no base image loads */}
-      {!loadedImages.has(baseImageSrc) && (
+      {/* Fallback if no images load */}
+      {!loadedImages.has(baseImageSrc) && imagesToShow.every(layer => !loadedImages.has(layer.src)) && (
         <div className="absolute inset-0 bg-gradient-to-br from-forest-50 to-forest-100 flex items-center justify-center">
           <div className="text-center text-nex-text/60">
             <div className="text-sm font-medium">Vista {viewMode}</div>

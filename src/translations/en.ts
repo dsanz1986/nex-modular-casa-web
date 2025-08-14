@@ -6,14 +6,15 @@ export const en = {
     ventajas: "Advantages",
     casaPiloto: "Pilot House",
     contacto: "Contact",
-    whatsapp: "WhatsApp"
+    whatsapp: "WhatsApp",
+    configurator: "Design Your Home"
   },
   hero: {
     badge: "Mobile modular homes without construction",
     title: "Mobile modular homes",
     subtitle: "without construction or complications",
     description: "Transportable mobile modular homes, ready to install on your land. No foundation, no construction, no hassles.",
-    ctaMain: "I want to know more",
+    ctaMain: "Design Your Home",
     ctaSecondary: "Contact via WhatsApp",
     qualityBadge: "Premium Quality"
   },
@@ -65,7 +66,7 @@ export const en = {
     title: "Customization to your measure",
     subtitle: "Make your home unique. Customize every interior and exterior detail to create the home of your dreams.",
     configurator: {
-      cta: "Customize now"
+      cta: "Design Your Home"
     },
     interior: {
       distribution: "Customizable interior layout",

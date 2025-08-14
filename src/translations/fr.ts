@@ -1,19 +1,20 @@
 export const fr = {
   navbar: {
     inicio: "Accueil",
-    nosotros: "À propos de nous",
+    nosotros: "À propos de nous", 
     modelos: "Modèles",
     ventajas: "Avantages",
     casaPiloto: "Maison témoin",
     contacto: "Contact",
-    whatsapp: "WhatsApp"
+    whatsapp: "WhatsApp",
+    configurator: "Concevez Votre Maison"
   },
   hero: {
     badge: "Maisons modulaires mobiles sans construction",
     title: "Maisons modulaires mobiles",
     subtitle: "sans construction ni complications",
     description: "Maisons modulaires mobiles transportables, prêtes à être installées sur votre terrain. Sans fondation, sans construction, sans tracas.",
-    ctaMain: "Je veux en savoir plus",
+    ctaMain: "Concevez Votre Maison",
     ctaSecondary: "Contacter via WhatsApp",
     qualityBadge: "Qualité Premium"
   },
@@ -64,6 +65,9 @@ export const fr = {
   personalization: {
     title: "Personnalisation sur mesure",
     subtitle: "Rendez votre maison unique. Personnalisez chaque détail intérieur et extérieur pour créer la maison de vos rêves.",
+    configurator: {
+      cta: "Concevez Votre Maison"
+    },
     interior: {
       distribution: "Agencement intérieur personnalisable",
       distributionDesc: "Adaptez les espaces à votre style de vie",
