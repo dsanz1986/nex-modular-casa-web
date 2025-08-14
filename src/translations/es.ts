@@ -107,14 +107,13 @@ export const es = {
       total: "Total"
     },
     categories: {
-      exteriorCoating: "Revestimiento exterior",
-      exteriorColor: "Color exterior",
-      doors: "Puertas exteriores",
-      windows: "Ventanas",
-      flooring: "Suelo interior",
-      kitchen: "Cocina",
-      bathroom: "Baño",
-      interiorDoors: "Puertas interiores"
+      exteriorCladding: "Revestimiento exterior"
+    },
+    interior: {
+      comingSoon: {
+        title: "Próximamente disponible",
+        description: "Las opciones de personalización interior estarán disponibles pronto. Mientras tanto, puedes configurar el exterior de tu casa."
+      }
     }
   },
   advantages: {

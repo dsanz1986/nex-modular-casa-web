@@ -14,109 +14,32 @@ export interface ConfigCategory {
 }
 
 export interface ConfiguratorState {
-  exteriorCoating: string;
-  exteriorColor: string;
-  doors: string;
-  windows: string;
-  interiorFlooring: string;
-  kitchen: string;
-  bathroom: string;
-  interiorDoors: string;
+  exteriorCladding: string;
 }
 
 export const configuratorData = {
   exterior: {
-    coating: {
-      id: 'coating',
+    cladding: {
+      id: 'cladding',
       name: 'Revestimiento exterior',
       options: [
-        { id: 'wood', name: 'Madera', price: 0, color: '#8B4513' },
-        { id: 'stone', name: 'Piedra', price: 1500, color: '#696969' },
-        { id: 'composite', name: 'Composite', price: 1200, color: '#654321' },
-        { id: 'metal', name: 'Metal', price: 800, color: '#708090' }
-      ]
-    },
-    color: {
-      id: 'color',
-      name: 'Color exterior',
-      options: [
-        { id: 'natural', name: 'Natural', price: 0, color: '#D2B48C' },
-        { id: 'white', name: 'Blanco', price: 0, color: '#FFFFFF' },
-        { id: 'gray', name: 'Gris', price: 0, color: '#808080' },
-        { id: 'black', name: 'Negro', price: 0, color: '#2F2F2F' },
-        { id: 'green', name: 'Verde', price: 0, color: '#228B22' },
-        { id: 'blue', name: 'Azul', price: 0, color: '#4682B4' }
-      ]
-    },
-    doors: {
-      id: 'doors',
-      name: 'Puertas exteriores',
-      options: [
-        { id: 'standard', name: 'Estándar', price: 0 },
-        { id: 'premium', name: 'Premium', price: 800 },
-        { id: 'glass', name: 'Con cristal', price: 1200 }
-      ]
-    },
-    windows: {
-      id: 'windows',
-      name: 'Ventanas',
-      options: [
-        { id: 'standard', name: 'Estándar', price: 0 },
-        { id: 'large', name: 'Grandes', price: 1500 },
-        { id: 'panoramic', name: 'Panorámicas', price: 2500 }
-      ]
-    }
-  },
-  interior: {
-    flooring: {
-      id: 'flooring',
-      name: 'Suelo interior',
-      options: [
-        { id: 'laminate', name: 'Laminado', price: 0, color: '#DEB887' },
-        { id: 'vinyl', name: 'Vinílico', price: 600, color: '#F5F5DC' },
-        { id: 'wood', name: 'Madera', price: 1500, color: '#8B4513' },
-        { id: 'tile', name: 'Baldosa', price: 1200, color: '#D3D3D3' }
-      ]
-    },
-    kitchen: {
-      id: 'kitchen',
-      name: 'Cocina',
-      options: [
-        { id: 'basic', name: 'Básica', price: 0 },
-        { id: 'modern', name: 'Moderna', price: 2500 },
-        { id: 'luxury', name: 'Lujo', price: 5000 }
-      ]
-    },
-    bathroom: {
-      id: 'bathroom',
-      name: 'Baño',
-      options: [
-        { id: 'standard', name: 'Estándar', price: 0 },
-        { id: 'modern', name: 'Moderno', price: 1800 },
-        { id: 'luxury', name: 'Lujo', price: 3500 }
-      ]
-    },
-    interiorDoors: {
-      id: 'interiorDoors',
-      name: 'Puertas interiores',
-      options: [
-        { id: 'white', name: 'Blancas', price: 0 },
-        { id: 'wood', name: 'Madera', price: 800 },
-        { id: 'glass', name: 'Con cristal', price: 1200 }
+        { id: 'terracota', name: 'Terracota Clásica', price: 0, color: '#CD853F' },
+        { id: 'blanco', name: 'Composite Blanco', price: 1200, color: '#FFFFFF' },
+        { id: 'gris-claro', name: 'Piedra Gris Clara', price: 1800, color: '#D3D3D3' },
+        { id: 'dorado', name: 'Ladrillo Dorado', price: 2100, color: '#DAA520' },
+        { id: 'gris-oscuro', name: 'Ladrillo Gris', price: 1900, color: '#696969' },
+        { id: 'antracita', name: 'Piedra Antracita', price: 2500, color: '#2F4F4F' },
+        { id: 'rojo', name: 'Ladrillo Rojo', price: 1600, color: '#B22222' },
+        { id: 'naranja', name: 'Terracota Moderna', price: 1400, color: '#FF6347' },
+        { id: 'madera-natural', name: 'Madera Natural', price: 2800, color: '#DEB887' },
+        { id: 'madera-chocolate', name: 'Madera Premium', price: 3000, color: '#8B4513' }
       ]
     }
   }
 };
 
 export const getDefaultConfig = (): ConfiguratorState => ({
-  exteriorCoating: 'wood',
-  exteriorColor: 'natural',
-  doors: 'standard',
-  windows: 'standard',
-  interiorFlooring: 'laminate',
-  kitchen: 'basic',
-  bathroom: 'standard',
-  interiorDoors: 'white'
+  exteriorCladding: 'terracota'
 });
 
 // Enhanced image path function with multiple format support
@@ -140,19 +63,10 @@ export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterio
   
   if (view === 'exterior') {
     layers.push(
-      { category: 'coating', option: config.exteriorCoating },
-      { category: 'color', option: config.exteriorColor },
-      { category: 'doors', option: config.doors },
-      { category: 'windows', option: config.windows }
-    );
-  } else {
-    layers.push(
-      { category: 'flooring', option: config.interiorFlooring },
-      { category: 'kitchen', option: config.kitchen },
-      { category: 'bathroom', option: config.bathroom },
-      { category: 'interiorDoors', option: config.interiorDoors }
+      { category: 'cladding', option: config.exteriorCladding }
     );
   }
+  // Interior view currently has no configurable options
   
   return layers.map(layer => ({
     ...layer,
@@ -163,18 +77,9 @@ export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterio
 export const getConfigPrice = (config: ConfiguratorState): number => {
   let totalPrice = 39990; // Precio base
 
-  // Calcular extras
+  // Calcular extras del revestimiento exterior
   const exterior = configuratorData.exterior;
-  const interior = configuratorData.interior;
-
-  totalPrice += exterior.coating.options.find(o => o.id === config.exteriorCoating)?.price || 0;
-  totalPrice += exterior.color.options.find(o => o.id === config.exteriorColor)?.price || 0;
-  totalPrice += exterior.doors.options.find(o => o.id === config.doors)?.price || 0;
-  totalPrice += exterior.windows.options.find(o => o.id === config.windows)?.price || 0;
-  totalPrice += interior.flooring.options.find(o => o.id === config.interiorFlooring)?.price || 0;
-  totalPrice += interior.kitchen.options.find(o => o.id === config.kitchen)?.price || 0;
-  totalPrice += interior.bathroom.options.find(o => o.id === config.bathroom)?.price || 0;
-  totalPrice += interior.interiorDoors.options.find(o => o.id === config.interiorDoors)?.price || 0;
+  totalPrice += exterior.cladding.options.find(o => o.id === config.exteriorCladding)?.price || 0;
 
   return totalPrice;
 };

@@ -1,7 +1,8 @@
 
-import { ConfiguratorState, configuratorData } from "@/lib/configurator-data";
+import { ConfiguratorState } from "@/lib/configurator-data";
 import { useTranslation } from "react-i18next";
-import { OptionGroup } from "./OptionGroup";
+import { Card, CardContent } from "@/components/ui/card";
+import { Construction } from "lucide-react";
 
 interface InteriorControlsProps {
   config: ConfiguratorState;
@@ -13,34 +14,17 @@ export const InteriorControls = ({ config, onUpdate }: InteriorControlsProps) =>
 
   return (
     <div className="space-y-8">
-      <OptionGroup
-        title={t('configurator.categories.flooring')}
-        options={configuratorData.interior.flooring.options}
-        selectedValue={config.interiorFlooring}
-        onSelect={(value) => onUpdate({ interiorFlooring: value })}
-        showColors={true}
-      />
-
-      <OptionGroup
-        title={t('configurator.categories.kitchen')}
-        options={configuratorData.interior.kitchen.options}
-        selectedValue={config.kitchen}
-        onSelect={(value) => onUpdate({ kitchen: value })}
-      />
-
-      <OptionGroup
-        title={t('configurator.categories.bathroom')}
-        options={configuratorData.interior.bathroom.options}
-        selectedValue={config.bathroom}
-        onSelect={(value) => onUpdate({ bathroom: value })}
-      />
-
-      <OptionGroup
-        title={t('configurator.categories.interiorDoors')}
-        options={configuratorData.interior.interiorDoors.options}
-        selectedValue={config.interiorDoors}
-        onSelect={(value) => onUpdate({ interiorDoors: value })}
-      />
+      <Card className="border-dashed border-2 border-nex-text/20">
+        <CardContent className="p-8 text-center">
+          <Construction className="w-16 h-16 mx-auto mb-4 text-nex-text/40" />
+          <h3 className="text-lg font-playfair font-bold text-nex-text mb-2">
+            {t('configurator.interior.comingSoon.title')}
+          </h3>
+          <p className="text-nex-text/60 font-inter">
+            {t('configurator.interior.comingSoon.description')}
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 };

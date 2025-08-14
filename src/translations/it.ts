@@ -283,14 +283,13 @@ export const it = {
       total: "Totale"
     },
     categories: {
-      exteriorCoating: "Rivestimento esterno",
-      exteriorColor: "Colore esterno",
-      doors: "Porte esterne",
-      windows: "Finestre",
-      flooring: "Pavimentazione interna",
-      kitchen: "Cucina",
-      bathroom: "Bagno",
-      interiorDoors: "Porte interne"
+      exteriorCladding: "Rivestimento esterno"
+    },
+    interior: {
+      comingSoon: {
+        title: "Prossimamente disponibile",
+        description: "Le opzioni di personalizzazione degli interni saranno disponibili presto. Nel frattempo, puoi configurare l'esterno della tua casa."
+      }
     }
   }
 };

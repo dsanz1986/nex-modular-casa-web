@@ -14,33 +14,11 @@ export const ExteriorControls = ({ config, onUpdate }: ExteriorControlsProps) =>
   return (
     <div className="space-y-8">
       <OptionGroup
-        title={t('configurator.categories.exteriorCoating')}
-        options={configuratorData.exterior.coating.options}
-        selectedValue={config.exteriorCoating}
-        onSelect={(value) => onUpdate({ exteriorCoating: value })}
+        title={t('configurator.categories.exteriorCladding')}
+        options={configuratorData.exterior.cladding.options}
+        selectedValue={config.exteriorCladding}
+        onSelect={(value) => onUpdate({ exteriorCladding: value })}
         showColors={true}
-      />
-
-      <OptionGroup
-        title={t('configurator.categories.exteriorColor')}
-        options={configuratorData.exterior.color.options}
-        selectedValue={config.exteriorColor}
-        onSelect={(value) => onUpdate({ exteriorColor: value })}
-        showColors={true}
-      />
-
-      <OptionGroup
-        title={t('configurator.categories.doors')}
-        options={configuratorData.exterior.doors.options}
-        selectedValue={config.doors}
-        onSelect={(value) => onUpdate({ doors: value })}
-      />
-
-      <OptionGroup
-        title={t('configurator.categories.windows')}
-        options={configuratorData.exterior.windows.options}
-        selectedValue={config.windows}
-        onSelect={(value) => onUpdate({ windows: value })}
       />
     </div>
   );

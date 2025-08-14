@@ -283,14 +283,13 @@ export const de = {
       total: "Gesamt"
     },
     categories: {
-      exteriorCoating: "Außenverkleidung",
-      exteriorColor: "Außenfarbe",
-      doors: "Außentüren",
-      windows: "Fenster",
-      flooring: "Innenböden",
-      kitchen: "Küche",
-      bathroom: "Badezimmer",
-      interiorDoors: "Innentüren"
+      exteriorCladding: "Außenverkleidung"
+    },
+    interior: {
+      comingSoon: {
+        title: "Demnächst verfügbar",
+        description: "Innenausstattungsoptionen werden bald verfügbar sein. In der Zwischenzeit können Sie das Äußere Ihres Hauses konfigurieren."
+      }
     }
   }
 };

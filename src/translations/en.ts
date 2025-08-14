@@ -283,14 +283,13 @@ export const en = {
       total: "Total"
     },
     categories: {
-      exteriorCoating: "Exterior coating",
-      exteriorColor: "Exterior color",
-      doors: "Exterior doors",
-      windows: "Windows",
-      flooring: "Interior flooring",
-      kitchen: "Kitchen",
-      bathroom: "Bathroom",
-      interiorDoors: "Interior doors"
+      exteriorCladding: "Exterior cladding"
+    },
+    interior: {
+      comingSoon: {
+        title: "Coming Soon",
+        description: "Interior customization options will be available soon. Meanwhile, you can configure your house exterior."
+      }
     }
   }
 };
