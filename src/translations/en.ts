@@ -285,6 +285,18 @@ export const en = {
     categories: {
       exteriorCladding: "Exterior cladding"
     },
+    options: {
+      terracota: "Classic Terracotta",
+      blanco: "White Composite",
+      "gris-claro": "Light Grey Stone",
+      dorado: "Golden Brick",
+      "gris-oscuro": "Grey Brick",
+      antracita: "Anthracite Stone",
+      rojo: "Red Brick",
+      naranja: "Modern Terracotta",
+      "madera-natural": "Natural Wood",
+      "madera-chocolate": "Premium Wood"
+    },
     interior: {
       comingSoon: {
         title: "Coming Soon",

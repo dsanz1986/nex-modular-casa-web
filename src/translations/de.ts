@@ -1,6 +1,6 @@
 export const de = {
   navbar: {
-    inicio: "Startseite",
+    inicio: "Start",
     nosotros: "Über uns", 
     modelos: "Modelle",
     ventajas: "Vorteile",
@@ -9,30 +9,30 @@ export const de = {
     whatsapp: "WhatsApp"
   },
   hero: {
-    badge: "Mobile Modulhäuser ohne Bauarbeiten",
+    badge: "Mobile Modulhäuser ohne Bau",
     title: "Mobile Modulhäuser",
-    subtitle: "ohne Bauarbeiten oder Komplikationen",
-    description: "Transportable mobile Modulhäuser, bereit zur Installation auf Ihrem Grundstück. Ohne Fundament, ohne Bauarbeiten, ohne Probleme.",
-    ctaMain: "Ich möchte mehr erfahren",
+    subtitle: "ohne Bau oder Komplikationen",
+    description: "Transportable mobile Modulhäuser, bereit zur Installation auf Ihrem Grundstück. Ohne Fundament, ohne Bau, ohne Probleme.",
+    ctaMain: "Ich möchte mehr wissen",
     ctaSecondary: "Kontakt über WhatsApp",
-    qualityBadge: "Premium-Qualität"
+    qualityBadge: "Premium Qualität"
   },
   about: {
     delivered: "+50 Häuser geliefert",
-    title: "Spezialisten für mobile Modulhäuser ohne Bauarbeiten",
+    title: "Spezialisten für mobile Modulhäuser ohne Bau",
     description1: "Bei <strong>Nex Modular Homes</strong> sind wir Spezialisten für <strong>transportable mobile Modulhäuser</strong> in ganz Spanien. Unsere Modulhäuser benötigen kein Fundament oder komplexe Bauarbeiten.",
-    description2: "Wir bieten hochwertige <strong>mobile Fertighäuser</strong> mit enthaltener Installation. Wir begleiten Sie durch den gesamten Prozess: von der Modellauswahl und Anpassung bis zur Lieferung und endgültigen Installation auf Ihrem Grundstück.",
+    description2: "Wir bieten hochwertige <strong>mobile Fertighäuser</strong> mit Installation inklusive. Wir begleiten Sie durch den gesamten Prozess: von der Modellauswahl und Anpassung bis zur Lieferung und finalen Installation auf Ihrem Grundstück.",
     description3: "Mit mehr als <strong>50 gelieferten mobilen Modulhäusern</strong> in Spanien garantieren wir Qualität, Geschwindigkeit und den besten Kundendienst."
   },
   models: {
-    title: "Unsere mobilen Modulhausmodelle",
+    title: "Unsere mobilen Modulhaus-Modelle",
     subtitle: "Wählen Sie das Modell, das am besten zu Ihrem Lebensstil und Budget passt",
     fromPrice: "Ab",
-    originalPrice: "Ursprünglicher Preis",
+    originalPrice: "Originalpreis",
     currentOffer: "Aktuelles Angebot",
     seeDetails: "Details anzeigen",
     downloadPdf: "Technisches Datenblatt herunterladen",
-    specialOffer: "BEFRISTETES SONDERANGEBOT BIS 31. AUGUST!",
+    specialOffer: "BEGRENZTES SONDERANGEBOT BIS 31. AUGUST!",
     reservationDeadline: "Reservierungen vor dem 31. August",
     nexNatura: {
       name: "Nex Natura",
@@ -40,11 +40,11 @@ export const de = {
       originalPrice: "44.990€",
       offerPrice: "39.990€",
       features: [
-        "Widerstandsfähige verzinkte Stahlstruktur + 65mm EPS-Isolierung",
+        "Resistente Struktur aus verzinktem Stahl + 65mm EPS-Isolierung",
         "Ideal zum ganzjährigen Wohnen als Hauptwohnsitz",
         "Hohe Energieeffizienz und anpassbare Aufteilung",
-        "Lieferung und Installation in 3-4 Monaten ohne Bauarbeiten",
-        "Transport und Installation in ganz Spanien inbegriffen"
+        "Lieferung und Installation in 3-4 Monaten ohne Bau",
+        "Transport und Installation in ganz Spanien inklusive"
       ]
     },
     nexNido: {
@@ -53,22 +53,22 @@ export const de = {
       originalPrice: "24.990€",
       offerPrice: "19.990€",
       features: [
-        "Widerstandsfähige verzinkte Stahlstruktur + 65mm EPS-Isolierung",
+        "Resistente Struktur aus verzinktem Stahl + 65mm EPS-Isolierung",
         "Perfekt als Zweitwohnsitz oder Gästehaus",
         "Kompaktes, effizientes und vollständig transportables Design",
         "Schnelle Lieferung in 3-4 Monaten ohne Bauarbeiten",
-        "Transport und Installation in ganz Spanien inbegriffen"
+        "Transport und Installation in ganz Spanien inklusive"
       ]
     }
   },
   personalization: {
-    title: "Anpassung nach Ihren Wünschen",
-    subtitle: "Machen Sie Ihr Zuhause einzigartig. Passen Sie jedes Detail im Innen- und Außenbereich an, um das Zuhause Ihrer Träume zu schaffen.",
+    title: "Anpassung nach Maß",
+    subtitle: "Machen Sie Ihr Zuhause einzigartig. Passen Sie jedes Detail innen und außen an, um das Zuhause Ihrer Träume zu schaffen.",
     interior: {
       distribution: "Anpassbare Innenaufteilung",
       distributionDesc: "Passen Sie die Räume an Ihren Lebensstil an",
-      flooring: "Innenboden nach Ihrem Geschmack",
-      flooringDesc: "Wählen Sie aus verschiedenen Bodenbelagsoptionen",
+      flooring: "Innenbodenbelag nach Ihrem Geschmack",
+      flooringDesc: "Wählen Sie aus mehreren Bodenbelagsoptionen",
       extraBath: "Zusätzliches Badezimmer",
       extraBathDesc: "Möglichkeit, ein zweites Badezimmer hinzuzufügen",
       coating: "Innenbeschichtung",
@@ -76,7 +76,7 @@ export const de = {
     },
     exterior: {
       extraWindows: "Zusätzliche Fenster",
-      extraWindowsDesc: "Mehr natürliches Licht in Ihr Zuhause bringen",
+      extraWindowsDesc: "Fügen Sie mehr natürliches Licht zu Ihrem Zuhause hinzu",
       doorTypes: "Türtypen",
       doorTypesDesc: "Verschiedene Türoptionen zur Auswahl",
       extraDoors: "Zusätzliche Türen",
@@ -87,10 +87,10 @@ export const de = {
   },
   advantages: {
     title: "Warum ein mobiles Modulhaus wählen?",
-    subtitle: "Unsere Häuser kombinieren das Beste aus einem Modulhaus mit der Freiheit eines mobilen Zuhauses.",
+    subtitle: "Unsere Häuser kombinieren das Beste eines Modulhauses mit der Freiheit eines mobilen Hauses.",
     items: {
       noConstruction: {
-        title: "Keine Bauarbeiten oder Fundament erforderlich",
+        title: "Keine Bau- oder Fundamentarbeiten erforderlich",
         description: "Schnelle und saubere Installation ohne komplexe Bauarbeiten"
       },
       readyToInstall: {
@@ -99,41 +99,41 @@ export const de = {
       },
       customizable: {
         title: "Vollständig anpassbar",
-        description: "Aufteilung, Türen, Fenster und Oberflächen nach Ihren Wünschen"
+        description: "Aufteilung, Türen, Fenster und Oberflächen nach Maß"
       },
       energyEfficient: {
         title: "Hohe Energieeffizienz",
         description: "Ausgezeichnete Isolierung mit 65mm EPS-Sandwichpaneelen"
       },
       fixedPrice: {
-        title: "Festpreis von Anfang an",
+        title: "Festpreis vom ersten Moment an",
         description: "Keine Überraschungen oder versteckten Kosten in Ihrem Budget"
       },
       pilotHouse: {
-        title: "Pilothaus zur Besichtigung verfügbar",
+        title: "Pilothaus zum Besichtigen verfügbar",
         description: "Kommen Sie nach Campo Real (Madrid) und erleben Sie, wie es sich anfühlt zu leben"
       }
     }
   },
   licenses: {
-    title: "Was ist mit den Genehmigungen? Keine Sorge, wir helfen Ihnen",
-    subtitle: "Wir wissen, dass der rechtliche Teil Zweifel aufwerfen kann, deshalb begleiten wir Sie auch in diesem Schritt. Da es sich um mobile Wohnungen ohne Fundament oder dauerhafte Verankerung handelt, werden sie nicht als traditionelle Gebäude betrachtet, was ihre städtebaulichen Verfahren erheblich vereinfacht.",
+    title: "Was ist mit den Lizenzen? Keine Sorge, wir helfen Ihnen",
+    subtitle: "Wir wissen, dass der rechtliche Teil Zweifel aufwerfen kann, deshalb begleiten wir Sie auch in diesem Schritt. Da es sich um mobile Wohnungen ohne Fundament oder dauerhafte Verankerung handelt, gelten sie nicht als traditionelle Gebäude, was ihre städtebaulichen Verfahren erheblich vereinfacht.",
     whatToDo: {
       title: "Was müssen Sie tun?",
-      description: "Sie müssen nur einen Installationsantrag bei Ihrem Rathaus einreichen. Wir stellen Ihnen das schriftliche Muster, das technische Datenblatt und den rechtlichen Anhang zur Verfügung, die notwendig sind, um zu beweisen, dass es sich um eine mobile und reversible Wohnung handelt."
+      description: "Sie müssen nur einen Installationsantrag bei Ihrer Gemeinde stellen. Wir stellen Ihnen das schriftliche Muster, das technische Datenblatt und den rechtlichen Anhang zur Verfügung, die erforderlich sind, um zu beweisen, dass es sich um eine mobile und reversible Wohnung handelt."
     },
     trust: {
       title: "Vertrauen",
       description: "Wir möchten, dass Sie sich bei jedem Schritt sicher fühlen. Wir verkaufen nicht nur ein Haus: Wir geben Ihnen die Werkzeuge, um es mit allen Garantien zu installieren."
     },
     simplified: {
-      title: "Vereinfachtes Verfahren",
-      description: "Da kein dauerhaftes Fundament erforderlich ist, ist das Bearbeitungsverfahren viel agiler als bei traditionellen Bauten. Wir begleiten Sie bei jedem Schritt des rechtlichen Prozesses."
+      title: "Vereinfachter Prozess",
+      description: "Da kein dauerhaftes Fundament erforderlich ist, ist der Bearbeitungsprozess viel agiler als bei traditionellen Bauweisen. Wir begleiten Sie bei jedem Schritt des rechtlichen Prozesses."
     }
   },
   pilotHouse: {
     title: "Besuchen Sie unser Pilothaus",
-    description: "Besuchen Sie unser Pilothaus in Campo Real (Madrid). Entdecken Sie, wie es sich anfühlt, in einem modernen und effizienten Fertighaus zu leben.",
+    description: "Kommen Sie und besuchen Sie unser Pilothaus in Campo Real (Madrid). Entdecken Sie, wie es sich anfühlt, in einem modernen und effizienten Fertighaus zu leben.",
     cta: "Termin über WhatsApp anfragen",
     address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
     location: "Campo Real, Madrid"
@@ -141,39 +141,39 @@ export const de = {
   faq: {
     badge: "Wir lösen Ihre Zweifel",
     title: "Häufig gestellte Fragen",
-    subtitle: "Alles, was Sie über unsere mobilen Modulhäuser ohne Bauarbeiten wissen müssen",
+    subtitle: "Alles, was Sie über unsere mobilen Modulhäuser ohne Bau wissen müssen",
     items: {
       permisos: {
         question: "Benötige ich spezielle Genehmigungen für die Installation eines mobilen Modulhauses?",
-        answer: "In den meisten Fällen benötigen Sie keine Baugenehmigungen, aber es ist ratsam, sich bei Ihrem örtlichen Rathaus über spezifische Vorschriften in Ihrer Region zu informieren. Unsere mobilen Modulhäuser sind als transportable Wohnungen klassifiziert, was die Verfahren im Vergleich zu traditionellen Bauten erheblich vereinfacht."
+        answer: "In den meisten Fällen benötigen Sie keine Baugenehmigungen, aber es ist ratsam, sich bei Ihrer örtlichen Gemeinde über spezifische Vorschriften in Ihrer Gegend zu informieren. Unsere mobilen Modulhäuser sind als transportable Wohnungen klassifiziert, was die Verfahren im Vergleich zum traditionellen Bau erheblich vereinfacht."
       },
       instalacion: {
         question: "Wie lange dauert die Installation?",
-        answer: "Die Installation unserer mobilen Modulhäuser ist sehr schnell. Sobald das Haus auf Ihrem Grundstück ankommt, wird der Installations- und Inbetriebnahmeprozess in 1-2 Tagen abgeschlossen. Sie benötigen kein Fundament oder Vorarbeiten, nur eine ebene Oberfläche."
+        answer: "Die Installation unserer mobilen Modulhäuser ist sehr schnell. Sobald das Haus auf Ihrem Grundstück ankommt, ist der Installations- und Inbetriebnahmeprozess in 1-2 Tagen abgeschlossen. Sie benötigen kein Fundament oder Vorarbeiten, nur eine ebene Fläche."
       },
       terreno: {
         question: "Welche Art von Grundstück benötige ich?",
-        answer: "Unsere mobilen Modulhäuser sind sehr vielseitig in Bezug auf das Grundstück. Sie benötigen eine ebene Oberfläche. Das Grundstück kann ländlich oder städtisch sein. Wir helfen Ihnen bei der Bewertung der Machbarkeit Ihres Grundstücks."
+        answer: "Unsere mobilen Modulhäuser sind sehr vielseitig in Bezug auf das Grundstück. Sie benötigen eine ebene Fläche. Das Grundstück kann ländlich oder städtisch sein. Wir helfen Ihnen bei der Bewertung der Machbarkeit Ihres Grundstücks."
       },
       servicios: {
-        question: "Wie werden die Versorgungsleistungen (Wasser und Strom) angeschlossen?",
-        answer: "Die Häuser sind für Standardanschlüsse vorbereitet. Wasser und Strom werden wie in jedem traditionellen Haus angeschlossen. Für Internet können Sie Glasfaseranschluss (falls in der Gegend verfügbar), 4G/5G oder Satelliteninternet verwenden. Wir beraten Sie über die besten Optionen für Ihren spezifischen Standort."
+        question: "Wie werden die Versorgungsleitungen (Wasser und Strom) angeschlossen?",
+        answer: "Die Häuser kommen für Standardanschlüsse vorbereitet. Wasser und Strom werden wie in jedem traditionellen Haus angeschlossen. Für Internet können Sie Glasfaseranschluss (falls in der Gegend verfügbar), 4G/5G oder Satelliteninternet verwenden. Wir beraten Sie über die besten Optionen für Ihren spezifischen Standort."
       },
       calidad: {
         question: "Welche Garantien bieten Sie für die Bauqualität?",
-        answer: "Wir bieten eine 10-jährige Strukturgarantie und eine 2-jährige Gesamtgarantie."
+        answer: "Wir bieten 10 Jahre Strukturgarantie und 2 Jahre allgemeine Garantie."
       },
       precio: {
         question: "Was ist im Preis enthalten?",
-        answer: "Der Preis umfasst das vollständig fertiggestellte Haus, Transport zu Ihrem Standort mit kompletter Installation. Keine versteckten Kosten oder Überraschungen."
+        answer: "Der Preis beinhaltet das komplett fertige Haus, Transport zu Ihrem Standort mit kompletter Installation. Keine versteckten Kosten oder Überraschungen."
       },
       mantenimiento: {
         question: "Welche Wartung benötigen sie?",
-        answer: "Die Wartung ist minimal, ähnlich wie bei jedem traditionellen Haus. Die verwendeten Materialien sind für wenig Wartung und lange Haltbarkeit konzipiert."
+        answer: "Die Wartung ist minimal, ähnlich wie bei jedem traditionellen Haus. Die verwendeten Materialien sind so konzipiert, dass sie wenig Wartung benötigen und eine lange Lebensdauer haben."
       },
       movilidad: {
-        question: "Können sie an einen anderen Ort verlegt werden?",
-        answer: "Ja, einer der großen Vorteile unserer mobilen Modulhäuser ist ihre Transportfähigkeit. Obwohl sie als Ihr dauerhaftes Zuhause konzipiert sind, können sie bei Bedarf an einen anderen Ort verlegt werden. Der Prozess erfordert Planung und spezialisierte Ausrüstung, die wir verwalten können."
+        question: "Können sie an einen anderen Standort verlegt werden?",
+        answer: "Ja, einer der großen Vorteile unserer mobilen Modulhäuser ist ihre Transportfähigkeit. Obwohl sie als Ihr dauerhaftes Zuhause konzipiert sind, können sie bei Bedarf an einen anderen Standort verlegt werden. Der Prozess erfordert Planung und spezialisierte Ausrüstung, die wir verwalten können."
       },
       personalizacion: {
         question: "Kann ich das Innendesign anpassen?",
@@ -203,7 +203,7 @@ export const de = {
     },
     success: {
       title: "Anfrage erfolgreich gesendet!",
-      description: "Wir haben Ihre Anfrage erhalten und werden uns bald mit Ihnen in Verbindung setzen."
+      description: "Wir haben Ihre Anfrage erhalten und werden Sie bald kontaktieren."
     },
     error: {
       title: "Fehler beim Senden",
@@ -212,18 +212,18 @@ export const de = {
   },
   footer: {
     company: "Nex Modular Homes",
-    description: "Spezialisten für mobile Modulhäuser ohne Bauarbeiten, bereit zur Installation in ganz Spanien.",
+    description: "Spezialisten für mobile Modulhäuser ohne Bau, bereit zur Installation in ganz Spanien.",
     contact: "Kontakt",
     services: "Unsere Dienstleistungen",
     servicesList: {
       modularHomes: "Modulhäuser",
-      installationIncluded: "Installation inbegriffen",
+      installationIncluded: "Installation inklusive",
       personalization: "Anpassung",
-      pilotHouse: "Besuchbares Pilothaus"
+      pilotHouse: "Besichtigbares Pilothaus"
     },
     legal: "Rechtliche Informationen",
     legalLinks: {
-      legalNotice: "Rechtlicher Hinweis",
+      legalNotice: "Impressum",
       privacy: "Datenschutzrichtlinie",
       cookies: "Cookie-Richtlinie"
     },
@@ -232,7 +232,7 @@ export const de = {
   cookies: {
     banner: {
       title: "🍪 Wir verbessern Ihre Erfahrung",
-      description: "Wir verwenden Cookies, um Ihre Erfahrung zu personalisieren und unseren Traffic zu analysieren. Nur wesentliche sind obligatorisch.",
+      description: "Wir verwenden Cookies, um Ihre Erfahrung zu personalisieren und unseren Traffic zu analysieren. Nur die wesentlichen sind obligatorisch.",
       configure: "Konfigurieren",
       essential: "Nur wesentliche",
       acceptAll: "Alle akzeptieren"
@@ -242,10 +242,10 @@ export const de = {
       description: "Passen Sie Ihre Erfahrung an, indem Sie wählen, welche Arten von Cookies Sie zulassen möchten.",
       necessary: {
         title: "Notwendige Cookies",
-        description: "Wesentlich für die Grundfunktionen der Website. Immer aktiv."
+        description: "Wesentlich für die grundlegende Funktionalität der Website. Immer aktiv."
       },
       analytics: {
-        title: "Analytische Cookies",
+        title: "Analytics-Cookies",
         description: "Sie helfen uns zu verstehen, wie Sie mit unserer Website interagieren."
       },
       marketing: {
@@ -269,8 +269,8 @@ export const de = {
     backToHome: "Zurück zur Startseite",
     share: "Teilen",
     download: "Herunterladen",
-    exterior: "Außenbereich",
-    interior: "Innenbereich",
+    exterior: "Außen",
+    interior: "Innen",
     previewDescription: "Vorschau Ihrer aktuellen Konfiguration",
     requestQuote: "Angebot anfordern",
     miniPreview: {
@@ -285,10 +285,22 @@ export const de = {
     categories: {
       exteriorCladding: "Außenverkleidung"
     },
+    options: {
+      terracota: "Klassische Terrakotta",
+      blanco: "Weißes Komposit",
+      "gris-claro": "Hellgrauer Stein",
+      dorado: "Goldener Ziegel",
+      "gris-oscuro": "Grauer Ziegel",
+      antracita: "Anthrazit-Stein",
+      rojo: "Roter Ziegel",
+      naranja: "Moderne Terrakotta",
+      "madera-natural": "Naturholz",
+      "madera-chocolate": "Premium-Holz"
+    },
     interior: {
       comingSoon: {
         title: "Demnächst verfügbar",
-        description: "Innenausstattungsoptionen werden bald verfügbar sein. In der Zwischenzeit können Sie das Äußere Ihres Hauses konfigurieren."
+        description: "Innenausstattungsoptionen werden in Kürze verfügbar sein. In der Zwischenzeit können Sie das Äußere Ihres Hauses konfigurieren."
       }
     }
   }

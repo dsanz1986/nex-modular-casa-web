@@ -109,6 +109,18 @@ export const es = {
     categories: {
       exteriorCladding: "Revestimiento exterior"
     },
+    options: {
+      terracota: "Terracota Clásica",
+      blanco: "Composite Blanco",
+      "gris-claro": "Piedra Gris Clara",
+      dorado: "Ladrillo Dorado",
+      "gris-oscuro": "Ladrillo Gris",
+      antracita: "Piedra Antracita",
+      rojo: "Ladrillo Rojo",
+      naranja: "Terracota Moderna",
+      "madera-natural": "Madera Natural",
+      "madera-chocolate": "Madera Premium"
+    },
     interior: {
       comingSoon: {
         title: "Próximamente disponible",

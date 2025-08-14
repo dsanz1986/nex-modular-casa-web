@@ -1,5 +1,5 @@
 
-import { ConfiguratorState } from "@/lib/configurator-data";
+import { ConfiguratorState, configuratorData } from "@/lib/configurator-data";
 import { Card, CardContent } from "@/components/ui/card";
 import { Eye } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -12,6 +12,11 @@ interface MobileMiniPreviewProps {
 
 export const MobileMiniPreview = ({ config, viewMode }: MobileMiniPreviewProps) => {
   const { t } = useTranslation();
+
+  // Get the selected cladding option details
+  const selectedCladding = configuratorData.exterior.cladding.options.find(
+    option => option.id === config.exteriorCladding
+  );
 
   return (
     <Card className="border-0 shadow-md bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden">
@@ -34,23 +39,13 @@ export const MobileMiniPreview = ({ config, viewMode }: MobileMiniPreviewProps) 
             </p>
             <div className="flex flex-wrap gap-1">
               {viewMode === "exterior" ? (
-                <>
-                  <span className="text-xs bg-nex-primary/10 text-nex-primary px-2 py-1 rounded">
-                    {config.exteriorCoating}
-                  </span>
-                  <span className="text-xs bg-nex-primary/10 text-nex-primary px-2 py-1 rounded">
-                    {config.exteriorColor}
-                  </span>
-                </>
+                <span className="text-xs bg-nex-primary/10 text-nex-primary px-2 py-1 rounded">
+                  {selectedCladding?.name || config.exteriorCladding}
+                </span>
               ) : (
-                <>
-                  <span className="text-xs bg-nex-primary/10 text-nex-primary px-2 py-1 rounded">
-                    {config.interiorFlooring}
-                  </span>
-                  <span className="text-xs bg-nex-primary/10 text-nex-primary px-2 py-1 rounded">
-                    {config.kitchen}
-                  </span>
-                </>
+                <span className="text-xs bg-nex-primary/10 text-nex-primary px-2 py-1 rounded">
+                  {t('configurator.interior.comingSoon.title')}
+                </span>
               )}
             </div>
           </div>

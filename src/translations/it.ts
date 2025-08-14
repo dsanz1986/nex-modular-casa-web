@@ -285,6 +285,18 @@ export const it = {
     categories: {
       exteriorCladding: "Rivestimento esterno"
     },
+    options: {
+      terracota: "Terracotta Classica",
+      blanco: "Composite Bianco",
+      "gris-claro": "Pietra Grigio Chiaro",
+      dorado: "Mattone Dorato",
+      "gris-oscuro": "Mattone Grigio",
+      antracita: "Pietra Antracite",
+      rojo: "Mattone Rosso",
+      naranja: "Terracotta Moderno",
+      "madera-natural": "Legno Naturale",
+      "madera-chocolate": "Legno Premium"
+    },
     interior: {
       comingSoon: {
         title: "Prossimamente disponibile",
