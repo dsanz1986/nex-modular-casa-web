@@ -300,7 +300,7 @@ export const it = {
     interior: {
       comingSoon: {
         title: "Prossimamente disponibile",
-        description: "Le opzioni di personalizzazione degli interni saranno disponibili presto. Nel frattempo, puoi configurare l'esterno della tua casa."
+        description: "Le opzioni di personalizzazione degli interni saranno disponibili pronto. Nel frattempo, puoi configurare l'esterno della tua casa."
       }
     }
   }
