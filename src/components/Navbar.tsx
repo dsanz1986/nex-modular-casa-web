@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,7 +6,7 @@ import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 
-export const Navbar = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
   const location = useLocation();
@@ -150,3 +149,5 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+export default Navbar;
