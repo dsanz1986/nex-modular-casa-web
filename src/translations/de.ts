@@ -64,6 +64,9 @@ export const de = {
   personalization: {
     title: "Anpassung nach Maß",
     subtitle: "Machen Sie Ihr Zuhause einzigartig. Passen Sie jedes Detail innen und außen an, um das Zuhause Ihrer Träume zu schaffen.",
+    configurator: {
+      cta: "Jetzt anpassen"
+    },
     interior: {
       distribution: "Anpassbare Innenaufteilung",
       distributionDesc: "Passen Sie die Räume an Ihren Lebensstil an",
@@ -83,6 +86,56 @@ export const de = {
       extraDoorsDesc: "Mehr Zugänge für größeren Komfort",
       coating: "Außenbeschichtung",
       coatingDesc: "Die gewünschte Außenoberfläche"
+    }
+  },
+  configurator: {
+    title: "Konfigurator",
+    backToHome: "Zurück zur Startseite",
+    share: "Teilen",
+    download: "Herunterladen",
+    exterior: "Außen",
+    interior: "Innen",
+    previewDescription: "Vorschau Ihrer aktuellen Konfiguration",
+    requestQuote: "Angebot anfordern",
+    miniPreview: {
+      currentView: "Aktuelle Ansicht"
+    },
+    summary: {
+      title: "Konfigurationszusammenfassung",
+      basePrice: "Grundpreis",
+      extras: "Extras",
+      total: "Gesamt"
+    },
+    categories: {
+      exteriorCladding: "Außenverkleidung",
+      exteriorDoors: "Außentüren",
+      exteriorWindows: "Außenfenster"
+    },
+    options: {
+      terracota: "Klassische Terrakotta",
+      blanco: "Weißes Komposit",
+      "gris-claro": "Hellgrauer Stein",
+      dorado: "Goldener Ziegel",
+      "gris-oscuro": "Grauer Ziegel",
+      antracita: "Anthrazit-Stein",
+      rojo: "Roter Ziegel",
+      naranja: "Moderne Terrakotta",
+      "madera-natural": "Naturholz",
+      "madera-chocolate": "Premium-Holz",
+      // Door options
+      "puerta-simple-blanca": "Einfache Weiße Tür",
+      "puerta-doble-blanca": "Doppelte Weiße Tür",
+      "puerta-doble-negra": "Doppelte Schwarze Tür",
+      // Window options
+      "ventanas-estandar": "Standard Fenster",
+      "ventanas-abatibles": "Schwingfenster",
+      "ventanas-negras": "Schwarze Fenster"
+    },
+    interior: {
+      comingSoon: {
+        title: "Demnächst verfügbar",
+        description: "Innenausstattungsoptionen werden in Kürze verfügbar sein. In der Zwischenzeit können Sie das Äußere Ihres Hauses konfigurieren."
+      }
     }
   },
   advantages: {
@@ -263,45 +316,5 @@ export const de = {
     fr: "Français",
     de: "Deutsch",
     it: "Italiano"
-  },
-  configurator: {
-    title: "Konfigurator",
-    backToHome: "Zurück zur Startseite",
-    share: "Teilen",
-    download: "Herunterladen",
-    exterior: "Außen",
-    interior: "Innen",
-    previewDescription: "Vorschau Ihrer aktuellen Konfiguration",
-    requestQuote: "Angebot anfordern",
-    miniPreview: {
-      currentView: "Aktuelle Ansicht"
-    },
-    summary: {
-      title: "Konfigurationszusammenfassung",
-      basePrice: "Grundpreis",
-      extras: "Extras",
-      total: "Gesamt"
-    },
-    categories: {
-      exteriorCladding: "Außenverkleidung"
-    },
-    options: {
-      terracota: "Klassische Terrakotta",
-      blanco: "Weißes Komposit",
-      "gris-claro": "Hellgrauer Stein",
-      dorado: "Goldener Ziegel",
-      "gris-oscuro": "Grauer Ziegel",
-      antracita: "Anthrazit-Stein",
-      rojo: "Roter Ziegel",
-      naranja: "Moderne Terrakotta",
-      "madera-natural": "Naturholz",
-      "madera-chocolate": "Premium-Holz"
-    },
-    interior: {
-      comingSoon: {
-        title: "Demnächst verfügbar",
-        description: "Innenausstattungsoptionen werden in Kürze verfügbar sein. In der Zwischenzeit können Sie das Äußere Ihres Hauses konfigurieren."
-      }
-    }
   }
 };

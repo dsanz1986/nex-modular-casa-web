@@ -1,4 +1,5 @@
 
+
 import { ConfiguratorState, configuratorData } from "@/lib/configurator-data";
 import { Card, CardContent } from "@/components/ui/card";
 import { Eye } from "lucide-react";
@@ -13,9 +14,17 @@ interface MobileMiniPreviewProps {
 export const MobileMiniPreview = ({ config, viewMode }: MobileMiniPreviewProps) => {
   const { t } = useTranslation();
 
-  // Get the selected cladding option details
+  // Get the selected option details
   const selectedCladding = configuratorData.exterior.cladding.options.find(
     option => option.id === config.exteriorCladding
+  );
+  
+  const selectedDoors = configuratorData.exterior.doors.options.find(
+    option => option.id === config.exteriorDoors
+  );
+  
+  const selectedWindows = configuratorData.exterior.windows.options.find(
+    option => option.id === config.exteriorWindows
   );
 
   return (
@@ -39,9 +48,17 @@ export const MobileMiniPreview = ({ config, viewMode }: MobileMiniPreviewProps) 
             </p>
             <div className="flex flex-wrap gap-1">
               {viewMode === "exterior" ? (
-                <span className="text-xs bg-nex-primary/10 text-nex-primary px-2 py-1 rounded">
-                  {selectedCladding?.name || config.exteriorCladding}
-                </span>
+                <>
+                  <span className="text-xs bg-nex-primary/10 text-nex-primary px-2 py-1 rounded">
+                    {selectedCladding?.name || config.exteriorCladding}
+                  </span>
+                  <span className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded">
+                    {selectedDoors?.name || config.exteriorDoors}
+                  </span>
+                  <span className="text-xs bg-green-50 text-green-600 px-2 py-1 rounded">
+                    {selectedWindows?.name || config.exteriorWindows}
+                  </span>
+                </>
               ) : (
                 <span className="text-xs bg-nex-primary/10 text-nex-primary px-2 py-1 rounded">
                   {t('configurator.interior.comingSoon.title')}
@@ -54,3 +71,4 @@ export const MobileMiniPreview = ({ config, viewMode }: MobileMiniPreviewProps) 
     </Card>
   );
 };
+

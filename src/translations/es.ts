@@ -64,6 +64,9 @@ export const es = {
   personalization: {
     title: "Personalización a tu medida",
     subtitle: "Haz tu casa única. Personaliza cada detalle interior y exterior para crear el hogar de tus sueños.",
+    configurator: {
+      cta: "Personalizar ahora"
+    },
     interior: {
       distribution: "Distribución interior personalizable",
       distributionDesc: "Adapta los espacios a tu estilo de vida",
@@ -104,9 +107,12 @@ export const es = {
       total: "Total"
     },
     categories: {
-      exteriorCladding: "Revestimiento exterior"
+      exteriorCladding: "Revestimiento exterior",
+      exteriorDoors: "Puertas exteriores",
+      exteriorWindows: "Ventanas exteriores"
     },
     options: {
+      // Cladding options
       terracota: "Terracota Clásica",
       blanco: "Composite Blanco",
       "gris-claro": "Piedra Gris Clara",
@@ -116,7 +122,15 @@ export const es = {
       rojo: "Ladrillo Rojo",
       naranja: "Terracota Moderna",
       "madera-natural": "Madera Natural",
-      "madera-chocolate": "Madera Premium"
+      "madera-chocolate": "Madera Premium",
+      // Door options
+      "puerta-simple-blanca": "Puerta Simple Blanca",
+      "puerta-doble-blanca": "Puerta Doble Blanca",
+      "puerta-doble-negra": "Puerta Doble Negra",
+      // Window options
+      "ventanas-estandar": "Ventanas Estándar",
+      "ventanas-abatibles": "Ventanas Abatibles",
+      "ventanas-negras": "Ventanas Negras"
     },
     interior: {
       comingSoon: {

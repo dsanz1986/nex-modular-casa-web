@@ -1,4 +1,5 @@
 
+
 export interface ConfigOption {
   id: string;
   name: string;
@@ -15,6 +16,8 @@ export interface ConfigCategory {
 
 export interface ConfiguratorState {
   exteriorCladding: string;
+  exteriorDoors: string;
+  exteriorWindows: string;
 }
 
 export const configuratorData = {
@@ -34,29 +37,59 @@ export const configuratorData = {
         { id: 'madera-natural', name: 'Madera Natural', price: 0, color: '#DEB887' },
         { id: 'madera-chocolate', name: 'Madera Premium', price: 0, color: '#8B4513' }
       ]
+    },
+    doors: {
+      id: 'doors',
+      name: 'Puertas exteriores',
+      options: [
+        { id: 'puerta-simple-blanca', name: 'Puerta Simple Blanca', price: 0 },
+        { id: 'puerta-doble-blanca', name: 'Puerta Doble Blanca', price: 500 },
+        { id: 'puerta-doble-negra', name: 'Puerta Doble Negra', price: 500 }
+      ]
+    },
+    windows: {
+      id: 'windows',
+      name: 'Ventanas exteriores',
+      options: [
+        { id: 'ventanas-estandar', name: 'Ventanas Estándar', price: 0 },
+        { id: 'ventanas-abatibles', name: 'Ventanas Abatibles', price: 300 },
+        { id: 'ventanas-negras', name: 'Ventanas Negras', price: 200 }
+      ]
     }
   }
 };
 
 export const getDefaultConfig = (): ConfiguratorState => ({
-  exteriorCladding: 'terracota'
+  exteriorCladding: 'terracota',
+  exteriorDoors: 'puerta-simple-blanca',
+  exteriorWindows: 'ventanas-estandar'
 });
 
-// Image path mapping to match uploaded files
+// Image path mapping using correct file names from /public/configurator/nex-natura/exterior/
 const imageMapping: Record<string, string> = {
   // Base image (terracota default)
-  'base': 'fe3d1060-0ef2-4564-9c30-b98d43c27356.png',
+  'base': 'base.jpg',
   
   // Cladding variations
-  'cladding-blanco': '49a21b50-31bf-4b24-ab6b-d13ca1f6ae37.png',
-  'cladding-gris-claro': '81f18258-549e-40ba-980c-8c359e18274a.png',
-  'cladding-dorado': '79ca2d0d-0900-4bb6-abf8-e8b64454f4cb.png',
-  'cladding-gris-oscuro': '806c2b8e-df1f-427b-bbb2-fd48460d4149.png',
-  'cladding-antracita': 'bba57c36-edcb-45ac-ba78-1c52ea488f58.png',
-  'cladding-rojo': '755573d9-3acd-45bd-8ce4-91598735c183.png',
-  'cladding-naranja': '2dff8986-af57-4311-a724-1e6d41e0bc08.png',
-  'cladding-madera-natural': '96abd6cd-722c-4b49-aa6e-28b7dac1a1c1.png',
-  'cladding-madera-chocolate': '2c692612-5352-4091-9f9b-463d9521af51.png'
+  'cladding-blanco': 'Blanca.png',
+  'cladding-gris-claro': 'Ladrillo-gris-blanco.png',
+  'cladding-dorado': 'Ladrillo-amarillo.png',
+  'cladding-gris-oscuro': 'Ladrillo gris.png',
+  'cladding-antracita': 'Ladrillo-gris-varios.png',
+  'cladding-rojo': 'Ladrillo-rojo-varios.png',
+  'cladding-naranja': 'Ladrillo-rojo-varios.png', // Fallback to red brick
+  'cladding-madera-natural': 'Madera-media.png',
+  'cladding-madera-chocolate': 'Madera-oscura.png',
+  
+  // Door variations
+  'doors-puerta-simple-blanca': 'Blanca-normal.png',
+  'doors-puerta-doble-blanca': 'Blanca-dos-puertas.png',
+  'doors-puerta-doble-negra': 'negra-dos-puertas.png',
+  
+  // Window variations
+  'windows-ventanas-estandar': 'base.jpg', // Use base image for standard windows
+  'windows-ventanas-abatibles': 'hoja-abatible.png',
+  'windows-ventanas-negras': 'Negras.png'
 };
 
 // Enhanced image path function using uploaded images
@@ -64,8 +97,8 @@ export const getImagePath = (category: string, option: string, view: 'exterior' 
   const imageKey = `${category}-${option}`;
   const fileName = imageMapping[imageKey];
   
-  if (fileName) {
-    return `/lovable-uploads/${fileName}`;
+  if (fileName && view === 'exterior') {
+    return `/configurator/nex-natura/exterior/${fileName}`;
   }
   
   // Fallback to original naming convention
@@ -78,7 +111,7 @@ export const getBaseImagePath = (view: 'exterior' | 'interior'): string => {
   if (view === 'exterior') {
     const fileName = imageMapping['base'];
     if (fileName) {
-      return `/lovable-uploads/${fileName}`;
+      return `/configurator/nex-natura/exterior/${fileName}`;
     }
   }
   
@@ -91,11 +124,21 @@ export const getBaseImagePath = (view: 'exterior' | 'interior'): string => {
 export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterior' | 'interior') => {
   const layers = [];
   
-  if (view === 'exterior' && config.exteriorCladding !== 'terracota') {
-    // Only add layer if it's not the default terracota (which is the base image)
-    layers.push(
-      { category: 'cladding', option: config.exteriorCladding }
-    );
+  if (view === 'exterior') {
+    // Add cladding layer if not default
+    if (config.exteriorCladding !== 'terracota') {
+      layers.push({ category: 'cladding', option: config.exteriorCladding });
+    }
+    
+    // Add doors layer if not default
+    if (config.exteriorDoors !== 'puerta-simple-blanca') {
+      layers.push({ category: 'doors', option: config.exteriorDoors });
+    }
+    
+    // Add windows layer if not default
+    if (config.exteriorWindows !== 'ventanas-estandar') {
+      layers.push({ category: 'windows', option: config.exteriorWindows });
+    }
   }
   // Interior view currently has no configurable options
   
@@ -107,7 +150,20 @@ export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterio
 
 export const getConfigPrice = (config: ConfiguratorState): number => {
   const basePrice = 39990; // Precio base
+  let extraPrice = 0;
 
-  // Sin precios adicionales, todos los revestimientos están incluidos
-  return basePrice;
+  // Add prices for doors
+  const doorOption = configuratorData.exterior.doors.options.find(opt => opt.id === config.exteriorDoors);
+  if (doorOption) {
+    extraPrice += doorOption.price;
+  }
+
+  // Add prices for windows
+  const windowOption = configuratorData.exterior.windows.options.find(opt => opt.id === config.exteriorWindows);
+  if (windowOption) {
+    extraPrice += windowOption.price;
+  }
+
+  return basePrice + extraPrice;
 };
+

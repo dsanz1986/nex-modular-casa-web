@@ -64,6 +64,9 @@ export const en = {
   personalization: {
     title: "Customization to your measure",
     subtitle: "Make your home unique. Customize every interior and exterior detail to create the home of your dreams.",
+    configurator: {
+      cta: "Customize now"
+    },
     interior: {
       distribution: "Customizable interior layout",
       distributionDesc: "Adapt the spaces to your lifestyle",
@@ -83,6 +86,54 @@ export const en = {
       extraDoorsDesc: "More access for greater comfort",
       coating: "Exterior coating",
       coatingDesc: "The exterior finish you want"
+    }
+  },
+  configurator: {
+    title: "Configurator",
+    backToHome: "Back to Home",
+    share: "Share",
+    download: "Download",
+    exterior: "Exterior",
+    interior: "Interior",
+    previewDescription: "Preview of your current configuration",
+    requestQuote: "Request Quote",
+    miniPreview: {
+      currentView: "Current view"
+    },
+    summary: {
+      title: "Configuration Summary",
+      basePrice: "Base price",
+      extras: "Extras",
+      total: "Total"
+    },
+    categories: {
+      exteriorCladding: "Exterior cladding",
+      exteriorDoors: "Exterior doors",
+      exteriorWindows: "Exterior windows"
+    },
+    options: {
+      terracota: "Classic Terracotta",
+      blanco: "White Composite",
+      "gris-claro": "Light Grey Stone",
+      dorado: "Golden Brick",
+      "gris-oscuro": "Grey Brick",
+      antracita: "Anthracite Stone",
+      rojo: "Red Brick",
+      naranja: "Modern Terracotta",
+      "madera-natural": "Natural Wood",
+      "madera-chocolate": "Premium Wood",
+      "puerta-simple-blanca": "Simple White Door",
+      "puerta-doble-blanca": "Double White Door",
+      "puerta-doble-negra": "Double Black Door",
+      "ventanas-estandar": "Standard Windows",
+      "ventanas-abatibles": "Casement Windows",
+      "ventanas-negras": "Black Windows"
+    },
+    interior: {
+      comingSoon: {
+        title: "Coming Soon",
+        description: "Interior customization options will be available soon. Meanwhile, you can configure your house exterior."
+      }
     }
   },
   advantages: {
@@ -263,45 +314,5 @@ export const en = {
     fr: "Français",
     de: "Deutsch",
     it: "Italiano"
-  },
-  configurator: {
-    title: "Configurator",
-    backToHome: "Back to Home",
-    share: "Share",
-    download: "Download",
-    exterior: "Exterior",
-    interior: "Interior",
-    previewDescription: "Preview of your current configuration",
-    requestQuote: "Request Quote",
-    miniPreview: {
-      currentView: "Current view"
-    },
-    summary: {
-      title: "Configuration Summary",
-      basePrice: "Base price",
-      extras: "Extras",
-      total: "Total"
-    },
-    categories: {
-      exteriorCladding: "Exterior cladding"
-    },
-    options: {
-      terracota: "Classic Terracotta",
-      blanco: "White Composite",
-      "gris-claro": "Light Grey Stone",
-      dorado: "Golden Brick",
-      "gris-oscuro": "Grey Brick",
-      antracita: "Anthracite Stone",
-      rojo: "Red Brick",
-      naranja: "Modern Terracotta",
-      "madera-natural": "Natural Wood",
-      "madera-chocolate": "Premium Wood"
-    },
-    interior: {
-      comingSoon: {
-        title: "Coming Soon",
-        description: "Interior customization options will be available soon. Meanwhile, you can configure your house exterior."
-      }
-    }
   }
 };

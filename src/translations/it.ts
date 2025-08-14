@@ -64,6 +64,9 @@ export const it = {
   personalization: {
     title: "Personalizzazione su misura",
     subtitle: "Rendi unica la tua casa. Personalizza ogni dettaglio interno ed esterno per creare la casa dei tuoi sogni.",
+    configurator: {
+      cta: "Personalizza ora"
+    },
     interior: {
       distribution: "Distribuzione interna personalizzabile",
       distributionDesc: "Adatta gli spazi al tuo stile di vita",
@@ -83,6 +86,56 @@ export const it = {
       extraDoorsDesc: "Più accessi per maggiore comodità",
       coating: "Rivestimento esterno",
       coatingDesc: "La finitura esterna che desideri"
+    }
+  },
+  configurator: {
+    title: "Configuratore",
+    backToHome: "Torna alla Home",
+    share: "Condividi",
+    download: "Scarica",
+    exterior: "Esterno",
+    interior: "Interno",
+    previewDescription: "Anteprima della tua configurazione attuale",
+    requestQuote: "Richiedi Preventivo",
+    miniPreview: {
+      currentView: "Vista attuale"
+    },
+    summary: {
+      title: "Riepilogo configurazione",
+      basePrice: "Prezzo base",
+      extras: "Extra",
+      total: "Totale"
+    },
+    categories: {
+      exteriorCladding: "Rivestimento esterno",
+      exteriorDoors: "Porte esterne",
+      exteriorWindows: "Finestre esterne"
+    },
+    options: {
+      terracota: "Terracotta Classica",
+      blanco: "Composito Bianco",
+      "gris-claro": "Pietra Grigio Chiaro",
+      dorado: "Mattone Dorato",
+      "gris-oscuro": "Mattone Grigio",
+      antracita: "Pietra Antracite",
+      rojo: "Mattone Rosso",
+      naranja: "Terracotta Moderna",
+      "madera-natural": "Legno Naturale",
+      "madera-chocolate": "Legno Premium",
+      // Door options
+      "puerta-simple-blanca": "Porta Semplice Bianca",
+      "puerta-doble-blanca": "Porta Doppia Bianca",
+      "puerta-doble-negra": "Porta Doppia Nera",
+      // Window options
+      "ventanas-estandar": "Finestre Standard",
+      "ventanas-abatibles": "Finestre a Battente",
+      "ventanas-negras": "Finestre Nere"
+    },
+    interior: {
+      comingSoon: {
+        title: "Prossimamente disponibile",
+        description: "Le opzioni di personalizzazione degli interni saranno disponibili presto. Nel frattempo, puoi configurare l'esterno della tua casa."
+      }
     }
   },
   advantages: {
@@ -263,45 +316,5 @@ export const it = {
     fr: "Français",
     de: "Deutsch",
     it: "Italiano"
-  },
-  configurator: {
-    title: "Configuratore",
-    backToHome: "Torna alla Home",
-    share: "Condividi",
-    download: "Scarica",
-    exterior: "Esterno",
-    interior: "Interno",
-    previewDescription: "Anteprima della tua configurazione attuale",
-    requestQuote: "Richiedi Preventivo",
-    miniPreview: {
-      currentView: "Vista attuale"
-    },
-    summary: {
-      title: "Riepilogo configurazione",
-      basePrice: "Prezzo base",
-      extras: "Extra",
-      total: "Totale"
-    },
-    categories: {
-      exteriorCladding: "Rivestimento esterno"
-    },
-    options: {
-      terracota: "Terracotta Classica",
-      blanco: "Composito Bianco",
-      "gris-claro": "Pietra Grigio Chiaro",
-      dorado: "Mattone Dorato",
-      "gris-oscuro": "Mattone Grigio",
-      antracita: "Pietra Antracite",
-      rojo: "Mattone Rosso",
-      naranja: "Terracotta Moderna",
-      "madera-natural": "Legno Naturale",
-      "madera-chocolate": "Legno Premium"
-    },
-    interior: {
-      comingSoon: {
-        title: "Prossimamente disponibile",
-        description: "Le opzioni di personalizzazione degli interni saranno disponibili presto. Nel frattempo, puoi configurare l'esterno della tua casa."
-      }
-    }
   }
 };
