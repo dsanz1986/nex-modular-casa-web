@@ -1,7 +1,6 @@
 
 import { ConfigOption } from "@/lib/configurator-data";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
 
 interface OptionGroupProps {
@@ -42,11 +41,6 @@ export const OptionGroup = ({ title, options, selectedValue, onSelect, showColor
                     )}
                     <div>
                       <h5 className="font-inter font-medium text-nex-text">{option.name}</h5>
-                      {option.price > 0 && (
-                        <Badge variant="secondary" className="mt-1">
-                          +{option.price}€
-                        </Badge>
-                      )}
                     </div>
                   </div>
                   

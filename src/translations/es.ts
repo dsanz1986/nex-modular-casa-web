@@ -64,9 +64,6 @@ export const es = {
   personalization: {
     title: "Personalización a tu medida",
     subtitle: "Haz tu casa única. Personaliza cada detalle interior y exterior para crear el hogar de tus sueños.",
-    configurator: {
-      cta: "Diseña tu casa ahora"
-    },
     interior: {
       distribution: "Distribución interior personalizable",
       distributionDesc: "Adapta los espacios a tu estilo de vida",
