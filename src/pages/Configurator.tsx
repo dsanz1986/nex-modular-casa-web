@@ -10,7 +10,6 @@ import { getDefaultConfig, ConfiguratorState } from "@/lib/configurator-data";
 import { ConfiguratorPreview } from "@/components/configurator/ConfiguratorPreview";
 import { ExteriorControls } from "@/components/configurator/ExteriorControls";
 import { InteriorControls } from "@/components/configurator/InteriorControls";
-import { MobileMiniPreview } from "@/components/configurator/MobileMiniPreview";
 import { ConfiguratorSummary } from "@/components/configurator/ConfiguratorSummary";
 
 export default function Configurator() {
@@ -55,22 +54,19 @@ export default function Configurator() {
       </div>
 
       <div className="container mx-auto px-4 py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Preview Section */}
-          <div className="lg:col-span-2 space-y-4">
-            {/* Mobile Mini Preview */}
-            <div className="lg:hidden">
-              <MobileMiniPreview config={config} viewMode={viewMode} />
-            </div>
-
-            {/* Main Preview */}
+        {/* Two column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          {/* Preview Section - Left Column */}
+          <div className="space-y-4">
             <Card className="border-0 shadow-lg">
               <CardContent className="p-6">
                 <ConfiguratorPreview config={config} viewMode={viewMode} />
               </CardContent>
             </Card>
+          </div>
 
-            {/* Controls */}
+          {/* Controls Section - Right Column */}
+          <div className="space-y-4">
             <Card className="border-0 shadow-lg">
               <CardContent className="p-6">
                 <Tabs value={viewMode} onValueChange={(value) => setViewMode(value as "exterior" | "interior")}>
@@ -94,21 +90,11 @@ export default function Configurator() {
               </CardContent>
             </Card>
           </div>
+        </div>
 
-          {/* Sidebar */}
-          <div className="space-y-4">
-            {/* Desktop Preview */}
-            <div className="hidden lg:block">
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-4">
-                  <ConfiguratorPreview config={config} viewMode={viewMode} />
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Summary */}
-            <ConfiguratorSummary config={config} />
-          </div>
+        {/* Summary Section - Full Width Below */}
+        <div className="w-full">
+          <ConfiguratorSummary config={config} />
         </div>
       </div>
     </div>

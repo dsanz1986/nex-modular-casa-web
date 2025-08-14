@@ -119,32 +119,32 @@ const imageMapping: Record<string, string> = {
   'cladding-madera-natural': 'Madera-media.png',
   'cladding-madera-chocolate': 'Madera-oscura.png',
   
-  // Door variations
+  // Door variations - updated according to user specifications
   'doors-simple-blanca': 'Blanca-normal.png',
   'doors-doble-blanca': 'Blanca-dos-puertas.png',
   'doors-negra-doble': 'negra-dos-puertas.png',
   
-  // Window variations
+  // Window variations - updated according to user specifications
   'windows-blancas': 'blancas.jpg',
   'windows-abatibles': 'hoja-abatible.png',
   'windows-negras': 'Negras.png',
   
-  // Interior flooring variations
+  // Interior flooring variations - updated according to user specifications
   'flooring-gris-claro': 'Gris.png',
   'flooring-gris-oscuro': 'Gris-oscuro.png',
-  'flooring-madera-clara': 'Tarima-2.png',
-  'flooring-madera-oscura': 'Tarima-1.png',
+  'flooring-madera-clara': 'Tarima-1.png',  // Changed from Tarima-2.png
+  'flooring-madera-oscura': 'Tarima-2.png', // Changed from Tarima-1.png
   
   // Kitchen variations
   'kitchen-madera-blanca': 'basecocina.jpg',
   'kitchen-madera-gris': 'CocinaGris.png',
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
-  // Bathroom variations
-  'bathroom-blanco-basic': 'blanco.png',
+  // Bathroom variations - updated according to user specifications
+  'bathroom-blanco-basic': 'bañooriginal.jpg',    // Changed from blanco.png
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
-  'bathroom-madera-clara': 'bañooriginal.jpg'
+  'bathroom-madera-clara': 'bañooriginal.jpg'     // Same as blanco-basic
 };
 
 // Enhanced image path function

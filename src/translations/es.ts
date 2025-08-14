@@ -1,4 +1,3 @@
-
 export const es = {
   navbar: {
     inicio: "Inicio",
@@ -102,10 +101,7 @@ export const es = {
       currentView: "Vista actual"
     },
     summary: {
-      title: "Resumen de configuración",
-      basePrice: "Precio base",
-      extras: "Extras",
-      total: "Total"
+      title: "Resumen de configuración"
     },
     categories: {
       exteriorCladding: "Revestimiento exterior",
@@ -119,9 +115,9 @@ export const es = {
       // Cladding options
       terracota: "Terracota Clásica",
       blanco: "Composite Blanco",
-      "gris-claro": "Piedra Gris Clara",
+      "cladding-gris-claro": "Piedra Gris Clara",
       dorado: "Ladrillo Dorado",
-      "gris-oscuro": "Ladrillo Gris",
+      "cladding-gris-oscuro": "Ladrillo Gris",
       antracita: "Piedra Antracita",
       rojo: "Ladrillo Rojo",
       naranja: "Terracota Moderna",
@@ -132,23 +128,23 @@ export const es = {
       "simple-blanca": "Simple blanca",
       "doble-blanca": "Doble blanca",
       // Window options
-      "blancas": "Blancas",
-      "negras": "Negras",
-      "abatibles": "Abatibles",
+      blancas: "Blancas",
+      negras: "Negras",
+      abatibles: "Abatibles",
       // Interior flooring options
-      "gris-claro": "Gris claro",
-      "gris-oscuro": "Gris oscuro",
-      "madera-clara": "Madera clara",
-      "madera-oscura": "Madera oscura",
+      "flooring-gris-claro": "Gris claro",
+      "flooring-gris-oscuro": "Gris oscuro",
+      "flooring-madera-clara": "Madera clara",
+      "flooring-madera-oscura": "Madera oscura",
       // Kitchen options
-      "madera-blanca": "Madera blanca",
-      "madera-gris": "Madera gris",
-      "madera-oscura": "Madera oscura",
+      "kitchen-madera-blanca": "Madera blanca",
+      "kitchen-madera-gris": "Madera gris",
+      "kitchen-madera-oscura": "Madera oscura",
       // Bathroom options
-      "blanco-basic": "Blanco basic",
-      "blanco-madera": "Blanco madera",
-      "blanco-moderno": "Blanco moderno",
-      "madera-clara": "Madera clara"
+      "bathroom-blanco-basic": "Blanco basic",
+      "bathroom-blanco-madera": "Blanco madera",
+      "bathroom-blanco-moderno": "Blanco moderno",
+      "bathroom-madera-clara": "Madera clara"
     },
     quoteForm: {
       title: "Solicitar presupuesto",

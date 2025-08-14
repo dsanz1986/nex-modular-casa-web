@@ -101,10 +101,7 @@ export const en = {
       currentView: "Current view"
     },
     summary: {
-      title: "Configuration Summary",
-      basePrice: "Base price",
-      extras: "Extras",
-      total: "Total"
+      title: "Configuration Summary"
     },
     categories: {
       exteriorCladding: "Exterior cladding",
@@ -117,9 +114,9 @@ export const en = {
     options: {
       terracota: "Classic Terracotta",
       blanco: "White Composite",
-      "gris-claro": "Light Grey Stone",
+      "cladding-gris-claro": "Light Grey Stone",
       dorado: "Golden Brick",
-      "gris-oscuro": "Grey Brick",
+      "cladding-gris-oscuro": "Grey Brick",
       antracita: "Anthracite Stone",
       rojo: "Red Brick",
       naranja: "Modern Terracotta",
@@ -128,18 +125,20 @@ export const en = {
       "negra-doble": "Black Double",
       "simple-blanca": "Simple White",
       "doble-blanca": "Double White",
-      "blancas": "White",
-      "negras": "Black",
-      "abatibles": "Casement",
-      "gris-claro": "Light Grey",
-      "gris-oscuro": "Dark Grey",
-      "madera-clara": "Light Wood",
-      "madera-oscura": "Dark Wood",
-      "madera-blanca": "White Wood",
-      "madera-gris": "Grey Wood",
-      "blanco-basic": "Basic White",
-      "blanco-madera": "White Wood",
-      "blanco-moderno": "Modern White"
+      blancas: "White",
+      negras: "Black",
+      abatibles: "Casement",
+      "flooring-gris-claro": "Light Grey",
+      "flooring-gris-oscuro": "Dark Grey",
+      "flooring-madera-clara": "Light Wood",
+      "flooring-madera-oscura": "Dark Wood",
+      "kitchen-madera-blanca": "White Wood",
+      "kitchen-madera-gris": "Grey Wood",
+      "kitchen-madera-oscura": "Dark Wood",
+      "bathroom-blanco-basic": "Basic White",
+      "bathroom-blanco-madera": "White Wood",
+      "bathroom-blanco-moderno": "Modern White",
+      "bathroom-madera-clara": "Light Wood"
     },
     quoteForm: {
       title: "Request Quote",

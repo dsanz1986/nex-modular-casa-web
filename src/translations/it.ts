@@ -101,10 +101,7 @@ export const it = {
       currentView: "Vista attuale"
     },
     summary: {
-      title: "Riepilogo configurazione",
-      basePrice: "Prezzo base",
-      extras: "Extra",
-      total: "Totale"
+      title: "Riepilogo configurazione"
     },
     categories: {
       exteriorCladding: "Rivestimento esterno",
@@ -117,9 +114,9 @@ export const it = {
     options: {
       terracota: "Terracotta Classica",
       blanco: "Composito Bianco",
-      "gris-claro": "Pietra Grigio Chiaro",
+      "cladding-gris-claro": "Pietra Grigio Chiaro",
       dorado: "Mattone Dorato",
-      "gris-oscuro": "Mattone Grigio",
+      "cladding-gris-oscuro": "Mattone Grigio",
       antracita: "Pietra Antracite",
       rojo: "Mattone Rosso",
       naranja: "Terracotta Moderna",
@@ -128,18 +125,20 @@ export const it = {
       "negra-doble": "Doppia Nera",
       "simple-blanca": "Semplice Bianca",
       "doble-blanca": "Doppia Bianca",
-      "blancas": "Bianche",
-      "negras": "Nere",
-      "abatibles": "A Battente",
-      "gris-claro": "Grigio Chiaro",
-      "gris-oscuro": "Grigio Scuro",
-      "madera-clara": "Legno Chiaro",
-      "madera-oscura": "Legno Scuro",
-      "madera-blanca": "Legno Bianco",
-      "madera-gris": "Legno Grigio",
-      "blanco-basic": "Bianco Basic",
-      "blanco-madera": "Bianco Legno",
-      "blanco-moderno": "Bianco Moderno"
+      blancas: "Bianche",
+      negras: "Nere",
+      abatibles: "A Battente",
+      "flooring-gris-claro": "Grigio Chiaro",
+      "flooring-gris-oscuro": "Grigio Scuro",
+      "flooring-madera-clara": "Legno Chiaro",
+      "flooring-madera-oscura": "Legno Scuro",
+      "kitchen-madera-blanca": "Legno Bianco",
+      "kitchen-madera-gris": "Legno Grigio",
+      "kitchen-madera-oscura": "Legno Scuro",
+      "bathroom-blanco-basic": "Bianco Basic",
+      "bathroom-blanco-madera": "Bianco Legno",
+      "bathroom-blanco-moderno": "Bianco Moderno",
+      "bathroom-madera-clara": "Legno Chiaro"
     },
     quoteForm: {
       title: "Richiedi Preventivo",
