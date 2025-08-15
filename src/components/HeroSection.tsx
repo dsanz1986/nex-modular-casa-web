@@ -1,3 +1,4 @@
+
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { AIButton } from "@/components/ui/ai-button";
@@ -68,15 +69,6 @@ const HeroSection = () => {
                 <MessageCircle className="w-5 h-5 mr-2" />
                 {t('hero.ctaSecondary')}
               </Button>
-            </div>
-
-            <div className="pt-4">
-              <Badge 
-                variant="outline" 
-                className="border-emerald-200 text-emerald-700 bg-emerald-50 font-medium animate-fade-in"
-              >
-                ✓ {t('hero.qualityBadge')}
-              </Badge>
             </div>
           </div>
 

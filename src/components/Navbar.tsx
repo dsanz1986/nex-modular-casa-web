@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AIButton } from "@/components/ui/ai-button";
 import LanguageSelector from "./LanguageSelector";
@@ -41,14 +42,11 @@ const Navbar = () => {
     <nav className="bg-white/95 backdrop-blur-sm shadow-sm border-b border-forest-100 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16 lg:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-nex-primary to-forest-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">N</span>
+          {/* Logo - Simple N icon only */}
+          <Link to="/" className="flex items-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-nex-primary to-forest-500 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">N</span>
             </div>
-            <span className="text-xl font-playfair font-bold text-nex-text">
-              Nex Modular Homes
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -85,6 +83,7 @@ const Navbar = () => {
               onClick={handleWhatsAppClick}
               className="border-nex-primary/30 text-nex-primary hover:bg-nex-primary/5 font-medium"
             >
+              <MessageCircle className="w-4 h-4 mr-2" />
               {t('navbar.whatsapp')}
             </Button>
             
@@ -139,6 +138,7 @@ const Navbar = () => {
                   onClick={handleWhatsAppClick}
                   className="w-full border-nex-primary/30 text-nex-primary hover:bg-nex-primary/5 font-medium"
                 >
+                  <MessageCircle className="w-4 h-4 mr-2" />
                   {t('navbar.whatsapp')}
                 </Button>
               </div>
