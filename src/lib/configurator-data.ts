@@ -1,4 +1,3 @@
-
 export interface ConfigOption {
   id: string;
   name: string;
@@ -93,7 +92,7 @@ export const configuratorData = {
 };
 
 export const getDefaultConfig = (): ConfiguratorState => ({
-  exteriorCladding: 'terracota',
+  exteriorCladding: 'gris-oscuro',
   exteriorDoors: 'simple-blanca',
   exteriorWindows: 'blancas',
   interiorFlooring: 'gris-claro',
@@ -101,10 +100,10 @@ export const getDefaultConfig = (): ConfiguratorState => ({
   interiorBathroom: 'blanco-basic'
 });
 
-// Updated image mapping with correct file names
+// Fixed image mapping with correct file names
 const imageMapping: Record<string, string> = {
-  // Base images
-  'base-exterior': 'terracota.jpg',
+  // Base images - fixed exterior base
+  'base-exterior': 'base.jpg',
   'base-interior': 'basecocina.jpg',
   
   // Exterior cladding variations
@@ -119,32 +118,32 @@ const imageMapping: Record<string, string> = {
   'cladding-madera-natural': 'Madera-media.png',
   'cladding-madera-chocolate': 'Madera-oscura.png',
   
-  // Door variations - updated according to user specifications
+  // Door variations
   'doors-simple-blanca': 'Blanca-normal.png',
   'doors-doble-blanca': 'Blanca-dos-puertas.png',
   'doors-negra-doble': 'negra-dos-puertas.png',
   
-  // Window variations - updated according to user specifications
-  'windows-blancas': 'blancas.jpg',
+  // Window variations - fixed white windows
+  'windows-blancas': 'base.jpg',
   'windows-abatibles': 'hoja-abatible.png',
   'windows-negras': 'Negras.png',
   
-  // Interior flooring variations - updated according to user specifications
+  // Interior flooring variations
   'flooring-gris-claro': 'Gris.png',
   'flooring-gris-oscuro': 'Gris-oscuro.png',
-  'flooring-madera-clara': 'Tarima-1.png',  // Changed from Tarima-2.png
-  'flooring-madera-oscura': 'Tarima-2.png', // Changed from Tarima-1.png
+  'flooring-madera-clara': 'Tarima-1.png',
+  'flooring-madera-oscura': 'Tarima-2.png',
   
   // Kitchen variations
   'kitchen-madera-blanca': 'basecocina.jpg',
   'kitchen-madera-gris': 'CocinaGris.png',
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
-  // Bathroom variations - updated according to user specifications
-  'bathroom-blanco-basic': 'bañooriginal.jpg',    // Changed from blanco.png
+  // Bathroom variations - fixed using Unicode for ñ
+  'bathroom-blanco-basic': 'ba\u00f1ooriginal.jpg',
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
-  'bathroom-madera-clara': 'bañooriginal.jpg'     // Same as blanco-basic
+  'bathroom-madera-clara': 'ba\u00f1ooriginal.jpg'
 };
 
 // Enhanced image path function
@@ -180,7 +179,7 @@ export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterio
   
   if (view === 'exterior') {
     // Add cladding layer if not default
-    if (config.exteriorCladding !== 'terracota') {
+    if (config.exteriorCladding !== 'gris-oscuro') {
       layers.push({ category: 'cladding', option: config.exteriorCladding });
     }
     

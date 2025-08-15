@@ -15,7 +15,8 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
   const [isLoading, setIsLoading] = useState(true);
 
   const baseImageSrc = getBaseImagePath(viewMode);
-  const layers = getConfigurationLayers(config, viewMode);
+  // Get all layers without checking for defaults - always render what's selected
+  const layers = getAllConfigurationLayers(config, viewMode);
   const allImages = [baseImageSrc, ...layers.map(layer => layer.src)];
 
   // Preload images and track loading state
@@ -67,7 +68,7 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
         />
       )}
 
-      {/* Layer images */}
+      {/* Layer images - always render all layers */}
       {layers.map((layer, index) => (
         loadedImages.has(layer.src) && (
           <img
@@ -92,3 +93,36 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
     </div>
   );
 };
+
+// New function to get ALL configuration layers regardless of defaults
+const getAllConfigurationLayers = (config: ConfiguratorState, view: 'exterior' | 'interior') => {
+  const layers = [];
+  
+  if (view === 'exterior') {
+    // Always add cladding layer
+    layers.push({ category: 'cladding', option: config.exteriorCladding });
+    
+    // Always add doors layer
+    layers.push({ category: 'doors', option: config.exteriorDoors });
+    
+    // Always add windows layer
+    layers.push({ category: 'windows', option: config.exteriorWindows });
+  } else if (view === 'interior') {
+    // Always add flooring layer
+    layers.push({ category: 'flooring', option: config.interiorFlooring });
+    
+    // Always add kitchen layer
+    layers.push({ category: 'kitchen', option: config.interiorKitchen });
+    
+    // Always add bathroom layer
+    layers.push({ category: 'bathroom', option: config.interiorBathroom });
+  }
+  
+  return layers.map(layer => ({
+    ...layer,
+    src: getImagePath(layer.category, layer.option, view)
+  }));
+};
+
+// Import the getImagePath function from configurator-data
+import { getImagePath } from "@/lib/configurator-data";

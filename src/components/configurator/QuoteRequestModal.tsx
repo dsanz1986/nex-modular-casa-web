@@ -1,81 +1,90 @@
 
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ConfiguratorState, getSelectedOptions, getConfigPrice } from "@/lib/configurator-data";
-import { useToast } from "@/hooks/use-toast";
+import { ConfiguratorState, getSelectedOptions } from "@/lib/configurator-data";
 import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 interface QuoteRequestModalProps {
   config: ConfiguratorState;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const QuoteRequestModal = ({ config, children }: QuoteRequestModalProps) => {
   const { t } = useTranslation();
   const { toast } = useToast();
-  const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: ""
+    phone: "",
   });
 
   const selectedOptions = getSelectedOptions(config);
-  const totalPrice = getConfigPrice(config);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    if (!formData.name || !formData.email || !formData.phone) {
+      toast({
+        title: "Error",
+        description: "Por favor completa todos los campos",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      // Prepare configuration summary
-      const configSummary = `
-CONFIGURACIÓN SELECCIONADA:
-
-EXTERIOR:
-- Revestimiento: ${selectedOptions.exteriorCladding?.name}
-- Puertas: ${selectedOptions.exteriorDoors?.name}
-- Ventanas: ${selectedOptions.exteriorWindows?.name}
-
-INTERIOR:
-- Tarima: ${selectedOptions.interiorFlooring?.name}
-- Muebles de Cocina: ${selectedOptions.interiorKitchen?.name}
-- Muebles de Baño: ${selectedOptions.interiorBathroom?.name}
-
-PRECIO TOTAL: ${totalPrice.toLocaleString()}€
-`;
+      // Create configuration summary for email
+      const configSummary = {
+        exteriorCladding: selectedOptions.exteriorCladding?.name || 'No seleccionado',
+        exteriorDoors: selectedOptions.exteriorDoors?.name || 'No seleccionado',
+        exteriorWindows: selectedOptions.exteriorWindows?.name || 'No seleccionado',
+        interiorFlooring: selectedOptions.interiorFlooring?.name || 'No seleccionado',
+        interiorKitchen: selectedOptions.interiorKitchen?.name || 'No seleccionado',
+        interiorBathroom: selectedOptions.interiorBathroom?.name || 'No seleccionado',
+      };
 
       const { error } = await supabase.functions.invoke('send-contact-email', {
         body: {
-          nombre: formData.name,
+          name: formData.name,
           email: formData.email,
-          telefono: formData.phone,
-          comentarios: `Solicitud de presupuesto del configurador:\n\n${configSummary}`
+          phone: formData.phone,
+          comments: `Solicitud de presupuesto del configurador:\n\nConfiguración seleccionada:\n${Object.entries(configSummary).map(([key, value]) => `${key}: ${value}`).join('\n')}`,
+          isQuoteRequest: true,
+          configuration: configSummary
         }
       });
 
-      if (error) {
-        throw error;
-      }
+      if (error) throw error;
 
       toast({
         title: t('configurator.quoteForm.success'),
-        description: "Te contactaremos pronto con tu presupuesto personalizado."
+        description: "Te contactaremos pronto con tu presupuesto personalizado.",
       });
 
-      setOpen(false);
+      // Reset form
       setFormData({ name: "", email: "", phone: "" });
     } catch (error) {
       console.error('Error sending quote request:', error);
       toast({
         title: t('configurator.quoteForm.error'),
-        description: "Por favor, inténtalo de nuevo.",
-        variant: "destructive"
+        description: "Por favor intenta de nuevo más tarde.",
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
@@ -83,87 +92,64 @@ PRECIO TOTAL: ${totalPrice.toLocaleString()}€
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        {children}
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="text-xl font-playfair text-nex-text">
-            {t('configurator.quoteForm.title')}
-          </DialogTitle>
-          <p className="text-sm text-nex-text/70">
+    <AlertDialog>
+      <AlertDialogTrigger asChild>
+        {children || (
+          <Button className="w-full bg-nex-primary hover:bg-nex-primary/90 text-white">
+            {t('configurator.requestQuote')}
+          </Button>
+        )}
+      </AlertDialogTrigger>
+      <AlertDialogContent className="max-w-md">
+        <AlertDialogHeader>
+          <AlertDialogTitle>{t('configurator.quoteForm.title')}</AlertDialogTitle>
+          <AlertDialogDescription>
             {t('configurator.quoteForm.subtitle')}
-          </p>
-        </DialogHeader>
+          </AlertDialogDescription>
+        </AlertDialogHeader>
 
         <div className="space-y-4">
-          {/* Configuration Summary */}
-          <div className="bg-forest-50 p-4 rounded-lg">
-            <h4 className="font-medium text-nex-text mb-2">
-              {t('configurator.summary.title')}
-            </h4>
-            <div className="text-sm text-nex-text/80 space-y-1">
-              <div>• {selectedOptions.exteriorCladding?.name}</div>
-              <div>• {selectedOptions.exteriorDoors?.name}</div>
-              <div>• {selectedOptions.exteriorWindows?.name}</div>
-              <div>• {selectedOptions.interiorFlooring?.name}</div>
-              <div>• {selectedOptions.interiorKitchen?.name}</div>
-              <div>• {selectedOptions.interiorBathroom?.name}</div>
-            </div>
-            <div className="text-lg font-semibold text-nex-primary mt-2">
-              {t('configurator.summary.total')}: {totalPrice.toLocaleString()}€
-            </div>
+          <div>
+            <Label htmlFor="name">{t('configurator.quoteForm.name')}</Label>
+            <Input
+              id="name"
+              placeholder={t('configurator.quoteForm.namePlaceholder')}
+              value={formData.name}
+              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+            />
           </div>
-
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <Label htmlFor="name">{t('configurator.quoteForm.name')}</Label>
-              <Input
-                id="name"
-                type="text"
-                required
-                value={formData.name}
-                onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                placeholder={t('configurator.quoteForm.namePlaceholder')}
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="email">{t('configurator.quoteForm.email')}</Label>
-              <Input
-                id="email"
-                type="email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                placeholder={t('configurator.quoteForm.emailPlaceholder')}
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="phone">{t('configurator.quoteForm.phone')}</Label>
-              <Input
-                id="phone"
-                type="tel"
-                required
-                value={formData.phone}
-                onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                placeholder={t('configurator.quoteForm.phonePlaceholder')}
-              />
-            </div>
-
-            <Button 
-              type="submit" 
-              className="w-full" 
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? t('configurator.quoteForm.submitting') : t('configurator.quoteForm.submit')}
-            </Button>
-          </form>
+          <div>
+            <Label htmlFor="email">{t('configurator.quoteForm.email')}</Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder={t('configurator.quoteForm.emailPlaceholder')}
+              value={formData.email}
+              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+            />
+          </div>
+          <div>
+            <Label htmlFor="phone">{t('configurator.quoteForm.phone')}</Label>
+            <Input
+              id="phone"
+              type="tel"
+              placeholder={t('configurator.quoteForm.phonePlaceholder')}
+              value={formData.phone}
+              onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+            />
+          </div>
         </div>
-      </DialogContent>
-    </Dialog>
+
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancelar</AlertDialogCancel>
+          <AlertDialogAction 
+            onClick={handleSubmit}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? t('configurator.quoteForm.submitting') : t('configurator.quoteForm.submit')}
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
   );
 };

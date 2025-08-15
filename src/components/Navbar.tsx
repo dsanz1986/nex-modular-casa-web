@@ -1,98 +1,111 @@
 
-import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import LanguageSelector from "./LanguageSelector";
+import { LanguageSelector } from "./LanguageSelector";
+import { AIButton } from "@/components/ui/ai-button";
 
-const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const navItems = [
+    { key: 'inicio', href: '/', section: 'hero' },
+    { key: 'nosotros', href: '/', section: 'nosotros' },
+    { key: 'modelos', href: '/', section: 'modelos' },
+    { key: 'ventajas', href: '/', section: 'ventajas' },
+    { key: 'casaPiloto', href: '/', section: 'casa-piloto' },
+    { key: 'contacto', href: '/', section: 'contacto' }
+  ];
 
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleWhatsApp = () => {
-    window.open('https://wa.me/34611486694', '_blank');
+  const handleNavClick = (section: string) => {
+    setIsOpen(false);
+    
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home first
+      window.location.href = `/#${section}`;
+      return;
+    }
+    
+    // If on home page, scroll to section
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-forest-200">
+      <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/18ebb9ab-42b6-4096-8212-c5a33d88126e.png" 
-              alt="Nex Modular Homes" 
-              className="h-10 w-auto"
-            />
-          </div>
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-nex-primary rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">N</span>
+            </div>
+            <span className="font-playfair font-bold text-xl text-nex-text">
+              Nex Modular Homes
+            </span>
+          </Link>
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('inicio')}
-              className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
-            >
-              {t('navbar.inicio')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('nosotros')}
-              className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
-            >
-              {t('navbar.nosotros')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('modelos')}
-              className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
-            >
-              {t('navbar.modelos')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('ventajas')}
-              className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
-            >
-              {t('navbar.ventajas')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('casa-piloto')}
-              className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
-            >
-              {t('navbar.casaPiloto')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('contacto')}
-              className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
-            >
-              {t('navbar.contacto')}
-            </button>
-          </div>
-
-          {/* Language Selector and WhatsApp Button */}
-          <div className="flex items-center gap-3">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.key}
+                onClick={() => handleNavClick(item.section)}
+                className="text-nex-text hover:text-nex-primary transition-colors duration-200 font-medium"
+              >
+                {t(`navbar.${item.key}`)}
+              </button>
+            ))}
+            
+            <Link to="/configurador">
+              <AIButton className="px-6 py-2 text-sm">
+                Diseña tu casa
+              </AIButton>
+            </Link>
+            
             <LanguageSelector />
-            <Button 
-              onClick={handleWhatsApp}
-              className="bg-nex-primary hover:bg-nex-primary/90 text-white px-4 py-2 rounded-xl font-inter font-semibold"
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="lg:hidden flex items-center space-x-4">
+            <LanguageSelector />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-nex-text hover:text-nex-primary transition-colors"
             >
-              {t('navbar.whatsapp')}
-            </Button>
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="lg:hidden py-4 border-t border-forest-200">
+            <div className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <button
+                  key={item.key}
+                  onClick={() => handleNavClick(item.section)}
+                  className="text-left text-nex-text hover:text-nex-primary transition-colors duration-200 font-medium py-2"
+                >
+                  {t(`navbar.${item.key}`)}
+                </button>
+              ))}
+              
+              <Link to="/configurador" onClick={() => setIsOpen(false)}>
+                <AIButton className="w-full mt-4">
+                  Diseña tu casa
+                </AIButton>
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
 };
-
-export default Navbar;

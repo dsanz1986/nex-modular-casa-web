@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { ArrowLeft, Share, Download } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
@@ -37,17 +37,6 @@ export default function Configurator() {
               <h1 className="text-2xl font-playfair font-bold text-nex-text">
                 {t('configurator.title')}
               </h1>
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm">
-                <Share className="w-4 h-4 mr-2" />
-                {t('configurator.share')}
-              </Button>
-              <Button variant="outline" size="sm">
-                <Download className="w-4 h-4 mr-2" />
-                {t('configurator.download')}
-              </Button>
             </div>
           </div>
         </div>
