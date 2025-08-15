@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { ArrowLeft, Share, Download } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
@@ -16,9 +16,18 @@ export default function Configurator() {
   const { t } = useTranslation();
   const [config, setConfig] = useState<ConfiguratorState>(getDefaultConfig());
   const [viewMode, setViewMode] = useState<"exterior" | "interior">("exterior");
+  const [lastSelectedOption, setLastSelectedOption] = useState<{ category: string; option: string; view: "exterior" | "interior" } | undefined>();
 
-  const handleConfigUpdate = (updates: Partial<ConfiguratorState>) => {
+  const handleConfigUpdate = (updates: Partial<ConfiguratorState>, selectedOption?: { category: string; option: string }) => {
     setConfig(prev => ({ ...prev, ...updates }));
+    
+    // Track the last selected option for preview
+    if (selectedOption) {
+      setLastSelectedOption({
+        ...selectedOption,
+        view: viewMode
+      });
+    }
   };
 
   return (
@@ -38,17 +47,6 @@ export default function Configurator() {
                 {t('configurator.title')}
               </h1>
             </div>
-            
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm">
-                <Share className="w-4 h-4 mr-2" />
-                {t('configurator.share')}
-              </Button>
-              <Button variant="outline" size="sm">
-                <Download className="w-4 h-4 mr-2" />
-                {t('configurator.download')}
-              </Button>
-            </div>
           </div>
         </div>
       </div>
@@ -60,7 +58,11 @@ export default function Configurator() {
           <div className="space-y-4">
             <Card className="border-0 shadow-lg">
               <CardContent className="p-6">
-                <ConfiguratorPreview config={config} viewMode={viewMode} />
+                <ConfiguratorPreview 
+                  config={config} 
+                  viewMode={viewMode} 
+                  lastSelectedOption={lastSelectedOption}
+                />
               </CardContent>
             </Card>
           </div>

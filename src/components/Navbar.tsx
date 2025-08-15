@@ -1,98 +1,97 @@
-
-import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import LanguageSelector from "./LanguageSelector";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+interface NavbarProps {
+  className?: string;
+}
+
+export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleWhatsApp = () => {
-    window.open('https://wa.me/34611486694', '_blank');
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/18ebb9ab-42b6-4096-8212-c5a33d88126e.png" 
-              alt="Nex Modular Homes" 
-              className="h-10 w-auto"
-            />
-          </div>
+    <div className={`bg-white border-b border-forest-200 ${className}`}>
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <Link to="/" className="font-playfair font-bold text-2xl text-nex-text">
+          NEX
+        </Link>
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('inicio')}
-              className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
-            >
+        <nav className="hidden md:flex items-center space-x-8">
+          <a href="#inicio" className="text-nex-text hover:text-nex-primary transition-colors font-inter">
+            {t('navbar.inicio')}
+          </a>
+          <a href="#nosotros" className="text-nex-text hover:text-nex-primary transition-colors font-inter">
+            {t('navbar.nosotros')}
+          </a>
+          <a href="#modelos" className="text-nex-text hover:text-nex-primary transition-colors font-inter">
+            {t('navbar.modelos')}
+          </a>
+          <Link to="/configurador" className="text-nex-text hover:text-nex-primary transition-colors font-inter">
+            Diseña tu casa
+          </Link>
+          <a href="#ventajas" className="text-nex-text hover:text-nex-primary transition-colors font-inter">
+            {t('navbar.ventajas')}
+          </a>
+          <a href="#casa-piloto" className="text-nex-text hover:text-nex-primary transition-colors font-inter">
+            {t('navbar.casaPiloto')}
+          </a>
+          <a href="#contacto" className="text-nex-text hover:text-nex-primary transition-colors font-inter">
+            {t('navbar.contacto')}
+          </a>
+        </nav>
+
+        <Button asChild variant="outline" size="sm" className="hidden md:flex">
+          <a href="https://wa.me/34644444444" target="_blank" rel="noopener noreferrer">
+            {t('navbar.whatsapp')}
+          </a>
+        </Button>
+
+        {/* Mobile menu button */}
+        <button onClick={toggleMobileMenu} className="md:hidden text-nex-text">
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-white py-4">
+          <div className="container mx-auto px-4 flex flex-col gap-4">
+            <a href="#inicio" className="text-nex-text hover:text-nex-primary transition-colors font-inter block">
               {t('navbar.inicio')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('nosotros')}
-              className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
-            >
+            </a>
+            <a href="#nosotros" className="text-nex-text hover:text-nex-primary transition-colors font-inter block">
               {t('navbar.nosotros')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('modelos')}
-              className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
-            >
+            </a>
+            <a href="#modelos" className="text-nex-text hover:text-nex-primary transition-colors font-inter block">
               {t('navbar.modelos')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('ventajas')}
-              className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
-            >
+            </a>
+             <Link to="/configurador" className="text-nex-text hover:text-nex-primary transition-colors font-inter block">
+              Diseña tu casa
+            </Link>
+            <a href="#ventajas" className="text-nex-text hover:text-nex-primary transition-colors font-inter block">
               {t('navbar.ventajas')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('casa-piloto')}
-              className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
-            >
+            </a>
+            <a href="#casa-piloto" className="text-nex-text hover:text-nex-primary transition-colors font-inter block">
               {t('navbar.casaPiloto')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('contacto')}
-              className="text-nex-text hover:text-nex-primary transition-colors font-inter font-medium"
-            >
+            </a>
+            <a href="#contacto" className="text-nex-text hover:text-nex-primary transition-colors font-inter block">
               {t('navbar.contacto')}
-            </button>
-          </div>
-
-          {/* Language Selector and WhatsApp Button */}
-          <div className="flex items-center gap-3">
-            <LanguageSelector />
-            <Button 
-              onClick={handleWhatsApp}
-              className="bg-nex-primary hover:bg-nex-primary/90 text-white px-4 py-2 rounded-xl font-inter font-semibold"
-            >
-              {t('navbar.whatsapp')}
+            </a>
+            <Button variant="outline" size="sm">
+              <a href="https://wa.me/34644444444" target="_blank" rel="noopener noreferrer">
+                {t('navbar.whatsapp')}
+              </a>
             </Button>
           </div>
         </div>
-      </div>
-    </nav>
+      )}
+    </div>
   );
 };
-
-export default Navbar;

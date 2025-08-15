@@ -7,15 +7,30 @@ interface LayeredPreviewImageProps {
   config: ConfiguratorState;
   viewMode: "exterior" | "interior";
   className?: string;
+  lastSelectedOption?: { category: string; option: string; view: "exterior" | "interior" };
 }
 
-export const LayeredPreviewImage = ({ config, viewMode, className = "" }: LayeredPreviewImageProps) => {
+export const LayeredPreviewImage = ({ 
+  config, 
+  viewMode, 
+  className = "",
+  lastSelectedOption
+}: LayeredPreviewImageProps) => {
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const [isLoading, setIsLoading] = useState(true);
 
+  // If we have a last selected option for this view mode, use it to override the config
+  let effectiveConfig = config;
+  if (lastSelectedOption && lastSelectedOption.view === viewMode) {
+    effectiveConfig = {
+      ...config,
+      [`${lastSelectedOption.view}${lastSelectedOption.category.charAt(0).toUpperCase()}${lastSelectedOption.category.slice(1)}`]: lastSelectedOption.option
+    };
+  }
+
   const baseImageSrc = getBaseImagePath(viewMode);
-  const layers = getConfigurationLayers(config, viewMode);
+  const layers = getConfigurationLayers(effectiveConfig, viewMode);
   const allImages = [baseImageSrc, ...layers.map(layer => layer.src)];
 
   // Preload images and track loading state
@@ -50,7 +65,7 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
       setFailedImages(failed);
       setIsLoading(false);
     });
-  }, [config, viewMode]);
+  }, [config, viewMode, lastSelectedOption]);
 
   if (isLoading) {
     return <Skeleton className={`w-full h-full ${className}`} />;

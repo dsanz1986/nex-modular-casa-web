@@ -1,169 +1,201 @@
-
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ConfiguratorState, getSelectedOptions, getConfigPrice } from "@/lib/configurator-data";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { ConfiguratorState, getSelectedOptions } from "@/lib/configurator-data";
 
 interface QuoteRequestModalProps {
   config: ConfiguratorState;
-  children: React.ReactNode;
 }
 
-export const QuoteRequestModal = ({ config, children }: QuoteRequestModalProps) => {
+export const QuoteRequestModal = ({ config }: QuoteRequestModalProps) => {
   const { t } = useTranslation();
-  const { toast } = useToast();
-  const [open, setOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [comments, setComments] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: ""
-  });
+  const [success, setSuccess] = useState<boolean | null>(null);
 
   const selectedOptions = getSelectedOptions(config);
-  const totalPrice = getConfigPrice(config);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSuccess(null);
 
     try {
-      // Prepare configuration summary
-      const configSummary = `
-CONFIGURACIÓN SELECCIONADA:
+      // Simulate form submission
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
-EXTERIOR:
-- Revestimiento: ${selectedOptions.exteriorCladding?.name}
-- Puertas: ${selectedOptions.exteriorDoors?.name}
-- Ventanas: ${selectedOptions.exteriorWindows?.name}
-
-INTERIOR:
-- Tarima: ${selectedOptions.interiorFlooring?.name}
-- Muebles de Cocina: ${selectedOptions.interiorKitchen?.name}
-- Muebles de Baño: ${selectedOptions.interiorBathroom?.name}
-
-PRECIO TOTAL: ${totalPrice.toLocaleString()}€
-`;
-
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: {
-          nombre: formData.name,
-          email: formData.email,
-          telefono: formData.phone,
-          comentarios: `Solicitud de presupuesto del configurador:\n\n${configSummary}`
-        }
-      });
-
-      if (error) {
-        throw error;
-      }
-
-      toast({
-        title: t('configurator.quoteForm.success'),
-        description: "Te contactaremos pronto con tu presupuesto personalizado."
-      });
-
-      setOpen(false);
-      setFormData({ name: "", email: "", phone: "" });
+      setSuccess(true);
+      setName("");
+      setEmail("");
+      setPhone("");
+      setComments("");
     } catch (error) {
-      console.error('Error sending quote request:', error);
-      toast({
-        title: t('configurator.quoteForm.error'),
-        description: "Por favor, inténtalo de nuevo.",
-        variant: "destructive"
-      });
+      setSuccess(false);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        {children}
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="text-xl font-playfair text-nex-text">
-            {t('configurator.quoteForm.title')}
-          </DialogTitle>
-          <p className="text-sm text-nex-text/70">
+    <AlertDialog>
+      <AlertDialogTrigger asChild>
+        <Button variant="outline">{t('configurator.requestQuote')}</Button>
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>{t('configurator.quoteForm.title')}</AlertDialogTitle>
+          <AlertDialogDescription>
             {t('configurator.quoteForm.subtitle')}
-          </p>
-        </DialogHeader>
-
-        <div className="space-y-4">
-          {/* Configuration Summary */}
-          <div className="bg-forest-50 p-4 rounded-lg">
-            <h4 className="font-medium text-nex-text mb-2">
-              {t('configurator.summary.title')}
-            </h4>
-            <div className="text-sm text-nex-text/80 space-y-1">
-              <div>• {selectedOptions.exteriorCladding?.name}</div>
-              <div>• {selectedOptions.exteriorDoors?.name}</div>
-              <div>• {selectedOptions.exteriorWindows?.name}</div>
-              <div>• {selectedOptions.interiorFlooring?.name}</div>
-              <div>• {selectedOptions.interiorKitchen?.name}</div>
-              <div>• {selectedOptions.interiorBathroom?.name}</div>
-            </div>
-            <div className="text-lg font-semibold text-nex-primary mt-2">
-              {t('configurator.summary.total')}: {totalPrice.toLocaleString()}€
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <Label htmlFor="name">{t('configurator.quoteForm.name')}</Label>
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <form onSubmit={handleSubmit}>
+          <div className="grid gap-4 py-4">
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="name" className="text-right">
+                {t('configurator.quoteForm.name')}
+                <span className="text-red-500">*</span>
+              </Label>
               <Input
-                id="name"
                 type="text"
-                required
-                value={formData.name}
-                onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 placeholder={t('configurator.quoteForm.namePlaceholder')}
+                className="col-span-3"
+                required
               />
             </div>
-
-            <div>
-              <Label htmlFor="email">{t('configurator.quoteForm.email')}</Label>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="email" className="text-right">
+                {t('configurator.quoteForm.email')}
+                <span className="text-red-500">*</span>
+              </Label>
               <Input
-                id="email"
                 type="email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder={t('configurator.quoteForm.emailPlaceholder')}
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="phone">{t('configurator.quoteForm.phone')}</Label>
-              <Input
-                id="phone"
-                type="tel"
+                className="col-span-3"
                 required
-                value={formData.phone}
-                onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                placeholder={t('configurator.quoteForm.phonePlaceholder')}
               />
             </div>
-
-            <Button 
-              type="submit" 
-              className="w-full" 
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? t('configurator.quoteForm.submitting') : t('configurator.quoteForm.submit')}
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="phone" className="text-right">
+                {t('configurator.quoteForm.phone')}
+                <span className="text-red-500">*</span>
+              </Label>
+              <Input
+                type="tel"
+                id="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder={t('configurator.quoteForm.phonePlaceholder')}
+                className="col-span-3"
+                required
+              />
+            </div>
+            <div className="grid grid-cols-4 items-start gap-4">
+              <Label htmlFor="comments" className="text-right">
+                {t('configurator.quoteForm.comments')}
+              </Label>
+              <Textarea
+                id="comments"
+                value={comments}
+                onChange={(e) => setComments(e.target.value)}
+                placeholder={t('configurator.quoteForm.commentsPlaceholder')}
+                className="col-span-3"
+              />
+            </div>
+              <div className="space-y-4 mb-6">
+                <h3 className="text-lg font-semibold text-nex-text mb-4">
+                  {t('configurator.summary.title')}
+                </h3>
+                
+                <div className="space-y-2 text-sm">
+                  {selectedOptions.exteriorCladding && (
+                    <div className="flex justify-between">
+                      <span className="text-nex-text/70">{t('configurator.categories.exteriorCladding')}:</span>
+                      <span className="font-medium">{selectedOptions.exteriorCladding.name}</span>
+                    </div>
+                  )}
+                  
+                  {selectedOptions.exteriorDoors && (
+                    <div className="flex justify-between">
+                      <span className="text-nex-text/70">{t('configurator.categories.exteriorDoors')}:</span>
+                      <span className="font-medium">{selectedOptions.exteriorDoors.name}</span>
+                    </div>
+                  )}
+                  
+                  {selectedOptions.exteriorWindows && (
+                    <div className="flex justify-between">
+                      <span className="text-nex-text/70">{t('configurator.categories.exteriorWindows')}:</span>
+                      <span className="font-medium">{selectedOptions.exteriorWindows.name}</span>
+                    </div>
+                  )}
+                  
+                  {selectedOptions.interiorFlooring && (
+                    <div className="flex justify-between">
+                      <span className="text-nex-text/70">{t('configurator.categories.interiorFlooring')}:</span>
+                      <span className="font-medium">{selectedOptions.interiorFlooring.name}</span>
+                    </div>
+                  )}
+                  
+                  {selectedOptions.interiorKitchen && (
+                    <div className="flex justify-between">
+                      <span className="text-nex-text/70">{t('configurator.categories.interiorKitchen')}:</span>
+                      <span className="font-medium">{selectedOptions.interiorKitchen.name}</span>
+                    </div>
+                  )}
+                  
+                  {selectedOptions.interiorBathroom && (
+                    <div className="flex justify-between">
+                      <span className="text-nex-text/70">{t('configurator.categories.interiorBathroom')}:</span>
+                      <span className="font-medium">{selectedOptions.interiorBathroom.name}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+          </div>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={isSubmitting}>
+              {t('cookies.cancel')}
+            </AlertDialogCancel>
+            <Button type="submit" disabled={isSubmitting}>
+              {isSubmitting
+                ? t('configurator.quoteForm.submitting')
+                : t('configurator.quoteForm.submit')}
             </Button>
-          </form>
-        </div>
-      </DialogContent>
-    </Dialog>
+          </AlertDialogFooter>
+        </form>
+        {success === true && (
+          <div className="mt-4 text-green-500">
+            {t('configurator.quoteForm.success')}
+          </div>
+        )}
+        {success === false && (
+          <div className="mt-4 text-red-500">
+            {t('configurator.quoteForm.error')}
+          </div>
+        )}
+      </AlertDialogContent>
+    </AlertDialog>
   );
 };
