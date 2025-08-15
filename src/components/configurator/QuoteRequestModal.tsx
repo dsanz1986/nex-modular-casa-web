@@ -1,3 +1,4 @@
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,15 +14,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { ConfiguratorState, getSelectedOptions } from "@/lib/configurator-data";
 
 interface QuoteRequestModalProps {
   config: ConfiguratorState;
+  children?: ReactNode;
 }
 
-export const QuoteRequestModal = ({ config }: QuoteRequestModalProps) => {
+export const QuoteRequestModal = ({ config, children }: QuoteRequestModalProps) => {
   const { t } = useTranslation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -56,7 +58,11 @@ export const QuoteRequestModal = ({ config }: QuoteRequestModalProps) => {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="outline">{t('configurator.requestQuote')}</Button>
+        {children ? (
+          children
+        ) : (
+          <Button variant="outline">{t('configurator.requestQuote')}</Button>
+        )}
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
@@ -67,6 +73,7 @@ export const QuoteRequestModal = ({ config }: QuoteRequestModalProps) => {
         </AlertDialogHeader>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-4 py-4">
+            {/* Nombre */}
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="name" className="text-right">
                 {t('configurator.quoteForm.name')}
@@ -82,6 +89,7 @@ export const QuoteRequestModal = ({ config }: QuoteRequestModalProps) => {
                 required
               />
             </div>
+            {/* Email */}
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="email" className="text-right">
                 {t('configurator.quoteForm.email')}
@@ -97,6 +105,7 @@ export const QuoteRequestModal = ({ config }: QuoteRequestModalProps) => {
                 required
               />
             </div>
+            {/* Teléfono */}
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="phone" className="text-right">
                 {t('configurator.quoteForm.phone')}
@@ -112,6 +121,7 @@ export const QuoteRequestModal = ({ config }: QuoteRequestModalProps) => {
                 required
               />
             </div>
+            {/* Comentarios */}
             <div className="grid grid-cols-4 items-start gap-4">
               <Label htmlFor="comments" className="text-right">
                 {t('configurator.quoteForm.comments')}
@@ -124,55 +134,50 @@ export const QuoteRequestModal = ({ config }: QuoteRequestModalProps) => {
                 className="col-span-3"
               />
             </div>
-              <div className="space-y-4 mb-6">
-                <h3 className="text-lg font-semibold text-nex-text mb-4">
-                  {t('configurator.summary.title')}
-                </h3>
-                
-                <div className="space-y-2 text-sm">
-                  {selectedOptions.exteriorCladding && (
-                    <div className="flex justify-between">
-                      <span className="text-nex-text/70">{t('configurator.categories.exteriorCladding')}:</span>
-                      <span className="font-medium">{selectedOptions.exteriorCladding.name}</span>
-                    </div>
-                  )}
-                  
-                  {selectedOptions.exteriorDoors && (
-                    <div className="flex justify-between">
-                      <span className="text-nex-text/70">{t('configurator.categories.exteriorDoors')}:</span>
-                      <span className="font-medium">{selectedOptions.exteriorDoors.name}</span>
-                    </div>
-                  )}
-                  
-                  {selectedOptions.exteriorWindows && (
-                    <div className="flex justify-between">
-                      <span className="text-nex-text/70">{t('configurator.categories.exteriorWindows')}:</span>
-                      <span className="font-medium">{selectedOptions.exteriorWindows.name}</span>
-                    </div>
-                  )}
-                  
-                  {selectedOptions.interiorFlooring && (
-                    <div className="flex justify-between">
-                      <span className="text-nex-text/70">{t('configurator.categories.interiorFlooring')}:</span>
-                      <span className="font-medium">{selectedOptions.interiorFlooring.name}</span>
-                    </div>
-                  )}
-                  
-                  {selectedOptions.interiorKitchen && (
-                    <div className="flex justify-between">
-                      <span className="text-nex-text/70">{t('configurator.categories.interiorKitchen')}:</span>
-                      <span className="font-medium">{selectedOptions.interiorKitchen.name}</span>
-                    </div>
-                  )}
-                  
-                  {selectedOptions.interiorBathroom && (
-                    <div className="flex justify-between">
-                      <span className="text-nex-text/70">{t('configurator.categories.interiorBathroom')}:</span>
-                      <span className="font-medium">{selectedOptions.interiorBathroom.name}</span>
-                    </div>
-                  )}
-                </div>
+            {/* Resumen de configuración */}
+            <div className="space-y-4 mb-6">
+              <h3 className="text-lg font-semibold text-nex-text mb-4">
+                {t('configurator.summary.title')}
+              </h3>
+              <div className="space-y-2 text-sm">
+                {selectedOptions.exteriorCladding && (
+                  <div className="flex justify-between">
+                    <span className="text-nex-text/70">{t('configurator.categories.exteriorCladding')}:</span>
+                    <span className="font-medium">{selectedOptions.exteriorCladding.name}</span>
+                  </div>
+                )}
+                {selectedOptions.exteriorDoors && (
+                  <div className="flex justify-between">
+                    <span className="text-nex-text/70">{t('configurator.categories.exteriorDoors')}:</span>
+                    <span className="font-medium">{selectedOptions.exteriorDoors.name}</span>
+                  </div>
+                )}
+                {selectedOptions.exteriorWindows && (
+                  <div className="flex justify-between">
+                    <span className="text-nex-text/70">{t('configurator.categories.exteriorWindows')}:</span>
+                    <span className="font-medium">{selectedOptions.exteriorWindows.name}</span>
+                  </div>
+                )}
+                {selectedOptions.interiorFlooring && (
+                  <div className="flex justify-between">
+                    <span className="text-nex-text/70">{t('configurator.categories.interiorFlooring')}:</span>
+                    <span className="font-medium">{selectedOptions.interiorFlooring.name}</span>
+                  </div>
+                )}
+                {selectedOptions.interiorKitchen && (
+                  <div className="flex justify-between">
+                    <span className="text-nex-text/70">{t('configurator.categories.interiorKitchen')}:</span>
+                    <span className="font-medium">{selectedOptions.interiorKitchen.name}</span>
+                  </div>
+                )}
+                {selectedOptions.interiorBathroom && (
+                  <div className="flex justify-between">
+                    <span className="text-nex-text/70">{t('configurator.categories.interiorBathroom')}:</span>
+                    <span className="font-medium">{selectedOptions.interiorBathroom.name}</span>
+                  </div>
+                )}
               </div>
+            </div>
           </div>
           <AlertDialogFooter>
             <AlertDialogCancel disabled={isSubmitting}>
@@ -199,3 +204,4 @@ export const QuoteRequestModal = ({ config }: QuoteRequestModalProps) => {
     </AlertDialog>
   );
 };
+

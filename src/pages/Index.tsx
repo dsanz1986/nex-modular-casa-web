@@ -1,9 +1,8 @@
-
-import Navbar from "@/components/Navbar";
+import { Navbar } from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ModelsSection from "@/components/ModelsSection";
-import PersonalizationSection from "@/components/PersonalizationSection";
+import { PersonalizationSection } from "@/components/PersonalizationSection";
 import AdvantagesSection from "@/components/AdvantagesSection";
 import LicensesSection from "@/components/LicensesSection";
 import PilotHouseSection from "@/components/PilotHouseSection";
