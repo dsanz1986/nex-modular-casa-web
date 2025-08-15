@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { ArrowLeft, Share, Download, Sparkles } from "lucide-react";
+import { ArrowLeft, Share, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
@@ -21,29 +21,6 @@ export default function Configurator() {
     setConfig(prev => ({ ...prev, ...updates }));
   };
 
-  const handleOptionSelect = (category: string, option: string) => {
-    const updates: Partial<ConfiguratorState> = {
-      lastSelected: {
-        category,
-        option,
-        viewMode
-      }
-    };
-
-    // Also update the actual config value
-    if (viewMode === 'exterior') {
-      if (category === 'cladding') updates.exteriorCladding = option;
-      if (category === 'doors') updates.exteriorDoors = option;
-      if (category === 'windows') updates.exteriorWindows = option;
-    } else {
-      if (category === 'flooring') updates.interiorFlooring = option;
-      if (category === 'kitchen') updates.interiorKitchen = option;
-      if (category === 'bathroom') updates.interiorBathroom = option;
-    }
-
-    handleConfigUpdate(updates);
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-forest-50 to-forest-100">
       {/* Header */}
@@ -57,8 +34,7 @@ export default function Configurator() {
                   {t('configurator.backToHome')}
                 </Button>
               </Link>
-              <h1 className="text-2xl font-playfair font-bold text-nex-text flex items-center gap-2">
-                <Sparkles className="w-6 h-6 text-nex-primary animate-pulse" />
+              <h1 className="text-2xl font-playfair font-bold text-nex-text">
                 {t('configurator.title')}
               </h1>
             </div>
@@ -104,19 +80,11 @@ export default function Configurator() {
                   </TabsList>
                   
                   <TabsContent value="exterior" className="mt-0">
-                    <ExteriorControls 
-                      config={config} 
-                      onUpdate={handleConfigUpdate}
-                      onOptionSelect={handleOptionSelect}
-                    />
+                    <ExteriorControls config={config} onUpdate={handleConfigUpdate} />
                   </TabsContent>
                   
                   <TabsContent value="interior" className="mt-0">
-                    <InteriorControls 
-                      config={config} 
-                      onUpdate={handleConfigUpdate}
-                      onOptionSelect={handleOptionSelect}
-                    />
+                    <InteriorControls config={config} onUpdate={handleConfigUpdate} />
                   </TabsContent>
                 </Tabs>
               </CardContent>

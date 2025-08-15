@@ -6,15 +6,14 @@ export const es = {
     ventajas: "Ventajas",
     casaPiloto: "Casa Piloto",
     contacto: "Contacto",
-    whatsapp: "WhatsApp",
-    configurator: "Diseña tu casa"
+    whatsapp: "WhatsApp"
   },
   hero: {
     badge: "Casas modulares móviles sin obra",
     title: "Casas modulares móviles",
     subtitle: "sin obra ni complicaciones",
     description: "Viviendas modulares móviles transportables, listas para instalar en tu terreno. Sin cimentación, sin obra, sin líos.",
-    ctaMain: "Diseña tu casa",
+    ctaMain: "Quiero saber más",
     ctaSecondary: "Contacta por WhatsApp",
     qualityBadge: "Calidad Premium"
   },
@@ -66,7 +65,7 @@ export const es = {
     title: "Personalización a tu medida",
     subtitle: "Haz tu casa única. Personaliza cada detalle interior y exterior para crear el hogar de tus sueños.",
     configurator: {
-      cta: "Diseña tu casa"
+      cta: "Personalizar ahora"
     },
     interior: {
       distribution: "Distribución interior personalizable",

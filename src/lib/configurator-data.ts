@@ -1,3 +1,4 @@
+
 export interface ConfigOption {
   id: string;
   name: string;
@@ -19,11 +20,6 @@ export interface ConfiguratorState {
   interiorFlooring: string;
   interiorKitchen: string;
   interiorBathroom: string;
-  lastSelected?: {
-    category: string;
-    option: string;
-    viewMode: 'exterior' | 'interior';
-  };
 }
 
 export const configuratorData = {
@@ -105,7 +101,7 @@ export const getDefaultConfig = (): ConfiguratorState => ({
   interiorBathroom: 'blanco-basic'
 });
 
-// Updated image mapping with corrected file names
+// Updated image mapping with correct file names
 const imageMapping: Record<string, string> = {
   // Base images
   'base-exterior': 'terracota.jpg',
@@ -123,32 +119,32 @@ const imageMapping: Record<string, string> = {
   'cladding-madera-natural': 'Madera-media.png',
   'cladding-madera-chocolate': 'Madera-oscura.png',
   
-  // Door variations - fixed mapping
+  // Door variations - updated according to user specifications
   'doors-simple-blanca': 'Blanca-normal.png',
   'doors-doble-blanca': 'Blanca-dos-puertas.png',
   'doors-negra-doble': 'negra-dos-puertas.png',
   
-  // Window variations
-  'windows-blancas': 'base.jpg', // Use base image for default windows
+  // Window variations - updated according to user specifications
+  'windows-blancas': 'blancas.jpg',
   'windows-abatibles': 'hoja-abatible.png',
   'windows-negras': 'Negras.png',
   
-  // Interior flooring variations - fixed mapping
+  // Interior flooring variations - updated according to user specifications
   'flooring-gris-claro': 'Gris.png',
   'flooring-gris-oscuro': 'Gris-oscuro.png',
-  'flooring-madera-clara': 'Tarima-1.png',
-  'flooring-madera-oscura': 'Tarima-2.png',
+  'flooring-madera-clara': 'Tarima-1.png',  // Changed from Tarima-2.png
+  'flooring-madera-oscura': 'Tarima-2.png', // Changed from Tarima-1.png
   
   // Kitchen variations
   'kitchen-madera-blanca': 'basecocina.jpg',
   'kitchen-madera-gris': 'CocinaGris.png',
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
-  // Bathroom variations - fixed mapping
-  'bathroom-blanco-basic': 'bañooriginal.jpg',
+  // Bathroom variations - updated according to user specifications
+  'bathroom-blanco-basic': 'bañooriginal.jpg',    // Changed from blanco.png
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
-  'bathroom-madera-clara': 'bañooriginal.jpg'
+  'bathroom-madera-clara': 'bañooriginal.jpg'     // Same as blanco-basic
 };
 
 // Enhanced image path function
@@ -178,28 +174,38 @@ export const getBaseImagePath = (view: 'exterior' | 'interior'): string => {
   return `/configurator/nex-natura/${view}/base.webp`;
 };
 
-// Updated function to always show the last selected option
+// Get all layer images for current configuration
 export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterior' | 'interior') => {
   const layers = [];
   
-  // If there's a last selected item for this view, prioritize it
-  if (config.lastSelected && config.lastSelected.viewMode === view) {
-    layers.push({
-      category: config.lastSelected.category,
-      option: config.lastSelected.option,
-      priority: true
-    });
-  } else {
-    // Otherwise, show current configuration
-    if (view === 'exterior') {
-      // Always show current selections
+  if (view === 'exterior') {
+    // Add cladding layer if not default
+    if (config.exteriorCladding !== 'terracota') {
       layers.push({ category: 'cladding', option: config.exteriorCladding });
+    }
+    
+    // Add doors layer if not default
+    if (config.exteriorDoors !== 'simple-blanca') {
       layers.push({ category: 'doors', option: config.exteriorDoors });
+    }
+    
+    // Add windows layer if not default  
+    if (config.exteriorWindows !== 'blancas') {
       layers.push({ category: 'windows', option: config.exteriorWindows });
-    } else if (view === 'interior') {
-      // Always show current selections
+    }
+  } else if (view === 'interior') {
+    // Add flooring layer if not default
+    if (config.interiorFlooring !== 'gris-claro') {
       layers.push({ category: 'flooring', option: config.interiorFlooring });
+    }
+    
+    // Add kitchen layer if not default
+    if (config.interiorKitchen !== 'madera-blanca') {
       layers.push({ category: 'kitchen', option: config.interiorKitchen });
+    }
+    
+    // Add bathroom layer if not default
+    if (config.interiorBathroom !== 'blanco-basic') {
       layers.push({ category: 'bathroom', option: config.interiorBathroom });
     }
   }

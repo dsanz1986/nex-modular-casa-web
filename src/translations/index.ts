@@ -23,6 +23,3 @@ export type NestedTranslationKey<T> = T extends object
   : never;
 
 export type TranslationPath = NestedTranslationKey<typeof es>;
-
-// Default export for compatibility
-export default translations;

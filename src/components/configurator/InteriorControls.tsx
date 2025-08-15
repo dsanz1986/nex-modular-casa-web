@@ -1,31 +1,15 @@
 
 import { ConfiguratorState, configuratorData } from "@/lib/configurator-data";
-import { OptionGroup } from "./OptionGroup";
 import { useTranslation } from "react-i18next";
+import { OptionGroup } from "./OptionGroup";
 
 interface InteriorControlsProps {
   config: ConfiguratorState;
   onUpdate: (updates: Partial<ConfiguratorState>) => void;
-  onOptionSelect?: (category: string, option: string) => void;
 }
 
-export const InteriorControls = ({ config, onUpdate, onOptionSelect }: InteriorControlsProps) => {
+export const InteriorControls = ({ config, onUpdate }: InteriorControlsProps) => {
   const { t } = useTranslation();
-
-  const handleFlooringChange = (optionId: string) => {
-    onUpdate({ interiorFlooring: optionId });
-    onOptionSelect?.('flooring', optionId);
-  };
-
-  const handleKitchenChange = (optionId: string) => {
-    onUpdate({ interiorKitchen: optionId });
-    onOptionSelect?.('kitchen', optionId);
-  };
-
-  const handleBathroomChange = (optionId: string) => {
-    onUpdate({ interiorBathroom: optionId });
-    onOptionSelect?.('bathroom', optionId);
-  };
 
   return (
     <div className="space-y-8">
@@ -33,21 +17,24 @@ export const InteriorControls = ({ config, onUpdate, onOptionSelect }: InteriorC
         title={t('configurator.categories.interiorFlooring')}
         options={configuratorData.interior.flooring.options}
         selectedValue={config.interiorFlooring}
-        onSelect={handleFlooringChange}
+        onSelect={(value) => onUpdate({ interiorFlooring: value })}
+        showColors={false}
       />
-
+      
       <OptionGroup
         title={t('configurator.categories.interiorKitchen')}
         options={configuratorData.interior.kitchen.options}
         selectedValue={config.interiorKitchen}
-        onSelect={handleKitchenChange}
+        onSelect={(value) => onUpdate({ interiorKitchen: value })}
+        showColors={false}
       />
-
+      
       <OptionGroup
         title={t('configurator.categories.interiorBathroom')}
         options={configuratorData.interior.bathroom.options}
         selectedValue={config.interiorBathroom}
-        onSelect={handleBathroomChange}
+        onSelect={(value) => onUpdate({ interiorBathroom: value })}
+        showColors={false}
       />
     </div>
   );

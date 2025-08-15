@@ -6,15 +6,14 @@ export const it = {
     ventajas: "Vantaggi",
     casaPiloto: "Casa Pilota",
     contacto: "Contatto",
-    whatsapp: "WhatsApp",
-    configurator: "Progetta la Tua Casa"
+    whatsapp: "WhatsApp"
   },
   hero: {
     badge: "Case modulari mobili senza costruzione",
     title: "Case modulari mobili",
     subtitle: "senza costruzione o complicazioni",
     description: "Case modulari mobili trasportabili, pronte per essere installate sul tuo terreno. Nessuna fondazione, nessuna costruzione, nessun problema.",
-    ctaMain: "Progetta la Tua Casa",
+    ctaMain: "Voglio saperne di più",
     ctaSecondary: "Contatta tramite WhatsApp",
     qualityBadge: "Qualità Premium"
   },
@@ -66,7 +65,7 @@ export const it = {
     title: "Personalizzazione su misura",
     subtitle: "Rendi unica la tua casa. Personalizza ogni dettaglio interno ed esterno per creare la casa dei tuoi sogni.",
     configurator: {
-      cta: "Progetta la Tua Casa"
+      cta: "Personalizza ora"
     },
     interior: {
       distribution: "Distribuzione interna personalizzabile",
