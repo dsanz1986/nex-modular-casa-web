@@ -1,3 +1,4 @@
+
 export interface ConfigOption {
   id: string;
   name: string;
@@ -100,7 +101,7 @@ export const getDefaultConfig = (): ConfiguratorState => ({
   interiorBathroom: 'blanco-basic'
 });
 
-// Updated image mapping with correct file names - FIXED MAPPINGS
+// Updated image mapping with correct file names
 const imageMapping: Record<string, string> = {
   // Base images
   'base-exterior': 'terracota.jpg',
@@ -111,39 +112,39 @@ const imageMapping: Record<string, string> = {
   'cladding-blanco': 'Blanca.png',  
   'cladding-gris-claro': 'Ladrillo-gris-blanco.png',
   'cladding-dorado': 'Ladrillo-amarillo.png',
-  'cladding-gris-oscuro': 'Ladrillo gris.png', // FIXED: Corrected file name
+  'cladding-gris-oscuro': 'Ladrillo gris.png',
   'cladding-antracita': 'Ladrillo-gris-varios.png',
   'cladding-rojo': 'Ladrillo-rojo-varios.png',
   'cladding-naranja': 'Ladrillo-rojo-varios.png',
   'cladding-madera-natural': 'Madera-media.png',
   'cladding-madera-chocolate': 'Madera-oscura.png',
   
-  // Door variations - FIXED MAPPINGS
-  'doors-simple-blanca': 'Blanca-normal.png', // FIXED: Corrected mapping
+  // Door variations - updated according to user specifications
+  'doors-simple-blanca': 'Blanca-normal.png',
   'doors-doble-blanca': 'Blanca-dos-puertas.png',
   'doors-negra-doble': 'negra-dos-puertas.png',
   
-  // Window variations
+  // Window variations - updated according to user specifications
   'windows-blancas': 'blancas.jpg',
   'windows-abatibles': 'hoja-abatible.png',
   'windows-negras': 'Negras.png',
   
-  // Interior flooring variations - FIXED MAPPINGS
-  'flooring-gris-claro': 'Gris.png', // FIXED: Corrected mapping
+  // Interior flooring variations - updated according to user specifications
+  'flooring-gris-claro': 'Gris.png',
   'flooring-gris-oscuro': 'Gris-oscuro.png',
-  'flooring-madera-clara': 'Tarima-1.png',
-  'flooring-madera-oscura': 'Tarima-2.png',
+  'flooring-madera-clara': 'Tarima-1.png',  // Changed from Tarima-2.png
+  'flooring-madera-oscura': 'Tarima-2.png', // Changed from Tarima-1.png
   
   // Kitchen variations
   'kitchen-madera-blanca': 'basecocina.jpg',
   'kitchen-madera-gris': 'CocinaGris.png',
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
-  // Bathroom variations - FIXED MAPPINGS
-  'bathroom-blanco-basic': 'bañooriginal.jpg', // FIXED: Corrected mapping
+  // Bathroom variations - updated according to user specifications
+  'bathroom-blanco-basic': 'bañooriginal.jpg',    // Changed from blanco.png
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
-  'bathroom-madera-clara': 'bañooriginal.jpg' // FIXED: Corrected mapping
+  'bathroom-madera-clara': 'bañooriginal.jpg'     // Same as blanco-basic
 };
 
 // Enhanced image path function
