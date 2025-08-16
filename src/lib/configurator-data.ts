@@ -100,13 +100,13 @@ export const getDefaultConfig = (): ConfiguratorState => ({
   interiorBathroom: 'blanco-basic'
 });
 
-// Fixed image mapping with correct file names
+// Updated image mapping with verified file names
 const imageMapping: Record<string, string> = {
-  // Base images - fixed exterior base
+  // Base images
   'base-exterior': 'base.jpg',
   'base-interior': 'basecocina.jpg',
   
-  // Exterior cladding variations
+  // Exterior cladding variations - these are overlay images
   'cladding-terracota': 'terracota.jpg',
   'cladding-blanco': 'Blanca.png',  
   'cladding-gris-claro': 'Ladrillo-gris-blanco.png',
@@ -118,38 +118,43 @@ const imageMapping: Record<string, string> = {
   'cladding-madera-natural': 'Madera-media.png',
   'cladding-madera-chocolate': 'Madera-oscura.png',
   
-  // Door variations
-  'doors-simple-blanca': 'Blanca-normal.png',
+  // Door variations - these are overlay images
+  'doors-simple-blanca': null, // Default doors are in base image
   'doors-doble-blanca': 'Blanca-dos-puertas.png',
   'doors-negra-doble': 'negra-dos-puertas.png',
   
-  // Window variations - fixed white windows
-  'windows-blancas': 'base.jpg',
+  // Window variations - these are overlay images
+  'windows-blancas': null, // Default windows are in base image
   'windows-abatibles': 'hoja-abatible.png',
   'windows-negras': 'Negras.png',
   
-  // Interior flooring variations
-  'flooring-gris-claro': 'Gris.png',
+  // Interior flooring variations - these are overlay images
+  'flooring-gris-claro': null, // Default flooring is in base image
   'flooring-gris-oscuro': 'Gris-oscuro.png',
   'flooring-madera-clara': 'Tarima-1.png',
   'flooring-madera-oscura': 'Tarima-2.png',
   
-  // Kitchen variations
-  'kitchen-madera-blanca': 'basecocina.jpg',
+  // Kitchen variations - these are overlay images
+  'kitchen-madera-blanca': null, // Default kitchen is in base image
   'kitchen-madera-gris': 'CocinaGris.png',
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
-  // Bathroom variations - fixed using Unicode for ñ
-  'bathroom-blanco-basic': 'ba\u00f1ooriginal.jpg',
+  // Bathroom variations - these are overlay images
+  'bathroom-blanco-basic': null, // Default bathroom is in base image
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
-  'bathroom-madera-clara': 'ba\u00f1ooriginal.jpg'
+  'bathroom-madera-clara': 'bañooriginal.jpg'
 };
 
 // Enhanced image path function
 export const getImagePath = (category: string, option: string, view: 'exterior' | 'interior' = 'exterior'): string => {
   const imageKey = `${category}-${option}`;
   const fileName = imageMapping[imageKey];
+  
+  // If null, it means it's the default option shown in base image
+  if (fileName === null) {
+    return '';
+  }
   
   if (fileName) {
     return `/configurator/nex-natura/${view}/${fileName}`;

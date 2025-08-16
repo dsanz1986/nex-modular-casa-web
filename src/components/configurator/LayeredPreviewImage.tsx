@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { getBaseImagePath, getConfigurationLayers, ConfiguratorState } from "@/lib/configurator-data";
+import { getBaseImagePath, ConfiguratorState, getImagePath } from "@/lib/configurator-data";
 
 interface LayeredPreviewImageProps {
   config: ConfiguratorState;
@@ -15,8 +15,58 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
   const [isLoading, setIsLoading] = useState(true);
 
   const baseImageSrc = getBaseImagePath(viewMode);
-  // Get all layers without checking for defaults - always render what's selected
-  const layers = getAllConfigurationLayers(config, viewMode);
+  
+  // Get all configuration layers - always show selected options
+  const getConfigurationLayers = () => {
+    const layers = [];
+    
+    if (viewMode === 'exterior') {
+      // Always add selected layers for exterior
+      layers.push({ 
+        category: 'cladding', 
+        option: config.exteriorCladding,
+        zIndex: 1
+      });
+      
+      layers.push({ 
+        category: 'doors', 
+        option: config.exteriorDoors,
+        zIndex: 2
+      });
+      
+      layers.push({ 
+        category: 'windows', 
+        option: config.exteriorWindows,
+        zIndex: 3
+      });
+    } else if (viewMode === 'interior') {
+      // Always add selected layers for interior
+      layers.push({ 
+        category: 'flooring', 
+        option: config.interiorFlooring,
+        zIndex: 1
+      });
+      
+      layers.push({ 
+        category: 'kitchen', 
+        option: config.interiorKitchen,
+        zIndex: 2
+      });
+      
+      layers.push({ 
+        category: 'bathroom', 
+        option: config.interiorBathroom,
+        zIndex: 3
+      });
+    }
+    
+    return layers.map(layer => ({
+      ...layer,
+      src: getImagePath(layer.category, layer.option, viewMode)
+    }));
+  };
+
+  const layers = getConfigurationLayers();
   const allImages = [baseImageSrc, ...layers.map(layer => layer.src)];
 
   // Preload images and track loading state
@@ -44,6 +94,7 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
           loaded.add(src);
         } else {
           failed.add(src);
+          console.warn(`Failed to load image: ${src}`);
         }
       });
 
@@ -59,24 +110,25 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
 
   return (
     <div className={`relative w-full h-full ${className}`}>
-      {/* Base image */}
+      {/* Base image - always at the bottom */}
       {loadedImages.has(baseImageSrc) && (
         <img
           src={baseImageSrc}
           alt={`Base ${viewMode}`}
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ zIndex: 0 }}
         />
       )}
 
-      {/* Layer images - always render all layers */}
-      {layers.map((layer, index) => (
+      {/* Layer images - render all selected options on top of base */}
+      {layers.map((layer) => (
         loadedImages.has(layer.src) && (
           <img
             key={`${layer.category}-${layer.option}`}
             src={layer.src}
             alt={`${layer.category} ${layer.option}`}
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ zIndex: index + 1 }}
+            style={{ zIndex: layer.zIndex }}
           />
         )
       ))}
@@ -93,36 +145,3 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
     </div>
   );
 };
-
-// New function to get ALL configuration layers regardless of defaults
-const getAllConfigurationLayers = (config: ConfiguratorState, view: 'exterior' | 'interior') => {
-  const layers = [];
-  
-  if (view === 'exterior') {
-    // Always add cladding layer
-    layers.push({ category: 'cladding', option: config.exteriorCladding });
-    
-    // Always add doors layer
-    layers.push({ category: 'doors', option: config.exteriorDoors });
-    
-    // Always add windows layer
-    layers.push({ category: 'windows', option: config.exteriorWindows });
-  } else if (view === 'interior') {
-    // Always add flooring layer
-    layers.push({ category: 'flooring', option: config.interiorFlooring });
-    
-    // Always add kitchen layer
-    layers.push({ category: 'kitchen', option: config.interiorKitchen });
-    
-    // Always add bathroom layer
-    layers.push({ category: 'bathroom', option: config.interiorBathroom });
-  }
-  
-  return layers.map(layer => ({
-    ...layer,
-    src: getImagePath(layer.category, layer.option, view)
-  }));
-};
-
-// Import the getImagePath function from configurator-data
-import { getImagePath } from "@/lib/configurator-data";
