@@ -92,7 +92,7 @@ export const configuratorData = {
 };
 
 export const getDefaultConfig = (): ConfiguratorState => ({
-  exteriorCladding: 'gris-oscuro',
+  exteriorCladding: 'terracota',
   exteriorDoors: 'simple-blanca',
   exteriorWindows: 'blancas',
   interiorFlooring: 'gris-claro',
@@ -183,35 +183,23 @@ export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterio
   const layers = [];
   
   if (view === 'exterior') {
-    // Add cladding layer if not default
-    if (config.exteriorCladding !== 'gris-oscuro') {
-      layers.push({ category: 'cladding', option: config.exteriorCladding });
-    }
+    // Always add cladding layer - now terracota is default so we always show the selected option
+    layers.push({ category: 'cladding', option: config.exteriorCladding });
     
-    // Add doors layer if not default
-    if (config.exteriorDoors !== 'simple-blanca') {
-      layers.push({ category: 'doors', option: config.exteriorDoors });
-    }
+    // Always add doors layer - show selected option
+    layers.push({ category: 'doors', option: config.exteriorDoors });
     
-    // Add windows layer if not default  
-    if (config.exteriorWindows !== 'blancas') {
-      layers.push({ category: 'windows', option: config.exteriorWindows });
-    }
+    // Always add windows layer - show selected option
+    layers.push({ category: 'windows', option: config.exteriorWindows });
   } else if (view === 'interior') {
-    // Add flooring layer if not default
-    if (config.interiorFlooring !== 'gris-claro') {
-      layers.push({ category: 'flooring', option: config.interiorFlooring });
-    }
+    // Always add flooring layer - show selected option
+    layers.push({ category: 'flooring', option: config.interiorFlooring });
     
-    // Add kitchen layer if not default
-    if (config.interiorKitchen !== 'madera-blanca') {
-      layers.push({ category: 'kitchen', option: config.interiorKitchen });
-    }
+    // Always add kitchen layer - show selected option
+    layers.push({ category: 'kitchen', option: config.interiorKitchen });
     
-    // Add bathroom layer if not default
-    if (config.interiorBathroom !== 'blanco-basic') {
-      layers.push({ category: 'bathroom', option: config.interiorBathroom });
-    }
+    // Always add bathroom layer - show selected option
+    layers.push({ category: 'bathroom', option: config.interiorBathroom });
   }
   
   return layers.map(layer => ({

@@ -75,6 +75,11 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
     setLoadedImages(new Set());
     setFailedImages(new Set());
 
+    if (allImages.length === 0) {
+      setIsLoading(false);
+      return;
+    }
+
     const imagePromises = allImages.map(src => {
       return new Promise<string>((resolve, reject) => {
         const img = new Image();
@@ -120,7 +125,7 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
         />
       )}
 
-      {/* Layer images - render all selected options on top of base */}
+      {/* Layer images - render all valid selected options on top of base */}
       {layers.map((layer) => (
         layer.src && loadedImages.has(layer.src) && (
           <img

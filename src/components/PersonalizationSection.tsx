@@ -18,9 +18,10 @@ export const PersonalizationSection = () => {
             {t('personalization.subtitle')}
           </p>
           <Link to="/configurador">
-            <AIButton className="text-xl px-14 py-5 bg-gradient-to-r from-nex-primary via-emerald-500 to-forest-600 hover:from-nex-primary/90 hover:via-emerald-500/90 hover:to-forest-600/90 shadow-2xl shadow-emerald-300/30 ring-2 ring-white/50 transform transition-all duration-200 hover:scale-105 animate-enter rounded-full">
-              <Sparkles className="w-5 h-5 mr-2" />
+            <AIButton className="inline-flex items-center gap-3 text-lg px-10 py-4 bg-gradient-to-r from-nex-primary via-emerald-500 to-forest-600 hover:from-nex-primary/90 hover:via-emerald-500/90 hover:to-forest-600/90 text-white font-semibold rounded-full shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:scale-105 ring-2 ring-white/20 hover:ring-white/40">
+              <Sparkles className="w-5 h-5" />
               Diseña tu casa
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
             </AIButton>
           </Link>
         </div>
