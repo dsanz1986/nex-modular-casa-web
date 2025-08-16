@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
@@ -36,17 +37,16 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-forest-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-forest-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-nex-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">N</span>
-            </div>
-            <span className="font-playfair font-bold text-xl text-nex-text">
-              Nex Modular Homes
-            </span>
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/672cf111-f384-44c4-bfe7-4489af3516c4.png" 
+              alt="Nex Modular Homes" 
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

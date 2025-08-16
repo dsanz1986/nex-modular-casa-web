@@ -14,13 +14,10 @@ export const AIButton = React.forwardRef<HTMLButtonElement, AIButtonProps>(
       <Button
         ref={ref}
         className={cn(
-          "relative overflow-hidden bg-gradient-to-r from-nex-primary via-purple-600 to-nex-accent",
-          "hover:from-nex-primary/90 hover:via-purple-600/90 hover:to-nex-accent/90",
+          "bg-gradient-to-r from-nex-primary to-forest-600",
+          "hover:from-nex-primary/90 hover:to-forest-600/90",
           "text-white font-semibold px-8 py-3 rounded-full",
-          "transform transition-all duration-300 hover:scale-105 hover:shadow-xl",
-          "before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent",
-          "before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700",
-          "animate-pulse",
+          "transform transition-all duration-200 hover:scale-105",
           className
         )}
         {...props}
