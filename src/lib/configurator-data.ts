@@ -100,13 +100,13 @@ export const getDefaultConfig = (): ConfiguratorState => ({
   interiorBathroom: 'blanco-basic'
 });
 
-// Updated image mapping with verified file names
+// CORREGIDO: Mapeo completo de imágenes con todas las opciones disponibles
 const imageMapping: Record<string, string> = {
   // Base images
   'base-exterior': 'base.jpg',
   'base-interior': 'basecocina.jpg',
   
-  // Exterior cladding variations - these are overlay images
+  // Exterior cladding variations - CORREGIDO: mapeamos a archivos existentes
   'cladding-terracota': 'terracota.jpg',
   'cladding-blanco': 'Blanca.png',  
   'cladding-gris-claro': 'Ladrillo-gris-blanco.png',
@@ -114,55 +114,56 @@ const imageMapping: Record<string, string> = {
   'cladding-gris-oscuro': 'Ladrillo gris.png',
   'cladding-antracita': 'Ladrillo-gris-varios.png',
   'cladding-rojo': 'Ladrillo-rojo-varios.png',
-  'cladding-naranja': 'Ladrillo-rojo-varios.png',
+  'cladding-naranja': 'Ladrillo-rojo-varios.png', // Usar mismo archivo que rojo por ahora
   'cladding-madera-natural': 'Madera-media.png',
   'cladding-madera-chocolate': 'Madera-oscura.png',
   
-  // Door variations - these are overlay images
-  'doors-simple-blanca': null, // Default doors are in base image
+  // Door variations - TODAS las opciones mapeadas
+  'doors-simple-blanca': '', // Default doors están en base image
   'doors-doble-blanca': 'Blanca-dos-puertas.png',
   'doors-negra-doble': 'negra-dos-puertas.png',
   
-  // Window variations - these are overlay images
-  'windows-blancas': null, // Default windows are in base image
+  // Window variations - TODAS las opciones mapeadas
+  'windows-blancas': '', // Default windows están en base image
   'windows-abatibles': 'hoja-abatible.png',
   'windows-negras': 'Negras.png',
   
-  // Interior flooring variations - these are overlay images
-  'flooring-gris-claro': null, // Default flooring is in base image
+  // Interior flooring variations - TODAS las opciones mapeadas
+  'flooring-gris-claro': '', // Default flooring está en base image
   'flooring-gris-oscuro': 'Gris-oscuro.png',
   'flooring-madera-clara': 'Tarima-1.png',
   'flooring-madera-oscura': 'Tarima-2.png',
   
-  // Kitchen variations - these are overlay images
-  'kitchen-madera-blanca': null, // Default kitchen is in base image
+  // Kitchen variations - TODAS las opciones mapeadas
+  'kitchen-madera-blanca': '', // Default kitchen está en base image
   'kitchen-madera-gris': 'CocinaGris.png',
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
-  // Bathroom variations - these are overlay images
-  'bathroom-blanco-basic': null, // Default bathroom is in base image
+  // Bathroom variations - TODAS las opciones mapeadas
+  'bathroom-blanco-basic': '', // Default bathroom está en base image
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
-  'bathroom-madera-clara': 'bañooriginal.jpg' // Fixed filename
+  'bathroom-madera-clara': 'bañooriginal.jpg'
 };
 
-// Enhanced image path function
+// CORREGIDO: función que maneja correctamente todas las opciones
 export const getImagePath = (category: string, option: string, view: 'exterior' | 'interior' = 'exterior'): string => {
   const imageKey = `${category}-${option}`;
   const fileName = imageMapping[imageKey];
   
-  // If null, it means it's the default option shown in base image
-  if (fileName === null) {
+  // Si es string vacío, significa que es la opción por defecto (está en la imagen base)
+  if (fileName === '') {
     return '';
   }
   
+  // Si tiene nombre de archivo, construir la ruta completa
   if (fileName) {
     return `/configurator/nex-natura/${view}/${fileName}`;
   }
   
-  // Fallback to original naming convention
-  const basePath = `/configurator/nex-natura/${view}`;
-  return `${basePath}/${category}-${option}.webp`;
+  // Si no está mapeado, devolver string vacío para evitar errores
+  console.warn(`No image mapping found for: ${imageKey}`);
+  return '';
 };
 
 // Get base image for each view
@@ -178,28 +179,48 @@ export const getBaseImagePath = (view: 'exterior' | 'interior'): string => {
   return `/configurator/nex-natura/${view}/base.webp`;
 };
 
-// Get all layer images for current configuration
+// CORREGIDO: función que siempre devuelve todas las capas seleccionadas
 export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterior' | 'interior') => {
   const layers = [];
   
   if (view === 'exterior') {
-    // Always add cladding layer - now terracota is default so we always show the selected option
-    layers.push({ category: 'cladding', option: config.exteriorCladding });
+    // SIEMPRE agregar TODAS las capas con las opciones seleccionadas
+    layers.push({ 
+      category: 'cladding', 
+      option: config.exteriorCladding,
+      zIndex: 1
+    });
     
-    // Always add doors layer - show selected option
-    layers.push({ category: 'doors', option: config.exteriorDoors });
+    layers.push({ 
+      category: 'doors', 
+      option: config.exteriorDoors,
+      zIndex: 2
+    });
     
-    // Always add windows layer - show selected option
-    layers.push({ category: 'windows', option: config.exteriorWindows });
+    layers.push({ 
+      category: 'windows', 
+      option: config.exteriorWindows,
+      zIndex: 3
+    });
   } else if (view === 'interior') {
-    // Always add flooring layer - show selected option
-    layers.push({ category: 'flooring', option: config.interiorFlooring });
+    // SIEMPRE agregar TODAS las capas con las opciones seleccionadas
+    layers.push({ 
+      category: 'flooring', 
+      option: config.interiorFlooring,
+      zIndex: 1
+    });
     
-    // Always add kitchen layer - show selected option
-    layers.push({ category: 'kitchen', option: config.interiorKitchen });
+    layers.push({ 
+      category: 'kitchen', 
+      option: config.interiorKitchen,
+      zIndex: 2
+    });
     
-    // Always add bathroom layer - show selected option
-    layers.push({ category: 'bathroom', option: config.interiorBathroom });
+    layers.push({ 
+      category: 'bathroom', 
+      option: config.interiorBathroom,
+      zIndex: 3
+    });
   }
   
   return layers.map(layer => ({

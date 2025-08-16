@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { getBaseImagePath, ConfiguratorState, getImagePath } from "@/lib/configurator-data";
+import { getBaseImagePath, ConfiguratorState, getConfigurationLayers } from "@/lib/configurator-data";
 
 interface LayeredPreviewImageProps {
   config: ConfiguratorState;
@@ -16,57 +16,8 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
 
   const baseImageSrc = getBaseImagePath(viewMode);
   
-  // Get all configuration layers - always show selected options
-  const getConfigurationLayers = () => {
-    const layers = [];
-    
-    if (viewMode === 'exterior') {
-      // Always add selected layers for exterior
-      layers.push({ 
-        category: 'cladding', 
-        option: config.exteriorCladding,
-        zIndex: 1
-      });
-      
-      layers.push({ 
-        category: 'doors', 
-        option: config.exteriorDoors,
-        zIndex: 2
-      });
-      
-      layers.push({ 
-        category: 'windows', 
-        option: config.exteriorWindows,
-        zIndex: 3
-      });
-    } else if (viewMode === 'interior') {
-      // Always add selected layers for interior
-      layers.push({ 
-        category: 'flooring', 
-        option: config.interiorFlooring,
-        zIndex: 1
-      });
-      
-      layers.push({ 
-        category: 'kitchen', 
-        option: config.interiorKitchen,
-        zIndex: 2
-      });
-      
-      layers.push({ 
-        category: 'bathroom', 
-        option: config.interiorBathroom,
-        zIndex: 3
-      });
-    }
-    
-    return layers.map(layer => ({
-      ...layer,
-      src: getImagePath(layer.category, layer.option, viewMode)
-    })).filter(layer => layer.src && layer.src !== ''); // Filter out empty sources
-  };
-
-  const layers = getConfigurationLayers();
+  // CORREGIDO: usar la función mejorada que siempre devuelve todas las capas
+  const layers = getConfigurationLayers(config, viewMode);
   const allImages = [baseImageSrc, ...layers.map(layer => layer.src)].filter(src => src && src !== '');
 
   // Preload images and track loading state
@@ -115,7 +66,7 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
 
   return (
     <div className={`relative w-full h-full ${className}`}>
-      {/* Base image - always at the bottom */}
+      {/* Base image - siempre en el fondo */}
       {loadedImages.has(baseImageSrc) && (
         <img
           src={baseImageSrc}
@@ -125,7 +76,7 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
         />
       )}
 
-      {/* Layer images - render all valid selected options on top of base */}
+      {/* CORREGIDO: Renderizar TODAS las capas válidas con el z-index correcto */}
       {layers.map((layer) => (
         layer.src && loadedImages.has(layer.src) && (
           <img
