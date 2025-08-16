@@ -28,16 +28,15 @@ const ModelsSection = () => {
       id: "nexNido",
       pdfPath: "/ficha-tecnica-nex-nido.pdf",
       images: [
-        "/lovable-uploads/02339d00-b43a-4820-ae8c-22bfbb566eaa.png",
-        "/lovable-uploads/046aaa69-718c-4a24-a79b-fe5728d15943.png",
-        "/lovable-uploads/18ebb9ab-42b6-4096-8212-c5a33d88126e.png",
-        "/lovable-uploads/2050482f-8056-4911-89a5-9ab6b7d0fe28.png",
-        "/lovable-uploads/28645916-5ddd-46fe-946b-0e532ba73e44.png",
-        "/lovable-uploads/2dff8986-af57-4311-a724-1e6d41e0bc08.png",
-        "/lovable-uploads/3123b2bf-3513-4bf8-8f1d-8493f0fced9e.png",
-        "/lovable-uploads/3162d70c-c470-4759-8821-e227d0f533f6.png",
-        "/lovable-uploads/48c4a309-3d86-476f-8aa9-b0c036f4377c.png",
-        "/lovable-uploads/49a21b50-31bf-4b24-ab6b-d13ca1f6ae37.png"
+        "/lovable-uploads/habitacion.jpeg",
+        "/lovable-uploads/imgi_107_359e49_37c2435d4a0c47c9b238d6578cedc96d~mv2.jpg",
+        "/lovable-uploads/imgi_113_359e49_274127b5de3d400f818d640c4f76c4a3~mv2.jpg",
+        "/lovable-uploads/imgi_125_359e49_d7a3ee2a2a9a461385893361f8ab26b4~mv2.jpg",
+        "/lovable-uploads/imgi_126_359e49_2040207d0f154ed8869049b3c41a5f73~mv2.jpg",
+        "/lovable-uploads/imgi_128_359e49_7295abc7e432491bb4560bc32b1cc64e~mv2.jpg",
+        "/lovable-uploads/imgi_129_359e49_78bff05cfc4c46bbab3d77a703ba8b3c~mv2.jpg",
+        "/lovable-uploads/imgi_84_359e49_7295abc7e432491bb4560bc32b1cc64e~mv2.jpg",
+        "/lovable-uploads/plano 36m2.png",
       ]
     }
   ];
