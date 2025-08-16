@@ -4,7 +4,6 @@ import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "./LanguageSelector";
-import { AIButton } from "@/components/ui/ai-button";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,20 +16,26 @@ export const Navbar = () => {
     { key: 'modelos', href: '/', section: 'modelos' },
     { key: 'ventajas', href: '/', section: 'ventajas' },
     { key: 'casaPiloto', href: '/', section: 'casa-piloto' },
+    { key: 'configurador', href: '/configurador', section: null },
     { key: 'contacto', href: '/', section: 'contacto' }
   ];
 
-  const handleNavClick = (section: string) => {
+  const handleNavClick = (item: { href: string; section: string | null }) => {
     setIsOpen(false);
+    
+    if (item.section === null) {
+      // For configurator, just navigate
+      return;
+    }
     
     if (location.pathname !== '/') {
       // If not on home page, navigate to home first
-      window.location.href = `/#${section}`;
+      window.location.href = `/#${item.section}`;
       return;
     }
     
     // If on home page, scroll to section
-    const element = document.getElementById(section);
+    const element = document.getElementById(item.section);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -43,7 +48,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/fd3d1060-0ef2-4564-9c30-b98d43c27356.png" 
+              src="/lovable-uploads/28645916-5ddd-46fe-946b-0e532ba73e44.png" 
               alt="Nex Modular Homes" 
               className="h-8 w-auto"
             />
@@ -52,20 +57,24 @@ export const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.key}
-                onClick={() => handleNavClick(item.section)}
-                className="text-nex-text hover:text-nex-primary transition-colors duration-200 font-medium"
-              >
-                {t(`navbar.${item.key}`)}
-              </button>
+              item.section === null ? (
+                <Link
+                  key={item.key}
+                  to={item.href}
+                  className="text-nex-text hover:text-nex-primary transition-colors duration-200 font-medium"
+                >
+                  {t(`navbar.${item.key}`)}
+                </Link>
+              ) : (
+                <button
+                  key={item.key}
+                  onClick={() => handleNavClick(item)}
+                  className="text-nex-text hover:text-nex-primary transition-colors duration-200 font-medium"
+                >
+                  {t(`navbar.${item.key}`)}
+                </button>
+              )
             ))}
-            
-            <Link to="/configurador">
-              <AIButton className="px-6 py-2 text-sm">
-                Diseña tu casa
-              </AIButton>
-            </Link>
             
             {/* WhatsApp Phone */}
             <a 
@@ -98,20 +107,25 @@ export const Navbar = () => {
           <div className="lg:hidden py-4">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <button
-                  key={item.key}
-                  onClick={() => handleNavClick(item.section)}
-                  className="text-left text-nex-text hover:text-nex-primary transition-colors duration-200 font-medium py-2"
-                >
-                  {t(`navbar.${item.key}`)}
-                </button>
+                item.section === null ? (
+                  <Link
+                    key={item.key}
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-left text-nex-text hover:text-nex-primary transition-colors duration-200 font-medium py-2"
+                  >
+                    {t(`navbar.${item.key}`)}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.key}
+                    onClick={() => handleNavClick(item)}
+                    className="text-left text-nex-text hover:text-nex-primary transition-colors duration-200 font-medium py-2"
+                  >
+                    {t(`navbar.${item.key}`)}
+                  </button>
+                )
               ))}
-              
-              <Link to="/configurador" onClick={() => setIsOpen(false)}>
-                <AIButton className="w-full mt-4">
-                  Diseña tu casa
-                </AIButton>
-              </Link>
               
               {/* Mobile WhatsApp Phone */}
               <a 
