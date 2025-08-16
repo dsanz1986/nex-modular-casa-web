@@ -105,12 +105,12 @@ const imageMapping: Record<string, string> = {
   'base-exterior': 'base.jpg',
   'base-interior': 'basecocina.jpg',
   
-  // Exterior cladding variations - CORRECTED ALL MAPPINGS
+  // Exterior cladding variations - CORRECTED MAPPINGS
   'cladding-terracota': 'terracota.jpg',
   'cladding-blanco': 'Blanca.png',  
   'cladding-gris-claro': 'Ladrillo-gris-blanco.png',
   'cladding-dorado': 'Ladrillo-amarillo.png',
-  'cladding-gris-oscuro': 'Ladrillo gris.png',
+  'cladding-gris-oscuro': 'Ladrillo-gris.png',
   'cladding-antracita': 'Ladrillo-gris-varios.png',
   'cladding-rojo': 'Ladrillo-rojo-varios.png',
   'cladding-naranja': 'Ladrillo-rojo-varios.png',
@@ -139,8 +139,7 @@ const imageMapping: Record<string, string> = {
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
   // Bathroom variations - CORRECTED ALL MAPPINGS
-  // Fix exact filename to match public asset (n + combining tilde)
-  'bathroom-blanco-basic': 'bãooriginal.jpg',
+  'bathroom-blanco-basic': 'bano-original.jpg',
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
   'bathroom-madera-clara': 'blanco.png'

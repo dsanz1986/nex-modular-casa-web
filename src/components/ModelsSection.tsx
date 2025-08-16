@@ -28,11 +28,16 @@ const ModelsSection = () => {
       id: "nexNido",
       pdfPath: "/ficha-tecnica-nex-nido.pdf",
       images: [
-        "/lovable-uploads/f7afae9f-fbd2-44e5-bde9-49caa41b6885.png",
-        "/lovable-uploads/bec838fc-2d40-420e-9dfe-bed755fd7c45.png",
-        "/lovable-uploads/083bb7cd-c3ba-4c2e-aafc-3dc125159796.png",
-        "/lovable-uploads/a65d23c5-c0bc-4314-ac7d-913879dd42bf.png",
-        "/lovable-uploads/52b7c7ef-7b60-4c96-a4a8-99bc4c81e639.png"
+        "/lovable-uploads/02339d00-b43a-4820-ae8c-22bfbb566eaa.png",
+        "/lovable-uploads/046aaa69-718c-4a24-a79b-fe5728d15943.png",
+        "/lovable-uploads/18ebb9ab-42b6-4096-8212-c5a33d88126e.png",
+        "/lovable-uploads/2050482f-8056-4911-89a5-9ab6b7d0fe28.png",
+        "/lovable-uploads/28645916-5ddd-46fe-946b-0e532ba73e44.png",
+        "/lovable-uploads/2dff8986-af57-4311-a724-1e6d41e0bc08.png",
+        "/lovable-uploads/3123b2bf-3513-4bf8-8f1d-8493f0fced9e.png",
+        "/lovable-uploads/3162d70c-c470-4759-8821-e227d0f533f6.png",
+        "/lovable-uploads/48c4a309-3d86-476f-8aa9-b0c036f4377c.png",
+        "/lovable-uploads/49a21b50-31bf-4b24-ab6b-d13ca1f6ae37.png"
       ]
     }
   ];

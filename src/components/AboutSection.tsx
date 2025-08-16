@@ -9,17 +9,20 @@ const AboutSection = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image */}
+          {/* Video */}
           <div className="relative animate-fade-in">
             <div className="rounded-3xl overflow-hidden shadow-xl">
-              <img 
-                src="/lovable-uploads/95729307-fe95-498b-8dc6-99da387641ff.png"
-                alt="Interior casa modular móvil Nex - Salón moderno con cocina integrada"
+              <video 
+                src="/lovable-uploads/Video-casa.mp4"
                 className="w-full h-[400px] object-cover"
                 width="600"
                 height="400"
-                loading="lazy"
-                decoding="async"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls={false}
+                aria-label="Vídeo interior casa modular móvil Nex - Salón moderno con cocina integrada"
               />
             </div>
             <div className="absolute -top-4 -right-4 bg-nex-primary text-white px-6 py-3 rounded-2xl font-inter font-semibold shadow-lg">
