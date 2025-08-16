@@ -13,7 +13,6 @@ const ModelsSection = () => {
       id: "nexNatura",
       pdfPath: "/ficha-tecnica-nex-natura.pdf",
       images: [
-        "/lovable-uploads/exterior blanca.jpeg",
         "/lovable-uploads/2c692612-5352-4091-9f9b-463d9521af51.png",
         "/lovable-uploads/5845baa7-852c-474a-86e5-371bfcb9e62e.png",
         "/lovable-uploads/abeef23b-3164-41d3-86b4-801639c11858.png",
@@ -29,14 +28,14 @@ const ModelsSection = () => {
       id: "nexNido",
       pdfPath: "/ficha-tecnica-nex-nido.pdf",
       images: [
-        "/lovable-uploads/habitacion.jpeg",
+        "/lovable-uploads/exterior blanca.jpeg",
         "/lovable-uploads/imgi_107_359e49_37c2435d4a0c47c9b238d6578cedc96d~mv2.jpg",
         "/lovable-uploads/imgi_113_359e49_274127b5de3d400f818d640c4f76c4a3~mv2.jpg",
         "/lovable-uploads/imgi_125_359e49_d7a3ee2a2a9a461385893361f8ab26b4~mv2.jpg",
         "/lovable-uploads/imgi_126_359e49_2040207d0f154ed8869049b3c41a5f73~mv2.jpg",
         "/lovable-uploads/imgi_128_359e49_7295abc7e432491bb4560bc32b1cc64e~mv2.jpg",
         "/lovable-uploads/imgi_129_359e49_78bff05cfc4c46bbab3d77a703ba8b3c~mv2.jpg",
-        "/lovable-uploads/imgi_127_359e49_1b849c2d052341b6a0dd449ccba57cfd~mv2.jpg",
+        "/lovable-uploads/imgi_84_359e49_7295abc7e432491bb4560bc32b1cc64e~mv2.jpg",
         "/lovable-uploads/plano 36m2.png",
       ]
     }
