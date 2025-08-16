@@ -5,6 +5,7 @@ export const en = {
     modelos: "Models",
     ventajas: "Advantages",
     casaPiloto: "Pilot House",
+    configurador: "Design your home",
     contacto: "Contact",
     whatsapp: "WhatsApp"
   },
