@@ -123,7 +123,7 @@ const imageMapping: Record<string, string> = {
   'doors-negra-doble': 'negra-dos-puertas.png',
   
   // Window variations - CORRECTED ALL MAPPINGS
-  'windows-blancas': '',
+  'windows-blancas': 'base.jpg',
   'windows-abatibles': 'hoja-abatible.png',
   'windows-negras': 'Negras.png',
   
@@ -134,7 +134,7 @@ const imageMapping: Record<string, string> = {
   'flooring-madera-oscura': 'Tarima-2.png',
   
   // Kitchen variations - CORRECTED ALL MAPPINGS
-  'kitchen-madera-blanca': '',
+  'kitchen-madera-blanca': 'basecocina.jpg',
   'kitchen-madera-gris': 'CocinaGris.png',
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
