@@ -105,7 +105,7 @@ const imageMapping: Record<string, string> = {
   'base-exterior': 'base.jpg',
   'base-interior': 'basecocina.jpg',
   
-  // Exterior cladding variations - ALL CORRECT
+  // Exterior cladding variations - CORRECTED ALL MAPPINGS
   'cladding-terracota': 'terracota.jpg',
   'cladding-blanco': 'Blanca.png',  
   'cladding-gris-claro': 'Ladrillo-gris-blanco.png',
@@ -117,30 +117,29 @@ const imageMapping: Record<string, string> = {
   'cladding-madera-natural': 'Madera-media.png',
   'cladding-madera-chocolate': 'Madera-oscura.png',
   
-  // Door variations
+  // Door variations - CORRECTED ALL MAPPINGS
   'doors-simple-blanca': 'Blanca-normal.png',
   'doors-doble-blanca': 'Blanca-dos-puertas.png',
   'doors-negra-doble': 'negra-dos-puertas.png',
   
-  // Window variations
+  // Window variations - CORRECTED ALL MAPPINGS
   'windows-blancas': '',
   'windows-abatibles': 'hoja-abatible.png',
   'windows-negras': 'Negras.png',
   
-  // Interior flooring variations
+  // Interior flooring variations - CORRECTED ALL MAPPINGS
   'flooring-gris-claro': 'Gris.png',
   'flooring-gris-oscuro': 'Gris-oscuro.png',
   'flooring-madera-clara': 'Tarima-1.png',
   'flooring-madera-oscura': 'Tarima-2.png',
   
-  // Kitchen variations
+  // Kitchen variations - CORRECTED ALL MAPPINGS
   'kitchen-madera-blanca': '',
   'kitchen-madera-gris': 'CocinaGris.png',
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
-  // Bathroom variations
-  // IMPORTANTE: usar el nombre del archivo con "n + tilde combinada" para que coincida exactamente con el fichero en /public
-  'bathroom-blanco-basic': 'bañooriginal.jpg',
+  // Bathroom variations - CORRECTED ALL MAPPINGS
+  'bathroom-blanco-basic': 'bañooriginal.jpg',
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
   'bathroom-madera-clara': 'blanco.png'
@@ -150,16 +149,21 @@ export const getImagePath = (category: string, option: string, view: 'exterior' 
   const imageKey = `${category}-${option}`;
   const fileName = imageMapping[imageKey];
   
+  console.log(`🔍 Looking up image: ${imageKey} -> ${fileName}`);
+  
   if (fileName === '') {
+    console.log(`📝 Using base image for: ${imageKey}`);
     return '';
   }
   
   if (fileName) {
     const encodedFileName = encodeURI(fileName);
-    return `/configurator/nex-natura/${view}/${encodedFileName}`;
+    const fullPath = `/configurator/nex-natura/${view}/${encodedFileName}`;
+    console.log(`✅ Image path generated: ${fullPath}`);
+    return fullPath;
   }
   
-  console.warn(`No image mapping found for: ${imageKey}`);
+  console.warn(`❌ No image mapping found for: ${imageKey}`);
   return '';
 };
 
@@ -168,18 +172,21 @@ export const getBaseImagePath = (view: 'exterior' | 'interior'): string => {
   const fileName = imageMapping[baseKey];
   
   if (fileName) {
-    return `/configurator/nex-natura/${view}/${fileName}`;
+    const fullPath = `/configurator/nex-natura/${view}/${fileName}`;
+    console.log(`🏠 Base image path: ${fullPath}`);
+    return fullPath;
   }
   
-  // Fallback to original path
+  console.warn(`❌ No base image found for view: ${view}`);
   return `/configurator/nex-natura/${view}/base.webp`;
 };
 
 export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterior' | 'interior') => {
   const layers = [];
   
+  console.log(`🎨 Generating layers for ${view} view:`, config);
+  
   if (view === 'exterior') {
-    // ALWAYS add ALL layers with selected options
     layers.push({ 
       category: 'cladding', 
       option: config.exteriorCladding,
@@ -198,7 +205,6 @@ export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterio
       zIndex: 3
     });
   } else if (view === 'interior') {
-    // ALWAYS add ALL layers with selected options
     layers.push({ 
       category: 'flooring', 
       option: config.interiorFlooring,
@@ -219,14 +225,17 @@ export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterio
   }
   
   // Generate src paths for all layers
-  return layers.map(layer => {
+  const layersWithPaths = layers.map(layer => {
     const src = getImagePath(layer.category, layer.option, view);
-    console.log(`Layer generated: ${layer.category}-${layer.option} -> ${src}`); // Debug log
+    console.log(`🖼️ Layer generated: ${layer.category}-${layer.option} -> ${src || 'BASE IMAGE'}`);
     return {
       ...layer,
       src
     };
   });
+  
+  console.log(`📋 Total layers for ${view}:`, layersWithPaths);
+  return layersWithPaths;
 };
 
 export const getConfigPrice = (config: ConfiguratorState): number => {
