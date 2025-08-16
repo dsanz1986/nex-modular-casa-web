@@ -14,7 +14,6 @@ const ModelsSection = () => {
       pdfPath: "/ficha-tecnica-nex-natura.pdf",
       images: [
         "/lovable-uploads/exterior blanca.jpeg",
-        "/lovable-uploads/2c692612-5352-4091-9f9b-463d9521af51.png",
         "/lovable-uploads/5845baa7-852c-474a-86e5-371bfcb9e62e.png",
         "/lovable-uploads/abeef23b-3164-41d3-86b4-801639c11858.png",
         "/lovable-uploads/ce58701f-da18-44e6-9bde-2c9ef77024fe.png",
