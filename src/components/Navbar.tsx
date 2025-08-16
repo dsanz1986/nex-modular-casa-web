@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { LanguageSelector } from "./LanguageSelector";
+import LanguageSelector from "./LanguageSelector";
 import { AIButton } from "@/components/ui/ai-button";
 
 export const Navbar = () => {
