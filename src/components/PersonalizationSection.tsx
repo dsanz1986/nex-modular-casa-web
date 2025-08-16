@@ -1,7 +1,7 @@
 
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { AIButton } from "@/components/ui/ai-button";
+import { CTAButton } from "@/components/ui/cta-button";
 import { LayoutGrid, Layers, ShowerHead, Paintbrush, PanelsTopLeft, DoorClosed, DoorOpen, Sparkles } from "lucide-react";
 
 export const PersonalizationSection = () => {
@@ -18,10 +18,10 @@ export const PersonalizationSection = () => {
             {t('personalization.subtitle')}
           </p>
           <Link to="/configurador">
-            <AIButton className="inline-flex items-center gap-3 text-lg px-10 py-4 animate-fade-in">
+            <CTAButton className="inline-flex items-center gap-3 text-lg px-10 py-4 animate-fade-in">
               <Sparkles className="w-5 h-5" />
               Diseña tu casa
-            </AIButton>
+            </CTAButton>
           </Link>
         </div>
 

@@ -100,47 +100,47 @@ export const getDefaultConfig = (): ConfiguratorState => ({
   interiorBathroom: 'blanco-basic'
 });
 
-// CORREGIDO: Mapeo completo de imágenes con todas las opciones disponibles
+// CORRECTED: Fixed image mappings with correct file names
 const imageMapping: Record<string, string> = {
   // Base images
   'base-exterior': 'base.jpg',
   'base-interior': 'basecocina.jpg',
   
-  // Exterior cladding variations - CORREGIDO: mapeamos a archivos existentes
+  // Exterior cladding variations - FIXED: correct mappings
   'cladding-terracota': 'terracota.jpg',
   'cladding-blanco': 'Blanca.png',  
   'cladding-gris-claro': 'Ladrillo-gris-blanco.png',
   'cladding-dorado': 'Ladrillo-amarillo.png',
-  'cladding-gris-oscuro': 'Ladrillo gris.png',
+  'cladding-gris-oscuro': 'Ladrillo gris.png', // FIXED: correct file name
   'cladding-antracita': 'Ladrillo-gris-varios.png',
   'cladding-rojo': 'Ladrillo-rojo-varios.png',
-  'cladding-naranja': 'Ladrillo-rojo-varios.png', // Usar mismo archivo que rojo por ahora
+  'cladding-naranja': 'Ladrillo-rojo-varios.png',
   'cladding-madera-natural': 'Madera-media.png',
   'cladding-madera-chocolate': 'Madera-oscura.png',
   
-  // Door variations - TODAS las opciones mapeadas
-  'doors-simple-blanca': '', // Default doors están en base image
+  // Door variations - FIXED: correct mapping for simple white door
+  'doors-simple-blanca': 'Blanca-normal.png', // FIXED: now uses correct file
   'doors-doble-blanca': 'Blanca-dos-puertas.png',
   'doors-negra-doble': 'negra-dos-puertas.png',
   
-  // Window variations - TODAS las opciones mapeadas
-  'windows-blancas': '', // Default windows están en base image
+  // Window variations - FIXED: white windows use base image
+  'windows-blancas': '', // FIXED: uses base image as specified
   'windows-abatibles': 'hoja-abatible.png',
   'windows-negras': 'Negras.png',
   
-  // Interior flooring variations - TODAS las opciones mapeadas
-  'flooring-gris-claro': '', // Default flooring está en base image
+  // Interior flooring variations
+  'flooring-gris-claro': '',
   'flooring-gris-oscuro': 'Gris-oscuro.png',
   'flooring-madera-clara': 'Tarima-1.png',
   'flooring-madera-oscura': 'Tarima-2.png',
   
-  // Kitchen variations - TODAS las opciones mapeadas
-  'kitchen-madera-blanca': '', // Default kitchen está en base image
+  // Kitchen variations
+  'kitchen-madera-blanca': '',
   'kitchen-madera-gris': 'CocinaGris.png',
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
-  // Bathroom variations - TODAS las opciones mapeadas
-  'bathroom-blanco-basic': '', // Default bathroom está en base image
+  // Bathroom variations
+  'bathroom-blanco-basic': '',
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
   'bathroom-madera-clara': 'bañooriginal.jpg'
