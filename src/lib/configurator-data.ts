@@ -139,7 +139,8 @@ const imageMapping: Record<string, string> = {
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
   // Bathroom variations - CORRECTED ALL MAPPINGS
-  'bathroom-blanco-basic': 'bañooriginal.jpg',
+  // Fix exact filename to match public asset (n + combining tilde)
+  'bathroom-blanco-basic': 'bãooriginal.jpg',
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
   'bathroom-madera-clara': 'blanco.png'
@@ -187,15 +188,16 @@ export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterio
   console.log(`🎨 Generating layers for ${view} view:`, config);
   
   if (view === 'exterior') {
-    layers.push({ 
-      category: 'cladding', 
-      option: config.exteriorCladding,
-      zIndex: 1
-    });
-    
+    // Reorder z-index so cladding is above doors and windows stays on top
     layers.push({ 
       category: 'doors', 
       option: config.exteriorDoors,
+      zIndex: 1
+    });
+
+    layers.push({ 
+      category: 'cladding', 
+      option: config.exteriorCladding,
       zIndex: 2
     });
     
