@@ -143,7 +143,7 @@ const imageMapping: Record<string, string> = {
   'bathroom-blanco-basic': null, // Default bathroom is in base image
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
-  'bathroom-madera-clara': 'bañooriginal.jpg'
+  'bathroom-madera-clara': 'bañooriginal.jpg' // Fixed filename
 };
 
 // Enhanced image path function

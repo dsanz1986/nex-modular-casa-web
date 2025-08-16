@@ -2,6 +2,7 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { AIButton } from "@/components/ui/ai-button";
+import { LayoutGrid, Layers, ShowerHead, Paintbrush, PanelsTopLeft, DoorClosed, DoorOpen, Sparkles } from "lucide-react";
 
 export const PersonalizationSection = () => {
   const { t } = useTranslation();
@@ -17,7 +18,8 @@ export const PersonalizationSection = () => {
             {t('personalization.subtitle')}
           </p>
           <Link to="/configurador">
-            <AIButton className="text-lg px-12 py-4">
+            <AIButton className="text-xl px-14 py-5 bg-gradient-to-r from-nex-primary via-emerald-500 to-forest-600 hover:from-nex-primary/90 hover:via-emerald-500/90 hover:to-forest-600/90 shadow-2xl shadow-emerald-300/30 ring-2 ring-white/50 transform transition-all duration-200 hover:scale-105 animate-enter rounded-full">
+              <Sparkles className="w-5 h-5 mr-2" />
               Diseña tu casa
             </AIButton>
           </Link>
@@ -31,8 +33,8 @@ export const PersonalizationSection = () => {
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-nex-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-6 h-6 bg-nex-primary rounded-full"></div>
+                <div className="w-12 h-12 bg-gradient-to-br from-nex-primary/10 to-nex-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <LayoutGrid className="w-6 h-6 text-nex-primary" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-nex-text mb-2">{t('personalization.interior.distribution')}</h4>
@@ -41,8 +43,8 @@ export const PersonalizationSection = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-nex-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-6 h-6 bg-nex-primary rounded-full"></div>
+                <div className="w-12 h-12 bg-gradient-to-br from-nex-primary/10 to-nex-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Layers className="w-6 h-6 text-nex-primary" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-nex-text mb-2">{t('personalization.interior.flooring')}</h4>
@@ -51,8 +53,8 @@ export const PersonalizationSection = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-nex-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-6 h-6 bg-nex-primary rounded-full"></div>
+                <div className="w-12 h-12 bg-gradient-to-br from-nex-primary/10 to-nex-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <ShowerHead className="w-6 h-6 text-nex-primary" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-nex-text mb-2">{t('personalization.interior.extraBath')}</h4>
@@ -61,8 +63,8 @@ export const PersonalizationSection = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-nex-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-6 h-6 bg-nex-primary rounded-full"></div>
+                <div className="w-12 h-12 bg-gradient-to-br from-nex-primary/10 to-nex-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Paintbrush className="w-6 h-6 text-nex-primary" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-nex-text mb-2">{t('personalization.interior.coating')}</h4>
@@ -78,8 +80,8 @@ export const PersonalizationSection = () => {
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-nex-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-6 h-6 bg-nex-accent rounded-full"></div>
+                <div className="w-12 h-12 bg-gradient-to-br from-nex-accent/10 to-nex-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <PanelsTopLeft className="w-6 h-6 text-nex-accent" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-nex-text mb-2">{t('personalization.exterior.extraWindows')}</h4>
@@ -88,8 +90,8 @@ export const PersonalizationSection = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-nex-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-6 h-6 bg-nex-accent rounded-full"></div>
+                <div className="w-12 h-12 bg-gradient-to-br from-nex-accent/10 to-nex-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <DoorClosed className="w-6 h-6 text-nex-accent" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-nex-text mb-2">{t('personalization.exterior.doorTypes')}</h4>
@@ -98,8 +100,8 @@ export const PersonalizationSection = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-nex-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-6 h-6 bg-nex-accent rounded-full"></div>
+                <div className="w-12 h-12 bg-gradient-to-br from-nex-accent/10 to-nex-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <DoorOpen className="w-6 h-6 text-nex-accent" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-nex-text mb-2">{t('personalization.exterior.extraDoors')}</h4>
@@ -108,8 +110,8 @@ export const PersonalizationSection = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-nex-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-6 h-6 bg-nex-accent rounded-full"></div>
+                <div className="w-12 h-12 bg-gradient-to-br from-nex-accent/10 to-nex-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Layers className="w-6 h-6 text-nex-accent" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-nex-text mb-2">{t('personalization.exterior.coating')}</h4>

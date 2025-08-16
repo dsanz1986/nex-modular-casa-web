@@ -63,11 +63,11 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
     return layers.map(layer => ({
       ...layer,
       src: getImagePath(layer.category, layer.option, viewMode)
-    }));
+    })).filter(layer => layer.src && layer.src !== ''); // Filter out empty sources
   };
 
   const layers = getConfigurationLayers();
-  const allImages = [baseImageSrc, ...layers.map(layer => layer.src)];
+  const allImages = [baseImageSrc, ...layers.map(layer => layer.src)].filter(src => src && src !== '');
 
   // Preload images and track loading state
   useEffect(() => {
@@ -122,7 +122,7 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
 
       {/* Layer images - render all selected options on top of base */}
       {layers.map((layer) => (
-        loadedImages.has(layer.src) && (
+        layer.src && loadedImages.has(layer.src) && (
           <img
             key={`${layer.category}-${layer.option}`}
             src={layer.src}
