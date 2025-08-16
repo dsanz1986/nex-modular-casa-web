@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getBaseImagePath, ConfiguratorState, getConfigurationLayers } from "@/lib/configurator-data";
@@ -66,7 +65,8 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
       setFailedImages(failed);
       setIsLoading(false);
     });
-  }, [config, viewMode]); // Trigger on config or viewMode changes
+    // Dependemos de las rutas concretas para asegurar que el efecto se ejecute siempre que cambien
+  }, [baseImageSrc, viewMode, allImages.join('|')]);
 
   if (isLoading) {
     return <Skeleton className={`w-full h-full ${className}`} />;

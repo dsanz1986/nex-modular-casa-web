@@ -110,25 +110,25 @@ const imageMapping: Record<string, string> = {
   'cladding-blanco': 'Blanca.png',  
   'cladding-gris-claro': 'Ladrillo-gris-blanco.png',
   'cladding-dorado': 'Ladrillo-amarillo.png',
-  'cladding-gris-oscuro': 'Ladrillo gris.png', // FIXED: correct file name
+  'cladding-gris-oscuro': 'Ladrillo gris.png',
   'cladding-antracita': 'Ladrillo-gris-varios.png',
   'cladding-rojo': 'Ladrillo-rojo-varios.png',
   'cladding-naranja': 'Ladrillo-rojo-varios.png',
   'cladding-madera-natural': 'Madera-media.png',
   'cladding-madera-chocolate': 'Madera-oscura.png',
   
-  // Door variations - FIXED
-  'doors-simple-blanca': 'Blanca-normal.png', // FIXED: correct file name
+  // Door variations
+  'doors-simple-blanca': 'Blanca-normal.png',
   'doors-doble-blanca': 'Blanca-dos-puertas.png',
   'doors-negra-doble': 'negra-dos-puertas.png',
   
-  // Window variations - FIXED
-  'windows-blancas': '', // FIXED: uses base image as specified
+  // Window variations
+  'windows-blancas': '',
   'windows-abatibles': 'hoja-abatible.png',
   'windows-negras': 'Negras.png',
   
-  // Interior flooring variations - FIXED
-  'flooring-gris-claro': 'Gris.png', // FIXED: now uses correct file name
+  // Interior flooring variations
+  'flooring-gris-claro': 'Gris.png',
   'flooring-gris-oscuro': 'Gris-oscuro.png',
   'flooring-madera-clara': 'Tarima-1.png',
   'flooring-madera-oscura': 'Tarima-2.png',
@@ -138,30 +138,27 @@ const imageMapping: Record<string, string> = {
   'kitchen-madera-gris': 'CocinaGris.png',
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
-  // Bathroom variations - FIXED
-  'bathroom-blanco-basic': 'bañooriginal.jpg', // FIXED: now uses correct file name
+  // Bathroom variations
+  // IMPORTANTE: usar el nombre del archivo con "n + tilde combinada" para que coincida exactamente con el fichero en /public
+  'bathroom-blanco-basic': 'bañooriginal.jpg',
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
-  'bathroom-madera-clara': 'blanco.png' // FIXED: now uses correct file name
+  'bathroom-madera-clara': 'blanco.png'
 };
 
 export const getImagePath = (category: string, option: string, view: 'exterior' | 'interior' = 'exterior'): string => {
   const imageKey = `${category}-${option}`;
   const fileName = imageMapping[imageKey];
   
-  // Si es string vacío, significa que es la opción por defecto (está en la imagen base)
   if (fileName === '') {
     return '';
   }
   
-  // Si tiene nombre de archivo, construir la ruta completa con encoding adecuado
   if (fileName) {
-    // Usar encodeURI para manejar espacios y caracteres especiales en nombres de archivo
     const encodedFileName = encodeURI(fileName);
     return `/configurator/nex-natura/${view}/${encodedFileName}`;
   }
   
-  // Si no está mapeado, devolver string vacío para evitar errores
   console.warn(`No image mapping found for: ${imageKey}`);
   return '';
 };
