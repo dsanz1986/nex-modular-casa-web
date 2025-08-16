@@ -105,7 +105,7 @@ const imageMapping: Record<string, string> = {
   'base-exterior': 'base.jpg',
   'base-interior': 'basecocina.jpg',
   
-  // Exterior cladding variations - CORRECTED MAPPINGS
+  // Exterior cladding variations - FIXED MAPPINGS
   'cladding-terracota': 'terracota.jpg',
   'cladding-blanco': 'Blanca.png',  
   'cladding-gris-claro': 'Ladrillo-gris-blanco.png',
@@ -117,28 +117,28 @@ const imageMapping: Record<string, string> = {
   'cladding-madera-natural': 'Madera-media.png',
   'cladding-madera-chocolate': 'Madera-oscura.png',
   
-  // Door variations - CORRECTED ALL MAPPINGS
+  // Door variations - FIXED MAPPINGS
   'doors-simple-blanca': 'Blanca-normal.png',
   'doors-doble-blanca': 'Blanca-dos-puertas.png',
   'doors-negra-doble': 'negra-dos-puertas.png',
   
-  // Window variations - CORRECTED ALL MAPPINGS
+  // Window variations - FIXED MAPPINGS
   'windows-blancas': 'base.jpg',
   'windows-abatibles': 'hoja-abatible.png',
   'windows-negras': 'Negras.png',
   
-  // Interior flooring variations - CORRECTED ALL MAPPINGS
+  // Interior flooring variations - FIXED MAPPINGS
   'flooring-gris-claro': 'Gris.png',
   'flooring-gris-oscuro': 'Gris-oscuro.png',
   'flooring-madera-clara': 'Tarima-1.png',
   'flooring-madera-oscura': 'Tarima-2.png',
   
-  // Kitchen variations - CORRECTED ALL MAPPINGS
+  // Kitchen variations - FIXED MAPPINGS
   'kitchen-madera-blanca': 'basecocina.jpg',
   'kitchen-madera-gris': 'CocinaGris.png',
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
-  // Bathroom variations - CORRECTED ALL MAPPINGS
+  // Bathroom variations - FIXED MAPPINGS
   'bathroom-blanco-basic': 'bano-original.jpg',
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
@@ -151,20 +151,15 @@ export const getImagePath = (category: string, option: string, view: 'exterior' 
   
   console.log(`🔍 Looking up image: ${imageKey} -> ${fileName}`);
   
-  if (fileName === '') {
-    console.log(`📝 Using base image for: ${imageKey}`);
+  if (!fileName) {
+    console.warn(`❌ No image mapping found for: ${imageKey}`);
     return '';
   }
   
-  if (fileName) {
-    const encodedFileName = encodeURI(fileName);
-    const fullPath = `/configurator/nex-natura/${view}/${encodedFileName}`;
-    console.log(`✅ Image path generated: ${fullPath}`);
-    return fullPath;
-  }
-  
-  console.warn(`❌ No image mapping found for: ${imageKey}`);
-  return '';
+  const encodedFileName = encodeURI(fileName);
+  const fullPath = `/configurator/nex-natura/${view}/${encodedFileName}`;
+  console.log(`✅ Image path generated: ${fullPath}`);
+  return fullPath;
 };
 
 export const getBaseImagePath = (view: 'exterior' | 'interior'): string => {
@@ -181,54 +176,52 @@ export const getBaseImagePath = (view: 'exterior' | 'interior'): string => {
   return `/configurator/nex-natura/${view}/base.webp`;
 };
 
-export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterior' | 'interior') => {
+export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterior' | 'interior', activeCategory?: string) => {
   const layers = [];
   
-  console.log(`🎨 Generating layers for ${view} view:`, config);
+  console.log(`🎨 Generating layers for ${view} view:`, { config, activeCategory });
   
   if (view === 'exterior') {
-    // Reorder z-index so cladding is above doors and windows stays on top
-    layers.push({ 
-      category: 'doors', 
-      option: config.exteriorDoors,
-      zIndex: 1
-    });
-
-    layers.push({ 
-      category: 'cladding', 
-      option: config.exteriorCladding,
-      zIndex: 2
-    });
+    // Add all layers but prioritize the active category
+    const categoryOrder = ['doors', 'cladding', 'windows'];
+    const baseZIndex = activeCategory ? 1 : 1;
     
-    layers.push({ 
-      category: 'windows', 
-      option: config.exteriorWindows,
-      zIndex: 3
+    categoryOrder.forEach((category, index) => {
+      const configKey = `exterior${category.charAt(0).toUpperCase() + category.slice(1)}` as keyof ConfiguratorState;
+      const option = config[configKey] as string;
+      
+      // If this is the active category, give it the highest z-index
+      const zIndex = activeCategory === category ? 10 : baseZIndex + index;
+      
+      layers.push({ 
+        category, 
+        option,
+        zIndex
+      });
     });
   } else if (view === 'interior') {
-    layers.push({ 
-      category: 'flooring', 
-      option: config.interiorFlooring,
-      zIndex: 1
-    });
+    const categoryOrder = ['flooring', 'kitchen', 'bathroom'];
+    const baseZIndex = activeCategory ? 1 : 1;
     
-    layers.push({ 
-      category: 'kitchen', 
-      option: config.interiorKitchen,
-      zIndex: 2
-    });
-    
-    layers.push({ 
-      category: 'bathroom', 
-      option: config.interiorBathroom,
-      zIndex: 3
+    categoryOrder.forEach((category, index) => {
+      const configKey = `interior${category.charAt(0).toUpperCase() + category.slice(1)}` as keyof ConfiguratorState;
+      const option = config[configKey] as string;
+      
+      // If this is the active category, give it the highest z-index
+      const zIndex = activeCategory === category ? 10 : baseZIndex + index;
+      
+      layers.push({ 
+        category, 
+        option,
+        zIndex
+      });
     });
   }
   
   // Generate src paths for all layers
   const layersWithPaths = layers.map(layer => {
     const src = getImagePath(layer.category, layer.option, view);
-    console.log(`🖼️ Layer generated: ${layer.category}-${layer.option} -> ${src || 'BASE IMAGE'}`);
+    console.log(`🖼️ Layer generated: ${layer.category}-${layer.option} -> ${src || 'BASE IMAGE'} (z-index: ${layer.zIndex})`);
     return {
       ...layer,
       src

@@ -16,9 +16,14 @@ export default function Configurator() {
   const { t } = useTranslation();
   const [config, setConfig] = useState<ConfiguratorState>(getDefaultConfig());
   const [viewMode, setViewMode] = useState<"exterior" | "interior">("exterior");
+  const [activeCategory, setActiveCategory] = useState<string>('');
 
-  const handleConfigUpdate = (updates: Partial<ConfiguratorState>) => {
+  const handleConfigUpdate = (updates: Partial<ConfiguratorState>, category?: string) => {
+    console.log(`🎯 Config update:`, { updates, category });
     setConfig(prev => ({ ...prev, ...updates }));
+    if (category) {
+      setActiveCategory(category);
+    }
   };
 
   return (
@@ -49,7 +54,11 @@ export default function Configurator() {
           <div className="space-y-4">
             <Card className="border-0 shadow-lg">
               <CardContent className="p-6">
-                <ConfiguratorPreview config={config} viewMode={viewMode} />
+                <ConfiguratorPreview 
+                  config={config} 
+                  viewMode={viewMode} 
+                  activeCategory={activeCategory}
+                />
               </CardContent>
             </Card>
           </div>

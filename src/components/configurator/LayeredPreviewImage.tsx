@@ -6,10 +6,11 @@ import { getBaseImagePath, ConfiguratorState, getConfigurationLayers } from "@/l
 interface LayeredPreviewImageProps {
   config: ConfiguratorState;
   viewMode: "exterior" | "interior";
+  activeCategory?: string;
   className?: string;
 }
 
-export const LayeredPreviewImage = ({ config, viewMode, className = "" }: LayeredPreviewImageProps) => {
+export const LayeredPreviewImage = ({ config, viewMode, activeCategory, className = "" }: LayeredPreviewImageProps) => {
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const [isLoading, setIsLoading] = useState(true);
@@ -17,12 +18,13 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
 
   const baseImageSrc = getBaseImagePath(viewMode);
   
-  // Get all configuration layers
-  const layers = getConfigurationLayers(config, viewMode);
+  // Get all configuration layers with active category priority
+  const layers = getConfigurationLayers(config, viewMode, activeCategory);
   const allImages = [baseImageSrc, ...layers.map(layer => layer.src)].filter(src => src && src !== '');
 
   console.log(`🔄 Preview update for ${viewMode}:`, { 
     config, 
+    activeCategory,
     layers, 
     allImages,
     baseImageSrc 
@@ -124,7 +126,7 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
         currentController.abort();
       }
     };
-  }, [baseImageSrc, viewMode, JSON.stringify(config)]);
+  }, [baseImageSrc, viewMode, activeCategory, JSON.stringify(config)]);
 
   if (isLoading) {
     return (
@@ -152,18 +154,20 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
         />
       )}
 
-      {/* Render ALL valid layers with correct z-index */}
-      {layers.map((layer) => (
-        layer.src && loadedImages.has(layer.src) && (
-          <img
-            key={`${layer.category}-${layer.option}-${Date.now()}`}
-            src={layer.src}
-            alt={`${layer.category} ${layer.option}`}
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ zIndex: layer.zIndex }}
-          />
-        )
-      ))}
+      {/* Render ALL valid layers with correct z-index, prioritizing active category */}
+      {layers
+        .sort((a, b) => a.zIndex - b.zIndex) // Sort by z-index
+        .map((layer) => (
+          layer.src && loadedImages.has(layer.src) && (
+            <img
+              key={`${layer.category}-${layer.option}-${Date.now()}`}
+              src={layer.src}
+              alt={`${layer.category} ${layer.option}`}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ zIndex: layer.zIndex }}
+            />
+          )
+        ))}
 
       {/* Debug overlay for failed images (only in development) */}
       {process.env.NODE_ENV === 'development' && failedImages.size > 0 && (

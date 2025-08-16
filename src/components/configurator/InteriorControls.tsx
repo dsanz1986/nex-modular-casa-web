@@ -5,7 +5,7 @@ import { OptionGroup } from "./OptionGroup";
 
 interface InteriorControlsProps {
   config: ConfiguratorState;
-  onUpdate: (updates: Partial<ConfiguratorState>) => void;
+  onUpdate: (updates: Partial<ConfiguratorState>, category?: string) => void;
 }
 
 export const InteriorControls = ({ config, onUpdate }: InteriorControlsProps) => {
@@ -17,7 +17,7 @@ export const InteriorControls = ({ config, onUpdate }: InteriorControlsProps) =>
         title={t('configurator.categories.interiorFlooring')}
         options={configuratorData.interior.flooring.options}
         selectedValue={config.interiorFlooring}
-        onSelect={(value) => onUpdate({ interiorFlooring: value })}
+        onSelect={(value) => onUpdate({ interiorFlooring: value }, 'flooring')}
         showColors={false}
       />
       
@@ -25,7 +25,7 @@ export const InteriorControls = ({ config, onUpdate }: InteriorControlsProps) =>
         title={t('configurator.categories.interiorKitchen')}
         options={configuratorData.interior.kitchen.options}
         selectedValue={config.interiorKitchen}
-        onSelect={(value) => onUpdate({ interiorKitchen: value })}
+        onSelect={(value) => onUpdate({ interiorKitchen: value }, 'kitchen')}
         showColors={false}
       />
       
@@ -33,7 +33,7 @@ export const InteriorControls = ({ config, onUpdate }: InteriorControlsProps) =>
         title={t('configurator.categories.interiorBathroom')}
         options={configuratorData.interior.bathroom.options}
         selectedValue={config.interiorBathroom}
-        onSelect={(value) => onUpdate({ interiorBathroom: value })}
+        onSelect={(value) => onUpdate({ interiorBathroom: value }, 'bathroom')}
         showColors={false}
       />
     </div>
