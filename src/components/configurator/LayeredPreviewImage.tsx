@@ -16,9 +16,11 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
 
   const baseImageSrc = getBaseImagePath(viewMode);
   
-  // CORREGIDO: usar la función mejorada que siempre devuelve todas las capas
+  // Get all configuration layers
   const layers = getConfigurationLayers(config, viewMode);
   const allImages = [baseImageSrc, ...layers.map(layer => layer.src)].filter(src => src && src !== '');
+
+  console.log(`Preview update for ${viewMode}:`, { config, layers, allImages }); // Enhanced debug log
 
   // Preload images and track loading state
   useEffect(() => {
@@ -34,8 +36,14 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
     const imagePromises = allImages.map(src => {
       return new Promise<string>((resolve, reject) => {
         const img = new Image();
-        img.onload = () => resolve(src);
-        img.onerror = () => reject(src);
+        img.onload = () => {
+          console.log(`✅ Image loaded successfully: ${src}`);
+          resolve(src);
+        };
+        img.onerror = () => {
+          console.error(`❌ Failed to load image: ${src}`);
+          reject(src);
+        };
         img.src = src;
       });
     });
@@ -50,15 +58,15 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
           loaded.add(src);
         } else {
           failed.add(src);
-          console.warn(`Failed to load image: ${src}`);
         }
       });
 
+      console.log(`Image loading completed:`, { loaded: Array.from(loaded), failed: Array.from(failed) });
       setLoadedImages(loaded);
       setFailedImages(failed);
       setIsLoading(false);
     });
-  }, [config, viewMode]);
+  }, [config, viewMode]); // Trigger on config or viewMode changes
 
   if (isLoading) {
     return <Skeleton className={`w-full h-full ${className}`} />;
@@ -66,7 +74,7 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
 
   return (
     <div className={`relative w-full h-full ${className}`}>
-      {/* Base image - siempre en el fondo */}
+      {/* Base image - always in the background */}
       {loadedImages.has(baseImageSrc) && (
         <img
           src={baseImageSrc}
@@ -76,7 +84,7 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
         />
       )}
 
-      {/* CORREGIDO: Renderizar TODAS las capas válidas con el z-index correcto */}
+      {/* Render ALL valid layers with correct z-index */}
       {layers.map((layer) => (
         layer.src && loadedImages.has(layer.src) && (
           <img
@@ -88,6 +96,16 @@ export const LayeredPreviewImage = ({ config, viewMode, className = "" }: Layere
           />
         )
       ))}
+
+      {/* Debug overlay for failed images (only in development) */}
+      {process.env.NODE_ENV === 'development' && failedImages.size > 0 && (
+        <div className="absolute top-2 left-2 bg-red-100 text-red-800 text-xs p-2 rounded max-w-xs">
+          <div className="font-semibold">Failed to load:</div>
+          {Array.from(failedImages).map(src => (
+            <div key={src} className="truncate">{src}</div>
+          ))}
+        </div>
+      )}
 
       {/* Fallback if no base image loads */}
       {!loadedImages.has(baseImageSrc) && (

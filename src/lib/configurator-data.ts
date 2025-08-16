@@ -100,13 +100,12 @@ export const getDefaultConfig = (): ConfiguratorState => ({
   interiorBathroom: 'blanco-basic'
 });
 
-// CORRECTED: Fixed image mappings with correct file names
 const imageMapping: Record<string, string> = {
   // Base images
   'base-exterior': 'base.jpg',
   'base-interior': 'basecocina.jpg',
   
-  // Exterior cladding variations - FIXED: correct mappings
+  // Exterior cladding variations - ALL CORRECT
   'cladding-terracota': 'terracota.jpg',
   'cladding-blanco': 'Blanca.png',  
   'cladding-gris-claro': 'Ladrillo-gris-blanco.png',
@@ -118,18 +117,18 @@ const imageMapping: Record<string, string> = {
   'cladding-madera-natural': 'Madera-media.png',
   'cladding-madera-chocolate': 'Madera-oscura.png',
   
-  // Door variations - FIXED: correct mapping for simple white door
-  'doors-simple-blanca': 'Blanca-normal.png', // FIXED: now uses correct file
+  // Door variations - FIXED
+  'doors-simple-blanca': 'Blanca-normal.png', // FIXED: correct file name
   'doors-doble-blanca': 'Blanca-dos-puertas.png',
   'doors-negra-doble': 'negra-dos-puertas.png',
   
-  // Window variations - FIXED: white windows use base image
+  // Window variations - FIXED
   'windows-blancas': '', // FIXED: uses base image as specified
   'windows-abatibles': 'hoja-abatible.png',
   'windows-negras': 'Negras.png',
   
-  // Interior flooring variations
-  'flooring-gris-claro': '',
+  // Interior flooring variations - FIXED
+  'flooring-gris-claro': 'Gris.png', // FIXED: now uses correct file name
   'flooring-gris-oscuro': 'Gris-oscuro.png',
   'flooring-madera-clara': 'Tarima-1.png',
   'flooring-madera-oscura': 'Tarima-2.png',
@@ -139,14 +138,13 @@ const imageMapping: Record<string, string> = {
   'kitchen-madera-gris': 'CocinaGris.png',
   'kitchen-madera-oscura': 'CocinaMadera.png',
   
-  // Bathroom variations
-  'bathroom-blanco-basic': '',
+  // Bathroom variations - FIXED
+  'bathroom-blanco-basic': 'bañooriginal.jpg', // FIXED: now uses correct file name
   'bathroom-blanco-madera': 'blanco-madera.png',
   'bathroom-blanco-moderno': 'blanco-moderno.png',
-  'bathroom-madera-clara': 'bañooriginal.jpg'
+  'bathroom-madera-clara': 'blanco.png' // FIXED: now uses correct file name
 };
 
-// CORREGIDO: función que maneja correctamente todas las opciones
 export const getImagePath = (category: string, option: string, view: 'exterior' | 'interior' = 'exterior'): string => {
   const imageKey = `${category}-${option}`;
   const fileName = imageMapping[imageKey];
@@ -156,9 +154,11 @@ export const getImagePath = (category: string, option: string, view: 'exterior' 
     return '';
   }
   
-  // Si tiene nombre de archivo, construir la ruta completa
+  // Si tiene nombre de archivo, construir la ruta completa con encoding adecuado
   if (fileName) {
-    return `/configurator/nex-natura/${view}/${fileName}`;
+    // Usar encodeURI para manejar espacios y caracteres especiales en nombres de archivo
+    const encodedFileName = encodeURI(fileName);
+    return `/configurator/nex-natura/${view}/${encodedFileName}`;
   }
   
   // Si no está mapeado, devolver string vacío para evitar errores
@@ -166,7 +166,6 @@ export const getImagePath = (category: string, option: string, view: 'exterior' 
   return '';
 };
 
-// Get base image for each view
 export const getBaseImagePath = (view: 'exterior' | 'interior'): string => {
   const baseKey = `base-${view}`;
   const fileName = imageMapping[baseKey];
@@ -179,12 +178,11 @@ export const getBaseImagePath = (view: 'exterior' | 'interior'): string => {
   return `/configurator/nex-natura/${view}/base.webp`;
 };
 
-// CORREGIDO: función que siempre devuelve todas las capas seleccionadas
 export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterior' | 'interior') => {
   const layers = [];
   
   if (view === 'exterior') {
-    // SIEMPRE agregar TODAS las capas con las opciones seleccionadas
+    // ALWAYS add ALL layers with selected options
     layers.push({ 
       category: 'cladding', 
       option: config.exteriorCladding,
@@ -203,7 +201,7 @@ export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterio
       zIndex: 3
     });
   } else if (view === 'interior') {
-    // SIEMPRE agregar TODAS las capas con las opciones seleccionadas
+    // ALWAYS add ALL layers with selected options
     layers.push({ 
       category: 'flooring', 
       option: config.interiorFlooring,
@@ -223,10 +221,15 @@ export const getConfigurationLayers = (config: ConfiguratorState, view: 'exterio
     });
   }
   
-  return layers.map(layer => ({
-    ...layer,
-    src: getImagePath(layer.category, layer.option, view)
-  }));
+  // Generate src paths for all layers
+  return layers.map(layer => {
+    const src = getImagePath(layer.category, layer.option, view);
+    console.log(`Layer generated: ${layer.category}-${layer.option} -> ${src}`); // Debug log
+    return {
+      ...layer,
+      src
+    };
+  });
 };
 
 export const getConfigPrice = (config: ConfiguratorState): number => {
