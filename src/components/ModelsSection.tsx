@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, Clock } from "lucide-react";
@@ -109,8 +110,7 @@ const ModelsSection = () => {
                     <li key={idx} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-nex-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-nex-text font-inter">
-                        {feature}
-                        {idx === 0 && " - Estructura de acero galvanizado + lana de roca de 100 mm"}
+                        {idx === 0 ? "Estructura de acero galvanizado + lana de roca de 100 mm" : feature}
                       </span>
                     </li>
                   ))}
