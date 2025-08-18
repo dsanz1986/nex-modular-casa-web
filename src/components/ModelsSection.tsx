@@ -36,7 +36,7 @@ const ModelsSection = () => {
         "/lovable-uploads/imgi_127_359e49_1b849c2d052341b6a0dd449ccba57cfd~mv2.jpg",
         "/lovable-uploads/imgi_128_359e49_7295abc7e432491bb4560bc32b1cc64e~mv2.jpg",
         "/lovable-uploads/imgi_129_359e49_78bff05cfc4c46bbab3d77a703ba8b3c~mv2.jpg",
-        "/lovable-uploads/habitacion.jpg",
+        "/lovable-uploads/habitacion.jpeg",
         "/lovable-uploads/cocina2.jpeg",
         "/lovable-uploads/salon2.jpeg"
       ]
