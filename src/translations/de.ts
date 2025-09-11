@@ -33,7 +33,7 @@ export const de = {
     currentOffer: "Aktuelles Angebot",
     seeDetails: "Details ansehen",
     downloadPdf: "Technisches Datenblatt herunterladen",
-    specialOffer: "SPEZIELLES LIMITIERTES ANGEBOT BIS 31. AUGUST!",
+    specialOffer: "SPEZIELLES LIMITIERTES ANGEBOT BIS 31. SEPTEMBER!",
     reservationDeadline: "Reservierungen vor dem 31. August",
     nexNatura: {
       name: "Nex Natura",
