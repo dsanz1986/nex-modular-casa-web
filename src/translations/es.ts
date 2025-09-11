@@ -290,6 +290,7 @@ export const es = {
   footer: {
     company: "Nex Modular Homes",
     description: "Especialistas en viviendas modulares móviles sin obra, listas para instalar en toda España.",
+    followUs: "Síguenos en",
     contact: "Contacto",
     services: "Nuestros Servicios",
     servicesList: {

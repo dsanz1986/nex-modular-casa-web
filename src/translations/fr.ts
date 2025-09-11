@@ -284,6 +284,7 @@ export const fr = {
   footer: {
     company: "Nex Modular Homes",
     description: "Spécialistes en maisons modulaires mobiles sans construction, prêtes à installer dans toute l'Espagne.",
+    followUs: "Suivez-nous",
     contact: "Contact",
     services: "Nos Services",
     servicesList: {
