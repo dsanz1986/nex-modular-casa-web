@@ -34,7 +34,7 @@ export const fr = {
     seeDetails: "Voir détails",
     downloadPdf: "Télécharger fiche technique",
     specialOffer: "OFFRE SPÉCIALE LIMITÉE JUSQU'AU 31 SEPTEMBRE !",
-    reservationDeadline: "Réservations avant le 31 août",
+    reservationDeadline: "Réservations avant le 31 septembre",
     nexNatura: {
       name: "Nex Natura",
       dimensions: "90 m² totaux | 72 m² habitables + 18 m² de porche",
