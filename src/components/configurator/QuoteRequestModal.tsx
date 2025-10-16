@@ -1,9 +1,9 @@
-
-import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { useTranslation } from "react-i18next";
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
@@ -14,10 +14,30 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { ConfiguratorState, getSelectedOptions } from "@/lib/configurator-data";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+
+const quoteSchema = z.object({
+  name: z.string()
+    .trim()
+    .min(2, "El nombre debe tener al menos 2 caracteres")
+    .max(100, "El nombre no puede superar 100 caracteres")
+    .regex(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/, "El nombre solo puede contener letras"),
+  email: z.string()
+    .trim()
+    .min(1, "El email es obligatorio")
+    .email("Debe ser un email válido")
+    .max(255, "El email es demasiado largo"),
+  phone: z.string()
+    .trim()
+    .min(9, "El teléfono debe tener al menos 9 dígitos")
+    .max(15, "El teléfono no puede superar 15 dígitos")
+    .regex(/^[+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/, "Formato de teléfono inválido")
+});
+
+type QuoteFormData = z.infer<typeof quoteSchema>;
 
 interface QuoteRequestModalProps {
   config: ConfiguratorState;
@@ -27,29 +47,20 @@ interface QuoteRequestModalProps {
 export const QuoteRequestModal = ({ config, children }: QuoteRequestModalProps) => {
   const { t } = useTranslation();
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
+
+  const form = useForm<QuoteFormData>({
+    resolver: zodResolver(quoteSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+    }
   });
 
   const selectedOptions = getSelectedOptions(config);
 
-  const handleSubmit = async () => {
-    if (!formData.name || !formData.email || !formData.phone) {
-      toast({
-        title: "Error",
-        description: "Por favor completa todos los campos",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-
+  const onSubmit = async (data: QuoteFormData) => {
     try {
-      // Create configuration summary for email
       const configSummary = {
         exteriorCladding: selectedOptions.exteriorCladding?.name || 'No seleccionado',
         exteriorDoors: selectedOptions.exteriorDoors?.name || 'No seleccionado',
@@ -61,10 +72,10 @@ export const QuoteRequestModal = ({ config, children }: QuoteRequestModalProps) 
 
       const { error } = await supabase.functions.invoke('send-contact-email', {
         body: {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          comments: `Solicitud de presupuesto del configurador:\n\nConfiguración seleccionada:\n${Object.entries(configSummary).map(([key, value]) => `${key}: ${value}`).join('\n')}`,
+          nombre: data.name,
+          email: data.email,
+          telefono: data.phone,
+          comentarios: `Solicitud de presupuesto del configurador:\n\nConfiguración seleccionada:\n${Object.entries(configSummary).map(([key, value]) => `${key}: ${value}`).join('\n')}`,
           isQuoteRequest: true,
           configuration: configSummary
         }
@@ -77,8 +88,7 @@ export const QuoteRequestModal = ({ config, children }: QuoteRequestModalProps) 
         description: "Te contactaremos pronto con tu presupuesto personalizado.",
       });
 
-      // Reset form
-      setFormData({ name: "", email: "", phone: "" });
+      form.reset();
     } catch (error) {
       console.error('Error sending quote request:', error);
       toast({
@@ -86,8 +96,6 @@ export const QuoteRequestModal = ({ config, children }: QuoteRequestModalProps) 
         description: "Por favor intenta de nuevo más tarde.",
         variant: "destructive",
       });
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -108,47 +116,72 @@ export const QuoteRequestModal = ({ config, children }: QuoteRequestModalProps) 
           </AlertDialogDescription>
         </AlertDialogHeader>
 
-        <div className="space-y-4">
-          <div>
-            <Label htmlFor="name">{t('configurator.quoteForm.name')}</Label>
-            <Input
-              id="name"
-              placeholder={t('configurator.quoteForm.namePlaceholder')}
-              value={formData.name}
-              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t('configurator.quoteForm.name')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t('configurator.quoteForm.namePlaceholder')}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
-          <div>
-            <Label htmlFor="email">{t('configurator.quoteForm.email')}</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder={t('configurator.quoteForm.emailPlaceholder')}
-              value={formData.email}
-              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+            
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t('configurator.quoteForm.email')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder={t('configurator.quoteForm.emailPlaceholder')}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
-          <div>
-            <Label htmlFor="phone">{t('configurator.quoteForm.phone')}</Label>
-            <Input
-              id="phone"
-              type="tel"
-              placeholder={t('configurator.quoteForm.phonePlaceholder')}
-              value={formData.phone}
-              onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+            
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t('configurator.quoteForm.phone')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="tel"
+                      placeholder={t('configurator.quoteForm.phonePlaceholder')}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
-        </div>
 
-        <AlertDialogFooter>
-          <AlertDialogCancel>Cancelar</AlertDialogCancel>
-          <AlertDialogAction 
-            onClick={handleSubmit}
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? t('configurator.quoteForm.submitting') : t('configurator.quoteForm.submit')}
-          </AlertDialogAction>
-        </AlertDialogFooter>
+            <AlertDialogFooter>
+              <AlertDialogCancel type="button">Cancelar</AlertDialogCancel>
+              <Button 
+                type="submit"
+                disabled={form.formState.isSubmitting}
+              >
+                {form.formState.isSubmitting ? t('configurator.quoteForm.submitting') : t('configurator.quoteForm.submit')}
+              </Button>
+            </AlertDialogFooter>
+          </form>
+        </Form>
       </AlertDialogContent>
     </AlertDialog>
   );
