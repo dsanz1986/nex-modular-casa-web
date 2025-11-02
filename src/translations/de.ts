@@ -33,8 +33,8 @@ export const de = {
     currentOffer: "Aktuelles Angebot",
     seeDetails: "Details ansehen",
     downloadPdf: "Technisches Datenblatt herunterladen",
-    specialOffer: "SPEZIELLES LIMITIERTES ANGEBOT BIS 31. OKTOBER!",
-    reservationDeadline: "Reservierungen vor dem 31. Oktober",
+    specialOffer: "SPEZIELLES LIMITIERTES ANGEBOT BIS 30. NOVEMBER!",
+    reservationDeadline: "Reservieren Sie vor dem 30. November",
     nexNatura: {
       name: "Nex Natura",
       dimensions: "90 m² gesamt | 72 m² bewohnbar + 18 m² Veranda",

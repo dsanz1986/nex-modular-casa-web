@@ -33,8 +33,8 @@ export const es = {
     currentOffer: "Oferta actual",
     seeDetails: "Ver detalles",
     downloadPdf: "Descargar ficha técnica",
-    specialOffer: "¡OFERTA ESPECIAL LIMITADA HASTA EL 31 DE OCTUBRE!",
-    reservationDeadline: "Reservas antes del 31 de octubre",
+    specialOffer: "¡OFERTA ESPECIAL LIMITADA HASTA EL 30 DE NOVIEMBRE!",
+    reservationDeadline: "Reserva antes del 30 de noviembre",
     nexNatura: {
       name: "Nex Natura",
       dimensions: "90 m² totales | 72 m² habitables + 18 m² de porche",
