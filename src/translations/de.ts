@@ -214,41 +214,85 @@ export const de = {
     title: "Häufig gestellte Fragen",
     subtitle: "Alles, was Sie über unsere mobilen modularen Häuser ohne Bauarbeiten wissen müssen",
     items: {
-      permisos: {
-        question: "Benötige ich spezielle Genehmigungen zur Installation eines mobilen modularen Hauses?",
-        answer: "In den meisten Fällen benötigen Sie keine Baugenehmigungen, aber es ist ratsam, sich bei Ihrer örtlichen Gemeinde über spezifische Vorschriften in Ihrer Region zu informieren. Unsere mobilen modularen Häuser sind als transportable Wohnungen klassifiziert, was die Verfahren im Vergleich zur traditionellen Bauweise erheblich vereinfacht."
-      },
-      instalacion: {
-        question: "Wie lange dauert die Installation?",
-        answer: "Die Installation unserer mobilen modularen Häuser ist sehr schnell. Sobald das Haus auf Ihrem Grundstück ankommt, ist der Installations- und Inbetriebnahmeprozess in 1-2 Tagen abgeschlossen. Sie benötigen kein Fundament oder Vorarbeiten, nur eine ebene Fläche."
+      legal: {
+        question: "Ist das legal oder bekomme ich Ärger?",
+        answer: "Unsere Häuser sind 100% vom Industrieministerium mit CE-Kennzeichnung und Fahrgestellnummer wie jedes Fahrzeug homologiert. Sie brauchen keine Baugenehmigung, müssen aber die Bauvorschriften Ihrer Gemeinde einhalten. Wir helfen Ihnen bei allem."
       },
       terreno: {
-        question: "Welche Art von Grundstück benötige ich?",
-        answer: "Unsere mobilen modularen Häuser sind sehr vielseitig in Bezug auf das Grundstück. Sie benötigen eine ebene Fläche. Das Grundstück kann ländlich oder urban sein. Wir helfen Ihnen bei der Bewertung der Machbarkeit Ihres Grundstücks."
+        question: "Was brauche ich vor dem Hauskauf?",
+        answer: "Ein Grundstück zum Aufstellen (Ihr eigenes, gemietet oder geliehen) mit Zugang für den Transport. Wir helfen Ihnen zu prüfen, ob Ihr Grundstück geeignet ist."
       },
-      servicios: {
-        question: "Wie werden die Versorgungsleistungen (Wasser und Strom) angeschlossen?",
-        answer: "Die Häuser kommen für Standardanschlüsse vorbereitet. Wasser und Strom werden wie in jedem traditionellen Haus angeschlossen. Für Internet können Sie Glasfaseranschluss (falls in der Gegend verfügbar), 4G/5G oder Satelliteninternet verwenden. Wir beraten Sie über die besten Optionen für Ihren spezifischen Standort."
+      duracion: {
+        question: "Wie lange hält ein Nex-Haus?",
+        answer: "Über 50 Jahre bei grundlegender Wartung. Wir verwenden verzinkte Stahlstruktur, hochdichte Isolierung und erstklassige Ausführungen."
       },
-      calidad: {
-        question: "Welche Garantien bieten Sie für die Bauqualität?",
-        answer: "Wir bieten 10 Jahre Strukturgarantie und 2 Jahre allgemeine Garantie."
+      problema: {
+        question: "Was ist, wenn ich nach dem Kauf ein Problem habe?",
+        answer: "Sie haben 10 Jahre Strukturgarantie und Kundendienst. Außerdem sind wir auch nach der Lieferung für Sie da."
+      },
+      temperatura: {
+        question: "Wie ist die Isolierung? Ist es im Winter kalt oder im Sommer heiß?",
+        answer: "Hochdichte Wärmedämmung in Wänden, Boden und Decke. Außerdem ist eine Klimaanlage mit Wärmepumpe inklusive, sodass Sie die Temperatur kontrollieren."
+      },
+      ruido: {
+        question: "Hört man alles wie in einem Wohnwagen?",
+        answer: "Überhaupt nicht. Die Wände haben Schalldämmung und die Materialien entsprechen traditionellem Bau. Die Stille wird Sie überraschen."
       },
       precio: {
-        question: "Was ist im Preis enthalten?",
-        answer: "Der Preis beinhaltet das komplett fertige Haus, Transport zu Ihrem Standort mit kompletter Installation. Keine versteckten Kosten oder Überraschungen."
+        question: "Was kostet es wirklich? Gibt es später Überraschungen?",
+        answer: "Der Festpreis beinhaltet das fertige Haus, Transport und Installation. Das Einzige, was Sie brauchen, ist ein vorbereitetes Grundstück mit Anschlüssen (Strom, Wasser, Abwasser)."
+      },
+      entrega: {
+        question: "Wie lange dauert die Lieferung?",
+        answer: "Zwischen 8 und 12 Wochen ab Bestellbestätigung, je nach Anpassungsgrad."
+      },
+      personalizar: {
+        question: "Kann ich es personalisieren?",
+        answer: "Ja, Sie können Ausführungen, Farben, Küche, Böden, Bäder wählen... Sie haben unseren Online-Konfigurator, um Optionen zu sehen."
+      },
+      distribucion: {
+        question: "Kann die Raumaufteilung geändert werden?",
+        answer: "Ja, innerhalb bestimmter technischer Grenzen. Wenn Sie zum Beispiel ein zusätzliches Schlafzimmer möchten, sprechen wir darüber und sagen Ihnen, wie es geht."
+      },
+      viviendaHabitual: {
+        question: "Ist es ein Hauptwohnsitz oder nur für den Urlaub?",
+        answer: "Es kann problemlos Ihr Hauptwohnsitz sein. Viele unserer Kunden leben das ganze Jahr in ihrem Nex-Haus."
+      },
+      ampliar: {
+        question: "Kann es später erweitert werden?",
+        answer: "Nex-Häuser sind als komplette Einheiten konzipiert. Sie können nicht mit zusätzlichen Modulen erweitert werden, aber Sie können eine zweite Einheit hinzufügen, wenn Ihr Grundstück es erlaubt."
       },
       mantenimiento: {
-        question: "Welche Wartung benötigen sie?",
-        answer: "Die Wartung ist minimal, ähnlich wie bei jedem traditionellen Haus. Die verwendeten Materialien sind so konzipiert, dass sie wenig Wartung benötigen und eine lange Haltbarkeit haben."
+        question: "Welche Wartung braucht es?",
+        answer: "Sehr wenig. Nur das Normale für jedes Haus: Installationen prüfen, Dachrinnen reinigen... Nichts Außergewöhnliches."
       },
-      movilidad: {
-        question: "Können sie an einen anderen Standort verlegt werden?",
-        answer: "Ja, einer der großen Vorteile unserer mobilen modularen Häuser ist ihre Transportfähigkeit. Obwohl sie als Ihr dauerhaftes Zuhause konzipiert sind, können sie bei Bedarf an einen anderen Standort verlegt werden. Der Prozess erfordert Planung und spezialisierte Ausrüstung, die wir verwalten können."
+      confianza: {
+        question: "Warum sollte ich Ihnen vertrauen?",
+        answer: "Wir fertigen in unseren eigenen Anlagen. Sie können uns besuchen, sehen wie wir arbeiten und Kunden treffen, die bereits ihr Haus haben."
       },
-      personalizacion: {
-        question: "Kann ich das Innendesign anpassen?",
-        answer: "Absolut. Unsere mobilen modularen Häuser sind vollständig anpassbar. Sie können Innenaufteilung, Oberflächen, Farben, Bodenbelagstypen, Küche, Badezimmer und alle Details wählen, die Ihr Zuhause einzigartig machen. Wir arbeiten mit Ihnen vom Design bis zur finalen Lieferung."
+      calidad: {
+        question: "Kann ich ein Haus vor der Entscheidung sehen?",
+        answer: "Natürlich. Wir haben ein Musterhaus in Villacastín (Segovia), das Sie nach Vereinbarung besichtigen können."
+      },
+      verTerreno: {
+        question: "Können Sie mein Grundstück besichtigen?",
+        answer: "Ja. Sobald Sie echtes Interesse haben, organisieren wir einen Besuch, um Zugang und Machbarkeit zu prüfen."
+      },
+      campo: {
+        question: "Kann ich es mitten auf dem Land aufstellen?",
+        answer: "Das hängt von den Gemeindevorschriften ab. Einige erlauben es, andere nicht. Wir helfen Ihnen, es herauszufinden, bevor Sie sich festlegen."
+      },
+      pendiente: {
+        question: "Was ist, wenn das Grundstück Gefälle hat?",
+        answer: "Der Bereich, wo das Haus stehen wird, muss nivelliert werden. Das kann mit einer Platte, Pfählen oder Plattform gemacht werden. Wir beraten Sie zur besten Option."
+      },
+      llegada: {
+        question: "Wie kommt das Haus auf mein Grundstück?",
+        answer: "Per LKW als Schwertransport. Es ruht auf Pfählen oder einem vorbereiteten Fundament."
+      },
+      turistico: {
+        question: "Kann es für touristische Vermietung genutzt werden?",
+        answer: "Ja, aber es hängt von den Vorschriften Ihrer Region ab. Einige Kunden tun es bereits."
       }
     }
   },

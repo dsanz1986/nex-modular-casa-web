@@ -214,41 +214,85 @@ export const fr = {
     title: "Questions Fréquentes",
     subtitle: "Tout ce que vous devez savoir sur nos maisons modulaires mobiles sans construction",
     items: {
-      permisos: {
-        question: "Ai-je besoin de permis spéciaux pour installer une maison modulaire mobile ?",
-        answer: "Dans la plupart des cas, vous n'avez pas besoin de permis de construire, mais il est conseillé de consulter votre mairie locale sur les réglementations spécifiques de votre zone. Nos maisons modulaires mobiles sont classées comme logements transportables, ce qui simplifie considérablement les démarches par rapport à la construction traditionnelle."
-      },
-      instalacion: {
-        question: "Combien de temps prend l'installation ?",
-        answer: "L'installation de nos maisons modulaires mobiles est très rapide. Une fois que la maison arrive sur votre terrain, le processus d'installation et de mise en service se termine en 1-2 jours. Vous n'avez pas besoin de fondation ni de travaux préalables, juste une surface nivelée."
+      legal: {
+        question: "C'est légal ou je vais avoir des ennuis ?",
+        answer: "Nos maisons sont 100% homologuées par le Ministère de l'Industrie avec marquage CE et numéro de châssis comme tout véhicule. Vous n'avez pas besoin de permis de construire, mais vous devez respecter la réglementation urbanistique de votre commune. Nous vous aidons avec tout."
       },
       terreno: {
-        question: "Quel type de terrain ai-je besoin ?",
-        answer: "Nos maisons modulaires mobiles sont très polyvalentes en ce qui concerne le terrain. Vous avez besoin d'une surface nivelée. Le terrain peut être rural ou urbain. Nous vous aidons à évaluer la viabilité de votre parcelle."
+        question: "De quoi ai-je besoin avant d'acheter la maison ?",
+        answer: "Un terrain où la placer (à vous, loué ou prêté) avec accès pour le transport. Nous vous aidons à évaluer si votre parcelle est viable."
       },
-      servicios: {
-        question: "Comment se connectent les services (eau et électricité) ?",
-        answer: "Les maisons arrivent préparées pour des connexions standard. L'eau et l'électricité se connectent comme dans n'importe quel logement traditionnel. Pour internet, vous pouvez utiliser une connexion par fibre (si disponible dans la zone), 4G/5G ou internet satellite. Nous vous conseillons sur les meilleures options pour votre emplacement spécifique."
+      duracion: {
+        question: "Combien de temps dure une maison Nex ?",
+        answer: "Plus de 50 ans avec un entretien basique. Nous utilisons une structure en acier galvanisé, une isolation haute densité et des finitions de première qualité."
       },
-      calidad: {
-        question: "Quelles garanties offrez-vous sur la qualité de construction ?",
-        answer: "Nous offrons une garantie structurelle de 10 ans et une garantie générale de 2 ans."
+      problema: {
+        question: "Et si j'ai un problème après l'achat ?",
+        answer: "Vous avez une garantie structurelle de 10 ans et un service après-vente. De plus, nous sommes toujours là après la livraison."
+      },
+      temperatura: {
+        question: "Comment est l'isolation ? Fait-il froid en hiver ou chaud en été ?",
+        answer: "Isolation thermique haute densité dans les murs, le sol et le plafond. De plus, nous incluons la climatisation avec pompe à chaleur, donc vous contrôlez la température."
+      },
+      ruido: {
+        question: "On entend tout comme dans une caravane ?",
+        answer: "Pas du tout. Les murs ont une isolation acoustique et les matériaux sont de construction traditionnelle. Vous serez surpris par le silence."
       },
       precio: {
-        question: "Qu'est-ce qui est inclus dans le prix ?",
-        answer: "Le prix inclut la maison complètement terminée, transport à votre emplacement avec installation complète. Sans coûts cachés ni surprises."
+        question: "Combien ça coûte vraiment ? Y a-t-il des surprises après ?",
+        answer: "Le prix fixe comprend la maison finie, le transport et l'installation. La seule chose dont vous avez besoin est d'avoir le terrain prêt avec ses raccordements (électricité, eau, assainissement)."
+      },
+      entrega: {
+        question: "Combien de temps pour la livraison ?",
+        answer: "Entre 8 et 12 semaines à partir de la confirmation de commande, selon le niveau de personnalisation."
+      },
+      personalizar: {
+        question: "Puis-je la personnaliser ?",
+        answer: "Oui, vous pouvez choisir les finitions, couleurs, cuisine, sols, salles de bains... Vous avez notre configurateur en ligne pour voir les options."
+      },
+      distribucion: {
+        question: "Peut-on changer la distribution intérieure ?",
+        answer: "Oui, dans certaines limites techniques. Si vous voulez une chambre de plus, par exemple, on en parle et on vous dit comment faire."
+      },
+      viviendaHabitual: {
+        question: "C'est une résidence principale ou seulement pour les vacances ?",
+        answer: "Elle peut être votre résidence principale sans problème. Beaucoup de nos clients vivent toute l'année dans leur maison Nex."
+      },
+      ampliar: {
+        question: "Peut-on l'agrandir après ?",
+        answer: "Les maisons Nex sont conçues comme des unités complètes. Elles ne peuvent pas être agrandies avec des modules supplémentaires, mais vous pouvez ajouter une deuxième unité si votre terrain le permet."
       },
       mantenimiento: {
-        question: "Quel entretien nécessitent-elles ?",
-        answer: "L'entretien est minimal, similaire à celui de n'importe quel logement traditionnel. Les matériaux utilisés sont conçus pour nécessiter peu d'entretien et avoir une longue durabilité."
+        question: "Quel entretien faut-il ?",
+        answer: "Très peu. Juste le normal pour toute maison : vérifier les installations, nettoyer les gouttières... Rien d'extraordinaire."
       },
-      movilidad: {
-        question: "Peuvent-elles être déplacées vers un autre emplacement ?",
-        answer: "Oui, l'un des grands avantages de nos maisons modulaires mobiles est leur capacité de transport. Bien qu'elles soient conçues pour être votre foyer permanent, elles peuvent être déplacées vers un autre emplacement si nécessaire. Le processus nécessite une planification et des équipements spécialisés que nous pouvons gérer."
+      confianza: {
+        question: "Pourquoi devrais-je vous faire confiance ?",
+        answer: "Nous fabriquons dans nos propres installations. Vous pouvez nous rendre visite, voir comment nous travaillons et rencontrer des clients qui ont déjà leur maison."
       },
-      personalizacion: {
-        question: "Puis-je personnaliser le design intérieur ?",
-        answer: "Absolument. Nos maisons modulaires mobiles sont entièrement personnalisables. Vous pouvez choisir la distribution intérieure, les finitions, les couleurs, les types de sol, la cuisine, la salle de bain et tous les détails qui rendent votre maison unique. Nous travaillons avec vous depuis le design jusqu'à la livraison finale."
+      calidad: {
+        question: "Puis-je voir une maison avant de me décider ?",
+        answer: "Bien sûr. Nous avons une maison pilote à Villacastín (Ségovie) que vous pouvez visiter sur rendez-vous."
+      },
+      verTerreno: {
+        question: "Pouvez-vous venir voir mon terrain ?",
+        answer: "Oui. Une fois que vous avez un intérêt réel, nous organisons une visite pour évaluer les accès et la viabilité."
+      },
+      campo: {
+        question: "Puis-je la mettre en pleine campagne ?",
+        answer: "Cela dépend de la réglementation de la commune. Certaines le permettent, d'autres non. Nous vous aidons à le savoir avant de vous engager."
+      },
+      pendiente: {
+        question: "Et si le terrain est en pente ?",
+        answer: "Il faut niveler la zone où ira la maison. Cela peut se faire avec une dalle, des pilotis ou une plateforme. Nous vous orientons sur la meilleure option."
+      },
+      llegada: {
+        question: "Comment la maison arrive-t-elle sur ma parcelle ?",
+        answer: "Par camion, comme un convoi exceptionnel. Elle repose sur des pilotis ou une base préparée au préalable."
+      },
+      turistico: {
+        question: "Peut-on l'utiliser pour la location touristique ?",
+        answer: "Oui, mais cela dépend de la réglementation de votre région. Certains clients le font déjà."
       }
     }
   },

@@ -220,41 +220,85 @@ export const es = {
     title: "Preguntas Frecuentes",
     subtitle: "Todo lo que necesitas saber sobre nuestras casas modulares móviles sin obra",
     items: {
-      permisos: {
-        question: "¿Necesito permisos especiales para instalar una casa modular móvil?",
-        answer: "En la mayoría de casos no necesitas permisos de obra, pero sí es recomendable consultar con tu ayuntamiento local sobre normativas específicas de tu zona. Nuestras casas modulares móviles están clasificadas como viviendas transportables, lo que simplifica significativamente los trámites comparado con la construcción tradicional."
-      },
-      instalacion: {
-        question: "¿Cuánto tiempo tarda la instalación?",
-        answer: "La instalación de nuestras casas modulares móviles es muy rápida. Una vez que la casa llega a tu terreno, el proceso de instalación y puesta en marcha se completa en 1-2 días. No necesitas cimentación ni obras previas, solo una superficie nivelada."
+      legal: {
+        question: "¿Esto es legal o me voy a meter en un lío?",
+        answer: "Nuestras casas están 100% homologadas por el Ministerio de Industria con marcado CE y número de bastidor como cualquier vehículo. No necesitas licencia de obra, pero sí debes cumplir la normativa urbanística de tu municipio. Nosotros te ayudamos con todo."
       },
       terreno: {
-        question: "¿Qué tipo de terreno necesito?",
-        answer: "Nuestras casas modulares móviles son muy versátiles en cuanto al terreno. Necesitas una superficie nivelada. El terreno puede ser rústico o urbano. Te ayudamos a evaluar la viabilidad de tu parcela."
+        question: "¿Qué necesito tener antes de comprar la casa?",
+        answer: "Un terreno donde colocarla (tuyo, alquilado o cedido) con acceso para el transporte. Te ayudamos a evaluar si tu parcela es viable."
       },
-      servicios: {
-        question: "¿Cómo se conectan los servicios (agua y luz)?",
-        answer: "Las casas vienen preparadas para conexiones estándar. Agua y electricidad se conectan como en cualquier vivienda tradicional. Para internet, puedes usar conexión por fibra (si está disponible en la zona), 4G/5G o internet satelital. Te asesoramos sobre las mejores opciones para tu ubicación específica."
+      duracion: {
+        question: "¿Cuánto dura una casa Nex?",
+        answer: "Más de 50 años con un mantenimiento básico. Usamos estructura de acero galvanizado, aislamiento de alta densidad y acabados de primera calidad."
       },
-      calidad: {
-        question: "¿Qué garantías ofrecen sobre la calidad de construcción?",
-        answer: "Ofrecemos garantía estructural de 10 años y garantía general de 2 años."
+      problema: {
+        question: "¿Y si tengo un problema después de comprarla?",
+        answer: "Tienes garantía estructural de 10 años y servicio posventa. Además, seguimos aquí después de la entrega."
+      },
+      temperatura: {
+        question: "¿Cómo es el aislamiento? ¿Hace frío en invierno o calor en verano?",
+        answer: "Aislamiento térmico de alta densidad en paredes, suelo y techo. Además, incluimos aire acondicionado con bomba de calor, así que la temperatura la controlas tú."
+      },
+      ruido: {
+        question: "¿Se escucha todo como en una caravana?",
+        answer: "Para nada. Las paredes tienen aislamiento acústico y los materiales son de obra tradicional. Te sorprenderá el silencio."
       },
       precio: {
-        question: "¿Qué está incluido en el precio?",
-        answer: "El precio incluye la casa completamente terminada, transporte a tu ubicación con instalación completa. Sin costes ocultos ni sorpresas."
+        question: "¿Cuánto cuesta realmente? ¿Hay sorpresas después?",
+        answer: "El precio cerrado incluye la casa terminada, transporte e instalación. Lo único que necesitas es tener el terreno listo con sus acometidas (luz, agua, saneamiento)."
+      },
+      entrega: {
+        question: "¿Cuánto tardan en entregarla?",
+        answer: "Entre 8 y 12 semanas desde la confirmación del pedido, dependiendo del nivel de personalización."
+      },
+      personalizar: {
+        question: "¿Puedo personalizarla?",
+        answer: "Sí, puedes elegir acabados, colores, cocina, suelos, baños... Tienes nuestro configurador online para ir viendo opciones."
+      },
+      distribucion: {
+        question: "¿Se puede cambiar la distribución interior?",
+        answer: "Sí, dentro de ciertos límites técnicos. Si quieres un dormitorio más, por ejemplo, hablamos y te decimos cómo hacerlo."
+      },
+      viviendaHabitual: {
+        question: "¿Es una vivienda habitual o solo para vacaciones?",
+        answer: "Puede ser tu primera residencia sin problema. Muchos de nuestros clientes viven todo el año en su casa Nex."
+      },
+      ampliar: {
+        question: "¿Se puede ampliar después?",
+        answer: "Las casas Nex están diseñadas como unidades completas. No se pueden ampliar con módulos adicionales, pero puedes añadir una segunda unidad si tu terreno lo permite."
       },
       mantenimiento: {
-        question: "¿Qué mantenimiento requieren?",
-        answer: "El mantenimiento es mínimo, similar al de cualquier vivienda tradicional. Los materiales utilizados están diseñados para requerir poco mantenimiento y tener larga durabilidad."
+        question: "¿Qué mantenimiento necesita?",
+        answer: "Muy poco. Solo lo normal en cualquier casa: revisar instalaciones, limpiar canalones... Nada fuera de lo común."
       },
-      movilidad: {
-        question: "¿Se pueden trasladar a otra ubicación?",
-        answer: "Sí, una de las grandes ventajas de nuestras casas modulares móviles es su capacidad de traslado. Aunque están diseñadas para ser tu hogar permanente, pueden moverse a otra ubicación si es necesario. El proceso requiere planificación y equipos especializados que podemos gestionar."
+      confianza: {
+        question: "¿Por qué debería confiar en vosotros?",
+        answer: "Fabricamos en nuestras propias instalaciones. Puedes visitarnos, ver cómo trabajamos y conocer a clientes que ya tienen su casa."
       },
-      personalizacion: {
-        question: "¿Puedo personalizar el diseño interior?",
-        answer: "Absolutamente. Nuestras casas modulares móviles son totalmente personalizables. Puedes elegir distribución interior, acabados, colores, tipos de suelo, cocina, baño y todos los detalles que hagan tu casa única. Trabajamos contigo desde el diseño hasta la entrega final."
+      calidad: {
+        question: "¿Puedo ver una casa antes de decidirme?",
+        answer: "Claro. Tenemos una casa piloto en Villacastín (Segovia) que puedes visitar con cita previa."
+      },
+      verTerreno: {
+        question: "¿Podéis venir a ver mi terreno?",
+        answer: "Sí. Una vez tengas interés real, organizamos una visita para evaluar accesos y viabilidad."
+      },
+      campo: {
+        question: "¿Puedo ponerla en medio del campo?",
+        answer: "Depende de la normativa del municipio. Algunos sí lo permiten, otros no. Te ayudamos a averiguarlo antes de comprometerte."
+      },
+      pendiente: {
+        question: "¿Qué pasa si el terreno tiene pendiente?",
+        answer: "Hay que nivelar la zona donde irá la casa. Puede hacerse con una losa, pilotes o plataforma. Te orientamos sobre la mejor opción."
+      },
+      llegada: {
+        question: "¿Cómo llega la casa a mi parcela?",
+        answer: "En camión, como una carga especial. Se apoya sobre pilotes o una base que se prepara previamente."
+      },
+      turistico: {
+        question: "¿Se puede usar para alquiler turístico?",
+        answer: "Sí, pero depende de la regulación de tu comunidad autónoma. Algunos clientes ya lo hacen."
       }
     }
   },

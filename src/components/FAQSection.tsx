@@ -7,15 +7,26 @@ const FAQSection = () => {
   const { t } = useTranslation();
 
   const faqKeys = [
-    "permisos",
-    "instalacion", 
+    "legal",
     "terreno",
-    "servicios",
-    "calidad",
+    "duracion",
+    "problema",
+    "temperatura",
+    "ruido",
     "precio",
+    "entrega",
+    "personalizar",
+    "distribucion",
+    "viviendaHabitual",
+    "ampliar",
     "mantenimiento",
-    "movilidad",
-    "personalizacion"
+    "confianza",
+    "calidad",
+    "verTerreno",
+    "campo",
+    "pendiente",
+    "llegada",
+    "turistico"
   ];
 
   return (

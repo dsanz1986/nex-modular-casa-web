@@ -214,41 +214,85 @@ export const en = {
     title: "Frequently Asked Questions",
     subtitle: "Everything you need to know about our mobile modular homes without construction",
     items: {
-      permisos: {
-        question: "Do I need special permits to install a mobile modular home?",
-        answer: "In most cases you don't need construction permits, but it is advisable to consult with your local town hall about specific regulations in your area. Our mobile modular homes are classified as transportable housing, which significantly simplifies the procedures compared to traditional construction."
-      },
-      instalacion: {
-        question: "How long does the installation take?",
-        answer: "The installation of our mobile modular homes is very fast. Once the house arrives at your land, the installation and commissioning process is completed in 1-2 days. You don't need foundation or previous work, just a level surface."
+      legal: {
+        question: "Is this legal or am I going to get into trouble?",
+        answer: "Our homes are 100% certified by the Ministry of Industry with CE marking and chassis number like any vehicle. You don't need a building permit, but you must comply with the urban planning regulations of your municipality. We help you with everything."
       },
       terreno: {
-        question: "What type of land do I need?",
-        answer: "Our mobile modular homes are very versatile in terms of land. You need a level surface. The land can be rural or urban. We help you evaluate the viability of your plot."
+        question: "What do I need before buying a home?",
+        answer: "A plot of land where to place it (owned, rented, or borrowed) with access for transport. We help you assess if your plot is viable."
       },
-      servicios: {
-        question: "How are services (water and electricity) connected?",
-        answer: "The houses come prepared for standard connections. Water and electricity are connected as in any traditional home. For internet, you can use fiber connection (if available in the area), 4G/5G or satellite internet. We advise you on the best options for your specific location."
+      duracion: {
+        question: "How long does a Nex home last?",
+        answer: "Over 50 years with basic maintenance. We use galvanized steel structure, high-density insulation, and top-quality finishes."
       },
-      calidad: {
-        question: "What guarantees do you offer on construction quality?",
-        answer: "We offer a 10-year structural warranty and 2-year general warranty."
+      problema: {
+        question: "What if I have a problem after buying it?",
+        answer: "You have a 10-year structural warranty and after-sales service. Plus, we're still here after delivery."
+      },
+      temperatura: {
+        question: "How is the insulation? Is it cold in winter or hot in summer?",
+        answer: "High-density thermal insulation in walls, floor, and ceiling. Plus, we include air conditioning with heat pump, so you control the temperature."
+      },
+      ruido: {
+        question: "Can you hear everything like in a caravan?",
+        answer: "Not at all. The walls have acoustic insulation and the materials are like traditional construction. You'll be surprised by the silence."
       },
       precio: {
-        question: "What is included in the price?",
-        answer: "The price includes the completely finished house, transport to your location with complete installation. No hidden costs or surprises."
+        question: "How much does it really cost? Are there surprises later?",
+        answer: "The fixed price includes the finished home, transport, and installation. The only thing you need is to have the land ready with its utilities (electricity, water, sewage)."
+      },
+      entrega: {
+        question: "How long does delivery take?",
+        answer: "Between 8 and 12 weeks from order confirmation, depending on the level of customization."
+      },
+      personalizar: {
+        question: "Can I customize it?",
+        answer: "Yes, you can choose finishes, colors, kitchen, floors, bathrooms... You have our online configurator to see options."
+      },
+      distribucion: {
+        question: "Can the interior layout be changed?",
+        answer: "Yes, within certain technical limits. If you want an extra bedroom, for example, we talk and tell you how to do it."
+      },
+      viviendaHabitual: {
+        question: "Is it a primary residence or just for holidays?",
+        answer: "It can be your primary residence without any problem. Many of our clients live year-round in their Nex home."
+      },
+      ampliar: {
+        question: "Can it be expanded later?",
+        answer: "Nex homes are designed as complete units. They cannot be expanded with additional modules, but you can add a second unit if your land allows it."
       },
       mantenimiento: {
-        question: "What maintenance do they require?",
-        answer: "Maintenance is minimal, similar to any traditional home. The materials used are designed to require little maintenance and have long durability."
+        question: "What maintenance does it need?",
+        answer: "Very little. Just the normal for any house: check installations, clean gutters... Nothing out of the ordinary."
       },
-      movilidad: {
-        question: "Can they be moved to another location?",
-        answer: "Yes, one of the great advantages of our mobile modular homes is their transport capacity. Although they are designed to be your permanent home, they can be moved to another location if necessary. The process requires planning and specialized equipment that we can manage."
+      confianza: {
+        question: "Why should I trust you?",
+        answer: "We manufacture in our own facilities. You can visit us, see how we work, and meet customers who already have their home."
       },
-      personalizacion: {
-        question: "Can I customize the interior design?",
-        answer: "Absolutely. Our mobile modular homes are fully customizable. You can choose interior layout, finishes, colors, flooring types, kitchen, bathroom and all the details that make your home unique. We work with you from design to final delivery."
+      calidad: {
+        question: "Can I see a home before deciding?",
+        answer: "Of course. We have a pilot house in Villacastín (Segovia) that you can visit by appointment."
+      },
+      verTerreno: {
+        question: "Can you come to see my land?",
+        answer: "Yes. Once you have real interest, we organize a visit to evaluate access and viability."
+      },
+      campo: {
+        question: "Can I put it in the middle of the countryside?",
+        answer: "It depends on the municipality regulations. Some allow it, others don't. We help you find out before you commit."
+      },
+      pendiente: {
+        question: "What if the land has a slope?",
+        answer: "The area where the house will go needs to be leveled. It can be done with a slab, piles, or platform. We guide you on the best option."
+      },
+      llegada: {
+        question: "How does the house arrive at my plot?",
+        answer: "By truck, as a special load. It rests on piles or a base that is prepared beforehand."
+      },
+      turistico: {
+        question: "Can it be used for tourist rental?",
+        answer: "Yes, but it depends on your autonomous community's regulations. Some clients are already doing it."
       }
     }
   },
