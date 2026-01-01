@@ -202,6 +202,34 @@ export const en = {
       description: "By not requiring permanent foundation, the processing process is much more agile than traditional construction. We accompany you at every step of the legal process."
     }
   },
+  nexBase: {
+    badge: "Professional leveling system",
+    title: "NEX BASE™",
+    description: "Our proprietary structural metal base system, designed to support and level your home on a previously built concrete slab.",
+    benefits: {
+      leveling: {
+        title: "Precise leveling",
+        description: "Millimeter adjustment for a perfect installation of your home"
+      },
+      loadDistribution: {
+        title: "Uniform load distribution",
+        description: "Optimal weight distribution on the concrete slab"
+      },
+      control: {
+        title: "Greater assembly control",
+        description: "System that facilitates and speeds up the entire installation process"
+      },
+      professional: {
+        title: "Professional and visible system",
+        description: "Industrial quality finish with a robust and durable appearance"
+      }
+    },
+    price: "€1,750",
+    priceDescription: "Supply and installation of the complete NEX BASE™ metal leg system",
+    included: "Installation included",
+    whyEssentialTitle: "Why is it essential?",
+    whyEssential: "After testing different support systems, NEX BASE™ is the one that has given us the best results. It is practically essential to achieve good anchoring and leveling of your modular home, guaranteeing long-term stability and durability."
+  },
   pilotHouse: {
     title: "Visit our pilot house",
     description: "Come and visit our pilot house in Campo Real (Madrid). Discover what it feels like to live in a modern and efficient prefabricated house.",

@@ -192,6 +192,34 @@ export const es = {
       }
     }
   },
+  nexBase: {
+    badge: "Sistema de nivelación profesional",
+    title: "NEX BASE™",
+    description: "Nuestro sistema propio de bases metálicas estructurales, diseñado para apoyar y nivelar la vivienda sobre una base de hormigón previamente construida.",
+    benefits: {
+      leveling: {
+        title: "Nivelación precisa",
+        description: "Ajuste milimétrico para una instalación perfecta de tu vivienda"
+      },
+      loadDistribution: {
+        title: "Reparto uniforme de cargas",
+        description: "Distribución óptima del peso sobre la losa de hormigón"
+      },
+      control: {
+        title: "Mayor control en el montaje",
+        description: "Sistema que facilita y agiliza todo el proceso de instalación"
+      },
+      professional: {
+        title: "Sistema profesional y visible",
+        description: "Acabado de calidad industrial con aspecto robusto y duradero"
+      }
+    },
+    price: "1.750€",
+    priceDescription: "Suministro e instalación del sistema completo de patas metálicas NEX BASE™",
+    included: "Incluye instalación",
+    whyEssentialTitle: "¿Por qué es imprescindible?",
+    whyEssential: "Después de probar distintos sistemas de apoyo, NEX BASE™ es el que mejor resultados nos ha dado. Es prácticamente imprescindible para conseguir un buen anclaje y nivelación de tu casa modular, garantizando estabilidad y durabilidad a largo plazo."
+  },
   licenses: {
     title: "¿Y qué pasa con las licencias? No te preocupes, te ayudamos",
     subtitle: "Sabemos que la parte legal puede generar dudas, por eso te acompañamos también en este paso. Al tratarse de vivienda móvil sin cimentación ni anclaje permanente, no se consideran edificaciones tradicionales, lo que facilita su tramitación urbanística.",

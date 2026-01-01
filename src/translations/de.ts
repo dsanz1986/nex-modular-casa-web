@@ -202,6 +202,34 @@ export const de = {
       description: "Da kein permanentes Fundament erforderlich ist, ist der Bearbeitungsprozess viel agiler als bei traditionellen Bauarbeiten. Wir begleiten Sie bei jedem Schritt des rechtlichen Prozesses."
     }
   },
+  nexBase: {
+    badge: "Professionelles Nivelliersystem",
+    title: "NEX BASE™",
+    description: "Unser eigenes System aus strukturellen Metallbasen, entwickelt um das Haus auf einer zuvor gebauten Betonplatte zu stützen und zu nivellieren.",
+    benefits: {
+      leveling: {
+        title: "Präzise Nivellierung",
+        description: "Millimetergenaue Einstellung für eine perfekte Installation Ihres Hauses"
+      },
+      loadDistribution: {
+        title: "Gleichmäßige Lastverteilung",
+        description: "Optimale Gewichtsverteilung auf der Betonplatte"
+      },
+      control: {
+        title: "Bessere Montagekontrolle",
+        description: "System, das den gesamten Installationsprozess erleichtert und beschleunigt"
+      },
+      professional: {
+        title: "Professionelles und sichtbares System",
+        description: "Industriequalitätsfinish mit robustem und langlebigem Erscheinungsbild"
+      }
+    },
+    price: "1.750€",
+    priceDescription: "Lieferung und Installation des kompletten NEX BASE™ Metallbein-Systems",
+    included: "Installation inklusive",
+    whyEssentialTitle: "Warum ist es unverzichtbar?",
+    whyEssential: "Nach dem Testen verschiedener Stützsysteme ist NEX BASE™ das System, das uns die besten Ergebnisse geliefert hat. Es ist praktisch unverzichtbar für eine gute Verankerung und Nivellierung Ihres Modulhauses und garantiert langfristige Stabilität und Haltbarkeit."
+  },
   pilotHouse: {
     title: "Besuchen Sie unser Pilothaus",
     description: "Kommen Sie und besuchen Sie unser Pilothaus in Campo Real (Madrid). Entdecken Sie, wie es sich anfühlt, in einem modernen und effizienten Fertighaus zu leben.",

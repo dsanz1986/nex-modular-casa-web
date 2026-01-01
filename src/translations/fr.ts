@@ -202,6 +202,34 @@ export const fr = {
       description: "En ne nécessitant pas de fondation permanente, le processus de traitement est beaucoup plus agile qu'une construction traditionnelle. Nous vous accompagnons à chaque étape du processus légal."
     }
   },
+  nexBase: {
+    badge: "Système de nivellement professionnel",
+    title: "NEX BASE™",
+    description: "Notre système propriétaire de bases métalliques structurelles, conçu pour soutenir et niveler la maison sur une dalle de béton préalablement construite.",
+    benefits: {
+      leveling: {
+        title: "Nivellement précis",
+        description: "Réglage millimétrique pour une installation parfaite de votre maison"
+      },
+      loadDistribution: {
+        title: "Répartition uniforme des charges",
+        description: "Distribution optimale du poids sur la dalle de béton"
+      },
+      control: {
+        title: "Meilleur contrôle du montage",
+        description: "Système qui facilite et accélère tout le processus d'installation"
+      },
+      professional: {
+        title: "Système professionnel et visible",
+        description: "Finition de qualité industrielle avec un aspect robuste et durable"
+      }
+    },
+    price: "1 750€",
+    priceDescription: "Fourniture et installation du système complet de pieds métalliques NEX BASE™",
+    included: "Installation incluse",
+    whyEssentialTitle: "Pourquoi est-ce indispensable ?",
+    whyEssential: "Après avoir testé différents systèmes de support, NEX BASE™ est celui qui nous a donné les meilleurs résultats. Il est pratiquement indispensable pour obtenir un bon ancrage et nivellement de votre maison modulaire, garantissant stabilité et durabilité à long terme."
+  },
   pilotHouse: {
     title: "Visitez notre maison pilote",
     description: "Venez découvrir notre maison pilote à Campo Real (Madrid). Découvrez ce que c'est que de vivre dans une maison préfabriquée au design moderne et efficace.",
