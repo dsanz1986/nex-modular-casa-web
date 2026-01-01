@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ModelsSection from "@/components/ModelsSection";
 import { PersonalizationSection } from "@/components/PersonalizationSection";
+import NexBaseSection from "@/components/NexBaseSection";
 import AdvantagesSection from "@/components/AdvantagesSection";
 import LicensesSection from "@/components/LicensesSection";
 import PilotHouseSection from "@/components/PilotHouseSection";
@@ -29,6 +30,9 @@ const Index = () => {
         </section>
         <section id="personalizacion">
           <PersonalizationSection />
+        </section>
+        <section id="nex-base">
+          <NexBaseSection />
         </section>
         <section id="ventajas">
           <AdvantagesSection />

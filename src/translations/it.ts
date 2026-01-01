@@ -202,6 +202,34 @@ export const it = {
       description: "Non richiedendo fondamenta permanenti, il processo di tramitazione è molto più agile di una costruzione tradizionale. Ti accompagniamo in ogni passo del processo legale."
     }
   },
+  nexBase: {
+    badge: "Sistema di livellamento professionale",
+    title: "NEX BASE™",
+    description: "Il nostro sistema proprietario di basi metalliche strutturali, progettato per supportare e livellare l'abitazione su una base di cemento precedentemente costruita.",
+    benefits: {
+      leveling: {
+        title: "Livellamento preciso",
+        description: "Regolazione millimetrica per un'installazione perfetta della tua casa"
+      },
+      loadDistribution: {
+        title: "Distribuzione uniforme dei carichi",
+        description: "Distribuzione ottimale del peso sulla soletta di cemento"
+      },
+      control: {
+        title: "Maggior controllo nel montaggio",
+        description: "Sistema che facilita e velocizza tutto il processo di installazione"
+      },
+      professional: {
+        title: "Sistema professionale e visibile",
+        description: "Finitura di qualità industriale con aspetto robusto e durevole"
+      }
+    },
+    price: "1.750€",
+    priceDescription: "Fornitura e installazione del sistema completo di gambe metalliche NEX BASE™",
+    included: "Installazione inclusa",
+    whyEssentialTitle: "Perché è indispensabile?",
+    whyEssential: "Dopo aver testato diversi sistemi di supporto, NEX BASE™ è quello che ci ha dato i migliori risultati. È praticamente indispensabile per ottenere un buon ancoraggio e livellamento della tua casa modulare, garantendo stabilità e durata a lungo termine."
+  },
   pilotHouse: {
     title: "Visita la nostra casa pilota",
     description: "Vieni a conoscere la nostra casa pilota a Campo Real (Madrid). Scopri com'è vivere in una casa prefabbricata dal design moderno ed efficiente.",
