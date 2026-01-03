@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Target, Scale, Settings, Eye, Check } from "lucide-react";
+import NexBaseCarousel from "./NexBaseCarousel";
 
 const NexBaseSection = () => {
   const { t } = useTranslation();
@@ -25,14 +26,6 @@ const NexBaseSection = () => {
       titleKey: "nexBase.benefits.professional.title",
       descKey: "nexBase.benefits.professional.description"
     }
-  ];
-
-  const images = [
-    "/lovable-uploads/nex-base-1.jpg",
-    "/lovable-uploads/nex-base-2.jpg",
-    "/lovable-uploads/nex-base-3.jpg",
-    "/lovable-uploads/nex-base-4.jpg",
-    "/lovable-uploads/nex-base-5.jpg"
   ];
 
   return (
@@ -116,22 +109,8 @@ const NexBaseSection = () => {
           </div>
         </div>
 
-        {/* Image Gallery */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {images.map((src, index) => (
-            <div 
-              key={index} 
-              className="aspect-square rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300"
-            >
-              <img
-                src={src}
-                alt={`NEX BASE™ ${index + 1}`}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
+        {/* Image Carousel */}
+        <NexBaseCarousel />
       </div>
     </section>
   );
