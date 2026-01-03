@@ -70,27 +70,47 @@ const NexBaseSection = () => {
         </div>
 
         {/* Price + Why Essential Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {/* Price Card */}
-          <div className="bg-gradient-to-r from-forest-50 to-forest-100 border border-forest-200 rounded-2xl p-8 animate-slide-up">
-            <div className="flex items-center gap-2 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          {/* Price Card Nex Natura */}
+          <div className="bg-gradient-to-r from-forest-50 to-forest-100 border border-forest-200 rounded-2xl p-6 animate-slide-up">
+            <div className="flex items-center gap-2 mb-3">
               <Check className="w-5 h-5 text-nex-primary" />
               <span className="text-sm font-inter font-medium text-nex-primary">{t("nexBase.included")}</span>
             </div>
-            <div className="text-4xl md:text-5xl font-playfair font-bold text-nex-primary mb-3">
-              {t("nexBase.price")}
+            <div className="text-sm font-inter font-medium text-nex-text/60 mb-1">
+              {t("nexBase.priceNaturaLabel")}
             </div>
-            <p className="font-inter text-nex-text/80">
+            <div className="text-3xl md:text-4xl font-playfair font-bold text-nex-primary mb-3">
+              {t("nexBase.priceNatura")}
+            </div>
+            <p className="text-sm font-inter text-nex-text/70">
+              {t("nexBase.priceDescription")}
+            </p>
+          </div>
+
+          {/* Price Card Nex Nido */}
+          <div className="bg-gradient-to-r from-forest-50 to-forest-100 border border-forest-200 rounded-2xl p-6 animate-slide-up" style={{ animationDelay: '50ms' }}>
+            <div className="flex items-center gap-2 mb-3">
+              <Check className="w-5 h-5 text-nex-primary" />
+              <span className="text-sm font-inter font-medium text-nex-primary">{t("nexBase.included")}</span>
+            </div>
+            <div className="text-sm font-inter font-medium text-nex-text/60 mb-1">
+              {t("nexBase.priceNidoLabel")}
+            </div>
+            <div className="text-3xl md:text-4xl font-playfair font-bold text-nex-primary mb-3">
+              {t("nexBase.priceNido")}
+            </div>
+            <p className="text-sm font-inter text-nex-text/70">
               {t("nexBase.priceDescription")}
             </p>
           </div>
 
           {/* Why Essential */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-center animate-slide-up" style={{ animationDelay: '100ms' }}>
-            <h3 className="text-xl font-playfair font-semibold text-nex-text mb-4">
+          <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-center animate-slide-up" style={{ animationDelay: '100ms' }}>
+            <h3 className="text-xl font-playfair font-semibold text-nex-text mb-3">
               {t("nexBase.whyEssentialTitle")}
             </h3>
-            <p className="font-inter text-nex-text/80 leading-relaxed">
+            <p className="text-sm font-inter text-nex-text/80 leading-relaxed">
               {t("nexBase.whyEssential")}
             </p>
           </div>

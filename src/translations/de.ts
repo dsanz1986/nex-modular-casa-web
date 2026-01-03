@@ -224,7 +224,10 @@ export const de = {
         description: "Industriequalitätsfinish mit robustem und langlebigem Erscheinungsbild"
       }
     },
-    price: "1.750€",
+    priceNatura: "1.990€",
+    priceNido: "1.490€",
+    priceNaturaLabel: "Nex Natura",
+    priceNidoLabel: "Nex Nido",
     priceDescription: "Lieferung und Installation des kompletten NEX BASE™ Metallbein-Systems",
     included: "Installation inklusive",
     whyEssentialTitle: "Warum ist es unverzichtbar?",

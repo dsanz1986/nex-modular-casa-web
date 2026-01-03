@@ -214,7 +214,10 @@ export const es = {
         description: "Acabado de calidad industrial con aspecto robusto y duradero"
       }
     },
-    price: "1.750€",
+    priceNatura: "1.990€",
+    priceNido: "1.490€",
+    priceNaturaLabel: "Nex Natura",
+    priceNidoLabel: "Nex Nido",
     priceDescription: "Suministro e instalación del sistema completo de patas metálicas NEX BASE™",
     included: "Incluye instalación",
     whyEssentialTitle: "¿Por qué es imprescindible?",
