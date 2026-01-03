@@ -224,7 +224,10 @@ export const fr = {
         description: "Finition de qualité industrielle avec un aspect robuste et durable"
       }
     },
-    price: "1 750€",
+    priceNatura: "1 990€",
+    priceNido: "1 490€",
+    priceNaturaLabel: "Nex Natura",
+    priceNidoLabel: "Nex Nido",
     priceDescription: "Fourniture et installation du système complet de pieds métalliques NEX BASE™",
     included: "Installation incluse",
     whyEssentialTitle: "Pourquoi est-ce indispensable ?",

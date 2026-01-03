@@ -224,7 +224,10 @@ export const en = {
         description: "Industrial quality finish with a robust and durable appearance"
       }
     },
-    price: "€1,750",
+    priceNatura: "€1,990",
+    priceNido: "€1,490",
+    priceNaturaLabel: "Nex Natura",
+    priceNidoLabel: "Nex Nido",
     priceDescription: "Supply and installation of the complete NEX BASE™ metal leg system",
     included: "Installation included",
     whyEssentialTitle: "Why is it essential?",

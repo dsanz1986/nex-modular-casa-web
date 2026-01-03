@@ -224,7 +224,10 @@ export const it = {
         description: "Finitura di qualità industriale con aspetto robusto e durevole"
       }
     },
-    price: "1.750€",
+    priceNatura: "1.990€",
+    priceNido: "1.490€",
+    priceNaturaLabel: "Nex Natura",
+    priceNidoLabel: "Nex Nido",
     priceDescription: "Fornitura e installazione del sistema completo di gambe metalliche NEX BASE™",
     included: "Installazione inclusa",
     whyEssentialTitle: "Perché è indispensabile?",
