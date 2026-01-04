@@ -78,14 +78,14 @@ const NexBaseCarousel = () => {
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index}>
-              <div className="relative overflow-hidden rounded-2xl shadow-xl">
+              <div className="relative overflow-hidden rounded-2xl shadow-xl bg-muted/30">
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-[350px] md:h-[450px] object-contain object-center transition-transform duration-500 hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
               </div>
             </CarouselItem>
           ))}
