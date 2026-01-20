@@ -263,7 +263,7 @@ export const de = {
       },
       temperatura: {
         question: "Wie ist die Isolierung? Ist es im Winter kalt oder im Sommer heiß?",
-        answer: "Hochdichte Wärmedämmung in Wänden, Boden und Decke. Außerdem ist eine Klimaanlage mit Wärmepumpe inklusive, sodass Sie die Temperatur kontrollieren."
+        answer: "Hochdichte Wärmedämmung in Wänden, Boden und Decke."
       },
       ruido: {
         question: "Hört man alles wie in einem Wohnwagen?",

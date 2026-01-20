@@ -263,7 +263,7 @@ export const en = {
       },
       temperatura: {
         question: "How is the insulation? Is it cold in winter or hot in summer?",
-        answer: "High-density thermal insulation in walls, floor, and ceiling. Plus, we include air conditioning with heat pump, so you control the temperature."
+        answer: "High-density thermal insulation in walls, floor, and ceiling."
       },
       ruido: {
         question: "Can you hear everything like in a caravan?",
