@@ -263,7 +263,7 @@ export const fr = {
       },
       temperatura: {
         question: "Comment est l'isolation ? Fait-il froid en hiver ou chaud en été ?",
-        answer: "Isolation thermique haute densité dans les murs, le sol et le plafond. De plus, nous incluons la climatisation avec pompe à chaleur, donc vous contrôlez la température."
+        answer: "Isolation thermique haute densité dans les murs, le sol et le plafond."
       },
       ruido: {
         question: "On entend tout comme dans une caravane ?",

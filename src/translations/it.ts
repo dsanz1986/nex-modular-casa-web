@@ -263,7 +263,7 @@ export const it = {
       },
       temperatura: {
         question: "Com'è l'isolamento? Fa freddo d'inverno o caldo d'estate?",
-        answer: "Isolamento termico ad alta densità in pareti, pavimento e soffitto. Inoltre, includiamo aria condizionata con pompa di calore, quindi controlli tu la temperatura."
+        answer: "Isolamento termico ad alta densità in pareti, pavimento e soffitto."
       },
       ruido: {
         question: "Si sente tutto come in una roulotte?",

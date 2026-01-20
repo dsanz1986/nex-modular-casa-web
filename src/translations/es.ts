@@ -269,7 +269,7 @@ export const es = {
       },
       temperatura: {
         question: "¿Cómo es el aislamiento? ¿Hace frío en invierno o calor en verano?",
-        answer: "Aislamiento térmico de alta densidad en paredes, suelo y techo. Además, incluimos aire acondicionado con bomba de calor, así que la temperatura la controlas tú."
+        answer: "Aislamiento térmico de alta densidad en paredes, suelo y techo."
       },
       ruido: {
         question: "¿Se escucha todo como en una caravana?",
