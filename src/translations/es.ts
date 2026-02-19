@@ -309,7 +309,7 @@ export const es = {
       },
       calidad: {
         question: "¿Puedo ver una casa antes de decidirme?",
-        answer: "Claro. Tenemos una casa piloto en Villacastín (Segovia) que puedes visitar con cita previa."
+        answer: "Claro. Tenemos una casa piloto en Campo Real (Madrid) que puedes visitar con cita previa."
       },
       verTerreno: {
         question: "¿Podéis venir a ver mi terreno?",
