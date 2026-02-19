@@ -303,7 +303,7 @@ export const de = {
       },
       calidad: {
         question: "Kann ich ein Haus vor der Entscheidung sehen?",
-        answer: "Natürlich. Wir haben ein Musterhaus in Villacastín (Segovia), das Sie nach Vereinbarung besichtigen können."
+        answer: "Natürlich. Wir haben ein Musterhaus in Campo Real (Madrid), das Sie nach Vereinbarung besichtigen können."
       },
       verTerreno: {
         question: "Können Sie mein Grundstück besichtigen?",

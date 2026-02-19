@@ -303,7 +303,7 @@ export const fr = {
       },
       calidad: {
         question: "Puis-je voir une maison avant de me décider ?",
-        answer: "Bien sûr. Nous avons une maison pilote à Villacastín (Ségovie) que vous pouvez visiter sur rendez-vous."
+        answer: "Bien sûr. Nous avons une maison pilote à Campo Real (Madrid) que vous pouvez visiter sur rendez-vous."
       },
       verTerreno: {
         question: "Pouvez-vous venir voir mon terrain ?",
