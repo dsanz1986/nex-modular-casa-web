@@ -44,7 +44,7 @@ export const es = {
         "Estructura de acero galvanizado resistente + aislamiento EPS 65mm",
         "Ideal para vivir todo el año como vivienda principal",
         "Alta eficiencia energética y distribución personalizable",
-        "Entrega e instalación en 3-4 meses sin obra",
+        "Entrega e instalación en 3-4 meses sin necesidad de obra",
         "Transporte e instalación incluidos en toda España"
       ]
     },
