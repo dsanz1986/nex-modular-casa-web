@@ -189,8 +189,8 @@ export const es = {
         description: "Sin sorpresas ni costes ocultos en tu presupuesto"
       },
       pilotHouse: {
-        title: "Casa piloto disponible para visitar",
-        description: "Ven a Campo Real (Madrid) y experimenta cómo se vive"
+        title: "Casas piloto disponibles para visitar",
+        description: "Ven a Campo Real o Mejorada del Campo (Madrid) y experimenta cómo se vive"
       }
     }
   },
