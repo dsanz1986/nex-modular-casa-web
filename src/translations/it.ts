@@ -38,7 +38,7 @@ export const it = {
     nexNatura: {
       name: "Nex Natura",
       dimensions: "90 m² totali | 72 m² abitabili + 18 m² di portico",
-      location: "Posizione: P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
+      location: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
       originalPrice: "44.990€",
       offerPrice: "39.990€",
       features: [
@@ -52,7 +52,7 @@ export const it = {
     nexNido: {
       name: "Nex Nido",
       dimensions: "54 m² totali | 36 m² abitabili + 18 m² di portico (opzionale)",
-      location: "Posizione: C/ Ebro 37, 28840 Mejorada del Campo, Madrid",
+      location: "C/ Ebro 37, 28840 Mejorada del Campo, Madrid",
       originalPrice: "24.990€",
       offerPrice: "19.990€",
       features: [
