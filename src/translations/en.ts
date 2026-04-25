@@ -38,27 +38,29 @@ export const en = {
     nexNatura: {
       name: "Nex Natura",
       dimensions: "90 m² total | 72 m² habitable + 18 m² porch",
+      location: "Location: P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
       originalPrice: "€44,990",
       offerPrice: "€39,990",
       features: [
         "Resistant galvanized steel structure + 65mm EPS insulation",
         "Ideal for year-round living as main residence",
         "High energy efficiency and customizable layout",
-        "Delivery and installation in 3-4 months without construction",
-        "Transport and installation included throughout Spain"
+        "Delivery and installation in 180 days without construction",
+        "Transport and installation included within 150 km of Madrid"
       ]
     },
     nexNido: {
       name: "Nex Nido",
       dimensions: "54 m² total | 36 m² habitable + 18 m² porch (optional)",
+      location: "Location: C/ Ebro 37, 28840 Mejorada del Campo, Madrid",
       originalPrice: "€24,990",
       offerPrice: "€19,990",
       features: [
         "Resistant galvanized steel structure + 65mm EPS insulation",
         "Perfect as second residence or guest house",
         "Compact, efficient and fully transportable design",
-        "Fast delivery in 3-4 months without construction work",
-        "Transport and installation included throughout Spain"
+        "Fast delivery in 180 days without construction work",
+        "Transport and installation included within 150 km of Madrid"
       ]
     }
   },
@@ -181,8 +183,8 @@ export const en = {
         description: "No surprises or hidden costs in your budget"
       },
       pilotHouse: {
-        title: "Pilot house available to visit",
-        description: "Come to Campo Real (Madrid) and experience how it feels to live"
+        title: "Pilot houses available to visit",
+        description: "Come to Campo Real or Mejorada del Campo (Madrid) and experience how it feels to live"
       }
     }
   },
@@ -234,11 +236,19 @@ export const en = {
     whyEssential: "After testing different support systems, NEX BASE™ is the one that has given us the best results. It is practically essential to achieve good anchoring and leveling of your modular home, guaranteeing long-term stability and durability."
   },
   pilotHouse: {
-    title: "Visit our pilot house",
-    description: "Come and visit our pilot house in Campo Real (Madrid). Discover what it feels like to live in a modern and efficient prefabricated house.",
+    title: "Visit our pilot houses",
+    description: "Come and visit our pilot houses in Madrid. Discover what it feels like to live in a modern and efficient prefabricated house.",
     cta: "Request your appointment via WhatsApp",
-    address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
-    location: "Campo Real, Madrid"
+    nexNatura: {
+      name: "Nex Natura",
+      address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
+      location: "Campo Real, Madrid"
+    },
+    nexNido: {
+      name: "Nex Nido",
+      address: "Calle Ebro 37, 28840 Mejorada del Campo, Madrid",
+      location: "Mejorada del Campo, Madrid"
+    }
   },
   faq: {
     badge: "We solve your doubts",
@@ -275,7 +285,7 @@ export const en = {
       },
       entrega: {
         question: "How long does delivery take?",
-        answer: "Between 8 and 12 weeks from order confirmation, depending on the level of customization."
+        answer: "180 days from order confirmation, depending on the level of customization."
       },
       personalizar: {
         question: "Can I customize it?",

@@ -37,28 +37,30 @@ export const fr = {
     reservationDeadline: "Réservez avant le 31 juillet",
     nexNatura: {
       name: "Nex Natura",
-      dimensions: "90 m² totaux | 72 m² habitables + 18 m² de porche",
-      originalPrice: "44.990€",
-      offerPrice: "39.990€",
+      dimensions: "90 m² total | 72 m² habitable + 18 m² de porche",
+      location: "Emplacement : P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
+      originalPrice: "44 990€",
+      offerPrice: "39 990€",
       features: [
-        "Structure en acier galvanisé résistant + isolation EPS 65mm",
+        "Structure en acier galvanisé résistante + isolation EPS 65mm",
         "Idéale pour vivre toute l'année comme résidence principale",
         "Haute efficacité énergétique et distribution personnalisable",
-        "Livraison et installation en 3-4 mois sans construction",
-        "Transport et installation inclus dans toute l'Espagne"
+        "Livraison et installation en 180 jours sans construction",
+        "Transport et installation inclus dans un rayon de 150 km de Madrid"
       ]
     },
     nexNido: {
       name: "Nex Nido",
-      dimensions: "54 m² totaux | 36 m² habitables + 18 m² de porche (optionnel)",
-      originalPrice: "24.990€",
-      offerPrice: "19.990€",
+      dimensions: "54 m² total | 36 m² habitable + 18 m² de porche (en option)",
+      location: "Emplacement : C/ Ebro 37, 28840 Mejorada del Campo, Madrid",
+      originalPrice: "24 990€",
+      offerPrice: "19 990€",
       features: [
-        "Structure en acier galvanisé résistant + isolation EPS 65mm",
+        "Structure en acier galvanisé résistante + isolation EPS 65mm",
         "Parfaite comme résidence secondaire ou maison d'invités",
         "Design compact, efficace et entièrement transportable",
-        "Livraison rapide en 3-4 mois sans besoin de construction",
-        "Transport et installation inclus dans toute l'Espagne"
+        "Livraison rapide en 180 jours sans besoin de construction",
+        "Transport et installation inclus dans un rayon de 150 km de Madrid"
       ]
     }
   },
@@ -181,8 +183,8 @@ export const fr = {
         description: "Aucune surprise ni coût caché dans votre budget"
       },
       pilotHouse: {
-        title: "Maison pilote disponible à visiter",
-        description: "Venez à Campo Real (Madrid) et expérimentez comment on y vit"
+        title: "Maisons pilotes disponibles à visiter",
+        description: "Venez à Campo Real ou Mejorada del Campo (Madrid) et expérimentez comment on y vit"
       }
     }
   },
@@ -234,11 +236,19 @@ export const fr = {
     whyEssential: "Après avoir testé différents systèmes de support, NEX BASE™ est celui qui nous a donné les meilleurs résultats. Il est pratiquement indispensable pour obtenir un bon ancrage et nivellement de votre maison modulaire, garantissant stabilité et durabilité à long terme."
   },
   pilotHouse: {
-    title: "Visitez notre maison pilote",
-    description: "Venez découvrir notre maison pilote à Campo Real (Madrid). Découvrez ce que c'est que de vivre dans une maison préfabriquée au design moderne et efficace.",
+    title: "Visitez nos maisons pilotes",
+    description: "Venez découvrir nos maisons pilotes à Madrid. Découvrez ce que c'est que de vivre dans une maison préfabriquée au design moderne et efficace.",
     cta: "Demandez votre rendez-vous via WhatsApp",
-    address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
-    location: "Campo Real, Madrid"
+    nexNatura: {
+      name: "Nex Natura",
+      address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
+      location: "Campo Real, Madrid"
+    },
+    nexNido: {
+      name: "Nex Nido",
+      address: "Calle Ebro 37, 28840 Mejorada del Campo, Madrid",
+      location: "Mejorada del Campo, Madrid"
+    }
   },
   faq: {
     badge: "Nous résolvons vos doutes",
@@ -275,7 +285,7 @@ export const fr = {
       },
       entrega: {
         question: "Combien de temps pour la livraison ?",
-        answer: "Entre 8 et 12 semaines à partir de la confirmation de commande, selon le niveau de personnalisation."
+        answer: "180 jours à partir de la confirmation de commande, selon le niveau de personnalisation."
       },
       personalizar: {
         question: "Puis-je la personnaliser ?",

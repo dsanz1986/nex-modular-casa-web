@@ -37,28 +37,30 @@ export const de = {
     reservationDeadline: "Reservieren Sie vor dem 31. Juli",
     nexNatura: {
       name: "Nex Natura",
-      dimensions: "90 m² gesamt | 72 m² bewohnbar + 18 m² Veranda",
+      dimensions: "90 m² gesamt | 72 m² Wohnfläche + 18 m² Veranda",
+      location: "Standort: P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
       originalPrice: "44.990€",
       offerPrice: "39.990€",
       features: [
-        "Widerstandsfähige verzinkte Stahlstruktur + 65mm EPS Isolierung",
-        "Ideal zum ganzjährigen Wohnen als Hauptwohnsitz",
-        "Hohe Energieeffizienz und anpassbare Aufteilung",
-        "Lieferung und Installation in 3-4 Monaten ohne Bauarbeiten",
-        "Transport und Installation in ganz Spanien inklusive"
+        "Robuste verzinkte Stahlstruktur + EPS-Dämmung 65mm",
+        "Ideal zum Ganzjahreswohnen als Hauptwohnsitz",
+        "Hohe Energieeffizienz und anpassbarer Grundriss",
+        "Lieferung und Installation in 180 Tagen ohne Bauarbeiten",
+        "Transport und Installation im Preis enthalten im Umkreis von 150 km um Madrid"
       ]
     },
     nexNido: {
       name: "Nex Nido",
-      dimensions: "54 m² gesamt | 36 m² bewohnbar + 18 m² Veranda (optional)",
+      dimensions: "54 m² gesamt | 36 m² Wohnfläche + 18 m² Veranda (optional)",
+      location: "Standort: C/ Ebro 37, 28840 Mejorada del Campo, Madrid",
       originalPrice: "24.990€",
       offerPrice: "19.990€",
       features: [
-        "Widerstandsfähige verzinkte Stahlstruktur + 65mm EPS Isolierung",
+        "Robuste verzinkte Stahlstruktur + EPS-Dämmung 65mm",
         "Perfekt als Zweitwohnsitz oder Gästehaus",
         "Kompaktes, effizientes und vollständig transportables Design",
-        "Schnelle Lieferung in 3-4 Monaten ohne Bauarbeiten",
-        "Transport und Installation in ganz Spanien inklusive"
+        "Schnelle Lieferung in 180 Tagen ohne Bauarbeiten",
+        "Transport und Installation im Preis enthalten im Umkreis von 150 km um Madrid"
       ]
     }
   },
@@ -181,8 +183,8 @@ export const de = {
         description: "Keine Überraschungen oder versteckten Kosten in Ihrem Budget"
       },
       pilotHouse: {
-        title: "Pilothaus verfügbar zum Besichtigen",
-        description: "Kommen Sie nach Campo Real (Madrid) und erleben Sie, wie es sich anfühlt zu leben"
+        title: "Pilothäuser zur Besichtigung verfügbar",
+        description: "Kommen Sie nach Campo Real oder Mejorada del Campo (Madrid) und erleben Sie, wie es sich anfühlt zu leben"
       }
     }
   },
@@ -234,11 +236,19 @@ export const de = {
     whyEssential: "Nach dem Testen verschiedener Stützsysteme ist NEX BASE™ das System, das uns die besten Ergebnisse geliefert hat. Es ist praktisch unverzichtbar für eine gute Verankerung und Nivellierung Ihres Modulhauses und garantiert langfristige Stabilität und Haltbarkeit."
   },
   pilotHouse: {
-    title: "Besuchen Sie unser Pilothaus",
-    description: "Kommen Sie und besuchen Sie unser Pilothaus in Campo Real (Madrid). Entdecken Sie, wie es sich anfühlt, in einem modernen und effizienten Fertighaus zu leben.",
+    title: "Besuchen Sie unsere Pilothäuser",
+    description: "Kommen Sie und besuchen Sie unsere Pilothäuser in Madrid. Entdecken Sie, wie es sich anfühlt, in einem modernen und effizienten Fertighaus zu leben.",
     cta: "Vereinbaren Sie Ihren Termin über WhatsApp",
-    address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
-    location: "Campo Real, Madrid"
+    nexNatura: {
+      name: "Nex Natura",
+      address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
+      location: "Campo Real, Madrid"
+    },
+    nexNido: {
+      name: "Nex Nido",
+      address: "Calle Ebro 37, 28840 Mejorada del Campo, Madrid",
+      location: "Mejorada del Campo, Madrid"
+    }
   },
   faq: {
     badge: "Wir lösen Ihre Zweifel",
@@ -275,7 +285,7 @@ export const de = {
       },
       entrega: {
         question: "Wie lange dauert die Lieferung?",
-        answer: "Zwischen 8 und 12 Wochen ab Bestellbestätigung, je nach Anpassungsgrad."
+        answer: "180 Tage ab Bestellbestätigung, je nach Anpassungsgrad."
       },
       personalizar: {
         question: "Kann ich es personalisieren?",
