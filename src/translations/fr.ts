@@ -183,8 +183,8 @@ export const fr = {
         description: "Aucune surprise ni coût caché dans votre budget"
       },
       pilotHouse: {
-        title: "Maison pilote disponible à visiter",
-        description: "Venez à Campo Real (Madrid) et expérimentez comment on y vit"
+        title: "Maisons pilotes disponibles à visiter",
+        description: "Venez à Campo Real ou Mejorada del Campo (Madrid) et expérimentez comment on y vit"
       }
     }
   },
