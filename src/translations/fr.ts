@@ -236,11 +236,19 @@ export const fr = {
     whyEssential: "Après avoir testé différents systèmes de support, NEX BASE™ est celui qui nous a donné les meilleurs résultats. Il est pratiquement indispensable pour obtenir un bon ancrage et nivellement de votre maison modulaire, garantissant stabilité et durabilité à long terme."
   },
   pilotHouse: {
-    title: "Visitez notre maison pilote",
-    description: "Venez découvrir notre maison pilote à Campo Real (Madrid). Découvrez ce que c'est que de vivre dans une maison préfabriquée au design moderne et efficace.",
+    title: "Visitez nos maisons pilotes",
+    description: "Venez découvrir nos maisons pilotes à Madrid. Découvrez ce que c'est que de vivre dans une maison préfabriquée au design moderne et efficace.",
     cta: "Demandez votre rendez-vous via WhatsApp",
-    address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
-    location: "Campo Real, Madrid"
+    nexNatura: {
+      name: "Nex Natura",
+      address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
+      location: "Campo Real, Madrid"
+    },
+    nexNido: {
+      name: "Nex Nido",
+      address: "Calle Ebro 37, 28840 Mejorada del Campo, Madrid",
+      location: "Mejorada del Campo, Madrid"
+    }
   },
   faq: {
     badge: "Nous résolvons vos doutes",

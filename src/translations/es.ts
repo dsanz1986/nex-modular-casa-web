@@ -242,11 +242,19 @@ export const es = {
     }
   },
   pilotHouse: {
-    title: "Visita nuestra casa piloto",
-    description: "Ven a conocer nuestra casa piloto en Campo Real (Madrid). Descubre cómo se siente vivir en una casa prefabricada de diseño moderno y eficiente.",
+    title: "Visita nuestras casas piloto",
+    description: "Ven a conocer nuestras casas piloto en Madrid. Descubre cómo se siente vivir en una casa prefabricada de diseño moderno y eficiente.",
     cta: "Solicita tu cita por WhatsApp",
-    address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
-    location: "Campo Real, Madrid"
+    nexNatura: {
+      name: "Nex Natura",
+      address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
+      location: "Campo Real, Madrid"
+    },
+    nexNido: {
+      name: "Nex Nido",
+      address: "Calle Ebro 37, 28840 Mejorada del Campo, Madrid",
+      location: "Mejorada del Campo, Madrid"
+    }
   },
   faq: {
     badge: "Resolvemos tus dudas",

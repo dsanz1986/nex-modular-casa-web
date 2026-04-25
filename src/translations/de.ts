@@ -236,11 +236,19 @@ export const de = {
     whyEssential: "Nach dem Testen verschiedener Stützsysteme ist NEX BASE™ das System, das uns die besten Ergebnisse geliefert hat. Es ist praktisch unverzichtbar für eine gute Verankerung und Nivellierung Ihres Modulhauses und garantiert langfristige Stabilität und Haltbarkeit."
   },
   pilotHouse: {
-    title: "Besuchen Sie unser Pilothaus",
-    description: "Kommen Sie und besuchen Sie unser Pilothaus in Campo Real (Madrid). Entdecken Sie, wie es sich anfühlt, in einem modernen und effizienten Fertighaus zu leben.",
+    title: "Besuchen Sie unsere Pilothäuser",
+    description: "Kommen Sie und besuchen Sie unsere Pilothäuser in Madrid. Entdecken Sie, wie es sich anfühlt, in einem modernen und effizienten Fertighaus zu leben.",
     cta: "Vereinbaren Sie Ihren Termin über WhatsApp",
-    address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
-    location: "Campo Real, Madrid"
+    nexNatura: {
+      name: "Nex Natura",
+      address: "P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
+      location: "Campo Real, Madrid"
+    },
+    nexNido: {
+      name: "Nex Nido",
+      address: "Calle Ebro 37, 28840 Mejorada del Campo, Madrid",
+      location: "Mejorada del Campo, Madrid"
+    }
   },
   faq: {
     badge: "Wir lösen Ihre Zweifel",
