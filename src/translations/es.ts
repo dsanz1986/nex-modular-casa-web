@@ -38,27 +38,29 @@ export const es = {
     nexNatura: {
       name: "Nex Natura",
       dimensions: "90 m² totales | 72 m² habitables + 18 m² de porche",
+      location: "Ubicación: P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
       originalPrice: "44.990€",
       offerPrice: "39.990€",
       features: [
         "Estructura de acero galvanizado resistente + aislamiento EPS 65mm",
         "Ideal para vivir todo el año como vivienda principal",
         "Alta eficiencia energética y distribución personalizable",
-        "Entrega e instalación en 3-4 meses sin necesidad de obra",
-        "Transporte e instalación incluidos en toda España"
+        "Entrega e instalación en 180 días sin necesidad de obra",
+        "Transporte e Instalación incluido en el precio a 150 Km de Madrid"
       ]
     },
     nexNido: {
       name: "Nex Nido",
       dimensions: "54 m² totales | 36 m² habitables + 18 m² de porche (opcional)",
+      location: "Ubicación: C/ Ebro 37, 28840 Mejorada del Campo, Madrid",
       originalPrice: "24.990€",
       offerPrice: "19.990€",
       features: [
         "Estructura de acero galvanizado resistente + aislamiento EPS 65mm",
         "Perfecta como segunda residencia o casa de invitados",
         "Diseño compacto, eficiente y totalmente transportable",
-        "Entrega rápida en 3-4 meses sin necesidad de obra",
-        "Transporte e instalación incluidos en toda España"
+        "Entrega rápida en 180 días sin necesidad de obra",
+        "Transporte e Instalación incluido en el precio a 150 Km de Madrid"
       ]
     }
   },

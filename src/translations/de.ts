@@ -37,28 +37,30 @@ export const de = {
     reservationDeadline: "Reservieren Sie vor dem 31. Juli",
     nexNatura: {
       name: "Nex Natura",
-      dimensions: "90 m² gesamt | 72 m² bewohnbar + 18 m² Veranda",
+      dimensions: "90 m² gesamt | 72 m² Wohnfläche + 18 m² Veranda",
+      location: "Standort: P.º de Pozuelo, 24, 28510 Campo Real, Madrid",
       originalPrice: "44.990€",
       offerPrice: "39.990€",
       features: [
-        "Widerstandsfähige verzinkte Stahlstruktur + 65mm EPS Isolierung",
-        "Ideal zum ganzjährigen Wohnen als Hauptwohnsitz",
-        "Hohe Energieeffizienz und anpassbare Aufteilung",
-        "Lieferung und Installation in 3-4 Monaten ohne Bauarbeiten",
-        "Transport und Installation in ganz Spanien inklusive"
+        "Robuste verzinkte Stahlstruktur + EPS-Dämmung 65mm",
+        "Ideal zum Ganzjahreswohnen als Hauptwohnsitz",
+        "Hohe Energieeffizienz und anpassbarer Grundriss",
+        "Lieferung und Installation in 180 Tagen ohne Bauarbeiten",
+        "Transport und Installation im Preis enthalten im Umkreis von 150 km um Madrid"
       ]
     },
     nexNido: {
       name: "Nex Nido",
-      dimensions: "54 m² gesamt | 36 m² bewohnbar + 18 m² Veranda (optional)",
+      dimensions: "54 m² gesamt | 36 m² Wohnfläche + 18 m² Veranda (optional)",
+      location: "Standort: C/ Ebro 37, 28840 Mejorada del Campo, Madrid",
       originalPrice: "24.990€",
       offerPrice: "19.990€",
       features: [
-        "Widerstandsfähige verzinkte Stahlstruktur + 65mm EPS Isolierung",
+        "Robuste verzinkte Stahlstruktur + EPS-Dämmung 65mm",
         "Perfekt als Zweitwohnsitz oder Gästehaus",
         "Kompaktes, effizientes und vollständig transportables Design",
-        "Schnelle Lieferung in 3-4 Monaten ohne Bauarbeiten",
-        "Transport und Installation in ganz Spanien inklusive"
+        "Schnelle Lieferung in 180 Tagen ohne Bauarbeiten",
+        "Transport und Installation im Preis enthalten im Umkreis von 150 km um Madrid"
       ]
     }
   },
