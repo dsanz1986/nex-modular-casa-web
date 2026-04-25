@@ -277,7 +277,7 @@ export const en = {
       },
       entrega: {
         question: "How long does delivery take?",
-        answer: "Between 8 and 12 weeks from order confirmation, depending on the level of customization."
+        answer: "180 days from order confirmation, depending on the level of customization."
       },
       personalizar: {
         question: "Can I customize it?",

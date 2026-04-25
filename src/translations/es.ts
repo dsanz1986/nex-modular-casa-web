@@ -283,7 +283,7 @@ export const es = {
       },
       entrega: {
         question: "¿Cuánto tardan en entregarla?",
-        answer: "Entre 8 y 12 semanas desde la confirmación del pedido, dependiendo del nivel de personalización."
+        answer: "180 días desde la confirmación del pedido, dependiendo del nivel de personalización."
       },
       personalizar: {
         question: "¿Puedo personalizarla?",

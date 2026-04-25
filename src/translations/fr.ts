@@ -277,7 +277,7 @@ export const fr = {
       },
       entrega: {
         question: "Combien de temps pour la livraison ?",
-        answer: "Entre 8 et 12 semaines à partir de la confirmation de commande, selon le niveau de personnalisation."
+        answer: "180 jours à partir de la confirmation de commande, selon le niveau de personnalisation."
       },
       personalizar: {
         question: "Puis-je la personnaliser ?",

@@ -277,7 +277,7 @@ export const it = {
       },
       entrega: {
         question: "Quanto tempo per la consegna?",
-        answer: "Tra 8 e 12 settimane dalla conferma dell'ordine, a seconda del livello di personalizzazione."
+        answer: "180 giorni dalla conferma dell'ordine, a seconda del livello di personalizzazione."
       },
       personalizar: {
         question: "Posso personalizzarla?",
