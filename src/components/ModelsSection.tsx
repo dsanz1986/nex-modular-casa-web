@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Download, Clock } from "lucide-react";
+import { Download, Clock, MapPin } from "lucide-react";
 import ModelImageCarousel from "./ModelImageCarousel";
 import { useTranslation } from "react-i18next";
 
@@ -84,8 +84,12 @@ const ModelsSection = () => {
                   <h3 className="text-2xl font-playfair font-bold text-nex-text mb-4">
                     {t(`models.${model.id}.name`)}
                   </h3>
-                  <p className="text-sm font-inter text-nex-text/70">
+                  <p className="text-sm font-inter text-nex-text/70 mb-2">
                     {t(`models.${model.id}.dimensions`)}
+                  </p>
+                  <p className="text-sm font-inter text-nex-text/70 inline-flex items-center justify-center gap-1.5">
+                    <MapPin className="w-4 h-4 text-nex-primary" />
+                    {t(`models.${model.id}.location`)}
                   </p>
                 </header>
 
