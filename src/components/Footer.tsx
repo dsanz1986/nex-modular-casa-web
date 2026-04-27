@@ -107,10 +107,28 @@ const Footer = () => {
               
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-nex-primary mt-1" />
-                <span className="text-white/80 font-inter">
+                <a
+                  href="https://maps.app.goo.gl/iUWkZ5LaFUCkBY417"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 font-inter hover:text-white transition-colors"
+                >
                   P.º de Pozuelo, 24<br />
                   28510 Campo Real, Madrid
-                </span>
+                </a>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-nex-primary mt-1" />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Calle+Ebro+37,+28840+Mejorada+del+Campo,+Madrid"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 font-inter hover:text-white transition-colors"
+                >
+                  C/ Ebro, 37<br />
+                  28840 Mejorada del Campo, Madrid
+                </a>
               </div>
             </div>
           </div>

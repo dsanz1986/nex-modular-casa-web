@@ -8,6 +8,12 @@ import { useTranslation } from "react-i18next";
 const ModelsSection = () => {
   const { t } = useTranslation();
 
+  const MAPS_URLS: Record<string, string> = {
+    nexNatura: "https://maps.app.goo.gl/iUWkZ5LaFUCkBY417",
+    nexNido:
+      "https://www.google.com/maps/search/?api=1&query=Calle+Ebro+37,+28840+Mejorada+del+Campo,+Madrid",
+  };
+
   const models = [
     {
       id: "nexNatura",
@@ -87,10 +93,16 @@ const ModelsSection = () => {
                   <p className="text-sm font-inter text-nex-text/70 mb-2">
                     {t(`models.${model.id}.dimensions`)}
                   </p>
-                  <p className="text-sm font-inter text-nex-text/70 inline-flex items-center justify-center gap-1.5">
+                  <a
+                    href={MAPS_URLS[model.id]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-inter text-nex-text/70 inline-flex items-center justify-center gap-1.5 hover:text-nex-primary transition-colors"
+                    aria-label={`Ver ${t(`models.${model.id}.name`)} en Google Maps`}
+                  >
                     <MapPin className="w-4 h-4 text-nex-primary" />
                     {t(`models.${model.id}.location`)}
-                  </p>
+                  </a>
                 </header>
 
                 {/* Precios centrados y destacados */}
