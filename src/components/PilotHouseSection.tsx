@@ -82,12 +82,18 @@ const PilotHouseSection = () => {
                 <h3 className="text-2xl font-playfair font-bold mb-3">
                   {t(`pilotHouse.${house.id}.name`)}
                 </h3>
-                <div className="flex items-start gap-2 mb-6 text-white/90">
+                <a
+                  href={house.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 mb-6 text-white/90 hover:text-white transition-colors"
+                  aria-label={`Ver ${t(`pilotHouse.${house.id}.name`)} en Google Maps`}
+                >
                   <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
                   <span className="font-inter">
                     {t(`pilotHouse.${house.id}.address`)}
                   </span>
-                </div>
+                </a>
 
                 <Button
                   size="lg"

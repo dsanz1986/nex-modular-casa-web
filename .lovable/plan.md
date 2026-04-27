@@ -1,58 +1,26 @@
-## Plan: Actualizar tiempos de entrega, transporte y casas piloto
+## Plan: Direcciones con enlace a Google Maps + dirección de Mejorada en el footer
 
-### 1. Cambiar plazos de entrega a 180 días (5 idiomas)
+### 1. Footer (`src/components/Footer.tsx`)
+Añadir un segundo bloque de dirección debajo del actual (Campo Real), con la dirección de Nex Nido en Mejorada del Campo. Ambas direcciones se convierten en enlaces clicables que abren Google Maps en una pestaña nueva.
 
-En las características de **Nex Natura** y **Nex Nido** (`src/translations/{es,en,fr,de,it}.ts`):
-- ES: "Entrega e instalación en 3-4 meses..." y "Entrega rápida en 3-4 meses..." → "Entrega e instalación en 180 días sin necesidad de obra" / "Entrega rápida en 180 días sin necesidad de obra"
-- EN/FR/DE/IT: equivalentes "180 days / 180 jours / 180 Tagen / 180 giorni"
+- Nex Natura: `P.º de Pozuelo, 24, 28510 Campo Real, Madrid` → https://maps.app.goo.gl/iUWkZ5LaFUCkBY417
+- Nex Nido: `C/ Ebro 37, 28840 Mejorada del Campo, Madrid` → https://www.google.com/maps/search/?api=1&query=Calle+Ebro+37,+28840+Mejorada+del+Campo,+Madrid
 
-En la **FAQ "¿Cuánto tardan en entregarla?"**:
-- ES: "Entre 8 y 12 semanas..." → "180 días desde la confirmación del pedido, dependiendo del nivel de personalización."
-- Misma actualización en EN/FR/DE/IT.
+Cada dirección tendrá su propio icono `MapPin` y enlace, manteniendo el estilo actual (`text-white/80 hover:text-white`).
 
-### 2. Cambiar transporte a "150 Km de Madrid" (5 idiomas)
+### 2. Sección de Modelos (`src/components/ModelsSection.tsx`)
+Convertir la línea de dirección de cada modelo (líneas 90-93) en un enlace `<a>` a Google Maps:
+- `nexNatura` → URL de Campo Real
+- `nexNido` → URL de Mejorada del Campo
 
-En las features de Nex Natura y Nex Nido:
-- ES: "Transporte e instalación incluidos en toda España" → "Transporte e Instalación incluido en el precio a 150 Km de Madrid"
-- EN: "Transport and installation included within 150 km of Madrid"
-- FR: "Transport et installation inclus dans un rayon de 150 km de Madrid"
-- DE: "Transport und Installation im Preis enthalten im Umkreis von 150 km um Madrid"
-- IT: "Trasporto e installazione inclusi nel prezzo entro 150 km da Madrid"
+Se mantiene el icono `MapPin` y el texto con la dirección. Se añade `hover:text-nex-primary transition-colors` y `target="_blank" rel="noopener noreferrer"`.
 
-### 3. Añadir direcciones a las fichas de los modelos
+Para mapear modelo → URL se usa un objeto local `MAPS_URLS` dentro del componente.
 
-En `src/components/ModelsSection.tsx`, mostrar bajo el nombre/dimensiones de cada modelo su ubicación:
-- **Nex Natura** → "Ubicación: P.º de Pozuelo, 24, 28510 Campo Real, Madrid"
-- **Nex Nido** → "Ubicación: C/ Ebro 37, 28840 Mejorada del Campo, Madrid"
-
-Se añadirán dos claves nuevas en cada idioma:
-- `models.nexNatura.location`
-- `models.nexNido.location`
-
-### 4. Sección "Visita nuestra casa piloto" — añadir Nex Nido
-
-Refactorizar `src/components/PilotHouseSection.tsx` para mostrar **dos casas piloto** en lugar de una sola, con un layout de 2 columnas (responsive a 1 columna en móvil). Cada tarjeta tendrá:
-- Imagen (Nex Natura: imagen actual `c6c6f354-...png`; Nex Nido: nueva imagen subida `fotonexnido.jpeg` copiada a `public/lovable-uploads/nex-nido-pilot.jpeg`)
-- Nombre del modelo
-- Dirección completa
-- Botón de WhatsApp (mensaje específico mencionando qué casa visitar)
-- Enlace a Google Maps con la dirección correcta
-
-Datos:
-- **Nex Natura** — P.º de Pozuelo, 24, 28510 Campo Real, Madrid (mantener Google Maps actual)
-- **Nex Nido** — Calle Ebro 37, 28840 Mejorada del Campo, Madrid (nuevo enlace a Google Maps con esa dirección)
-
-Nuevas claves de traducción en `pilotHouse`:
-- `pilotHouse.nexNatura.{name,address,location,cta}`
-- `pilotHouse.nexNido.{name,address,location,cta}`
-Mantener `pilotHouse.title`, descripción general y teléfono/email comunes.
-
-También actualizar la pequeña descripción en `advantages.items.pilotHouse.description`:
-- ES: "Ven a Campo Real o Mejorada del Campo (Madrid) y experimenta cómo se vive" (y equivalentes en otros idiomas).
+### 3. Sección Casa Piloto (`src/components/PilotHouseSection.tsx`)
+Ya existe el botón con `MapPin` sobre la imagen que abre Maps. Adicionalmente, convertir también la línea de dirección de debajo del título (`{t(\`pilotHouse.${house.id}.address\`)}`) en un enlace a Google Maps usando la misma `house.mapsUrl`, para consistencia.
 
 ### Archivos modificados
-
-- `src/translations/es.ts`, `en.ts`, `fr.ts`, `de.ts`, `it.ts` — strings de modelos, FAQ entrega, sección pilotHouse, advantages
-- `src/components/ModelsSection.tsx` — añadir ubicación bajo dimensiones
-- `src/components/PilotHouseSection.tsx` — refactor a dos casas piloto
-- `public/lovable-uploads/nex-nido-pilot.jpeg` — nueva imagen (copiada del upload)
+- `src/components/Footer.tsx`
+- `src/components/ModelsSection.tsx`
+- `src/components/PilotHouseSection.tsx`
