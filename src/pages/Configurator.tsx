@@ -11,6 +11,7 @@ import { ConfiguratorPreview } from "@/components/configurator/ConfiguratorPrevi
 import { ExteriorControls } from "@/components/configurator/ExteriorControls";
 import { InteriorControls } from "@/components/configurator/InteriorControls";
 import { ConfiguratorSummary } from "@/components/configurator/ConfiguratorSummary";
+import { SEO } from "@/components/SEO";
 
 export default function Configurator() {
   const { t } = useTranslation();
@@ -28,6 +29,11 @@ export default function Configurator() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-forest-50 to-forest-100">
+      <SEO
+        title="Configurador de Casas Modulares | Nex Modular Homes"
+        description="Configura tu casa modular Nex Natura o Nex Nido: acabados exteriores e interiores y solicita presupuesto en minutos."
+        path="/configurador"
+      />
       {/* Header */}
       <div className="bg-white border-b border-forest-200 sticky top-0 z-40">
         <div className="container mx-auto px-4 py-4">

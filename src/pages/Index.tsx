@@ -13,10 +13,16 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import { SEO } from "@/components/SEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen font-inter">
+      <SEO
+        title="Casas Modulares Móviles Sin Obra | Nex Modular Homes España"
+        description="Casas modulares móviles sin obra en España. Instalación incluida, precio cerrado y casa piloto visitable en Madrid. Desde 19.990€."
+        path="/"
+      />
       <Navbar />
       <main>
         <section id="inicio">
