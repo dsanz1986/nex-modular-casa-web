@@ -2,10 +2,16 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const CookiePolicy = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Política de Cookies | Nex Modular Homes"
+        description="Información sobre el uso de cookies en el sitio web de Nex Modular Homes."
+        path="/politica-cookies"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-8">
           <Link to="/">
